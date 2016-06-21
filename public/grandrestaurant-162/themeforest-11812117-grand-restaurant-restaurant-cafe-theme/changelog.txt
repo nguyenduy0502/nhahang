@@ -1,0 +1,126 @@
+----------------------------------------------------------------------------
+   Release notes for Theme
+----------------------------------------------------------------------------
+
+   Theme Name: Grandrestaurant
+
+   Version: 1.6.2
+
+   by ThemeGoods
+   http://themeforest.net/user/ThemeGoods
+
+
+----------------------------------------------------------------------------
+  Change log
+----------------------------------------------------------------------------
+
+= V1.0 - 19.06.2015 =
+* Initial Release
+
+= V1.1 - 30.06.2015 =
+* Fix long menu excerpt text issue on menu classic layout
+* Fix social media shortcode not displaying all social profiles
+
+= V1.2 - 06.07.2015 =
+* Fix auto update issue, temporary disable auto update feature due to invite server downtime issue
+
+= V1.3 - 15.07.2015 =
+* Add translation files for custom post type plugin
+* Fix parallax scrolling effect issue with the latest version of Chrome/Window
+
+= V1.4 - 19.07.2015 =
+* Add new left align menu layout option
+* Add new left align demo import option
+* Add reservation form support on mobile
+
+= V1.4.1 - 23.07.2015 =
+* Fix single product page header margin issue
+* Fix single post page header background image margin issue
+
+= V1.4.2 - 31.07.2015 =
+* Fix left menu alignment issue on Firefox
+* Fix mobile menu not visible on touch devices when check option çHide sidemenu on desktopé
+
+= V1.4.3 - 02.08.2015 =
+* Fix gallery display issue when using left align menu layout
+* Fix grand restaurant custom post type translation issue
+
+= V1.5 - 05.08.2015 =
+* Add boxed layout
+* Add Bakery demo option
+* Add centre logo & menu layout
+* Fix Google Font error for some customer server setting
+
+= V1.5.1 - 07.08.2015 =
+* Fix logo resizing issue on mobile devices
+* Update revolution slider plugin v5.0.1
+* Update revolution slider plugin documentation
+
+= V1.5.2 - 19.08.2015 =
+* Fix widget notice messages in WordPress 4.3
+* Update Revolution Slider plugin v5.0.4.1
+
+= V1.5.3 - 25.08.2015 =
+* Add TripAdvisor social profile option
+* Fix visual editor in content builder issue with WordPress 4.3
+
+= V1.5.4 - 27.08.2015 =
+* Fix Facebook and Google+ social profiles issue on footer
+* Fix Facebook sharing issue
+
+= V1.5.5 - 03.09.2015 =
+* Update Revolution Slider plugin v5.0.6
+
+= V1.5.6 - 04.09.2015 =
+* Fix all map modules display issue when using with custom map style
+
+= V1.5.7 - 07.09.2015 =
+* Fix team member post options issue
+
+= V1.5.8 - 12.09.2015 =
+* Add menu ID to all menu content builder modules
+* Add option to update required plugins from WordPress Dashboard
+* Add option to make food menu price optional
+* Add sample child theme to theme documentation
+* Update Revolution Slider plugin v5.0.8
+
+= V1.5.9 - 17.09.2015 =
+* Add image caption support for menu grid module
+* Fix reservation form script issue when using child theme
+* Fix footer social profile link issue
+
+= V1.5.10 - 23.09.2015 =
+* Fix Google Map shortcode display issue
+
+= V1.5.11 - 01.10.2015 =
+* Fix left menu layout issue on IE browser
+
+= V1.5.12 - 10.11.2015 =
+* Fix search results page layout issue
+
+= V1.5.13 - 13.11.2015 =
+* Update Revolution Slider plugin v5.1.1
+
+= V1.5.14 - 15.11.2015 =
+* Fix reservation popup issue on Safari/iOS
+
+= V1.5.15 - 22.11.2015 =
+* Fix one page script issue for some customer settings
+
+= V1.5.16 - 01.12.2015 =
+* Update Revolution Slider plugin v5.1.4
+
+= V1.6 - 01.01.2016 =
+* Fix comment date translation issue
+* Update Revolution Slider plugin v5.1.5
+
+= V1.6.1 - 15.01.2016 =
+* Update Revolution Slider plugin v5.1.6
+* Fix pagination issue when set page as static homepage in WordPress 4.4.1
+
+= V1.6.2 - 22.01.2016 =
+* Fix Google Map zoom option issue
+* Fix one page hashtag default location scrolling issue
+* Fix missing translation "We also sent a copy of reservation email to"
+
+* Add cc/bcc reservation email options
