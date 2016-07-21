@@ -98,10 +98,10 @@ function add_header_stylesheet() {
 	wp_enqueue_style('bootstrap-grid');
 	wp_register_style('font-awesome.min',TEMPLATE_LIBS.'/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style('font-awesome.min');
-	wp_register_style('jquery.fancybox',TEMPLATE_LIBS.'/fancybox/helpers/jquery.fancybox.css');
+	wp_register_style('jquery.fancybox',TEMPLATE_LIBS.'/fancybox/jquery.fancybox.css');
 	wp_enqueue_style('jquery.fancybox');
-	wp_register_style('owl-carousel',TEMPLATE_LIBS.'/owl-carousel/owl-carousel.css');
-	wp_enqueue_style('owl-carousel');
+	wp_register_style('owl-carousel-css',TEMPLATE_LIBS.'/owl-carousel/owl.carousel.css');
+	wp_enqueue_style('owl-carousel-css');
 	wp_register_style('countdown',TEMPLATE_LIBS.'/countdown/jquery.countdown.css');
 	wp_enqueue_style('countdown');
 	wp_register_style('fonts',TEMPLATE_FOLDER.'/css/fonts.css');
