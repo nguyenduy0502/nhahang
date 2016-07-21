@@ -1,0 +1,8 @@
+#login h1 a {
+    background-image: url("../icon/logoasite.png") !important;
+    width: 300px !important;
+    height: 100px !important;
+    background-size: 200px auto !important;
+    padding-bottom: 30px !important;
+
+}

@@ -1,0 +1,186 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.about-us-text{
+		padding: 20px 0;
+	}
+	.about-us-time {
+		padding: 20px 0;
+	}
+}
+
+
+
+
+@media only screen and (max-width: 58.75rem){
+/*
+	.top_line{
+		background-color: transparent;
+		top: 0;
+		width: 1px;
+	}
+
+	.has-logo{
+		display: none;
+	}
+	.mobile-display{
+		display: block;
+		margin:0rem auto;
+		text-align: center
+	}
+
+	.nav-list>li:not(.has-logo)>a {
+		background-color: rgba(17,91,54,.7);
+		text-align: center;
+	}
+	*/
+	.bamboo img{
+	right: -40px;
+}
+}
+
+@media only screen and (max-width: 670px){
+	.top_line{
+		background-color: transparent;
+		top: 0;
+		width: 1px;
+	}
+	.has-logo{
+		display: none;
+	}
+	.mobile-display{
+		display: block;
+		margin:0rem auto;
+		text-align: center
+	}
+	.nav-list>li:not(.has-logo)>a {
+		background-color: rgba(17,91,54,.7);
+		text-align: center;
+	}
+	.toggle-menu{
+		display: block;
+		max-width: -webkit-min-content;
+		max-width: -moz-min-content;
+		max-width: min-content;
+		margin: 1rem auto 0 auto;
+		background-color: rgba(17,91,54,.7);
+		text-align: center;
+		color: #fff !important;
+		padding: 0.8rem;
+		border-radius: .25em;
+
+	}
+	.toggle-menu:hover{background-color: rgb(17,91,54);}
+
+	.nav-list{
+		display: block;
+		width: 100%;
+		position: static;
+		line-height: 1rem;
+		z-index: 1012;
+		left: 0;
+		top:0;
+		background-color: #fff;
+		
+		max-height: 0;
+		overflow: hidden;
+	
+	}
+
+	.active{
+		max-height: 100%;
+		overflow: auto;
+	}
+
+
+	.nav-list  ul{
+		position: static;
+		text-indent: 2rem;
+		z-index: 1013;
+	}
+}
+
+
+
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.bamboo{
+		display: none;
+	}
+	h1{
+		font-size: 1.4em;
+	}
+
+	.contact-us-small {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 10px;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.about-us-text, .about-us-time{
+		padding: 15px;
+	}
+	.google-map {
+	width: 100%;
+	}
+		.social {
+	letter-spacing: 3px;
+	}
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	.about-us-text, .about-us-time{
+		padding: 10px;
+	}
+	.credit {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+.contact-us-form{
+	padding: 0;
+	width: 190px;
+	margin: 0 auto;
+}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
