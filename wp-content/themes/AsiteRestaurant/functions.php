@@ -170,8 +170,45 @@ if (function_exists('register_sidebar')) {
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>'
 	);
+	$args_hours=array(
+		'name' => __('Hours widget', 'asite'),
+		'id' => 'hours-sidebar',
+		'description' => 'Show information hours in index',
+		'class' => '',
+		'before_widget' => '<div class="about-us-time">',
+		'after_widget' => '</div>',
+		'before_title' => '<h1 class="widgettitle">',
+		'after_title' => '</h1>'
+	);
 	register_sidebar($args_booking);
+	register_sidebar($args_hours);
 }
+/***********************************************************
+ * CREATE CUSTOM EXCERPT
+ * ********************************************************
+ */
+function nguyenduy_excerpt($text, $chars = 1620)
+{
+	$text = $text . " ";
+	$text = substr($text, 0, $chars);
+	$text = substr($text, 0, strrpos($text, ' '));
+	$text = $text . "...";
+	return $text;
+}
+/***********************************************************
+ * SHORTEN POST TITLE
+ * ********************************************************
+ */
+function short_title($after = '', $length)
+{
+	$mytitle = explode(' ', get_the_title(), $length);
+	if (count($mytitle) >= $length) {
+		array_pop($mytitle);
+		$mytitle = implode(" ", $mytitle) . $after;
+	} else {
+		$mytitle = implode(" ", $mytitle);
+	}
+	return $mytitle;
 
-
+}
 ?>
