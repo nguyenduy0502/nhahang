@@ -8,13 +8,8 @@
 <?php get_template_part('includes/section-index/about-us');?>
 <!--end about us-->
 
-<!--news-->
-<?php get_template_part('includes/section-index/news'); ?>
-<!--end news-->
-
 <!--new food-->
 <?php get_template_part('includes/section-index/new-food');?>
-</div>
 <!--end new food-->
 
 <!--food-menu-->
@@ -24,6 +19,10 @@
 <!--booking-->
 <?php get_template_part('includes/section-index/booking');?>
 <!--end booking-->
+
+    <!--news-->
+<?php get_template_part('includes/section-index/news'); ?>
+    <!--end news-->
 
 <!--contact us-->
 <?php get_template_part('includes/section-index/contact-us');?>
