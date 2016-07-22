@@ -106,11 +106,11 @@ function add_header_stylesheet() {
 	wp_enqueue_style('countdown');
 	wp_register_style('fonts',TEMPLATE_FOLDER.'/css/fonts.css');
 	wp_register_style('main',TEMPLATE_FOLDER.'/css/main.css');
-	wp_register_style('media',TEMPLATE_FOLDER.'/css/media.css');
+	wp_register_style('media-theme',TEMPLATE_FOLDER.'/css/media.css');
 	wp_register_style('owl.carousel',TEMPLATE_FOLDER.'/css/owl.carousel.css');
 	wp_enqueue_style('fonts');
 	wp_enqueue_style('main');
-	wp_enqueue_style('media');
+	wp_enqueue_style('media-theme');
 	wp_enqueue_style('owl.carousel');
 }
 /***********************************************************
