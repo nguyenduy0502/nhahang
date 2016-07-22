@@ -155,8 +155,23 @@ function add_footer_js() {
 	wp_enqueue_script('owl.carousel.min');
 }
 
-
-
+/*******************************************************************
+ * REGISTER WIDGET
+ *****************************************************************
+ */
+if (function_exists('register_sidebar')) {
+	$args_booking=array(
+		'name' => __('Booking widget', 'asite'),
+		'id' => 'booking-sidebar',
+		'description' => 'Booking sidebar',
+		'class' => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>'
+	);
+	register_sidebar($args_booking);
+}
 
 
 ?>
