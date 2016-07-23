@@ -5,6 +5,7 @@
  * Time: 23:34
  * Description:
  */
+get_header();
 echo 'this is a file cuisine';
 if(have_posts()):while(have_posts()):the_post();
 	echo "<br/>";

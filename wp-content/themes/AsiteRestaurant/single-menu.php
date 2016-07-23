@@ -5,7 +5,7 @@
  * Time: 23:44
  * Description:
  */
-
+get_header();
 echo 'This is a string test menu single';
 $args=array(
 	'post_type'=>'food',

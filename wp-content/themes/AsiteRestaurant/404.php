@@ -5,5 +5,6 @@
  * Time: 16:31
  * Description:
  */
+get_header();
 echo 'this is a file 404';
 ?>

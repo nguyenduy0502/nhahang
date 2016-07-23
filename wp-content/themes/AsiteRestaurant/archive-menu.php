@@ -5,7 +5,7 @@
  * Time: 23:39
  * Description:
  */
-
+get_header();
 echo 'This is a file archive menu';
 
 if(have_posts()):while(have_posts()):the_post();

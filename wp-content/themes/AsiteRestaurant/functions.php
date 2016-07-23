@@ -13,6 +13,7 @@ define('THEME_URL',get_template_directory_uri());
 define('LANGUAGES_FOLDER',THEME_URL.'/languages');
 define('PUBLIC_FOLDER',THEME_URL.'/public');
 define('CUSTOM_MENU',THEME_URL.'/AdditionalPlugins/MenuRetaurant');
+define('CUSTOM_FOOD',THEME_URL.'/AdditionalPlugins/CustomPostRestaurant');
 define('TEMPLATE_FOLDER',THEME_URL.'/template/viethouse');
 define('TEMPLATE_LIBS',TEMPLATE_FOLDER.'/libs');
 /*******************************************************************
