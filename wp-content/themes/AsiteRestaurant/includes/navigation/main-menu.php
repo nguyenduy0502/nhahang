@@ -1,5 +1,5 @@
 <div class="row">
-	<header>
+	<header class="header clearfix">
 		<nav>
 			<div class="top_line">
 			</div>
@@ -46,5 +46,5 @@
 			</div>
 		</div>
 
-	</header>
+	</header class="header">
 </div>

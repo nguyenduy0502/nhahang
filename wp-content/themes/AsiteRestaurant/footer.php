@@ -74,10 +74,44 @@
 			navigation: false,
 			pagination:true,
 			paginationNumbers:true,
-			navigationText: ["prev", "next"]
+			navigationText: ["prev", "next"],
+			responsive : {
+				0:{items : 2},
+				480:{items : 3},
+				768:{items: 4},
+				992:{items: 5},
+				1200:{items: 6}
+			}
 
 		});
 	});
+</script>
+<script>
+	$("li").click(function(e) {
+	e.preventDefault();
+	$("li").removeClass("selected");
+	$(this).addClass("selected");
+});
+</script>
+<script>
+$(document).ready(function() {
+    $("#content").find("[id^='tab']").hide(); // Hide all content
+    $("#tabs li:first").attr("id","current"); // Activate the first tab
+    $("#content #tab1").fadeIn(); // Show first tab's content
+    
+    $('#tabs a').click(function(e) {
+        e.preventDefault();
+        if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+         return;       
+        }
+        else{             
+          $("#content").find("[id^='tab']").hide(); // Hide all content
+          $("#tabs li").attr("id",""); //Reset id's
+          $(this).parent().attr("id","current"); // Activate this
+          $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+        }
+    });
+});
 </script>
 </body>
 </html>

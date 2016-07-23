@@ -50,7 +50,7 @@ body {
 .container{
 	max-width: 972px;
 }
-header{
+.header{
 	background-image: url(../img/top_bg.jpg);
 	min-height: 430px;
 	background-position: center center;
@@ -82,6 +82,7 @@ header{
 	border-radius: 45px 0 45px 0;
 	box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.749);
 	position: relative;
+	margin-bottom: 150px;
 }
 
 h1{
@@ -218,17 +219,38 @@ h2, h3, h4, h5, h6{
 	border-radius: 45px 0;
 	overflow: hidden;
 	margin: 20px;
+	position: relative;
+	-webkit-transition: ease-out 0.25s;
+	-moz-transition: ease-out 0.25s;
+	-o-transition: ease-out 0.25s;
+	transition: ease-out 0.25s;
+}
+
+.item:hover{
+	-webkit-box-shadow: 0 0 0 8px #fff;
+	box-shadow: 0 0 0 8px #fff;
+	border-radius: 0;
+
 }
 .item img{
 	min-width: 100%;
 	height: 100%;
 }
 
+.item h5{
+	position: absolute; 
+	bottom: 0; 
+	left: 0; 
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 2px 6px;
+}
+
+
 
 .section-title{
 	background-color: rgb(17,91,54);
 	margin: 5px;
-
 }
 
 .container{
@@ -307,14 +329,14 @@ a{
 /**/
 
 .food-menu{
-	min-height: 620px;
-	background-image: -moz-linear-gradient( 84deg, rgb(255,255,255) -50%, rgb(17,91,54) 100%);
-    background-image: -webkit-linear-gradient( 84deg, rgb(255,255,255) -50%, rgb(17,91,54) 100%);
-    background-image: -ms-linear-gradient( 84deg, rgb(255,255,255) -50%, rgb(17,91,54) 100%);
+	min-height: 100%;
+	background-image: -moz-linear-gradient( 84deg, rgb(255,255,255) -70%, rgb(17,91,54) 100%);
+    background-image: -webkit-linear-gradient( 84deg, rgb(255,255,255) -70%, rgb(17,91,54) 100%);
+    background-image: -ms-linear-gradient( 84deg, rgb(255,255,255) -70%, rgb(17,91,54) 100%);
 }
 
 .food-menu table{
-	max-width: 780px;
+	max-width: 912px;
 	margin: 0 auto;
 }
 
@@ -344,8 +366,10 @@ td .food-text{
 
 
 .booking{
-	min-height: 700px;
-	background: #aaa
+	min-height: 100%;
+	background-image:url(http://7606-presscdn-0-74.pagely.netdna-cdn.com/wp-content/uploads/2016/06/4-2.jpg);
+	background-position: top center;
+	background-size:100%;
 }
 
 .contact-us{
@@ -380,9 +404,14 @@ td .food-text{
 .contact-us-form{
 	padding: 5px 40px;
 }
-.contact-us-form textarea{
-	width: 182px;
+.contact-us-form textarea,
+.contact-us-form input{
+	width: 200px;
 	resize: none;
+	margin: 5px;
+}
+.contact-us-form textarea{
+	height: 90px;
 }
 
 .google-map{
@@ -414,7 +443,7 @@ label{
 }
 
 .social{
-	margin: 44px auto;
+	margin: 43px auto;
 	display: inline-block;
 	float: right;
 	letter-spacing: 13px;
@@ -437,3 +466,205 @@ label{
 }
 
 
+/* слегка доработанный, универсальный clearfix хак */
+
+.clearfix:after {
+
+     visibility: hidden;
+
+     display: block;
+
+     font-size: 0;
+
+     content: " ";
+
+     clear: both;
+
+     height: 0;
+
+     }
+
+.clearfix { display: inline-block; }
+
+/* start commented backslash hack \*/
+
+* html .clearfix { height: 1%; }
+
+.clearfix { display: block; }
+
+/* close commented backslash hack */
+
+.rtb-booking-form form{
+	padding: 10px 20px;
+	background-color: rgba(00,00,00,.8);
+}
+
+
+.rtb-booking-form fieldset.reservation,
+.rtb-booking-form fieldset.contact{
+	display: inline-block!important;
+	float: left;
+	width: 262px;
+	color: #fff;
+}
+
+
+
+/*tab design*/
+HTML  CSS  JS  Result
+Edit on 
+		.tabrow {
+		    text-align: center;
+		    list-style: none;
+		    margin: 200px 0 20px;
+		    padding: 0;
+		    line-height: 24px;
+		    height: 26px;
+		    overflow: hidden;
+		    font-size: 12px;
+		    font-family: verdana;
+		    position: relative;
+		}
+		.tabrow li {
+		    border: 1px solid #AAA;
+		    background: #D1D1D1;
+		    background: -o-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: -ms-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: -moz-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: -webkit-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    background: linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+		    display: inline-block;
+		    position: relative;
+		    z-index: 0;
+		    border-top-left-radius: 6px;
+		    border-top-right-radius: 6px;
+		    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 #FFF;
+		    text-shadow: 0 1px #FFF;
+		    margin: 0 -5px;
+		    padding: 0 20px;
+		}
+		.tabrow a {
+			  color: #555;
+			  text-decoration: none;
+		}
+		.selected .tabrow a{
+			color:white;
+		}
+		.tabrow li.selected {
+		    background: #FFF;
+		    color: #333;
+		    z-index: 2;
+		    border-bottom-color: #FFF;
+		}
+		.tabrow:before {
+		    position: absolute;
+		    content: " ";
+		    width: 100%;
+		    bottom: 0;
+		    left: 0;
+		    border-bottom: 1px solid #AAA;
+		    z-index: 1;
+		}
+		.tabrow li:before,
+		.tabrow li:after {
+		    border: 1px solid #AAA;
+		    position: absolute;
+		    bottom: -1px;
+		    width: 5px;
+		    height: 5px;
+		    content: " ";
+		}
+		.tabrow li:before {
+		    left: -6px;
+		    border-bottom-right-radius: 6px;
+		    border-width: 0 1px 1px 0;
+		    box-shadow: 2px 2px 0 #D1D1D1;
+		}
+		.tabrow li:after {
+		    right: -6px;
+		    border-bottom-left-radius: 6px;
+		    border-width: 0 0 1px 1px;
+		    box-shadow: -2px 2px 0 #D1D1D1;
+		}
+		.tabrow li.selected:before {
+		    box-shadow: 2px 2px 0 #FFF;
+		}
+		.tabrow li.selected:after {
+		    box-shadow: -2px 2px 0 #FFF;
+		}
+/*end tab design*/
+
+#tabs {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#tabs li {
+  float: left;
+  margin: 0 .5em 0 0;
+}
+
+#tabs a {
+  position: relative;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);  
+  padding: .7em 3.5em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  border-radius: 5px 0 0 0;
+  box-shadow: 0 2px 2px rgba(0,0,0,.4);
+}
+
+#tabs a:hover,
+#tabs a:hover::after,
+#tabs a:focus,
+#tabs a:focus::after {
+  background: #fff;
+}
+
+#tabs a:focus {
+  outline: 0;
+}
+
+#tabs a::after {
+  content:'';
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  right: -.5em;  
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);  
+  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  transform: skew(10deg);
+  border-radius: 0 5px 0 0;  
+}
+
+#tabs #current a,
+#tabs #current a::after {
+  background: rgb(17,91,54);
+  z-index: 3;
+  color: #fff;
+}
+
+#content {
+  background: #fff;
+  padding: 2em;
+  min-height: 100%;
+  position: relative;
+  z-index: 2; 
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+  background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) -70%, rgb(17,91,54) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) -70%, rgb(17,91,54) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) -70%, rgb(17,91,54) 100%);
+}
+
+.booking-info{
+	width: 575px;
+}
