@@ -1,6 +1,6 @@
 <div class="booking clearfix" id="booking">
 	<div class="section-title booking-title">
-		<h1>Booking</h1>
+		<h1>Зарезервировать столик</h1>
 	</div>
 	<div class="container">
 		<div class="row">

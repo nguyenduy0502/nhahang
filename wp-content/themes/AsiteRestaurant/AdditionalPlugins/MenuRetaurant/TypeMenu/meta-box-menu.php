@@ -15,27 +15,60 @@ function form_menu_output($post)
 {
 
 	$choose_food = array(get_post_meta($post->ID, 'choose_food', true));
-	$stored_choose = get_post_meta($post->ID);
-	if (empty($choose_food[0])) {
-		// set default data for array
-		$choose_food[0] = array(0502);
-	}
-	wp_nonce_field('save_choose_food_nonce', 'info_choose_food_nonce');
-	?>
-	<?php
-	//$args = array(
-	//'post_type' => 'food',
-	//'post_per_page' => '-1',
-	/*'tax_query' => array(
-	array(
-		'taxonomy' => 'cuisine',
-		'field'    => 'id',
-		'terms'    => '53', //Горячие Закуски
-	),
-),*/
 
-	//);
-	//$query = new WP_Query($args);
+	$choose_cat_53=array(get_post_meta($post->ID,'choose_cat_53',true));
+	$choose_cat_55=array(get_post_meta($post->ID,'choose_cat_55',true));
+	$choose_cat_50=array(get_post_meta($post->ID,'choose_cat_50',true));
+	$choose_cat_52=array(get_post_meta($post->ID,'choose_cat_52',true));
+	$choose_cat_51=array(get_post_meta($post->ID,'choose_cat_51',true));
+	$choose_cat_54=array(get_post_meta($post->ID,'choose_cat_54',true));
+	$choose_cat_56=array(get_post_meta($post->ID,'choose_cat_56',true));
+	$choose_cat_57=array(get_post_meta($post->ID,'choose_cat_57',true));
+
+	wp_nonce_field('save_choose_food_nonce', 'info_choose_food_nonce');
+	wp_nonce_field('save_choose_cat_53_nonce', 'info_choose_cat_53_nonce');
+	wp_nonce_field('save_choose_cat_55_nonce', 'info_choose_cat_55_nonce');
+	wp_nonce_field('save_choose_cat_50_nonce', 'info_choose_cat_50_nonce');
+	wp_nonce_field('save_choose_cat_52_nonce', 'info_choose_cat_52_nonce');
+	wp_nonce_field('save_choose_cat_51_nonce', 'info_choose_cat_51_nonce');
+	wp_nonce_field('save_choose_cat_54_nonce', 'info_choose_cat_54_nonce');
+	wp_nonce_field('save_choose_cat_56_nonce', 'info_choose_cat_56_nonce');
+	wp_nonce_field('save_choose_cat_57_nonce', 'info_choose_cat_57_nonce');
+	if (empty($choose_cat_53[0])) {
+		// set default data for array
+		$choose_cat_53[0]=array(0502);
+	}
+	if (empty($choose_cat_55[0])) {
+		// set default data for array
+		$choose_cat_55[0]=array(0502);
+	}
+	if (empty($choose_cat_50[0])) {
+		// set default data for array
+		$choose_cat_50[0]=array(0502);
+	}
+	if (empty($choose_cat_52[0])) {
+		// set default data for array
+		$choose_cat_52[0]=array(0502);
+	}
+	if (empty($choose_cat_51[0])) {
+		// set default data for array
+		$choose_cat_51[0]=array(0502);
+	}
+	if (empty($choose_cat_54[0])) {
+		// set default data for array
+		$choose_cat_54[0]=array(0502);
+	}
+	if (empty($choose_cat_56[0])) {
+		// set default data for array
+		$choose_cat_54[0]=array(0502);
+	}
+	if (empty($choose_cat_57[0])) {
+		// set default data for array
+		$choose_cat_57[0]=array(0502);
+	}
+
+
+
 	?>
 	<?php $args_cats = array('taxonomy' => 'cuisine'); // get category cuisine
 	$cats = get_categories($args_cats)// set list categories
@@ -57,8 +90,8 @@ function form_menu_output($post)
 			</tr>
 			<?php if ($query_53->have_posts()): while ($query_53->have_posts()):$query_53->the_post(); ?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_53_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_53[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
@@ -81,8 +114,8 @@ function form_menu_output($post)
 			</tr>
 			<?php if($query_55->have_posts()):while($query_55->have_posts()):$query_55->the_post();?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_55_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_55[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
@@ -104,8 +137,8 @@ function form_menu_output($post)
 			</tr>
 			<?php if($query_50->have_posts()):while($query_50->have_posts()):$query_50->the_post();?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_50_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_50[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
@@ -127,8 +160,8 @@ function form_menu_output($post)
 			</tr>
 			<?php if($query_52->have_posts()):while($query_52->have_posts()):$query_52->the_post();?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_52_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_52[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
@@ -150,8 +183,8 @@ function form_menu_output($post)
 			</tr>
 			<?php if($query_51->have_posts()):while($query_51->have_posts()):$query_51->the_post();?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_51_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_51[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
@@ -173,8 +206,8 @@ function form_menu_output($post)
 			</tr>
 			<?php if($query_54->have_posts()):while($query_54->have_posts()):$query_54->the_post();?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_54_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_54[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
@@ -196,13 +229,36 @@ function form_menu_output($post)
 			</tr>
 			<?php if($query_56->have_posts()):while($query_56->have_posts()):$query_56->the_post();?>
 				<tr>
-					<td><input type="checkbox" name="choose_food_array[]"
-					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_food[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					<td><input type="checkbox" name="choose_cat_56_array[]"
+					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_56[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
 
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 56 ?>
 		</table> <!-- end table Специальное Предложение -->
+		<table> <!-- table Напитки -->
+			<?php $cat_57 = array(
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'cuisine',
+						'field' => 'id',
+						'terms' => '57', //Напитки
+					))
+			);
+			$query_57 = new WP_Query($cat_57);
+			?>
+			<tr>
+				<th>Напитки</th>
+			</tr>
+			<?php if($query_57->have_posts()):while($query_57->have_posts()):$query_57->the_post();?>
+				<tr>
+					<td><input type="checkbox" name="choose_cat_57_array[]"
+							   value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_57[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
+					</td>
+
+				</tr>
+				<?php wp_reset_query(); endwhile; endif // end query for cat 57 ?>
+		</table> <!-- end table Напитки -->
 	</div><!-- end class menu-choose-->
 	<?php
 
@@ -216,31 +272,110 @@ function save_form_menu_output($post_id)
 		return;
 	}
 	//save data choose_food
-	if (!wp_verify_nonce($_POST['info_choose_food_nonce'], 'save_choose_food_nonce')) {
+	if (!wp_verify_nonce($_POST['info_choose_cat_53_nonce'], 'save_choose_cat_53_nonce')) {
 		return;
 	}
-	if (isset($_POST['choose_food_array']) && $_POST['choose_food_array'] !== "") {
-		/*$args=array(
-			'post_type'=>'food', // custom post type=food
-			'per_post_number'=>'-1'// get all post
-
-		);
-		$query=new WP_Query();
-		$query->query($args);
-		if($query->have_posts()):while($query->have_posts()):$query->the_post();
-			update_post_meta($post_id,'choose_food',get_the_ID());
-
-		wp_reset_query();
-			endwhile;endif;*/
-
-
-		$custom = $_POST['choose_food_array'];
-		$old_meta = get_post_meta($post_id, 'choose_food', true);
+	if (isset($_POST['choose_cat_53_array']) && $_POST['choose_cat_53_array'] !== "") {
+		$custom = $_POST['choose_cat_53_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_53', true);
 		// Update post meta
 		if (!empty($old_meta)) {
-			update_post_meta($post_id, 'choose_food', $custom);
+			update_post_meta($post_id, 'choose_cat_53', $custom);
 		} else {
-			add_post_meta($post_id, 'choose_food', $custom);
+			add_post_meta($post_id, 'choose_cat_53', $custom);
+
+		}
+
+
+	}
+
+	if (isset($_POST['choose_cat_55_array']) && $_POST['choose_cat_55_array'] !== "") {
+		$custom = $_POST['choose_cat_53_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_55', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_55', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_55', $custom);
+
+		}
+
+
+	}
+	if (isset($_POST['choose_cat_50_array']) && $_POST['choose_cat_50_array'] !== "") {
+		$custom = $_POST['choose_cat_50_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_50', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_50', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_50', $custom);
+
+		}
+
+
+	}
+
+	if (isset($_POST['choose_cat_52_array']) && $_POST['choose_cat_52_array'] !== "") {
+		$custom = $_POST['choose_cat_52_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_52', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_52', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_52', $custom);
+
+		}
+
+
+	}
+	if (isset($_POST['choose_cat_51_array']) && $_POST['choose_cat_51_array'] !== "") {
+		$custom = $_POST['choose_cat_51_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_51', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_51', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_51', $custom);
+
+		}
+
+
+	}
+	if (isset($_POST['choose_cat_54_array']) && $_POST['choose_cat_54_array'] !== "") {
+		$custom = $_POST['choose_cat_54_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_54', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_54', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_54', $custom);
+
+		}
+
+
+	}
+	if (isset($_POST['choose_cat_56_array']) && $_POST['choose_cat_56_array'] !== "") {
+		$custom = $_POST['choose_cat_56_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_56', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_56', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_56', $custom);
+
+		}
+
+
+	}
+	if (isset($_POST['choose_cat_57_array']) && $_POST['choose_cat_57_array'] !== "") {
+		$custom = $_POST['choose_cat_57_array'];
+		$old_meta = get_post_meta($post_id, 'choose_cat_57', true);
+		// Update post meta
+		if (!empty($old_meta)) {
+			update_post_meta($post_id, 'choose_cat_57', $custom);
+		} else {
+			add_post_meta($post_id, 'choose_cat_57', $custom);
 
 		}
 

@@ -21,7 +21,7 @@
 				<li><a href="#new-food">New Foods</a></li>
 				<li class="has-logo"><a href="#">
 						<h2 class="site-title">
-							<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="viethouse">
+							<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="<?php bloginfo('description')?>" title="<?php bloginfo('name');?>">
 						</h2>
 					</a></li>
 				<li class="has-submenu"><a href="#food-menu">Menu</a>

@@ -2,38 +2,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="section-title food-title borr">
-				<h1>New foods</h1>
+				<h1>Новые Блюда</h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class=" owl-carousel">
+				<?php $query=new WP_Query(array('post_type'=>'food','orderby'=>'rand'));?>
+				<?php if($query->have_posts()):while($query->have_posts()):$query->the_post();?>
 				<div class="item">
-					<a href="#"><img src="http://lorempixel.com/130/130/food" alt=""></a>
-					<h5>foodname</h5>
+					<a href="#"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title()?>" title="<?php the_title();?>"></a>
+					<h5><?php the_title()?></h5>
 				</div>
-				<div class="item">
-					<a href="#"><img src="http://lorempixel.com/131/131/food" alt=""></a>alt="">
-					<h5>foodname</h5>
-				</div>
-				<div class="item">
-					<a href="#"><img src="http://lorempixel.com/132/132/food" alt=""></a>
-					<h5>foodname</h5>
-				</div>
-				<div class="item">
-					<a href="#"><img src="http://lorempixel.com/130/133/food" alt=""></a>
-					<h5>foodname</h5>
-				</div>
-				<div class="item">
-					<a href="#"><img src="http://lorempixel.com/130/134/food" alt=""></a>
-					<h5>foodname</h5>
-				</div>
-				<div class="item">
-					<a href="#"><img src="http://lorempixel.com/130/135/food" alt=""></a>
-					<h5>foodname</h5>
-				</div>
+				<?php endwhile; endif;?>
 			</div>
 		</div>
-		<div class="row">
+	<!--	 <div class="row">
 			<div class=" owl-carousel">
 				<div class="item">
 					<a href="#"><img src="http://lorempixel.com/130/130/food" alt=""></a>
@@ -88,6 +71,6 @@
 					<h5>foodname</h5>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>

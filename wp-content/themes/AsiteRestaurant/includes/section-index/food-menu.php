@@ -1,13 +1,19 @@
 <div class="food-menu clearfix" id="food-menu">
 	<div class="section-title food-menu-title">
-		<h1>Menu</h1>
+		<h1>ВьетЛанч</h1>
 	</div>
+	<?php
+	$arr_tab1=get_post_meta(3938,'choose_cat_53');
+	$arr_tab2=get_post_meta(3938,'choose_cat_52');
+	$arr_tab3=get_post_meta(3938,'choose_cat_50');
+	$arr_tab4=get_post_meta(3938,'choose_cat_57');
+	?>
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<ul id="tabs">
-			<li><a href="#" name="tab1">One</a></li>
-			<li><a href="#" name="tab2">Two</a></li>
-			<li><a href="#" name="tab3">Three</a></li>
-			<li><a href="#" name="tab4">Four</a></li>    
+			<li><a href="#" name="tab1">Горячие Закуски</a></li>
+			<li><a href="#" name="tab2">Суп</a></li>
+			<li><a href="#" name="tab3">Салат</a></li>
+			<li><a href="#" name="tab4">Напитки</a></li>
 		</ul>
 
 		<div id="content"> 
@@ -15,15 +21,13 @@
 				<table cellspacing='0'>
 					<tbody>
 					<?php
-					$arr_food=get_post_meta(3855,'choose_food'); // get array food in page have id 3855
-					$args_menu=array(
-						'post__in'=>$arr_food[0],
+					$args_tab1=array(
+						'post__in'=>$arr_tab1[0],
 						'post_type'=>'food'
 					);
-					;
-					$query_menu= new WP_Query();
-					$query_menu->query($args_menu);
-					if($query_menu->have_posts()):while($query_menu->have_posts()):$query_menu->the_post(); ?>
+					$query_tab1= new WP_Query();
+					$query_tab1->query($args_tab1);
+					if($query_tab1->have_posts()):while($query_tab1->have_posts()):$query_tab1->the_post(); ?>
 					<tr>
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
@@ -40,7 +44,7 @@
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<td><?php echo get_price_food($post->ID);?></td>
-						<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td>
+						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 
 					</tr>
 					<?php endwhile; endif; ?>
@@ -52,15 +56,13 @@
 				<table cellspacing='0'>
 					<tbody>
 					<?php
-					$arr_food=get_post_meta(3855,'choose_food'); // get array food in page have id 3855
-					$args_menu=array(
-						'post__in'=>$arr_food[0],
+					$args_tab2=array(
+						'post__in'=>$arr_tab2[0],
 						'post_type'=>'food'
 					);
-					;
-					$query_menu= new WP_Query();
-					$query_menu->query($args_menu);
-					if($query_menu->have_posts()):while($query_menu->have_posts()):$query_menu->the_post(); ?>
+					$query_tab2= new WP_Query();
+					$query_tab2->query($args_tab2);
+					if($query_tab2->have_posts()):while($query_tab2->have_posts()):$query_tab2->the_post(); ?>
 					<tr>
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
@@ -77,8 +79,7 @@
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<td><?php echo get_price_food($post->ID);?></td>
-						<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td>
-
+						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 					</tr>
 					<?php endwhile; endif; ?>
 					<?php wp_reset_query(); ?>
@@ -89,15 +90,13 @@
 				<table cellspacing='0'>
 					<tbody>
 					<?php
-					$arr_food=get_post_meta(3855,'choose_food'); // get array food in page have id 3855
-					$args_menu=array(
-						'post__in'=>$arr_food[0],
+					$args_tab3=array(
+						'post__in'=>$arr_tab3[0],
 						'post_type'=>'food'
 					);
-					;
-					$query_menu= new WP_Query();
-					$query_menu->query($args_menu);
-					if($query_menu->have_posts()):while($query_menu->have_posts()):$query_menu->the_post(); ?>
+					$query_tab3= new WP_Query();
+					$query_tab3->query($args_tab3);
+					if($query_tab3->have_posts()):while($query_tab3->have_posts()):$query_tab3->the_post(); ?>
 					<tr>
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
@@ -114,7 +113,7 @@
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<td><?php echo get_price_food($post->ID);?></td>
-						<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td>
+						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 
 					</tr>
 					<?php endwhile; endif; ?>
@@ -126,15 +125,13 @@
 								<table cellspacing='0'>
 					<tbody>
 					<?php
-					$arr_food=get_post_meta(3855,'choose_food'); // get array food in page have id 3855
-					$args_menu=array(
-						'post__in'=>$arr_food[0],
+					$args_tab4=array(
+						'post__in'=>$arr_tab4[0],
 						'post_type'=>'food'
 					);
-					;
-					$query_menu= new WP_Query();
-					$query_menu->query($args_menu);
-					if($query_menu->have_posts()):while($query_menu->have_posts()):$query_menu->the_post(); ?>
+					$query_tab3= new WP_Query();
+					$query_tab3->query($args_tab4);
+					if($query_tab3->have_posts()):while($query_tab3->have_posts()):$query_tab3->the_post(); ?>
 					<tr>
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
@@ -151,7 +148,7 @@
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<td><?php echo get_price_food($post->ID);?></td>
-						<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td>
+						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 
 					</tr>
 					<?php endwhile; endif; ?>

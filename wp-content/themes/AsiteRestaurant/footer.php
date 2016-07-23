@@ -4,16 +4,16 @@
 		<div class="row">
 			<div class="col-md-3 col-sm-4 col-xs-6">
 				<div class="social">
-					<a href="#"><i class="fa fa-facebook-square"></i></a>
+					<a href="https://www.facebook.com/viethousemoscow"><i class="fa fa-facebook-square"></i></a>
 					<a href=""><i class="fa fa-youtube-square"></i></a>
 					<a href=""><i class="fa fa-google-plus-square"></i></a>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-4 col-xs-6">
 				<div class="credit">
-					<h6>Lorem ipsum dolor.</h6>
-					<h6>Lorem ipsum</h6>
-					<h6>Lorem</h6>
+					<h6><?php bloginfo('description');?></h6>
+					<h6>8 (926) 127-37-77</h6>
+					<h6>ул. Покровка, 14/2, стр 01, Moscow</h6>
 				</div>
 			</div>
 		</div>
