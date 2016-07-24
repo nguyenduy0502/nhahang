@@ -6,7 +6,7 @@
 <html lang="ru">
 <!--<![endif]-->
 <head>
-	<meta charset="utf-8" />
+	<meta charset="<?php bloginfo('charset');?>" />
 	<title>
 		<?php
 		$cat_name = get_the_category();
@@ -67,9 +67,7 @@
 		}
 
 		?>
-
 	</title>
-
 	<meta content="telephone=no" name="format-detection" />
 	<meta http-equiv="x-rim-auto-match" content="none">
 
