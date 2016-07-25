@@ -13,7 +13,7 @@
 		if (is_home()) {
 			// Title home
 			bloginfo('name');
-			echo "|";
+			echo " | ";
 			bloginfo('description');
 		}
 		if (is_single()) {

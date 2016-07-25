@@ -3,7 +3,7 @@
 		<nav>
 			<div class="top_line">
 			</div>
-			<a href="#" class="toggle-menu"><img src="img/logo.jpg" alt="viethouse" ></a>
+			<a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="<?php bloginfo('description')?>" title="<?php bloginfo('name');?>"></a>
 			<!--<a href="#" class="toggle-menu">&#9776;</a>-->
 
 			<ul class="nav-list nav-open" id="nav">
