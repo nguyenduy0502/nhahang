@@ -226,7 +226,6 @@ h2, h3, h4, h5, h6{
 
 
 .new-food{
-	min-height: 250px;
 	background-position: center;
 	position: relative;
 	z-index: 0;
@@ -756,3 +755,23 @@ tbody tr:nth-child(2n-1) {
 }
 
 .row{ margin: 0; }
+
+button {
+  padding: 5px 10px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {background-color: #eee}
+
+button:active {
+  background-color: #eee;
+  box-shadow: 0 3px #666;
+  transform: translateY(3px);
+}
