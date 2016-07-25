@@ -5,12 +5,7 @@
  * Time: 23:39
  * Description:
  */
-get_header();
-echo 'This is a file archive menu';
+get_header();?>
+HTML CODE (file archive menu)
 
-if(have_posts()):while(have_posts()):the_post();
-	echo "<br/>";
-the_ID(); echo ': '; the_title();
-	echo "<br/>";
-	endwhile; endif;
-?>
+<?php get_footer();?>

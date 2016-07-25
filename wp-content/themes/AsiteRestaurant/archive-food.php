@@ -5,7 +5,8 @@
  * Time: 23:18
  * Description: Archive custom post type food
  */
-get_header();
-echo 'this is a file archive food';
-
 ?>
+<?php get_header();?>
+HTML CODE (file archive food)
+
+<?php get_footer();?>

@@ -1,8 +1,7 @@
 <?php get_header();?>
 
 
-<?php get_template_part('includes/navigation/main-menu'); // get template main menu?>
-<!--end header-->
+
 
 <!--about-us-->
 <?php get_template_part('includes/section-index/about-us');?>
