@@ -2,7 +2,7 @@
     <div class="contact-us-small">
         <div class="col-md-5 col-sm-5 col-xs-12">
             <div class="contact-us-form">
-                <h2>Contact us</h2>
+                <h2>Контакты</h2>
                 <!--	<div class="contact-info">
                        <h6>Lorem ipsum dolor.</h6>
                        <h6>Lorem ipsum</h6>
