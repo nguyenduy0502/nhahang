@@ -60,11 +60,7 @@
 <script>
 	$(document).ready(function(){
 		(jQuery)(".owl-carousel").owlCarousel({
-			items:5,
-			itemsDesktop : [1199, 5], //При разрешении экрана от 901px до 1000px
-			itemsDesktopSmall : [979, 4], // При разрешении экрана от 601px до 900px
-			itemsTablet: [768, 3], //При разрешении экрана от 0 до 600px
-			itemsMobile: [479, 2],
+			items:4,
 			loop:true,
 			margin:10,
 			autoHeight:true,
@@ -78,16 +74,16 @@
 			responsive : {
 				0:{items : 2},
 				480:{items : 3},
-				768:{items: 4},
-				992:{items: 5},
-				1200:{items: 6}
+				768:{items: 3},
+				992:{items: 4},
+				1200:{items: 5}
 			}
 
 		});
 	});
 </script>
 <script>
-	$("li").click(function(e) {
+	$(".food-menu li").click(function(e) {
 	e.preventDefault();
 	$("li").removeClass("selected");
 	$(this).addClass("selected");

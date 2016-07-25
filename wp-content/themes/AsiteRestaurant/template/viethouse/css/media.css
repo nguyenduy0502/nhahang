@@ -13,8 +13,15 @@
 	.about-us-time {
 		padding: 20px 0;
 	}
-}
 
+
+}
+@media only screen and (max-width : 991px) {
+	.booking-title {
+    border-left: 89px solid transparent;
+    border-right: 89px solid transparent;
+}
+}
 
 
 
@@ -45,6 +52,38 @@
 }
 }
 
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.bamboo{
+		display: none;
+	}
+	h1{
+		font-size: 1.4em;
+	}
+
+	.contact-us-small {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 10px;
+	}
+
+	#tabs a{
+		padding: .3em 1.0em;
+	}
+
+	.food{
+		width: 120px;
+		height: 120px;
+	}
+		.booking-title {
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+}
+}
+
+
 @media only screen and (max-width: 670px){
 	.top_line{
 		background-color: transparent;
@@ -74,7 +113,7 @@
 		color: #fff !important;
 		padding: 0.8rem;
 		border-radius: .25em;
-
+	
 	}
 	.toggle-menu:hover{background-color: rgb(17,91,54);}
 
@@ -104,28 +143,25 @@
 		text-indent: 2rem;
 		z-index: 1013;
 	}
+
+	.food-menu table td:nth-of-type(3){
+		display: none;
+	}
+	.food-menu th, .food-menu td{
+		padding: 10px 10px;
+	}
 }
 
 
+@media only screen and (max-width : 572px) {
 
-
-
-
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-	.bamboo{
-		display: none;
-	}
-	h1{
-		font-size: 1.4em;
-	}
-
-	.contact-us-small {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	padding: 10px;
-	}
+	.rtb-booking-form fieldset.reservation,
+	.rtb-booking-form fieldset.contact{
+		float: none!important;
+		}
+	.booking-info {
+		width: 320px;
+		}
 }
 
 /* Extra Small Devices, Phones */
@@ -139,6 +175,26 @@
 		.social {
 	letter-spacing: 3px;
 	}
+	#tabs a{
+	padding: 0.2em 0.42em;
+	font-size: 13px;
+	}
+	.food{
+		width: 90px;
+		height: 90px;
+	}
+	.food-menu table td:nth-of-type(4){
+		display: none;
+	}
+	.food-menu th, .food-menu td {
+		font-size: 14px;
+		padding: 6px;
+	}
+
+	.item{
+		height: 124px;
+		width: 124px;
+	}
 
 }
 
@@ -147,11 +203,20 @@
 	.about-us-text, .about-us-time{
 		padding: 10px;
 	}
-	.credit {
-    padding-left: 10px;
-    padding-right: 10px;
-}
+	.credit{
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+	#tab a{
+	padding: 0.1em 0.5em;
+	font-size: 12px;
+	}
 
+
+	.food-menu th, .food-menu td {
+		padding: 4px;
+	}
+}
 
 /*==========  Mobile First Method  ==========*/
 

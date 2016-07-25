@@ -1,7 +1,7 @@
 <div class="about-us" id="about-us">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-9 col-xs-10">
+            <div class="col-md-8 col-sm-9 col-xs-7">
                 <div class="about-us-text">
                     <?php
                     $args_about=array(
@@ -16,7 +16,7 @@
                     <?php wp_reset_query(); // reset query ?>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-3 col-xs-2">
+            <div class="col-md-4 col-sm-3 col-xs-5">
                 <?php // check sidebar hours. This show time working in index
                 if (is_active_sidebar('hours-sidebar')):
                     dynamic_sidebar('hours-sidebar');

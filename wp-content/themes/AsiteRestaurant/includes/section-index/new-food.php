@@ -1,7 +1,7 @@
 <div class="new-food" id="new-food">
 	<div class="container">
 		<div class="row">
-			<div class="section-title food-title borr">
+			<div class="section-title food-title">
 				<h1>Новые Блюда</h1>
 			</div>
 		</div>

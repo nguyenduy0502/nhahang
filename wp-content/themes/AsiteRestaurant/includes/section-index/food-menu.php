@@ -1,21 +1,24 @@
 <div class="food-menu clearfix" id="food-menu">
-	<div class="section-title food-menu-title">
-		<h1>ВьетЛанч</h1>
-	</div>
+
 	<?php
 	$arr_tab1=get_post_meta(3938,'choose_cat_53');
 	$arr_tab2=get_post_meta(3938,'choose_cat_52');
 	$arr_tab3=get_post_meta(3938,'choose_cat_50');
 	$arr_tab4=get_post_meta(3938,'choose_cat_57');
 	?>
-	<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="container">
+
+	<div class="menu-food">
+			<div class="food-menu-title">
+		<h1>ВьетЛанч</h1>
+	
 		<ul id="tabs">
 			<li><a href="#" name="tab1">Горячие Закуски</a></li>
 			<li><a href="#" name="tab2">Суп</a></li>
 			<li><a href="#" name="tab3">Салат</a></li>
 			<li><a href="#" name="tab4">Напитки</a></li>
 		</ul>
-
+</div>
 		<div id="content"> 
 			<div id="tab1">
 				<table cellspacing='0'>
@@ -158,9 +161,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 col-sm-12 col-xs-12">
-
-
-
 	</div>
+
 </div>
