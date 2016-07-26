@@ -168,7 +168,7 @@ h2, h3, h4, h5, h6{
 }
 
 .about-us-title,.food-title, .news-title, .food-menu-title, .booking-title{
-	padding: 1px 10px;
+	padding: 1px 0px;
 }
 .food-title{
 	border-radius: 0 0 45px 45px;
@@ -446,15 +446,23 @@ td .food-text{
 }
 .contact-us-form{
 	padding: 5px 40px;
+	color: #fff;
 }
 .contact-us-form textarea,
 .contact-us-form input{
 	width: 200px;
 	resize: none;
 	margin: 5px;
+	color: #333;
+	font-size: 14px;
 }
 .contact-us-form textarea{
 	height: 90px;
+}
+.contact-us-form p{
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .google-map{
@@ -648,16 +656,17 @@ Edit on
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	margin-bottom: -1px;
 }
 
 #tabs li {
 	float: left;
-	margin: 0 .5em 0 0;
+	/*margin: 0 .5em 0 0;*/
 }
 
 #tabs a {
 position: relative;
-background: #fff;
+background: #eee;
 /*background-image: -webkit-linear-gradient(#fff, #ddd);
 background-image: -o-linear-gradient(#fff, #ddd);
 background-image: linear-gradient(#fff, #ddd);  */
@@ -688,7 +697,7 @@ box-shadow: 0 2px 2px rgba(0,0,0,.4);
   right: -.5em;  
   bottom: 0;
   width: 1em;
-  background: #fff;
+  background: #eee;
   /*background-image: linear-gradient(to bottom, #fff, #ddd);  */
   box-shadow: 2px 2px 2px rgba(0,0,0,.4);
   transform: skew(10deg);
@@ -697,9 +706,9 @@ box-shadow: 0 2px 2px rgba(0,0,0,.4);
 
 #tabs #current a,
 #tabs #current a::after {
-	background: #3E7F5F;
+	background: #fff;
 	z-index: 3;
-	color: #fff;
+	color: #000;
 }
 
 #content {
@@ -718,7 +727,7 @@ box-shadow: 0 2px 2px rgba(0,0,0,.4);
 	width: 572px;
 }
 
-tbody tr:nth-child(2n-1) {
+tbody tr:nth-child(2n-2) {
     background-color: #f5f5f5;
     transition: all .125s ease-in-out;
 }
@@ -756,22 +765,26 @@ tbody tr:nth-child(2n-1) {
 
 .row{ margin: 0; }
 
-button {
-  padding: 5px 10px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0 5px #999;
+button, .button {
+	padding: 5px 10px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 5px #999;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
-button:hover {background-color: #eee}
+button:hover, .button:hover {background-color: #eee;}
 
-button:active {
-  background-color: #eee;
-  box-shadow: 0 3px #666;
-  transform: translateY(3px);
+button:active, .button:active {
+	background-color: #eee;
+	box-shadow: 0 3px #666;
+	transform: translateY(3px);
+
 }
