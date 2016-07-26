@@ -74,6 +74,15 @@ body {
 	width: 100%;
 	margin-bottom: -27px;
 }
+.top_line2{
+	height: 40px;
+	background-color: rgb(17,91,54);
+	/*opacity: .83;*/
+	position: relative;
+	top: 17px;
+	width: 100%;
+	margin-bottom: -27px;
+}
 
 .vhmain{
 	top: 60px;
@@ -787,4 +796,102 @@ button:active, .button:active {
 	box-shadow: 0 3px #666;
 	transform: translateY(3px);
 
+}
+
+/*archive menu*/
+div.archive-menu {
+  width: 100%;
+  margin: 0 auto;
+  overflow: auto;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJElEQVQYV2NkIBIwEqmOgQ4K/////5+RkRHDJjpYjSsUqG81AJiGBAs8ShhgAAAAAElFTkSuQmCC), -moz-linear-gradient( 84deg, rgb(17,91,54) -70%, rgb(255,255,255) 250%);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJElEQVQYV2NkIBIwEqmOgQ4K/////5+RkRHDJjpYjSsUqG81AJiGBAs8ShhgAAAAAElFTkSuQmCC), -webkit-linear-gradient( 84deg, rgb(17,91,54) -70%, rgb(255,255,255) 250%);
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAJElEQVQYV2NkIBIwEqmOgQ4K/////5+RkRHDJjpYjSsUqG81AJiGBAs8ShhgAAAAAElFTkSuQmCC), -ms-linear-gradient( 84deg, rgb(17,91,54) -70%, rgb(255,255,255) 250%);
+}
+ 
+.archive-menu ul {
+  list-style-type: none;
+}
+ 
+.archive-menu li img {
+  float: left;
+  width: 80%;
+  height: 200px;
+  margin: 5px;
+  border: 5px solid #333;
+ -moz-transition: all 0.2s ease-in-out;
+ -webkit-transition: all 0.2s ease-in-out;
+ transition: all 0.2s ease-in-out;
+}
+
+.archive-menu li img:hover {
+border: 5px solid #F15123;
+}
+
+
+.archive-menu-content{
+	padding: 80px 0;
+}
+
+
+/* Styling the input */
+form #search {
+	padding: 5px 10px;
+	outline: none;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	box-shadow: 0 5px #999;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: bold;
+	/*box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);*/
+}
+
+.category-list{
+	padding: 10px;
+}
+
+/*end archive menu*/
+
+#nestedlist, #nestedlist ul {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  margin-left:0;
+  padding-left:15px;
+  text-indent: -4px;
+}
+
+/* UL Layer 1 Rules */
+#nestedlist {
+  font-size: 20px;
+  font-weight:bold;
+}
+
+/* UL Layer 2 Rules */
+#nestedlist ul {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 3px;
+}
+
+/* UL Layer 3 Rules */
+#nestedlist ul ul {
+  font-size: 16px;
+}
+
+/* UL 4 Rules */
+#nestedlist ul ul ul {
+  font-size: 14px;
+}
+
+
+ul li a {
+  text-decoration: none;
+
+}
+
+
+.content, .sidebar{
+	background-color: #aaa;
+	padding: 10px;
 }
