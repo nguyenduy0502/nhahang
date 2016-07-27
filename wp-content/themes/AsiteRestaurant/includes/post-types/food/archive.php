@@ -14,9 +14,15 @@
         <div class="archive-food-content">
             <?php if(have_posts()):while(have_posts()):the_post();?>
             <div class="afc-item">
-                <div class="afc-item-img">
-                    <img src="<?php the_post_thumbnail_url()?>" alt="">
-                </div>
+               <?php if(has_post_thumbnail()):?>
+                   <div class="afc-item-img">
+                       <img src="<?php the_post_thumbnail_url()?>" alt="">
+                   </div>
+                    <?php else: ?>
+                   <div class="afc-item-img">
+                       <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="">
+                   </div>
+                    <?php endif; ?>
                 <div class="afc-item-npr">
                     <div class="afc-item-n"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a></div>
                     <div class="afc-item-pr"><?php echo get_price_food($post->ID);?></div>
