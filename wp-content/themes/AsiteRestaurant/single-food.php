@@ -13,67 +13,9 @@ get_header();?>
 <div class="container">
 <div class="row">
 		<div class="page-block clearfix">
-			<div class="col-md-9">
-				<div class="page-content clearfix">
-					<div class="single-food">
-						<div class="sf-images">
-							<a href="#"><img src="http://placehold.it/500x500" alt=""></a>
-						</div>
-						<div class="sf-info">
-							<h2>Нэм Чуа</h2>
-							<p class="price">190 руб.</p>
-							<p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias sunt quo deserunt nisi suscipit quidem alias assumenda sequi eum ab possimus quia, distinctio voluptatem quae fugit quod, architecto modi cum.</p>
-						</div>
-						<div class="sf-description">
-							<ul id="tabs">
-								<li><a href="#" name="tab1">Описание</a></li>
-								<li><a href="#" name="tab2">Комментарий</a></li>
-							</ul>
-							<div id="content">
-								<div id="tab1">
-									<h2>Описание блюды</h2>
-									<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Ему меня домах, переулка ее запятых вопроса даже повстречался рукописи встретил коварных речью! Необходимыми, путь, подпоясал. Рукопись, напоивший семантика заглавных!</p>
-								</div>
-								<div id="tab2"></div>
-							</div>
-						</div>
-						<div class="sf-otherfood">
-							<h2>Другие Блюды</h2>
-							<div class="otherfood-list">
-								<div class="of-item">
-									<div class="of-img">
-										<img src="http://placehold.it/300x300" alt="">
-									</div>
-									<div class="of-text">
-										<h3>Фо Бо Га</h3>
-										<p class="of-price">120 руб.</p>
-									</div>
-								</div>
-								<div class="of-item">
-									<div class="of-img">
-										<img src="http://placehold.it/300x300" alt="">
-									</div>
-									<div class="of-text">
-										<h3>Фо Бо Га</h3>
-										<p class="of-price">120 руб.</p>
-									</div>
-								</div>
-								<div class="of-item">
-									<div class="of-img">
-										<img src="http://placehold.it/300x300" alt="">
-									</div>
-									<div class="of-text">
-										<h3>Фо Бо Га</h3>
-										<p class="of-price">120 руб.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php get_template_part('includes/post-types/food/content'); // get file content food?>
 			<div class="col-md-3">
-				<div class="sidebar">
+			<!--	<div class="sidebar">
 					<form action="">
 						<input type="search" name="Search" id="search" placeholder="Search">
 						<button class="">|||</button>
@@ -108,7 +50,10 @@ get_header();?>
 						    </li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
+				<?php if(is_active_sidebar('left-food-sidebar')): ?>
+				<?php dynamic_sidebar('left-food-sidebar');?>
+				<?php endif;?>
 			</div>
 		</div>
 	</div>
