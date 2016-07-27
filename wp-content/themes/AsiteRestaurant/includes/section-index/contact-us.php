@@ -9,7 +9,7 @@
                        <h6>Lorem</h6>
                    </div> -->
                 <div class="form-group">
-                    <?php echo do_shortcode('[contact-form-7 id="3893" title="Contact form"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="3872" title="Contact form"]'); ?>
                 </div>
             </div>
         </div>
