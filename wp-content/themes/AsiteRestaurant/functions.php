@@ -32,9 +32,10 @@ require_once('AdditionalPlugins/MenuRetaurant/main.php'); // custom page menu
 require_once('backend/login/login.php');
 require_once('backend/functions.php');
 /*******************************************************************
- * ADD FILE RELATED POST
+ * ADD WIDGET
  *****************************************************************
  */
+require_once('widget/searchform-food.php');
 //require_once('includes/relatedpost/cat_food.php');
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS
@@ -257,7 +258,7 @@ function pagination($prev = '&laquo;', $next = '&raquo;')
 		'current' => $current,
 		'prev_text' => $prev,
 		'next_text' => $next,
-		'type' => 'plain'
+		'type' => 'list'
 	);
 	if ($wp_rewrite->using_permalinks())
 		$pagination['base'] = user_trailingslashit(trailingslashit(remove_query_arg('s', get_pagenum_link(1))) . 'page/%#%/', 'paged');
