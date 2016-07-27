@@ -975,7 +975,7 @@ ul li a {
 }
 .sf-images img, .otherfood-list img{
 	width: 100%;
-	-webkit-filter: invert(100%);
+	/*-webkit-filter: invert(100%);*/
 }
 .sf-info{
 	width: 48%;

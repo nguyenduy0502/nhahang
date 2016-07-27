@@ -31,13 +31,17 @@ require_once('AdditionalPlugins/MenuRetaurant/main.php'); // custom page menu
  */
 require_once('backend/login/login.php');
 require_once('backend/functions.php');
-
+/*******************************************************************
+ * ADD FILE RELATED POST
+ *****************************************************************
+ */
+//require_once('includes/relatedpost/cat_food.php');
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS
  ****************************************************************
  */
 load_textdomain('asite',LANGUAGES_FOLDER);
-
+add_post_type_support( 'food', 'comments' );
 add_theme_support('post-thumbnails');
 add_theme_support( 'post-formats', array(
 	'video','gallery'
@@ -194,9 +198,21 @@ if (function_exists('register_sidebar')) {
 		'before_title' => '<h1 class="widgettitle">',
 		'after_title' => '</h1>'
 	);
+	$args_food=array(
+		'name' => __('Left food sidebar', 'asite'),
+		'id' => 'left-food-sidebar',
+		'description' => 'Show information in left food sidebar ',
+		'class' => '',
+		'before_widget' => '<div class="about-us-time">',
+		'after_widget' => '</div>',
+		'before_title' => '<h1 class="widgettitle">',
+		'after_title' => '</h1>'
+
+	);
 
 	register_sidebar($args_booking);
 	register_sidebar($args_hours);
+	register_sidebar($args_food);
 }
 /***********************************************************
  * CREATE CUSTOM EXCERPT
