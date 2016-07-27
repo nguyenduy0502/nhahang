@@ -10,9 +10,9 @@ get_header();?>
 <div class="new-page">
 <div class="container">
 <div class="row">
-		<div class="page-content clearfix">
+		<div class="page-block clearfix">
 			<div class="col-md-9">
-				<div class="content clearfix">
+				<div class="page-content clearfix">
 					<div class="archive-menu">
 						<div class="archive-menu-name">
 							<h2>Name</h2>

@@ -9,16 +9,16 @@
 	<div class="container">
 
 	<div class="menu-food">
-			<div class="food-menu-title">
-		<h1>ВьетЛанч</h1>
+		<div class="food-menu-title">
+			<h1>ВьетЛанч</h1>
 	
-		<ul id="tabs">
-			<li><a href="#" name="tab1">Горячие Закуски</a></li>
-			<li><a href="#" name="tab2">Суп</a></li>
-			<li><a href="#" name="tab3">Салат</a></li>
-			<li><a href="#" name="tab4">Напитки</a></li>
-		</ul>
-</div>
+			<ul id="tabs">
+				<li><a href="#" name="tab1">Горячие Закуски</a></li>
+				<li><a href="#" name="tab2">Суп</a></li>
+				<li><a href="#" name="tab3">Салат</a></li>
+				<li><a href="#" name="tab4">Напитки</a></li>
+			</ul>
+		</div>
 		<div id="content"> 
 			<div id="tab1">
 				<table cellspacing='0'>
@@ -125,7 +125,7 @@
 				</table>
 			</div>
 			<div id="tab4">
-								<table cellspacing='0'>
+				<table cellspacing='0'>
 					<tbody>
 					<?php
 					$args_tab4=array(

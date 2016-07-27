@@ -13,128 +13,109 @@
 		<div class="page-block clearfix">
 			<div class="col-md-9">
 				<div class="page-content clearfix">
-					<div class="archive-menu">
-						<div class="archive-menu-name">
-							<h2>Name</h2>
+					<div class="archive-food">
+						<div class="archive-food-name">
+							<h2>Список блюд</h2>
 						</div>
-						<div class="archive-menu-content">
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+						<div class="archive-food-content">
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="archive-menu">
-						<div class="archive-menu-name">
-							<h2>Name</h2>
-						</div>
-						<div class="archive-menu-content">
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
+							<div class="afc-item">
+								<div class="afc-item-img">
+									<img src="http://placehold.it/300x250" alt="">
 								</div>
-								<div class="amc-item-consist">
+								<div class="afc-item-npr">
+									<div class="afc-item-n">Далеко-далеко.</div>
+									<div class="afc-item-pr">1.3$</div>
+								</div>
+								<div class="afc-item-consist">
 									Далеко-далеко, за, словесными.
 								</div>
 							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
-								</div>
-								<div class="amc-item-consist">
-									Далеко-далеко, за, словесными.
-								</div>
-							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
-								</div>
-								<div class="amc-item-consist">
-									Далеко-далеко, за, словесными.
-								</div>
-							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
-								</div>
-								<div class="amc-item-consist">
-									Далеко-далеко, за, словесными.
-								</div>
-							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
-								</div>
-								<div class="amc-item-consist">
-									Далеко-далеко, за, словесными.
-								</div>
-							</div>
-							<div class="amc-item">
-								<div class="amc-item-npr">
-									<div class="amc-item-n">Далеко-далеко.</div>
-									<div class="amc-item-pr">1.3$</div>
-								</div>
-								<div class="amc-item-consist">
-									Далеко-далеко, за, словесными.
-								</div>
-							</div>
+
 						</div>
 					</div>
+
+					<ul class="paginate pag2 clearfix">
+						<li class="single">Page 1 of 5</li>
+						<li><a href="#">prev</a></li>
+						<li class="current">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">next</a></li>
+					</ul>
 				</div>
 			</div>
 			<div class="col-md-3">
