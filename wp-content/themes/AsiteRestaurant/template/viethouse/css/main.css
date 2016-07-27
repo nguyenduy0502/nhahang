@@ -1179,7 +1179,7 @@ p.of-price{
   box-shadow: 0 4px #999;
 }
  
-.paginate.pag2 li.single, .paginate.pag2 li.current {
+.paginate.pag2 li.single, .paginate.pag2 li span.page-numbers {
   display: block;
   float: left;
   padding: 6px 11px;
