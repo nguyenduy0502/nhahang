@@ -9,7 +9,7 @@
 add_action('add_meta_boxes', 'add_food_metaboxes');
 function add_food_metaboxes()
 {
-	add_meta_box('add_food_metaboxes', 'Thông tin về món ăn', 'form_food_output', 'food', 'default');
+	add_meta_box('add_food_metaboxes', 'Thông tin về món ăn', 'form_food_output', 'food');
 }
 
 function form_food_output($post)
@@ -34,7 +34,7 @@ function form_food_output($post)
 	$stored_meta=get_post_meta($post->ID);
 
 	?>
-	<table>
+	<table class="info-food">
 		<tr>
 			<td>
 				<label for="price_food"><?php echo __('Giá tiền', 'asite') ?></label>
