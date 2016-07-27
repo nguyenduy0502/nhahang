@@ -8,52 +8,136 @@
 get_header();?>
 
 <div class="new-page">
-		<div class="row">
-			<div class="second-menu">
-				<nav>
-					<div class="top_line2">
-					</div>
-<!-- 					<a href="#" class="toggle-menu"><img src="img/logo.jpg" alt="viethouse" ></a> -->
-					<!--<a href="#" class="toggle-menu">&#9776;</a>-->
-
-					<ul class="nav-list nav-open" id="nav">
-
-						<li><a href="#about-us">Главное</a></li>
-						<li class="has-submenu"><a href="#news">Новости</a>
-						</li>
-						<li><a href="#new-food">Меню</a></li>
-<!-- 						<li class="has-logo"><a href="#">
-							<h2 class="site-title">
-								<img src="img/logo.jpg" alt="viethouse">
-							</h2>
-						</a></li> -->
-						<li><a href="#booking">Блюды</a></li>
-						<li><a href="#contact-us">Контакт</a></li>
-					</ul>
-				</nav>
-
-			</div>
-		</div>
 <div class="container">
 <div class="row">
 		<div class="page-content clearfix">
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div class="content clearfix">
-					
-			  <ul>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			    <li><a href="#"><img src="http://s17.postimg.org/xixeyesbz/image_grid.png"></a></li>
-			   </ul>
+					<div class="archive-menu">
+						<div class="archive-menu-name">
+							<h2>Name</h2>
+						</div>
+						<div class="archive-menu-content">
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="archive-menu">
+						<div class="archive-menu-name">
+							<h2>Name</h2>
+						</div>
+						<div class="archive-menu-content">
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+							<div class="amc-item">
+								<div class="amc-item-npr">
+									<div class="amc-item-n">Далеко-далеко.</div>
+									<div class="amc-item-pr">1.3$</div>
+								</div>
+								<div class="amc-item-consist">
+									Далеко-далеко, за, словесными.
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="sidebar">
 					<form action="">
 						<input type="search" name="Search" id="search" placeholder="Search">
