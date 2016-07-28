@@ -1,10 +1,10 @@
 <div class="food-menu clearfix" id="food-menu">
 
 	<?php
-	$arr_tab1=get_post_meta(3938,'choose_cat_53');
-	$arr_tab2=get_post_meta(3938,'choose_cat_52');
-	$arr_tab3=get_post_meta(3938,'choose_cat_50');
-	$arr_tab4=get_post_meta(3938,'choose_cat_57');
+	$arr_tab1=get_post_meta(3938,'choose_cat_53'); // Горячие Закуски
+	$arr_tab2=get_post_meta(3938,'choose_cat_52'); // Суп
+	$arr_tab3=get_post_meta(3938,'choose_cat_50'); // Салат
+	$arr_tab4=get_post_meta(3938,'choose_cat_57'); //Напитки
 	?>
 	<div class="container">
 
@@ -43,7 +43,7 @@
 								</div>
 							<?php endif; // end check ?>
 						</td>
-						<td><?php the_title();?></td>
+						<td><a href="<?php the_permalink()?>" title="<?php the_title();?>"><?php the_title();?></a></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
@@ -77,7 +77,7 @@
 								</div>
 							<?php endif; // end check ?>
 						</td>
-						<td><?php the_title();?></td>
+						<td><a href="<?php the_permalink()?>" title="<?php the_title();?>"><?php the_title();?></a></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
@@ -110,7 +110,7 @@
 								</div>
 							<?php endif; // end check ?>
 						</td>
-						<td><?php the_title();?></td>
+						<td><a href="<?php the_permalink()?>" title="<?php the_title();?>"><?php the_title();?></a></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
@@ -144,7 +144,7 @@
 								</div>
 							<?php endif; // end check ?>
 						</td>
-						<td><?php the_title();?></td>
+						<td><a href="<?php the_permalink()?>" title="<?php the_title();?>"><?php the_title();?></a></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
