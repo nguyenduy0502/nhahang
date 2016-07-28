@@ -33,7 +33,7 @@ $related_items = new WP_Query( $args );
         <?php if($related_items->have_posts()):while($related_items->have_posts()):$related_items->the_post();?>
         <div class="of-item">
             <div class="of-img">
-                <img src="<?php the_post_thumbnail_url();?>" alt="<?php bloginfo('name'); echo ', '; the_title();?>" title="<?php the_title();?>">
+                <img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>">
             </div>
             <div class="of-text">
                 <a href="<?php the_permalink();?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
