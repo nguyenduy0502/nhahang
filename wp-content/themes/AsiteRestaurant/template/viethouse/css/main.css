@@ -1073,20 +1073,20 @@ p.of-price{
 }
 
 .afc-item{
-	margin: 10px 2%;
-    width: 29%;
+    margin: 10px 2% 10px 3%;
+    width: 45%;
     box-sizing: border-box;
     float: left;
 }
 .afc-item-img{
 	box-shadow: 0 5px #aaa;
 	margin-bottom: 10px;
-	height: 150px;
+	height: 190px;
 }
 .afc-item-img img{
 	width: 100%;
 	object-fit: cover;
-	height: 150px;
+	height: 190px;
 }
 
 .afc-item-npr{
