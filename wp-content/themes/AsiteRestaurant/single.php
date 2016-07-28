@@ -6,3 +6,7 @@
  * Description: single post
  */
 ?>
+<?php get_header();?>
+html code single
+
+<?php get_footer();?>
