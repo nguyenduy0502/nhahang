@@ -13,19 +13,19 @@
 		if (is_home()) {
 			// Title home
 			bloginfo('name');
-			echo " | ";
+			echo "|";
 			bloginfo('description');
 		}
 		if (is_single()) {
 			// Title single
 			the_title();
-			echo " | ";
+			echo "|";
 			bloginfo('name');
 		}
 		if (is_category()) {
 			// title category
 			echo $cat_name[0]->cat_name;
-			echo " | ";
+			echo "|";
 			bloginfo('name');
 		}
 		if (is_404()) {
@@ -36,7 +36,7 @@
 		if (is_page()) {
 			// title page
 			the_title();
-			echo " | ";
+			echo "|";
 			bloginfo('description');
 		}
 		if (is_search()) {
@@ -56,13 +56,13 @@
 		}
 		if (is_post_type_archive('menu')) {
 			// title archive event
-			echo "Меню нашего ресторана"." | ";
+			echo "Меню нашего ресторана"."|";
 			bloginfo('name');
 		}
 		if (is_tax('cuisine')) {
 			$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 			echo $term->name;
-			echo " | ";
+			echo "|";
 			bloginfo('name');
 		}
 
@@ -75,6 +75,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" />
+	<meta property="fb:app_id" content="273681262992709" />
+	<meta property="fb:admins" content="1099208330101074"/>
 
 </head>
 <?php wp_head();?>
