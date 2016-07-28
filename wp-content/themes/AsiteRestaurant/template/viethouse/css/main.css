@@ -1077,6 +1077,7 @@ p.of-price{
     width: 45%;
     box-sizing: border-box;
     float: left;
+    height: 260px;
 }
 .afc-item-img{
 	box-shadow: 0 5px #aaa;
