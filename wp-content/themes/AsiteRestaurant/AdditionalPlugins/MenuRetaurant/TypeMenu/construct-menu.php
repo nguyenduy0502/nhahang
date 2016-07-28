@@ -10,15 +10,15 @@ add_action('init','custom_page_menu',0);
 function custom_page_menu() {
 
 	$labels = array(
-		'name'                  => _x( 'Thực đơn', 'Post Type General Name', 'asite' ),
-		'singular_name'         => _x( 'Thực đơn', 'Post Type Singular Name', 'asite' ),
-		'menu_name'             => __( 'Thực đơn', 'asite' ),
-		'name_admin_bar'        => __( 'Thực đơn', 'asite' ),
+		'name'                  => _x( 'Ланч', 'Post Type General Name', 'asite' ),
+		'singular_name'         => _x( 'Ланч', 'Post Type Singular Name', 'asite' ),
+		'menu_name'             => __( 'Ланч', 'asite' ),
+		'name_admin_bar'        => __( 'Ланч', 'asite' ),
 		'archives'              => __( 'Item Archives', 'asite' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'asite' ),
-		'all_items'             => __( 'Tất cả thực đơn', 'asite' ),
-		'add_new_item'          => __( 'Thêm', 'asite' ),
-		'add_new'               => __( 'Thêm', 'asite' ),
+		'all_items'             => __( 'Все Ланч', 'asite' ),
+		'add_new_item'          => __( 'Добовить', 'asite' ),
+		'add_new'               => __( 'Добовить', 'asite' ),
 		'new_item'              => __( 'New Item', 'asite' ),
 		'edit_item'             => __( 'Sửa', 'asite' ),
 		'update_item'           => __( 'Cập nhật', 'asite' ),

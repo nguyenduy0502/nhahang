@@ -10,15 +10,15 @@ add_action('init','custom_post_food',0);
 function custom_post_food() {
 
 	$labels = array(
-		'name'                  => _x( 'Món ăn', 'Post Type General Name', 'asite' ),
-		'singular_name'         => _x( 'Món ăn', 'Post Type Singular Name', 'asite' ),
-		'menu_name'             => __( 'Món ăn', 'asite' ),
-		'name_admin_bar'        => __( 'Món ăn', 'asite' ),
+		'name'                  => _x( 'Блюда', 'Post Type General Name', 'asite' ),
+		'singular_name'         => _x( 'Блюда', 'Post Type Singular Name', 'asite' ),
+		'menu_name'             => __( 'Блюда', 'asite' ),
+		'name_admin_bar'        => __( 'Блюда', 'asite' ),
 		'archives'              => __( 'Item Archives', 'asite' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'asite' ),
-		'all_items'             => __( 'Tất cả món ăn', 'asite' ),
-		'add_new_item'          => __( 'Thêm', 'asite' ),
-		'add_new'               => __( 'Thêm', 'asite' ),
+		'all_items'             => __( 'Все Блюда', 'asite' ),
+		'add_new_item'          => __( 'Добовить', 'asite' ),
+		'add_new'               => __( 'Добовить', 'asite' ),
 		'new_item'              => __( 'New Item', 'asite' ),
 		'edit_item'             => __( 'Sửa', 'asite' ),
 		'update_item'           => __( 'Cập nhật', 'asite' ),

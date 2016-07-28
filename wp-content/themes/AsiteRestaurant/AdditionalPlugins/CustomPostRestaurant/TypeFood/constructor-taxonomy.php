@@ -10,9 +10,9 @@ add_action( 'init', 'custom_taxonomy_food', 0 );
 function custom_taxonomy_food() {
 
 	$labels = array(
-		'name'                       => _x( 'Danh mục', 'Taxonomy General Name', 'asite' ),
-		'singular_name'              => _x( 'Danh mục', 'Taxonomy Singular Name', 'asite' ),
-		'menu_name'                  => __( 'Danh mục', 'asite' ),
+		'name'                       => _x( 'Категория', 'Taxonomy General Name', 'asite' ),
+		'singular_name'              => _x( 'Категория', 'Taxonomy Singular Name', 'asite' ),
+		'menu_name'                  => __( 'Категория', 'asite' ),
 		'all_items'                  => __( 'All Items', 'asite' ),
 		'parent_item'                => __( 'Parent Item', 'asite' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'asite' ),

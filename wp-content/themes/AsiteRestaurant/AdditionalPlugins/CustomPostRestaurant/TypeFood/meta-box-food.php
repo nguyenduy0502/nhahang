@@ -9,7 +9,7 @@
 add_action('add_meta_boxes', 'add_food_metaboxes');
 function add_food_metaboxes()
 {
-	add_meta_box('add_food_metaboxes', 'Thông tin về món ăn', 'form_food_output', 'food');
+	add_meta_box('add_food_metaboxes', 'Информация о еде', 'form_food_output', 'food');
 }
 
 function form_food_output($post)
@@ -37,7 +37,7 @@ function form_food_output($post)
 	<table class="info-food">
 		<tr>
 			<td>
-				<label for="price_food"><?php echo __('Giá tiền', 'asite') ?></label>
+				<label for="price_food"><?php echo __('Цена', 'asite') ?></label>
 			</td>
 			<td>
 				<input type="text" id="price_food" name="price_food" placeholder="250" value="<?php echo esc_attr($price_food); ?>"/>
@@ -50,40 +50,40 @@ function form_food_output($post)
 			</td>-->
 		</tr>
 		<tr>
-			<td><label for="weight_food">Trọng lượng</label></td>
+			<td><label for="weight_food">Масса</label></td>
 			<td><input type="text" id="weight_food" name="weight_food" placeholder="250" value="<?php echo esc_attr($weight_food); ?>"/></td>
 		</tr>
 		<tr>
-			<td><label for="protein_food">Protein</label></td>
+			<td><label for="protein_food">Белки</label></td>
 			<td><input type="text" id="protein_food" name="protein_food" placeholder="0.25" value="<?php echo esc_attr($protein_food);?>"></td>
 		</tr>
 		<tr>
-			<td><label for="fat_food">Chất béo</label></td>
+			<td><label for="fat_food">Жиры</label></td>
 			<td><input type="text" id="fat_food" name="fat_food" placeholder="5.25" value="<?php echo esc_attr($fat_food);?>"></td>
 		</tr>
 		<tr>
-			<td><label for="calorie_food">Calories</label></td>
+			<td><label for="calorie_food">Салории</label></td>
 			<td><input type="text" id="calorie_food" name="calorie_food" placeholder="90.15" value="<?php echo esc_attr($calorie_food);?>"></td>
 		</tr>
 		<tr>
-			<td><label for="quantity_food">Số lượng</label></td>
+			<td><label for="quantity_food">Количество</label></td>
 			<td><select name="quantity_food" id="quantity_food">
 					<option value="select-null">---</option>
-					<option value="select-3" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-3')?>>3 Cái</option>
-					<option value="select-4" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-4')?>>4 Cái</option>
-					<option value="select-5" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-5')?>>5 Cái</option>
+					<option value="select-3" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-3')?>>3 Шт</option>
+					<option value="select-4" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-4')?>>4 Шт</option>
+					<option value="select-5" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-5')?>>5 Шт</option>
 
 				</select></td>
 
 		</tr>
 
 		<tr>
-			<td><label for="ingredient_food">Thành phần</label></td>
-			<td><textarea id="ingredient_food" name="ingredient_food" placeholder="Thịt bò, nấm"><?php echo esc_attr($ingredient_food)?></textarea></td>
+			<td><label for="ingredient_food">Состав</label></td>
+			<td><textarea id="ingredient_food" name="ingredient_food" placeholder="Говядина, лук .."><?php echo esc_attr($ingredient_food)?></textarea></td>
 		</tr>
 
 		<tr>
-			<td><label for="recommend_food">Giới thiệu</label></td>
+			<td><label for="recommend_food">Рекомендовать</label></td>
 			<td><input type="checkbox" id="recommend_food" name="recommend_food" value="yes" <?php if(isset($stored_meta['recommend_food'])) checked($stored_meta['recommend_food'][0],'yes')?>/></td>
 
 		</tr>

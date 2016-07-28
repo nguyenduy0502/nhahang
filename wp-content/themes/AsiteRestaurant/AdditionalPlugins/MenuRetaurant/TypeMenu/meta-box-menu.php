@@ -8,7 +8,7 @@
 add_action('add_meta_boxes', 'metabox_menu');
 function metabox_menu()
 {
-	add_meta_box('metabox_menu', 'Lựa chọn món ăn cho thực đơn', 'form_menu_output', 'menu');
+	add_meta_box('metabox_menu', 'Выбор блюд для меню', 'form_menu_output', 'menu');
 }
 
 function form_menu_output($post)
@@ -60,7 +60,7 @@ function form_menu_output($post)
 	}
 	if (empty($choose_cat_56[0])) {
 		// set default data for array
-		$choose_cat_54[0]=array(0502);
+		$choose_cat_56[0]=array(0502);
 	}
 	if (empty($choose_cat_57[0])) {
 		// set default data for array
@@ -261,6 +261,66 @@ function form_menu_output($post)
 		</table> <!-- end table Напитки -->
 	</div><!-- end class menu-choose-->
 	<?php
+	$day_start=get_post_meta($post->ID,'day_start',true);
+	$time_start=get_post_meta($post->ID,'time_start',true);
+	$day_end=get_post_meta($post->ID,'day_end',true);
+	$time_end=get_post($post->ID,'time_end',true);
+	wp_nonce_field('save_day_start_nonce', 'info_day_start_nonce');
+	wp_nonce_field('save_time_start_nonce', 'info_time_start_nonce');
+	wp_nonce_field('save_day_end_nonce', 'info_day_end_nonce');
+	wp_nonce_field('save_time_end_nonce', 'info_time_end_nonce');
+
+
+	?>
+	<div class="menu-time">
+		<label for=""><strong>Дополнительная информация</strong></label>
+		<table>
+			<tr>
+				<td>Старт</td>
+				<td> <!--start #day_start -->
+					<select name="day_start" id="day_start">
+						<option value="пн" <?php selected('пн',get_post_meta($post->ID,'day_start',true));?> >Понедельник</option>
+						<option value="вт" <?php selected('вт',get_post_meta($post->ID,'day_start',true));?> >Вторник</option>
+						<option value="ср" <?php selected('ср',get_post_meta($post->ID,'day_start',true));?> >Среда</option>
+						<option value="чт" <?php selected('чт',get_post_meta($post->ID,'day_start',true));?> >Четверг</option>
+						<option value="пт" <?php selected('пт',get_post_meta($post->ID,'day_start',true));?> >Пятница</option>
+						<option value="сб" <?php selected('сб',get_post_meta($post->ID,'day_start',true));?> >Суббота</option>
+						<option value="вс" <?php selected('вс',get_post_meta($post->ID,'day_start',true));?> >Воскресенье</option>
+					</select>
+				</td><!--end #day_start -->
+				<td><!--start #time_start -->
+					<select name="time_start" id="time_start">
+						<?php for($i=0;$i<25;$i++): ?>
+							<?php $value_start=$i.':00'?>
+						<option value="<?php echo $value_start;?>" <?php selected($value_start,get_post_meta($post->ID,'time_start',true));?>><?php echo $value_start;?></option>
+						<?php endfor; ?>
+					</select>
+				</td><!--end #time_start -->
+				<td>Стоп</td>
+				<td> <!--start #day_end -->
+					<select name="day_end" id="day_end">
+						<option value="пн" <?php selected('пн',get_post_meta($post->ID,'day_end',true));?> >Понедельник</option>
+						<option value="вт" <?php selected('вт',get_post_meta($post->ID,'day_end',true));?> >Вторник</option>
+						<option value="ср" <?php selected('ср',get_post_meta($post->ID,'day_end',true));?> >Среда</option>
+						<option value="чт" <?php selected('чт',get_post_meta($post->ID,'day_end',true));?> >Четверг</option>
+						<option value="пт" <?php selected('пт',get_post_meta($post->ID,'day_end',true));?> >Пятница</option>
+						<option value="сб" <?php selected('сб',get_post_meta($post->ID,'day_end',true));?> >Суббота</option>
+						<option value="вс" <?php selected('вс',get_post_meta($post->ID,'day_end',true));?> >Воскресенье</option>
+					</select>
+				</td><!--end #day_end -->
+				<td><!--end #time_end -->
+					<select name="time_end" id="time_end">
+						<?php for($i=0;$i<25;$i++): ?>
+							<?php $value_end=$i.':00'?>
+							<option value="<?php echo $value_end;?>" <?php selected($value_end,get_post_meta($post->ID,'time_end',true));?>><?php echo $value_end;?></option>
+						<?php endfor; ?>
+					</select>
+				</td><!--end #time_end -->
+			</tr>
+		</table>
+
+	</div><!-- -->
+	<?php
 
 
 }
@@ -381,8 +441,33 @@ function save_form_menu_output($post_id)
 
 
 	}
+	// save data day_start
+	if (!wp_verify_nonce($_POST['info_day_start_nonce'], 'save_day_start_nonce')) {
+		return;
+	}
+	if (isset($_POST['day_start']) && $_POST['day_start'] !== "") {
+		update_post_meta($post_id,'day_start',$_POST['day_start']);
+	}
+	// save data day_end
+	if (!wp_verify_nonce($_POST['info_day_end_nonce'], 'save_day_end_nonce')) {
+		return;
+	}
+	if (isset($_POST['day_end']) && $_POST['day_end'] !== "") {
+		update_post_meta($post_id,'day_end',$_POST['day_end']);
+	}
+	// save data time_start
+	if (!wp_verify_nonce($_POST['info_time_start_nonce'], 'save_time_start_nonce')) {
+		return;
+	}
+	if (isset($_POST['time_start']) && $_POST['time_start'] !== "") {
+		update_post_meta($post_id,'time_start',$_POST['time_start']);
+	}// save data time_end
+	if (!wp_verify_nonce($_POST['info_time_end_nonce'], 'save_time_end_nonce')) {
+		return;
+	}
+	if (isset($_POST['time_end']) && $_POST['time_end'] !== "") {
+		update_post_meta($post_id,'time_end',$_POST['time_end']);
+	}
 
 }
-
-
 ?>
