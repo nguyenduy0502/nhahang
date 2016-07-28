@@ -36,6 +36,7 @@ require_once('backend/functions.php');
  *****************************************************************
  */
 require_once('widget/searchform-food.php');
+require_once('widget/categories-food.php');
 //require_once('includes/relatedpost/cat_food.php');
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS
@@ -196,18 +197,18 @@ if (function_exists('register_sidebar')) {
 		'class' => '',
 		'before_widget' => '<div class="about-us-time">',
 		'after_widget' => '</div>',
-		'before_title' => '<h1 class="widgettitle">',
-		'after_title' => '</h1>'
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>'
 	);
 	$args_food=array(
 		'name' => __('Left food sidebar', 'asite'),
 		'id' => 'left-food-sidebar',
 		'description' => 'Show information in left food sidebar ',
 		'class' => '',
-		'before_widget' => '<div class="about-us-time">',
-		'after_widget' => '</div>',
-		'before_title' => '<h1 class="widgettitle">',
-		'after_title' => '</h1>'
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>'
 
 	);
 
