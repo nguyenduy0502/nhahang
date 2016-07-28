@@ -10,7 +10,7 @@
 
 	<div class="menu-food">
 		<div class="food-menu-title">
-			<h1>ВьетЛанч</h1>
+			<h1>ВьетЛанч - 350 руб</h1>
 	
 			<ul id="tabs">
 				<li><a href="#" name="tab1">Горячие Закуски</a></li>
@@ -46,7 +46,6 @@
 						<td><?php the_title();?></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
-						<td><?php echo get_price_food($post->ID);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 
 					</tr>
@@ -81,7 +80,6 @@
 						<td><?php the_title();?></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
-						<td><?php echo get_price_food($post->ID);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 					</tr>
 					<?php endwhile; endif; ?>
@@ -115,7 +113,6 @@
 						<td><?php the_title();?></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
-						<td><?php echo get_price_food($post->ID);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 
 					</tr>
@@ -150,7 +147,6 @@
 						<td><?php the_title();?></td>
 						<td><?php the_terms($post->ID,'cuisine');?></td>
 						<td><?php echo get_post_meta($post->ID,'ingredient_food',true);?></td>
-						<td><?php echo get_price_food($post->ID);?></td>
 						<!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
 
 					</tr>
