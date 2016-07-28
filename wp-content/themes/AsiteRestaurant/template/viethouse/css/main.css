@@ -918,20 +918,20 @@ ul li a {
 }
 
 .amc-item-n{
-	font-size: 15px;
+	font-size: 16px;
     font-weight: 500;
     letter-spacing: 1px;
-    color: #4c352a;
+    color: #444;
     padding: 1px 4px;
     display: inline-block;
     float: left;
 }
 .amc-item-pr{
-    color: #d0ae5e;
+    color: #444;
     float: right;
     font-size: 16px;
-    font-weight: 700;
-    padding: 1px 11px;
+    font-weight: 500;
+    padding: 1px 4px;
     position: absolute;
     right: 0;
     background: #fff;
