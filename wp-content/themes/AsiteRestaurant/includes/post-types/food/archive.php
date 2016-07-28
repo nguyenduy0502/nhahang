@@ -14,17 +14,17 @@
         <div class="archive-food-content">
             <?php if(have_posts()):while(have_posts()):the_post();?>
             <div class="afc-item">
-               <?php if(has_post_thumbnail()):?>
+               <?php if(has_post_thumbnail()): // check has post thumbnail?>
                    <div class="afc-item-img">
-                       <img src="<?php the_post_thumbnail_url()?>" alt="">
+                       <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title(); echo '|'; bloginfo('name');?>" title="<?php the_title();?>">
                    </div>
                     <?php else: ?>
                    <div class="afc-item-img">
-                       <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="">
+                       <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="<?php the_title(); echo '|'; bloginfo('name');?>" title="<?php the_title();?>">
                    </div>
-                    <?php endif; ?>
+                    <?php endif; // end check?>
                 <div class="afc-item-npr">
-                    <div class="afc-item-n"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a></div>
+                    <div class="afc-item-n"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php echo short_title('...',10);?></a></div>
                     <div class="afc-item-pr"><?php echo get_price_food($post->ID);?></div>
                 </div>
                 <div class="afc-item-consist"><?php echo get_post_meta($post->ID,'ingredient_food',true);?></div>

@@ -23,15 +23,14 @@
             );
             $query=new WP_Query($args_query);
 
-
             ?>
             <?php while ($query->have_posts()):$query->the_post(); ?>
                 <div class="amc-item">
                     <div class="amc-item-npr">
-                        <div class="amc-item-n"><a href="">ass</a></div>
-                        <div class="amc-item-pr"><?php echo get_price_food($post->ID); ?></div>
+                        <div class="amc-item-n"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a></div>
+                        <div class="amc-item-pr"><?php echo get_post_meta($post->ID,'ingredient_food',true); ?></div>
                     </div>
-                    <div class="amc-item-consist"><?php echo get_post_meta($post->ID,'ingredient_food',true); ?></div>
+                   <!-- <div class="amc-item-consist"></div> -->
                 </div>
             <?php endwhile;
             endif; ?>

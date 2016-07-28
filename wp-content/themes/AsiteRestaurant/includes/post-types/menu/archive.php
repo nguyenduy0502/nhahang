@@ -14,19 +14,37 @@
             <h2>Menu</h2>
         </div>
         <div class="archive-menu-content">
-            <?php if(have_posts()):while(have_posts()):the_post();?>
-            <div class="amc-item">
-                <div class="amc-item-npr">
-                    <div class="amc-item-n"><a href="">thong tin</a></div>
-                    <div class="amc-item-pr">Giới thiệu qua về menu</div>
+            <?php if (have_posts()):while (have_posts()):the_post(); ?>
+                <?php
+                $time_start=get_post_meta($post->ID,'time_start',true);
+                $time_end=get_post_meta($post->ID,'time_end',true);
+                $day_start=get_post_meta($post->ID,'day_start',true);
+                $day_end=get_post_meta($post->ID,'day_end',true);
+
+
+                ?>
+                <div class="amc-item">
+                    <div class="amc-item-npr">
+                        <div class="amc-item-n"><a href="<?php the_permalink(); ?>"
+                                                   title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
+                        <div class="amc-item-pr">
+
+                            <?php if(empty($day_start)): ?>
+                                <?php echo 'Круглосуточно'?>
+                            <?php else: ?>
+                                <?php echo $day_start; ?> - <?php echo $day_end; ?> <?php echo $time_start;?>–<?php echo $time_end;?>
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                    <!-- <div class="amc-item-consist">
+                         bỏ
+                     </div> -->
                 </div>
-                <div class="amc-item-consist">
-                    bỏ
-                </div>
-            </div>
             <?php endwhile; endif; ?>
         </div>
     </div>
+    <ul class="paginate pag2 clearfix"><?php pagination(); ?></ul>
 
 
 </div>

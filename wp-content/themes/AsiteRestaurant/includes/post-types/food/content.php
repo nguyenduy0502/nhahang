@@ -10,12 +10,20 @@
     <div class="page-content clearfix">
         <div class="single-food">
             <?php if(have_posts()): while(have_posts()):the_post();?>
-            <div class="sf-images">
-                <a href="#"><img src="<?php the_post_thumbnail_url();?>" alt=""></a>
-            </div>
+
+                <?php if(has_post_thumbnail()): // check has post thumbnail?>
+                    <div class="sf-images">
+                        <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title(); echo '|'; bloginfo('name');?>"></a>
+                    </div>
+                    <?php else: ?>
+                    <div class="sf-images">
+                        <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title(); echo '|'; bloginfo('name');?>"></a>
+                    </div>
+                    <?php endif; // end check ?>
             <div class="sf-info">
                 <h2><?php the_title();?></h2>
                 <p class="price"><?php echo get_price_food($post->ID);?></p>
+                <?php get_template_part('includes/social-navigator/fb-share');?>
                 <p class="description">
                 <ul>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i> Масса: <?php echo get_weight_food($post->ID);?></li>
