@@ -41,6 +41,7 @@
                          bỏ
                      </div> -->
                 </div>
+                <?php get_template_part('includes/tags/google-tags'); // google tag SEO?>
             <?php endwhile; endif; ?>
         </div>
     </div>

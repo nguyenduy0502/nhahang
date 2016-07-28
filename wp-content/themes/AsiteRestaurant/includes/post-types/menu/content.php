@@ -32,6 +32,7 @@
                     </div>
                    <!-- <div class="amc-item-consist"></div> -->
                 </div>
+                <?php get_template_part('includes/tags/google-tags'); // google tag SEO?>
             <?php endwhile;
             endif; ?>
             <?php wp_reset_query();?>

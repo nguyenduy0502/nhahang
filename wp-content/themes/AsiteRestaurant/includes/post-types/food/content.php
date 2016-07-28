@@ -23,7 +23,7 @@
             <div class="sf-info">
                 <h2><?php the_title();?></h2>
                 <p class="price"><?php echo get_price_food($post->ID);?></p>
-                <?php get_template_part('includes/social-navigator/fb-share');?>
+                <?php get_template_part('includes/social-navigator/fb-share'); // get navigator fb?>
                 <p class="description">
                 <ul>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i> Масса: <?php echo get_weight_food($post->ID);?></li>
@@ -50,9 +50,9 @@
                 </div>
 
             </div>
-                <?php get_template_part('includes/tags/google-tags'); ?>
+                <?php get_template_part('includes/tags/google-tags'); // google tag SEO?>
             <?php endwhile; endif; ?>
-            <?php get_template_part('includes/relatedpost/cat_food');?>
+            <?php get_template_part('includes/relatedpost/cat_food'); // get related post type food?>
             <?php //get_relatedpost_food();?>
 
 

@@ -29,6 +29,7 @@
                 </div>
                 <div class="afc-item-consist"><?php echo get_post_meta($post->ID,'ingredient_food',true);?></div>
             </div>
+                <?php get_template_part('includes/tags/google-tags'); // google tag SEO?>
             <?php endwhile; endif; ?>
         </div>
     </div>
