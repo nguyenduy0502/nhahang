@@ -13,7 +13,7 @@ class Searchform_Food extends WP_Widget{
     function __construct()
     {
         parent::__construct(
-            'Search form food',
+            'searchform_food',
             'Search form food',
             array(
                 'description' => 'Widget search form food'
