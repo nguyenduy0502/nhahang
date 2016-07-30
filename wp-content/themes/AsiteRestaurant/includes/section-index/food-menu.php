@@ -10,7 +10,7 @@
 
 	<div class="menu-food">
 		<div class="food-menu-title">
-			<h1>ВьетЛанч - 350 руб</h1>
+			<a href="<?php echo get_the_permalink(3938)?>"><h1>ВьетЛанч - 350 руб</h1></a>
 	
 			<ul id="tabs">
 				<li><a href="#" name="tab1">Суп</a></li>
@@ -35,7 +35,7 @@
 							<td>
 								<?php if(has_post_thumbnail()): // check has post thumbnails?>
 									<div class="food">
-										<img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+										<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
 									</div>
 								<?php else: ?>
 									<div class="food">
@@ -68,7 +68,7 @@
 							<td>
 								<?php if(has_post_thumbnail()): // check has post thumbnails?>
 									<div class="food">
-										<img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+										<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
 									</div>
 								<?php else: ?>
 									<div class="food">
@@ -102,7 +102,7 @@
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
 								<div class="food">
-									<img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+									<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
 								</div>
 							<?php else: ?>
 								<div class="food">
@@ -136,7 +136,7 @@
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
 								<div class="food">
-									<img src="<?php echo get_the_post_thumbnail_url();?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+									<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
 								</div>
 							<?php else: ?>
 								<div class="food">

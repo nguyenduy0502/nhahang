@@ -12,7 +12,7 @@
 			<div class="col-md-3 col-sm-4 col-xs-6">
 				<div class="credit">
 					<h6><?php bloginfo('description');?></h6>
-					<h6>8 (926) 127-37-77</h6>
+					<h6>Телефон: 8 (909) 352-10-58 или 8 (964) 628-99-13</h6>
 					<h6>ул. Покровка, 14/2, стр 01, Moscow</h6>
 				</div>
 			</div>

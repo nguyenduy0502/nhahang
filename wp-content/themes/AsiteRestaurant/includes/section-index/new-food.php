@@ -9,10 +9,18 @@
 			<div class=" owl-carousel">
 				<?php $query=new WP_Query(array('post_type'=>'food','orderby'=>'rand'));?>
 				<?php if($query->have_posts()):while($query->have_posts()):$query->the_post();?>
-				<div class="item">
-					<a href="#"><img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title()?>" title="<?php the_title();?>"></a>
-					<h5><?php the_title()?></h5>
-				</div>
+					<?php if(has_post_thumbnail()): // check has post thumbnails ?>
+						<div class="item">
+							<a href="#"><img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title()?>" title="<?php the_title();?>"></a>
+							<h5><?php the_title()?></h5>
+						</div>
+						<?php else: ?>
+						<div class="item">
+							<a href="<?php the_permalink()?>" title="<?php the_title();?>"><img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title();?>" title="<?php the_title();?>"></a>
+							<h5><?php the_title()?></h5>
+						</div>
+						<?php endif; // end check?>
+
 				<?php endwhile; endif;?>
 			</div>
 		</div>
