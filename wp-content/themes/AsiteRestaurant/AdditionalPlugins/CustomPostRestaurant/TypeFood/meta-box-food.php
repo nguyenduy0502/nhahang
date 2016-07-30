@@ -42,12 +42,6 @@ function form_food_output($post)
 			<td>
 				<input type="text" id="price_food" name="price_food" placeholder="250" value="<?php echo esc_attr($price_food); ?>"/>
 			</td>
-			<!--<td>
-				<select>
-					<option value="RUB" selected="selected">RUB</option>
-					<option value="Dollar">$</option>
-				</select>
-			</td>-->
 		</tr>
 		<tr>
 			<td><label for="weight_food">Масса</label></td>
@@ -87,18 +81,10 @@ function form_food_output($post)
 			<td><input type="checkbox" id="recommend_food" name="recommend_food" value="yes" <?php if(isset($stored_meta['recommend_food'])) checked($stored_meta['recommend_food'][0],'yes')?>/></td>
 
 		</tr>
-
-		
-
-
-
 	</table>
 
 	<?php
-
-
 }
-
 add_action('save_post', 'save_form_food_output');
 function save_form_food_output($post_id)
 {
@@ -164,9 +150,5 @@ function save_form_food_output($post_id)
 	if (isset($_POST['quantity_food']) && $_POST['quantity_food'] !== "") {
 		update_post_meta($post_id,'quantity_food',$_POST['quantity_food']);
 	}
-
-
-
 }
-
 ?>

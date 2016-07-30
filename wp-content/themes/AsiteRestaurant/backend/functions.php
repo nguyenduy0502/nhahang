@@ -12,5 +12,4 @@ function add_type_menu_style() {
 	wp_enqueue_style('info-food');
 	wp_enqueue_style('type-menu');
 }
-
 ?>

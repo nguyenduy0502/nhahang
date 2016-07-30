@@ -7,5 +7,4 @@
  */
 require_once('TypeMenu/meta-box-menu.php');
 require_once('TypeMenu/construct-menu.php');
-
 ?>

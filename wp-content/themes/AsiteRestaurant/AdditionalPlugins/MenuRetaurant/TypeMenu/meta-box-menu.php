@@ -66,9 +66,6 @@ function form_menu_output($post)
 		// set default data for array
 		$choose_cat_57[0]=array(0502);
 	}
-
-
-
 	?>
 	<?php $args_cats = array('taxonomy' => 'cuisine'); // get category cuisine
 	$cats = get_categories($args_cats)// set list categories
@@ -93,7 +90,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_53_array[]"
 					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_53[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 				<?php wp_reset_query(); endwhile; endif; // end query for cat 53
 			?>
@@ -117,7 +113,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_55_array[]"
 					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_55[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 			<?php wp_reset_query(); endwhile; endif // end query for cat 55 ?>
 		</table><!-- end table Вегетарианские Блюда -->
@@ -140,7 +135,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_50_array[]"
 					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_50[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 50 ?>
 		</table><!-- end table Салаты -->
@@ -163,7 +157,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_52_array[]"
 					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_52[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 52 ?>
 		</table><!-- end table Супы -->
@@ -186,7 +179,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_51_array[]"
 					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_51[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 51 ?>
 		</table><!-- end table Холодные Закуски -->
@@ -209,7 +201,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_54_array[]"
 					           value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_54[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 54 ?>
 		</table> <!-- end table Основные Блюда -->
@@ -255,7 +246,6 @@ function form_menu_output($post)
 					<td><input type="checkbox" name="choose_cat_57_array[]"
 							   value="<?php the_ID() ?>" <?php echo (in_array(get_the_ID(), $choose_cat_57[0])) ? 'checked="checked"' : ''; ?>><?php the_title() ?>
 					</td>
-
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 57 ?>
 		</table> <!-- end table Напитки -->
@@ -269,8 +259,6 @@ function form_menu_output($post)
 	wp_nonce_field('save_time_start_nonce', 'info_time_start_nonce');
 	wp_nonce_field('save_day_end_nonce', 'info_day_end_nonce');
 	wp_nonce_field('save_time_end_nonce', 'info_time_end_nonce');
-
-
 	?>
 	<div class="menu-time">
 		<label for=""><strong>Дополнительная информация</strong></label>
