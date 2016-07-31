@@ -12,7 +12,7 @@
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;
-        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=273681262992709";
+        js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.7&appId=273681262992709";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 <div class="fb-like" data-href="<?php the_permalink();?>" data-layout="button" data-action="like"
