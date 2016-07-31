@@ -1193,3 +1193,26 @@ p.of-price{
   border-radius: 3px;
   color: #676767;
 }
+
+/*map*/
+
+#map-canvas{
+	height: 600px;
+	width: 100%;
+}
+
+#marker-content{
+	display:none;
+}
+
+.inlinecssfix{
+	display: none;
+}
+
+.quad h2{
+    color: #fff;
+    text-align: center;
+    line-height: 6px;
+    margin: 0.67em 0;
+    font-size: 2em;
+}

@@ -16,16 +16,16 @@
         <div class="col-md-7 col-sm-7 col-xs-12">
             <div class="google-map">
                 <div class="map-header" >
-                    <div id="marker-content" style="display:none;">
+                    <div id="marker-content">
                         <p>ул. Покровка, 14/2, стр 01, Moscow</p>
-                        <p>Телефон: 8 (909) 352-10-58</p>
+                        <p>Телефон: 8 (926) 127-37-77</p>
                     </div>
                 </div>
-                <div id="map-canvas" class="location-map" style="height: 600px; width: 100%;"></div>
+                <div id="map-canvas" class="location-map" ></div>
                 <script type='text/javascript'>
                     /* <![CDATA[ */
                     var wpdata = {"url":"http:\/\/viethousecafe.ru\/\/","td":"http:\/\/viethousecafe.ru\/wp-content\/themes\/AsiteRestaurant\/template\/viethouse\/img\/"};
-                    var geo = {"map":"1","lat":"55.7587865","lon":"37.644835"};
+                    var geo = {"map":"1","lat":"55.7581792","lon":"37.6432273"};
                     var flickr = {"id":"52617155@N08","limit":"15"};
                     var color = {"code":"#fc6f5c"};
                     /* ]]> */

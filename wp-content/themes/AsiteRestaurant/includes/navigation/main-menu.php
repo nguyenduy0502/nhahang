@@ -8,9 +8,9 @@
 
 		<div class="col-md-12 col-xs-12 col_centered vhmain">
 			<div class="quad col_centered">
-				<h1>Вьет Хауз</h1>
-				<h1><i class="fa fa-coffee"></i></h1>
-				<h1>Мы всегда рады Вам</h1>
+				<h2>Вьет Хауз</h2>
+				<h2><i class="fa fa-coffee"></i></h2>
+				<h2>Мы всегда рады Вам</h2>
 			</div>
 		</div>
 

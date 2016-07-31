@@ -16,7 +16,7 @@
                         $query_about=new WP_Query();
                         $query_about->query($args_about);
                         if($query_about->have_posts()):while($query_about->have_posts()):$query_about->the_post(); ?>
-                            <a href="#" title="<?php the_title();?>"><?php echo the_title('<h1>','</h1>');?></a>
+                            <a href="#" title="<?php the_title();?>"><?php echo the_title('<h2>','</h2>');?></a>
                             <?php //echo '<h3>'. nguyenduy_excerpt(get_the_content(),800).'</h3>';?>
                             <h3>Приходите во Вьет Хауз Кафе -   вы придете именно во вьетнамскую кухню. Мы откроем для вас удивительный мир экзотики Вьетнама и отправимся с вами в путешествие гастрономических наслаждений.</h3>
                         <?php endwhile; /* end loop get post*/ endif;?>
