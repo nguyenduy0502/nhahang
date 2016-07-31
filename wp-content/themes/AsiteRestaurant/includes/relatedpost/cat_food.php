@@ -32,9 +32,15 @@ $related_items = new WP_Query( $args );
     <div class="otherfood-list">
         <?php if($related_items->have_posts()):while($related_items->have_posts()):$related_items->the_post();?>
         <div class="of-item">
-            <div class="of-img">
-                <img src="<?php the_post_thumbnail_url();?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>">
-            </div>
+           <?php if(has_post_thumbnail()): // check has post thumbnails ?>
+               <div class="of-img">
+                   <img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>">
+               </div>
+               <?php else: ?>
+               <div class="of-img">
+                   <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title()?>" title="<?php the_title();?>">
+               </div>
+                <?php endif; // end check?>
             <div class="of-text">
                 <a href="<?php the_permalink();?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
                 <p class="of-price"><?php echo get_price_food($post->ID);?></p><a href=""></a>

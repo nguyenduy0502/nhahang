@@ -35,11 +35,11 @@
 							<td>
 								<?php if(has_post_thumbnail()): // check has post thumbnails?>
 									<div class="food">
-										<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+										<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 									</div>
 								<?php else: ?>
 									<div class="food">
-										<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+										<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 									</div>
 								<?php endif; // end check ?>
 							</td>
@@ -68,11 +68,11 @@
 							<td>
 								<?php if(has_post_thumbnail()): // check has post thumbnails?>
 									<div class="food">
-										<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+										<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 									</div>
 								<?php else: ?>
 									<div class="food">
-										<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+										<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 									</div>
 								<?php endif; // end check ?>
 							</td>
@@ -102,11 +102,11 @@
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
 								<div class="food">
-									<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+									<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 								</div>
 							<?php else: ?>
 								<div class="food">
-									<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+									<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 								</div>
 							<?php endif; // end check ?>
 						</td>
@@ -136,11 +136,11 @@
 						<td>
 							<?php if(has_post_thumbnail()): // check has post thumbnails?>
 								<div class="food">
-									<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+									<img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 								</div>
 							<?php else: ?>
 								<div class="food">
-									<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+									<img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>" title="<?php the_title();?>">
 								</div>
 							<?php endif; // end check ?>
 						</td>

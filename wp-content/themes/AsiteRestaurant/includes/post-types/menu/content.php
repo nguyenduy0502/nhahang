@@ -28,7 +28,8 @@
                 <div class="amc-item">
                     <div class="amc-item-npr">
                         <div class="amc-item-n"><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php the_title();?></a></div>
-                        <div class="amc-item-pr"><?php echo get_post_meta($post->ID,'ingredient_food',true); ?></div>
+                        <?php $ingredient_food=get_post_meta($post->ID,'ingredient_food',true);?>
+                        <div class="amc-item-pr"><?php echo nguyenduy_excerpt(get_post_meta($post->ID,'ingredient_food',true),110);?></div>
                     </div>
                    <!-- <div class="amc-item-consist"></div> -->
                 </div>
