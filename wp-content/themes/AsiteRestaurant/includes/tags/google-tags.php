@@ -6,7 +6,7 @@
  * Description: Google tags SEO
  */
 ?>
-<div style="display: none">
+<div class="gg-tags">
     <h1 class="title entry-title updated"><?php the_title(); ?></h1>
     <span class="vcard author"><span class="fn"><?php bloginfo('name');?></span></span>
     <span class="post_date date updated"><?php the_time('j F,Y'); ?></span>

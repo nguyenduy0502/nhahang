@@ -1193,3 +1193,15 @@ p.of-price{
   border-radius: 3px;
   color: #676767;
 }
+/* hidden tag google SEO*/
+.gg-tags{
+	display: none;
+}
+/* Google Map*/
+.location-map{
+	height: 600px;
+	width: 100%;
+}
+#marker-content{
+	display:none;
+}
