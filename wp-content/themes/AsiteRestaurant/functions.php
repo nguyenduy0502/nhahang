@@ -158,7 +158,7 @@ function add_footer_js() {
 	wp_enqueue_script('equalheight');
 	wp_enqueue_script('stellar');
 	wp_enqueue_script('common');
-	wp_enqueue_script('owl.carousel');
+	//wp_enqueue_script('owl.carousel');
 	wp_enqueue_script('owl.carousel.min');
 }
 /***********************************************************
