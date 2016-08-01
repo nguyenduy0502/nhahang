@@ -16,13 +16,13 @@
         if (is_home()) {
             // Title home
             bloginfo('name');
-            echo "|";
+            echo " - ";
             bloginfo('description');
         }
         if (is_single()) {
             // Title single
             the_title();
-            echo "|";
+            echo " - ";
             bloginfo('name');
         }
         if (is_category()) {
@@ -39,33 +39,33 @@
         if (is_page()) {
             // title page
             the_title();
-            echo "|";
+            echo " - ";
             bloginfo('description');
         }
         if (is_search()) {
             // title search
-            echo 'Результаты поиска' . '|';
+            echo 'Результаты поиска' . ' - ';
             bloginfo('name');
         }
         if (is_author()) {
             // title author
-            echo 'Наш шеф-повар' . '|';
+            echo 'Наш шеф-повар' . ' - ';
             bloginfo('name');
         }
         if (is_post_type_archive('food')) {
             // title archive company
-            echo "Новые блюда в нашем ресторане" . "|";
+            echo "Новые блюда в нашем ресторане" . " - ";
             bloginfo('name');
         }
         if (is_post_type_archive('menu')) {
             // title archive event
-            echo "Меню нашего ресторана" . "|";
+            echo "Меню нашего ресторана" . " - ";
             bloginfo('name');
         }
         if (is_tax('cuisine')) {
             $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
             echo $term->name;
-            echo "|";
+            echo " - ";
             bloginfo('name');
         }
 
