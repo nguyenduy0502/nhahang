@@ -149,9 +149,9 @@ function add_footer_js() {
 	wp_enqueue_script('waypoints');
 	wp_enqueue_script('scrollto');
 	wp_enqueue_script('owl-carousel');
+	wp_enqueue_script('jquery.plugin');
 	wp_enqueue_script('jquery.countdown.min');
 	wp_enqueue_script('jquery.countdown-ru');
-	wp_enqueue_script('jquery.plugin');
 	wp_enqueue_script('navigation');
 	wp_enqueue_script('bootstrap-toolkit.min');
 	wp_enqueue_script('maskedinput');
