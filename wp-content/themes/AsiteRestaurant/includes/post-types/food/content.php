@@ -37,8 +37,8 @@
             </div>
             <div class="sf-description">
                 <ul id="tabs">
-                    <li><a href="#" name="tab1">Описание</a></li>
-                    <li><a href="#" name="tab2">Комментарий</a></li>
+                    <li><a href="#" class="tab1">Описание</a></li>
+                    <li><a href="#" class="tab2">Комментарий</a></li>
                 </ul>
                 <div id="content">
                     <div id="tab1">

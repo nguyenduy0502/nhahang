@@ -13,10 +13,10 @@
 			<a href="<?php echo get_the_permalink(3938)?>"><h1>ВьетЛанч - 350 руб</h1></a>
 	
 			<ul id="tabs">
-				<li><a href="#" class="tab1">Суп</a></li>
-				<li><a href="#" class="tab2">Салат</a></li>
-				<li><a href="#" class="tab3">Горячее</a></li>
-				<li><a href="#" class="tab4">Напитки</a></li>
+				<li><a href="#" class="tab1"><h2>Суп</h2></a></li>
+				<li><a href="#" class="tab2"><h2>Салат</h2></a></li>
+				<li><a href="#" class="tab3"><h2>Горячее</h2></a></li>
+				<li><a href="#" class="tab4"><h2>Напитки</h2></a></li>
 			</ul>
 		</div>
 		<div id="content">

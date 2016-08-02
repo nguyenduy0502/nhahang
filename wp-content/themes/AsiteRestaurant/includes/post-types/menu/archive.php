@@ -28,6 +28,8 @@
                         <div class="amc-item-n"><a href="<?php the_permalink(); ?>"
                                                    title="<?php the_title(); ?>"><?php the_title(); ?></a></div>
                         <div class="amc-item-pr">
+                        <p>
+                            
 
                             <?php if(empty($day_start)): ?>
                                 <?php echo 'Круглосуточно'?>
@@ -35,6 +37,7 @@
                                 <?php echo $day_start; ?> - <?php echo $day_end; ?> <?php echo $time_start;?>–<?php echo $time_end;?>
                             <?php endif; ?>
 
+                        </p>
                         </div>
                     </div>
                     <!-- <div class="amc-item-consist">
