@@ -16,13 +16,13 @@
         if (is_home()) {
             // Title home
             bloginfo('name');
-            echo "|";
+            echo " - ";
             bloginfo('description');
         }
         if (is_single()) {
             // Title single
             the_title();
-            echo "|";
+            echo " - ";
             bloginfo('name');
         }
         if (is_category()) {
@@ -39,33 +39,33 @@
         if (is_page()) {
             // title page
             the_title();
-            echo "|";
+            echo " - ";
             bloginfo('description');
         }
         if (is_search()) {
             // title search
-            echo 'Результаты поиска' . '|';
+            echo 'Результаты поиска' . ' - ';
             bloginfo('name');
         }
         if (is_author()) {
             // title author
-            echo 'Наш шеф-повар' . '|';
+            echo 'Наш шеф-повар' . ' - ';
             bloginfo('name');
         }
         if (is_post_type_archive('food')) {
             // title archive company
-            echo "Новые блюда в нашем ресторане" . "|";
+            echo "Новые блюда в нашем ресторане" . " - ";
             bloginfo('name');
         }
         if (is_post_type_archive('menu')) {
             // title archive event
-            echo "Меню нашего ресторана" . "|";
+            echo "Меню нашего ресторана" . " - ";
             bloginfo('name');
         }
         if (is_tax('cuisine')) {
             $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
             echo $term->name;
-            echo "|";
+            echo " - ";
             bloginfo('name');
         }
 
@@ -80,9 +80,19 @@
     <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"/>
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
-
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-81719881-1', 'auto');
+        ga('require', 'linkid', 'linkid.js');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+    <?php wp_head(); ?>
 </head>
-<?php wp_head(); ?>
+
 <body>
 <!-- header-->
 <!--

@@ -149,16 +149,16 @@ function add_footer_js() {
 	wp_enqueue_script('waypoints');
 	wp_enqueue_script('scrollto');
 	wp_enqueue_script('owl-carousel');
+	wp_enqueue_script('jquery.plugin');
 	wp_enqueue_script('jquery.countdown.min');
 	wp_enqueue_script('jquery.countdown-ru');
-	wp_enqueue_script('jquery.plugin');
 	wp_enqueue_script('navigation');
 	wp_enqueue_script('bootstrap-toolkit.min');
 	wp_enqueue_script('maskedinput');
 	wp_enqueue_script('equalheight');
 	wp_enqueue_script('stellar');
 	wp_enqueue_script('common');
-	wp_enqueue_script('owl.carousel');
+	//wp_enqueue_script('owl.carousel');
 	wp_enqueue_script('owl.carousel.min');
 }
 /***********************************************************
@@ -168,7 +168,8 @@ function add_footer_js() {
 add_action('wp_enqueue_scripts','add_header_js');
 function add_header_js() {
     wp_register_script('maps',TEMPLATE_LIBS.'/maps/maps.js',array(),'',true);
-    wp_register_script('maps-load','https://maps.googleapis.com/maps/api/js?key=AIzaSyB4cW0wCPb-bt-Ieckbr7aW_lKuQNI1lIY&#038;callback=initialize&#038;ver=4.5.2');
+    //wp_register_script('maps-load','https://maps.googleapis.com/maps/api/js?key=AIzaSyB4cW0wCPb-bt-Ieckbr7aW_lKuQNI1lIY&#038;callback=initialize&#038;ver=4.5.2');
+	wp_register_script('maps-load',TEMPLATE_LIBS.'/maps/maps-load.js');
 	wp_enqueue_script('maps-load');
 	wp_enqueue_script('maps');
 
