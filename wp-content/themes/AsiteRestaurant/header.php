@@ -73,7 +73,6 @@
     </title>
     <meta name="author" content="<?php bloginfo('name');?>">
     <meta content="telephone=no" name="format-detection"/>
-    <meta http-equiv="x-rim-auto-match" content="none">
     <meta name="Keywords"
           content="вьетнамская кухня, вьетнамская кухня рецепты, ресторан вьетнамской кухни, блюда вьетнамской кухни, кафе вьетнамской кухни, вьетнамская кухня в москве, суп фо бо, вьетнамский суп фо, фо рецепт, Вьет Хауз, суп фо вьетнамский рецепт, вьетнамская кухня меню, ВьетЛанч, <?php wp_title( '|', true, 'right' );?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>

@@ -13,15 +13,15 @@
 			<a href="<?php echo get_the_permalink(3938)?>"><h1>ВьетЛанч - 350 руб</h1></a>
 	
 			<ul id="tabs">
-				<li><a href="#" name="tab1">Суп</a></li>
-				<li><a href="#" name="tab2">Салат</a></li>
-				<li><a href="#" name="tab3">Горячее</a></li>
-				<li><a href="#" name="tab4">Напитки</a></li>
+				<li><a href="#" class="tab1">Суп</a></li>
+				<li><a href="#" class="tab2">Салат</a></li>
+				<li><a href="#" class="tab3">Горячее</a></li>
+				<li><a href="#" class="tab4">Напитки</a></li>
 			</ul>
 		</div>
 		<div id="content">
 			<div id="tab1">
-				<table cellspacing='0'>
+				<table>
 					<tbody>
 					<?php
 					$args_tab1=array(
@@ -54,7 +54,7 @@
 				</table>
 			</div>
 			<div id="tab2">
-				<table cellspacing='0'>
+				<table>
 					<tbody>
 					<?php
 					$args_tab2=array(
@@ -88,7 +88,7 @@
 				</table>
 			</div>
 			<div id="tab3">
-				<table cellspacing='0'>
+				<table>
 					<tbody>
 					<?php
 					$args_tab3=array(
@@ -122,7 +122,7 @@
 				</table>
 			</div>
 			<div id="tab4">
-				<table cellspacing='0'>
+				<table>
 					<tbody>
 					<?php
 					$args_tab4=array(
