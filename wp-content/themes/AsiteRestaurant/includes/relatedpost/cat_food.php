@@ -34,11 +34,11 @@ $related_items = new WP_Query( $args );
         <div class="of-item">
            <?php if(has_post_thumbnail()): // check has post thumbnails ?>
                <div class="of-img">
-                   <img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php the_title(); echo ' | '; bloginfo('name');?>">
+                   <img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>">
                </div>
                <?php else: ?>
                <div class="of-img">
-                   <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title()?>" title="<?php the_title();?>">
+                   <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>" title="<?php the_title();?>">
                </div>
                 <?php endif; // end check?>
             <div class="of-text">

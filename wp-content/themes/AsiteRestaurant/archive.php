@@ -24,11 +24,11 @@
                                         <div class="afc-item">
                                             <?php if(has_post_thumbnail()): // check has post thumbnail?>
                                                 <div class="afc-item-img">
-                                                    <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title(); echo '|'; bloginfo('name');?>" title="<?php the_title();?>">
+                                                    <img src="<?php the_post_thumbnail_url()?>" alt="<?php the_title(); echo ' - '; bloginfo('name');?>" title="<?php the_title();?>">
                                                 </div>
                                             <?php else: ?>
                                                 <div class="afc-item-img">
-                                                    <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="<?php the_title(); echo '|'; bloginfo('name');?>" title="<?php the_title();?>">
+                                                    <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'?>" alt="<?php the_title(); echo ' - '; bloginfo('name');?>" title="<?php the_title();?>">
                                                 </div>
                                             <?php endif; // end check?>
                                             <div class="afc-item-npr">

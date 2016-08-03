@@ -26,13 +26,12 @@
                             else if ($format == 'video') {
                                 get_template_part('includes/post-format/video');  // get single post-format gallery
                             }
-
                             ?>
-
+							<?php get_template_part('includes/tags/google-tags');?>
                         <?php endwhile; endif; // end loop get content?>
 					</div>
-					<?php get_template_part('includes/relatedpost/cat_post');?>
-                    <?php comments_template();?>
+					<?php //get_template_part('includes/relatedpost/cat_post');?>
+                    <?php //comments_template();?>
 				</div>
 
 			</div>
