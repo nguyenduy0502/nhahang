@@ -11,7 +11,7 @@
                     <div class="about-us-text">
                         <?php
                         $args_about=array(
-                            'pagename'=>'about-us' // get page have name about-us
+                            'pagename'=>'о-нас' // get page have name about-us
                         );
                         $query_about=new WP_Query();
                         $query_about->query($args_about);

@@ -12,7 +12,9 @@
 	}
 	.about-us-time {
 		padding: 20px 0;
+
 	}
+
 
 
 }
@@ -246,5 +248,7 @@
 
  /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-
+		.booking-title {
+		border-left: 299px solid transparent;
+		border-right: 299px solid transparent;}
 }

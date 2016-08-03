@@ -808,9 +808,7 @@ div.new-page {
 
 
 
-.page-block{
-	padding: 30px 0;
-}
+
 
 
 /* Styling the input */
@@ -872,9 +870,10 @@ ul li a {
 }
 
 /*sidebar*/
-.page-content, .sidebar{
+.page-content, .sidebar, .page-bottom{
 	background-color: #fff;
-    box-shadow: 0px 5px #999;
+    box-shadow: 0px 5px rgb(17,91,54), 0px 0px 10px rgba(0, 0, 0, 0.15);
+    outline: 1px solid #EAEAEA;
 }
 .sidebar{
     background: #fff;
@@ -886,11 +885,15 @@ ul li a {
 	border-bottom: 1px solid #eee;
 	text-align: center;
 }
+.page-block{
+	padding: 30px 0;
+}
 .page-block h2{
 	color: #444;
 	font-size: 24px;
 	padding: 10px 0;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 
@@ -937,7 +940,7 @@ ul li a {
     overflow: hidden;
 }
 
-.amc-item-n{
+.amc-item-n a{
 	font-size: 16px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -957,7 +960,7 @@ ul li a {
     background: #fff;
     border-radius: 27px;
 }
-.amc-item-n::after{
+.amc-item-n a::after{
     content: '';
     display: inline;
     float: right;
@@ -1011,7 +1014,7 @@ p.price{
     margin: 10px 0;
     font-weight: 300;
     text-align: center;
-    border: 6px solid #e3e3e3;
+    border: 6px solid rgba(17,91,54,0.8);
 }
 
 p.description{
@@ -1036,7 +1039,7 @@ p.description{
 }
 
 /*shadow*/
-	.sf-images, .sf-info, .single-food #content, .of-item{
+	.sf-images, .sf-info, .single-food #content{
     box-shadow: 0 5px #aaa;
 	}
 
@@ -1058,7 +1061,7 @@ p.of-price{
     margin: 5px 0;
     font-weight: 300;
     text-align: center;
-    border: 6px solid #e3e3e3;
+    border: 4px solid rgba(17,91,54,0.8);
 }
 
 /*archive food*/
@@ -1237,18 +1240,9 @@ p.of-price{
 .single-page {background: #fff;}
 
 .single-page-name{
-    padding-top: 20px;
     background: #fff;
 }
-.single-page-name::after {
-    content: "";
-    margin: 14px auto 10px;
-    width: 140px;
-    height: 0;
-    display: block;
-    position: relative;
-    border-bottom: 1px solid #e1e1e1;
-}
+
 
 .spc-header{background: #fff;}
 .spc-header img{width: 100%;}
@@ -1279,11 +1273,10 @@ p.of-price{
 .page-bottom{
 	background: #fff;
 	margin: 30px 0;
-	padding: 10px 0;
+	padding: 0px 0 10px 0;
 }
 .pb-otherpost{
-	background: #f0f0f0;
-	box-shadow: 0px 5px #999;
+
 }
 .pb-otherpost img{
 	width: 100%;
@@ -1301,7 +1294,6 @@ p.of-price{
     background: #e8e8e8;
     width: 100%;
     padding: 7px 14px;
-    border-radius: 4px;
 }
 .post-info time, .post-info a{
     display: table-cell;

@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="spc-content"><?php the_content();?></div>
-
+                                <?php get_template_part('includes/tags/google-tags');?>
                             <?php endwhile; endif; // end loop get content?>
                         </div>
                         <?php //get_template_part('includes/relatedpost/cat_post');?>
