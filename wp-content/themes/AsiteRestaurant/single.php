@@ -18,6 +18,7 @@
 
 								<h2>Name</h2>
 
+<<<<<<< HEAD
 							</div>
 							<div class="spc-header">
 								<img src="http://lorempixel.com/600/250/food" alt="">
@@ -50,6 +51,19 @@
 				</div>
 					<?php get_template_part('includes/relatedpost/cat_post');?>
                     <?php comments_template();?>
+=======
+                            }
+                            else if ($format == 'video') {
+                                get_template_part('includes/post-format/video');  // get single post-format gallery
+                            }
+                            ?>
+							<?php get_template_part('includes/tags/google-tags');?>
+                        <?php endwhile; endif; // end loop get content?>
+					</div>
+					<?php //get_template_part('includes/relatedpost/cat_post');?>
+                    <?php //comments_template();?>
+				</div>
+>>>>>>> origin/master
 
 			</div>
 			<div class="col-md-3">
