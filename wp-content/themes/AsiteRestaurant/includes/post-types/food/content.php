@@ -43,6 +43,7 @@
                 <div id="content">
                     <div id="tab1">
                         <h2>Описание блюды</h2>
+                        <img src="http://lorempixel.com/250/150/food" alt="">
                         <p><?php the_content();?></p>
                     </div>
                     <div id="tab2"><?php comments_template();?></div>

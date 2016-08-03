@@ -1318,3 +1318,9 @@ p.of-price{
     border-right: 2px solid #fff;
     color: #4a4a4a;
 }
+
+.single-food .sf-description img{
+	width: 60%;
+	margin: 10px auto;
+	display: block;
+}
