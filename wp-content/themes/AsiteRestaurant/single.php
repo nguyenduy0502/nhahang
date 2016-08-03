@@ -45,13 +45,16 @@
 							</div>
 					</div>
 					<?php get_template_part('includes/relatedpost/cat_post');?>
+                    <?php comments_template();?>
 				</div>
+
 			</div>
 			<div class="col-md-3">
 				<div class="sidebar">
 					<?php get_template_part('includes/sidebar/left-food-sidebar'); ?>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
