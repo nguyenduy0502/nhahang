@@ -76,8 +76,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '53', //Горячие Закуски
+						'field' => 'slug',
+						'terms' => 'горячие-закуски', //Горячие Закуски
 					))
 			);
 			$query_53 = new WP_Query($cat_53);
@@ -99,8 +99,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '55', //Вегетарианские Блюда
+						'field' => 'slug',
+						'terms' => 'вегетарианские-блюда', //Вегетарианские Блюда
 					))
 			);
 			$query_55 = new WP_Query($cat_55);
@@ -121,8 +121,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '50', //Салаты
+						'field' => 'slug',
+						'terms' => 'салаты', //Салаты
 					))
 			);
 			$query_50 = new WP_Query($cat_50);
@@ -143,8 +143,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '52', //Супы
+						'field' => 'slug',
+						'terms' => 'супы', //Супы
 					))
 			);
 			$query_52 = new WP_Query($cat_52);
@@ -165,8 +165,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '51', //Холодные Закуски
+						'field' => 'slug',
+						'terms' => 'холодные-закуски', //Холодные Закуски
 					))
 			);
 			$query_51 = new WP_Query($cat_51);
@@ -187,8 +187,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '54', //Основные Блюда
+						'field' => 'slug',
+						'terms' => 'основные-блюда', //Основные Блюда
 					))
 			);
 			$query_54 = new WP_Query($cat_54);
@@ -209,8 +209,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '56', //Специальное Предложение
+						'field' => 'slug',
+						'terms' => 'специальное-предложение', //Специальное Предложение
 					))
 			);
 			$query_56 = new WP_Query($cat_56);
@@ -232,8 +232,8 @@ function form_menu_output($post)
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'cuisine',
-						'field' => 'id',
-						'terms' => '57', //Напитки
+						'field' => 'slug',
+						'terms' => 'напитки', //Напитки
 					))
 			);
 			$query_57 = new WP_Query($cat_57);
