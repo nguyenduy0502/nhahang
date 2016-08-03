@@ -15,16 +15,18 @@
 				<div class="page-content clearfix">
 					<div class="single-page">
 							<div class="single-page-name">
-								<div class="">
-                                    <a href="" rel="bookmark"></a>
-                                        <time class="entry-date published" datetime="2016-04-05 22:14:58">05-Apr-2016</time>
-                                        <time class="updated" datetime="05-Apr-2016 22:14:58">05-Apr-2016</time>
-                                </div><!-- -->
+
 								<h2>Name</h2>
-								<a href=""><span>In category</span></a>
+
 							</div>
 							<div class="spc-header">
 								<img src="http://lorempixel.com/600/250/food" alt="">
+								<div class="post-info">
+                                    <!-- <a href="" rel="bookmark"></a> -->
+                                    <time class="entry-date published" datetime="2016-04-05 22:14:58">05-Apr-2016</time>
+                                    <time class="updated" datetime="05-Apr-2016 22:14:58">05-Apr-2016</time>
+									<a href=""><span>In category</span></a>
+                                </div><!-- -->
 							</div>
 							<div class="spc-content">
 								<p>

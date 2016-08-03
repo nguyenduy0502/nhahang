@@ -882,6 +882,10 @@ ul li a {
     border: 8px solid #ccc;
 }
 
+.sidebar ul li{
+	padding: 5px;
+	border-bottom: 1px solid #eee;
+}
 .sidebar h2{
 	color: #444;
 	font-size: 20px;
@@ -1271,6 +1275,9 @@ p.of-price{
 	text-align: center;
 	background: #fff;
 }
+.page-content .single-page .updated{
+	display: none;
+}
 
 .spc-bottom{
 	background: #fff;
@@ -1288,4 +1295,26 @@ p.of-price{
 .spc-otherpost p{
 	padding: 5px 10px;
 	text-align: center;
+}
+
+/*post info panel in single page*/
+.post-info{
+    margin-bottom: 10px;
+    display: table;
+    background: #e8e8e8;
+    width: 100%;
+    padding: 7px 14px;
+    border-radius: 4px;
+}
+.post-info time, .post-info a{
+    display: table-cell;
+    letter-spacing: 0;
+    padding-right: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    padding-right: 4px;
+    margin-bottom: 0;
+    border-right: 2px solid #fff;
+    color: #4a4a4a;
 }
