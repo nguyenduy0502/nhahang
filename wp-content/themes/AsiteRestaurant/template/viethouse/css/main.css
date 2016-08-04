@@ -1244,7 +1244,9 @@ p.of-price{
 }
 
 
-.spc-header{background: #fff;}
+.spc-header{
+	background: #fff;
+	text-align: center}
 .spc-header img{width: 100%;}
 
 .spc-content{
