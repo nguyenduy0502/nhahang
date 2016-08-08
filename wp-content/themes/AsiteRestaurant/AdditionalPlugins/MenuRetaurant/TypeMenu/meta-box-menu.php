@@ -78,7 +78,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'горячие-закуски', //Горячие Закуски
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_53 = new WP_Query($cat_53);
 			?>
@@ -101,7 +102,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'вегетарианские-блюда', //Вегетарианские Блюда
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_55 = new WP_Query($cat_55);
 			?>
@@ -123,7 +125,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'салаты', //Салаты
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_50 = new WP_Query($cat_50);
 			?>
@@ -145,7 +148,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'супы', //Супы
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_52 = new WP_Query($cat_52);
 			?>
@@ -167,7 +171,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'холодные-закуски', //Холодные Закуски
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_51 = new WP_Query($cat_51);
 			?>
@@ -189,7 +194,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'основные-блюда', //Основные Блюда
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_54 = new WP_Query($cat_54);
 			?>
@@ -211,7 +217,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'специальное-предложение', //Специальное Предложение
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_56 = new WP_Query($cat_56);
 			?>
@@ -234,7 +241,8 @@ function form_menu_output($post)
 						'taxonomy' => 'cuisine',
 						'field' => 'slug',
 						'terms' => 'напитки', //Напитки
-					))
+					)),
+				'posts_per_page'=>-1 // get all
 			);
 			$query_57 = new WP_Query($cat_57);
 			?>
