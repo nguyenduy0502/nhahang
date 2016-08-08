@@ -69,7 +69,6 @@ function form_food_output($post)
 					<option value="select-10" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-10')?>>10 Шт</option>
 					<option value="select-15" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-15')?>>15 Шт</option>
 					<option value="select-20" <?php if(isset($stored_meta['quantity_food'])) selected($stored_meta['quantity_food'][0],'select-20')?>>20 Шт</option>
-
 				</select></td>
 
 		</tr>
