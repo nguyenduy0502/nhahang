@@ -70,8 +70,10 @@ function form_menu_output($post)
 	<?php $args_cats = array('taxonomy' => 'cuisine'); // get category cuisine
 	$cats = get_categories($args_cats)// set list categories
 	?>
+	<input class="form-control" id="livesearch" placeholder="Поиск блюдо" type="text" style="width: 300px"/>
 	<div class="menu-choose" style="">
-		<table><!-- table Горячие Закуски -->
+
+		<table id="List-User"><!-- table Горячие Закуски -->
 			<?php $cat_53 = array(
 				'tax_query' => array(
 					array(
@@ -95,7 +97,7 @@ function form_menu_output($post)
 				<?php wp_reset_query(); endwhile; endif; // end query for cat 53
 			?>
 		</table><!-- end table Горячие Закуски -->
-		<table><!-- table Вегетарианские Блюда -->
+		<table id="List-User"><!-- table Вегетарианские Блюда -->
 			<?php $cat_55 = array(
 				'tax_query' => array(
 					array(
@@ -118,7 +120,7 @@ function form_menu_output($post)
 				</tr>
 			<?php wp_reset_query(); endwhile; endif // end query for cat 55 ?>
 		</table><!-- end table Вегетарианские Блюда -->
-		<table><!-- table Салаты -->
+		<table id="List-User"><!-- table Салаты -->
 			<?php $cat_50 = array(
 				'tax_query' => array(
 					array(
@@ -141,7 +143,7 @@ function form_menu_output($post)
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 50 ?>
 		</table><!-- end table Салаты -->
-		<table><!-- table Супы -->
+		<table id="List-User"><!-- table Супы -->
 			<?php $cat_52 = array(
 				'tax_query' => array(
 					array(
@@ -164,7 +166,7 @@ function form_menu_output($post)
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 52 ?>
 		</table><!-- end table Супы -->
-		<table><!-- table Холодные Закуски -->
+		<table id="List-User"><!-- table Холодные Закуски -->
 			<?php $cat_51 = array(
 				'tax_query' => array(
 					array(
@@ -187,7 +189,7 @@ function form_menu_output($post)
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 51 ?>
 		</table><!-- end table Холодные Закуски -->
-		<table> <!-- table Основные Блюда -->
+		<table id="List-User"> <!-- table Основные Блюда -->
 			<?php $cat_54 = array(
 				'tax_query' => array(
 					array(
@@ -210,7 +212,7 @@ function form_menu_output($post)
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 54 ?>
 		</table> <!-- end table Основные Блюда -->
-		<table> <!-- table Специальное Предложение -->
+		<table id="List-User"> <!-- table Специальное Предложение -->
 			<?php $cat_56 = array(
 				'tax_query' => array(
 					array(
@@ -234,7 +236,7 @@ function form_menu_output($post)
 				</tr>
 				<?php wp_reset_query(); endwhile; endif // end query for cat 56 ?>
 		</table> <!-- end table Специальное Предложение -->
-		<table> <!-- table Напитки -->
+		<table id="List-User"> <!-- table Напитки -->
 			<?php $cat_57 = array(
 				'tax_query' => array(
 					array(
@@ -258,6 +260,14 @@ function form_menu_output($post)
 				<?php wp_reset_query(); endwhile; endif // end query for cat 57 ?>
 		</table> <!-- end table Напитки -->
 	</div><!-- end class menu-choose-->
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery('input#livesearch').liveSearch({
+				table : 'table#List-User'
+			});
+
+		});
+	</script>
 	<?php
 	$day_start=get_post_meta($post->ID,'day_start',true);
 	$time_start=get_post_meta($post->ID,'time_start',true);
