@@ -1,4 +1,4 @@
-<div class="news" id="news">
+<div class="news section" id="news">
 	<div class="bamboo">
 		<img src="img/content/bamboo.png" alt="">
 	</div>

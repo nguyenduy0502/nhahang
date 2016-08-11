@@ -60,11 +60,21 @@
 <script>
 	$(document).ready(function(){
 		(jQuery)(".owl-carousel").owlCarousel({
+      // navigation : true, // показывать кнопки next и prev 
+ 
+      // slideSpeed : 300,
+      // paginationSpeed : 400,
+ 
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
 			items:4,
 			loop:true,
-			margin:10,
 			autoHeight:true,
-			autoplay:6000,
+			autoplay:false,
 			autoplayTimeout:1000,
 			autoplayHoverPause:true,
 			navigation: false,
@@ -72,11 +82,11 @@
 			paginationNumbers:true,
 			navigationText: ["prev", "next"],
 			responsive : {
-				0:{items : 2},
-				480:{items : 3},
-				768:{items: 3},
-				992:{items: 4},
-				1200:{items: 5}
+				0:{items : 1},
+				480:{items : 1},
+				768:{items: 2},
+				992:{items: 2},
+				1200:{items: 2}
 			}
 
 		});
@@ -150,5 +160,13 @@ $(document).ready(function () {
 });
 </script>
 <!-- end smooth scroll up -->
+<script>
+        $(function() {
+        $.scrollify({
+        section: ".section"
+                    });
+                });
+
+</script>
 </body>
 </html>

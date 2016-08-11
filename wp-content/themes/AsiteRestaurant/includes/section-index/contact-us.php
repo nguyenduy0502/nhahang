@@ -1,5 +1,9 @@
-<div class="contact-us" id="contact-us">
+<div class="contact-us section" id="contact-us">
     <div class="contact-us-small">
+                <div class="section-title">
+                    <h1>Свяжитесь</h1>
+                    <h2>С нами</h2>
+                </div>
         <div class="col-md-5 col-sm-5 col-xs-12">
             <div class="contact-us-form">
                 <h2>Контакты</h2>

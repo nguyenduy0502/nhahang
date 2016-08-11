@@ -31,7 +31,10 @@
 */
 
 
-
+@import url('http://webfonts.ru/import/nickainley.css');
+@import url('http://webfonts.ru/import/marckscript.css');
+@import url('http://webfonts.ru/import/badscript.css');
+@import url('http://webfonts.ru/import/comfortaa.css');
 
 
 /*1. RESET CSS
@@ -69,7 +72,7 @@
 	opacity: 1;
 }
 body {
-	font-family: "RobotoRegular", sans-serif;
+	font-family: "comfortaa", sans-serif;
 	font-size: 16px;
 	min-width: 320px;
 	position: relative;
@@ -82,13 +85,31 @@ body {
 	background-position: 50% 0;
 	position: relative;
 }
-h1{
-	color: #fff;
-	text-align: center;
-	line-height: 6px
+.section{
+	min-height: 100vh;
+	display: flex!important;
+	justify-content: center;
+	align-items: center;
 }
-h2, h3, h4, h5, h6{color:#fff; }
-.section-title{background-color: rgb(17,91,54); }
+.section-title h2{
+	color: rgb(17,91,54);;
+}
+h1{
+/*	color: #fff;
+	line-height: 6px*/;
+	text-align: center;
+	font-family: 'marck script';
+	font-weight: bold;
+	font-size: 50px;
+	margin: 0;
+	margin-bottom: -25px;
+}
+h2, h3, h4, h5, h6{ text-align: center; }
+/*.section-title{background-color: rgb(17,91,54); }*/
+
+.section p{
+	font-size: 16px;
+}
 ul li a { text-decoration: none; }
 label{
 	color: #fff;
@@ -171,6 +192,9 @@ button:active, .button:active {
 	list-style: none;
 	margin-bottom: -1px;
 }
+/*#tabs h2{
+	font-family: 'marck script';
+}*/
 #tabs li {
 	float: left;
 	margin: 0 .3em 0 0;
@@ -301,10 +325,10 @@ a{ color:#444 ; }
 
 .header{
 	background-image: url(../img/top-bg.jpg);
-	min-height: 430px;
+	min-height: 100vh;
 	background-position: center center;
 	position: relative;
-	height: 100%;
+	background-size: cover;
 }
 .top_line{
 	height: 40px;
@@ -324,9 +348,16 @@ a{ color:#444 ; }
 	width: 100%;
 	margin-bottom: -27px;
 }
-.vhmain{ top: 60px; }
+.vhmain{ 
+	top: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 80vh;
+}
 
 .quad{
+	min-width: 310px;
 	max-width: 500px;
 	background-color: rgba(0, 0, 0, 0.749);
 	border: 1px solid #fff;
@@ -334,6 +365,7 @@ a{ color:#444 ; }
 	box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.749);
 	position: relative;
 	margin-bottom: 150px;
+	font-family: 'marck Script';
 }
 .quad p{
 	color: #fff;
@@ -393,10 +425,45 @@ tbody tr:nth-child(2n-2) {
 	position: absolute;
 	z-index: -1;
 }
-.about-us-title{ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
+/*.about-us-title{ box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); }
+*/
 .about-us-text{
 	text-align: center;
-	border-image: url(../img/content/bamboo-small.png)
+	border-image: url(../img/content/bamboo-small.png);
+	margin: 40px;
+}
+.about-us-text ul{
+	/*display: flex;*/
+}
+.border-line{
+	border-bottom: 1px solid #ccc;
+}
+.au-fact{
+	margin: 30px auto;
+	text-align: center;
+}
+/*.au-fact div{
+	margin: 20px 0;
+}*/
+
+.au-fact div span{
+	font-size: 30px;
+	font-family: 'marck script';
+	display: block;
+}
+.au-fact p{
+	font-size: 18px;
+	margin: 5px;
+}
+.au-fact i{
+	font-size: 30px;
+	color: #fff;
+	background: rgb(17,91,54);
+	border-radius: 50%;
+	padding: 15px;
+	width: 60px;
+	height: 60px;
+	margin: 5px;
 }
 .about-us-time{
 	text-align: center;
@@ -404,9 +471,9 @@ tbody tr:nth-child(2n-2) {
 	border-left: 1px solid #fff;
 }
 .row-about-us{
-	padding: 60px 20px;
+/*	padding: 60px 20px;
 	background: rgba(23,21,21,.7);
-	margin: 22px;
+	margin: 22px;*/
 }
 
 /* 3.2. NEWS SECTION
@@ -458,63 +525,159 @@ tbody tr:nth-child(2n-2) {
 	background-position: center;
 	position: relative;
 	z-index: 0;
+	min-height: 100vh;
+	padding: 0 4%;
 }
-.new-food:after {
+.new-food::after {
 	content : "";
 	display: block;
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url(../img/bg5.jpg);
+	background: #fff;
 	background-position: center;
-	background-size: 100%;
+	background-size: 110%;
 	width: 100%;
 	height: 100%;
 	opacity : 0.87;
 	z-index: -1;
 }
-.item{
-	height: 150px;
-	width: 150px;
-	-webkit-box-shadow: 0 0 0 8px rgb(17,91,54);
-	box-shadow: 0 0 0 8px rgb(17,91,54);
-	border-radius: 45px 0;
-	overflow: hidden;
-	margin: 20px;
+.item-info::after {
+    content: '';
+    position: absolute;
+    left: 40%;
+    top:42%;
+    border-bottom: 20px solid transparent;
+    border-left:  20px solid white;
+    border-right:  20px solid transparent;
+    border-top:  20px solid transparent;
+    z-index: 10;
+}
+/*.item{
 	position: relative;
 	-webkit-transition: ease-out 0.25s;
 	-moz-transition: ease-out 0.25s;
 	-o-transition: ease-out 0.25s;
 	transition: ease-out 0.25s;
+}*/
+/*.item{float:left;position:relative}
+.item .new{background-position:-248px -482px;height:28px;left:-9px;padding:7px 0 0 7px;top:41px;width:55px; background:#F00;color:#FFF;display:block;font-family:"league-gothic",sans-serif;font-size:18px;position:absolute;text-transform:uppercase;z-index:1; }
+.item a{background-color:#FFF;color:#820922;display:block;overflow:hidden;position:absolute;box-shadow:0 0 7px 0 #CCC;-moz-box-shadow:0 0 7px 0 #CCC;-webkit-box-shadow:0 0 7px 0 #CCC}
+.item a:hover{z-index:2;-webkit-transition:height .2s ease-in-out;-moz-transition:height .2s ease-in-out;-o-transition:height .2s ease-in-out;-ms-transition:height .2s ease-in-out;transition:height .2s ease-in-out}
+.item:hover .new{z-index:3}
+.item a h3{border:0;font-family:"league-gothic",sans-serif;font-size:18px;margin:0 0 .5em 0;padding:0;text-transform:uppercase; }
+.item a p{color:#432;font-size:16px;}
+
+.our_menu .menu{float:left;margin:0 0 50px 0}
+.item{background-position:9px -791px;height:170px;padding:0 0 0 7px;width:316px}
+.item a{height:25px;padding:114px 0 0 14px;top:20px;width:295px;text-decoration:none;}
+.item a:hover{height:132px;padding-top:179px}
+.item a img{clip:rect(0px,283px,96px,0px);height:164px;position:absolute;top:14px;width:283px}
+.item a:hover img{clip:auto}
+.item .new{left:-1px}*/
+.owl-carousel{
+	height: 40vh;
+	margin: 2vh 0px;
 }
-.item:hover{
-	-webkit-box-shadow: 0 0 0 8px #fff;
-	box-shadow: 0 0 0 8px #fff;
-	border-radius: 0;
+.item{
+	height: 40vh;
+	border: 4px solid #ccc;
+	margin: 0px 1%;
 }
-.item img{
-	min-width: 100%;
+.item-info{
 	height: 100%;
+	width: 40%;
+	background: #fff;
+	display: block;
+	float: left;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
 }
-.item h5{
-	position: absolute; 
-	bottom: 0; 
-	left: 0; 
-	width: 100%;
-	background: rgba(0, 0, 0, 0.7);
-	padding: 2px 6px;
+.it-name{
+	font-size: 2em;
+	font-family: 'marck script';
+	line-height: 0.4;
 }
+.it-price{
+	font-size: 1.5em;
+	color: rgb(17,91,54);
+}
+
+.item-image{
+	height: 100%;
+	width: 60%;
+	background: red;
+	display: block;
+	float: right;
+}
+.item-image img{
+	object-fit: cover;
+	height: 100%;
+	width: 100%!important;
+}
+/*
+.item-image {
+	background-color:#003a6f;
+	height:95vh;
+	width:100%;
+	background-size:cover;
+	position:relative;
+	z-index:-1;
+}
+.item-image img{
+	min-height: 100%;
+}
+#backshape .wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float:left;
+	width:100%;
+	padding:0 5%;
+	min-height: 19vh;
+	transform:skew(0deg,-10deg);
+-ms-transform:skew(0deg,-10deg);
+-webkit-transform:skew(0deg,-10deg); 
+background: #fff;
+}
+.item-text {
+  float:left;
+  background:transparent;
+  transform:skew(0deg,-10deg);
+-ms-transform:skew(0deg,-10deg);
+-webkit-transform:skew(0deg,5deg);
+}
+#backshape {
+  z-index:1;
+  display:block;
+  float:left;
+  margin-top:-100px;
+  width:100%;
+  background:white;
+  transform:skew(0deg,10deg);
+-ms-transform:skew(0deg,10deg);
+-webkit-transform:skew(0deg,5deg); 
+}*/
 
 /* 3.4. VIETLUNCH SECTION
 
 -----------------------------------------------*/
 .menu-food {
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-	margin: 20px 0;
+/*	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+*/	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+	margin: 80px 0;
+	background: white;
+	border: 4px dashed rgb(17, 91,54);
+	box-shadow: 0 0 0 40px #fff;
+/*	-webkit-mask-box-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/stampTiles.svg) 28 repeat;
+	mask-border: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/stampTiles.svg) 30 repeat;*/
+	padding: 0px;
 }
 .food-menu-title{
-	background-color: rgb(17,91,54);
+/*	background-color: rgb(17,91,54);*/
 }
 .food-menu{
 	min-height: 100%;
@@ -537,8 +700,7 @@ tbody tr:nth-child(2n-2) {
 	width: 180px;
 	height: 130px;
 	overflow: hidden;
-	border-radius: 20px;
-	box-shadow: 0 0 0 3px rgba(57,141,73,.8)
+	border: 3px solid #ccc;
 }
 .food img{
 	width: 100%;
@@ -551,21 +713,14 @@ td .food-text{
 ------------------------------------------------*/
 
 .booking{
-	min-height: 100%;
 	background-image:url(../img/bg1.jpg);
-	background-position: bottom center;
-	background-size:100%;
+	background-size:cover;
 }
-.booking-title{
-	border-top: 68px solid rgba(00,00,00,.87);
-	border-left: 200px solid transparent;
-	border-right: 200px solid transparent;
-	height: 0;
-	margin-bottom: -2px
+.booking h1{
+	color: #fff;
 }
-.booking-title h1{
-	position: relative;
-	top: -70px;
+.booking .section-title h2{
+	color: #5fcd91;
 }
 .booking-info{
 	width: 572px;
@@ -589,18 +744,16 @@ td .food-text{
 
 /* 3.6. CONTACT-US SECTION
 -------------------------------------------------*/
-
-.contact-us{
-	min-height: 460px;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 0;
+.contact-us h1{
+	color: #fff;
 }
+.contact-us .section-title h2{
+	color: #5fcd91;
+}
+
 .contact-us-small{
 	width: 780px;
-	height: 410px;
+	height: 100%;
 	background-color: rgba(23,21,21,.7);
 	overflow: hidden;
 	padding: 10px;
