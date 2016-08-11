@@ -16,6 +16,7 @@ define('CUSTOM_MENU',THEME_URL.'/AdditionalPlugins/MenuRetaurant');
 define('CUSTOM_FOOD',THEME_URL.'/AdditionalPlugins/CustomPostRestaurant');
 define('TEMPLATE_FOLDER',THEME_URL.'/template/viethouse');
 define('TEMPLATE_LIBS',TEMPLATE_FOLDER.'/libs');
+define('BACKEND_URL',THEME_URL.'/backend');
 /*******************************************************************
  * ADD PLUGIN CUSTOM POST RESTAURANT
  *****************************************************************
