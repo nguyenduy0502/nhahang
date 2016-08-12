@@ -34,7 +34,7 @@ $related_items = new WP_Query( $args );
         <div class="of-item">
            <?php if(has_post_thumbnail()): // check has post thumbnails ?>
                <div class="of-img">
-                   <img src="<?php the_post_thumbnail_url('medium');?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>">
+                   <img src="<?php the_post_thumbnail_url('large');?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>">
                </div>
                <?php else: ?>
                <div class="of-img">

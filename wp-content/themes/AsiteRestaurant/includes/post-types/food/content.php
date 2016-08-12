@@ -23,7 +23,7 @@
 
                 <?php if(has_post_thumbnail()): // check has post thumbnail?>
                     <div class="sf-images">
-                        <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php the_post_thumbnail_url();?>" alt="<?php echo $ingredient_food; echo ' - '; bloginfo('name');?>"></a>
+                        <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php the_post_thumbnail_url('large');?>" alt="<?php echo $ingredient_food; echo ' - '; bloginfo('name');?>"></a>
                     </div>
                     <?php else: ?>
                     <div class="sf-images">

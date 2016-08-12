@@ -23,7 +23,7 @@
                                     <div class="afc-item">
                                         <?php if (has_post_thumbnail()): ?>
                                             <div class="afc-item-img">
-                                                <img src="<?php the_post_thumbnail_url() ?>"
+                                                <img src="<?php the_post_thumbnail_url('large') ?>"
                                                      alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);;
                                                      echo ' - ';
                                                      bloginfo('name'); ?>" title="<?php the_title(); ?>">

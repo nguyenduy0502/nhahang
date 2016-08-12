@@ -67,7 +67,8 @@ class New_Food extends WP_Widget
                     'field' => 'id',
                     'terms' => $instance['id'], //get by id
                 )),
-            'posts_per_page' => $instance['count'] // get count
+            'posts_per_page' => $instance['count'], // get count
+            'orderby'=>'rand'
         );
         $query = new WP_Query();
         $query->query($arr); ?>
@@ -88,7 +89,7 @@ class New_Food extends WP_Widget
 
                     <?php if(has_post_thumbnail()):?>
                         <div class="item-image">
-                            <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php echo $ingredient_food;
+                            <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php echo $ingredient_food;
                             echo " | ";
                             bloginfo('description'); ?>" title="<?php the_title(); ?>">
                         </div>
