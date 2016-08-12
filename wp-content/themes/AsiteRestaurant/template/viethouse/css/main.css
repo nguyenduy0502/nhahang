@@ -277,22 +277,22 @@ button:active, .button:active {
 .nav-list>li:not(.has-logo)>a{
 	text-transform: uppercase;
 	display: block;
-	padding:20px 1rem;
+	padding:0px 1rem;
 	font-size: 17px;
 	transition: 0.4s ease;
 	color: #ffffff;
 	border-top: 2px solid transparent;
 	border-bottom: 2px solid transparent;
 }
-.nav-list>li:not(.has-logo)>a:hover{
+/*.nav-list>li:not(.has-logo)>a:hover{
 	border-top: 2px solid #ffffff;
 	border-bottom: 2px solid #ffffff;
 	padding: 1px 1rem; 
-}
+}*/
 .nav-list ul{
 	position: absolute;
 	z-index: 1010;
-	background-color: #fff;
+	background-color: rgba(17,91,54,0.8);
 	line-height: 2rem;
 	left: -9999px;
 }
