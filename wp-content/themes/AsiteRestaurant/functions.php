@@ -38,6 +38,7 @@ require_once('backend/functions.php');
  */
 require_once('widget/searchform-food.php');
 require_once('widget/categories-food.php');
+require_once('widget/new-food.php');
 //require_once('includes/relatedpost/cat_food.php');
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS
@@ -103,23 +104,26 @@ function second_navigation()
 add_action('wp_enqueue_scripts','add_header_stylesheet');
 function add_header_stylesheet() {
     wp_register_style('bootstrap-grid',TEMPLATE_LIBS.'/bootstrap/bootstrap-grid-3.3.1.min.css');
-	wp_enqueue_style('bootstrap-grid');
 	wp_register_style('font-awesome.min',TEMPLATE_LIBS.'/font-awesome/css/font-awesome.min.css');
-	wp_enqueue_style('font-awesome.min');
 	wp_register_style('jquery.fancybox',TEMPLATE_LIBS.'/fancybox/jquery.fancybox.css');
-	wp_enqueue_style('jquery.fancybox');
 	wp_register_style('owl-carousel-css',TEMPLATE_LIBS.'/owl-carousel/owl.carousel.css');
-	wp_enqueue_style('owl-carousel-css');
 	wp_register_style('countdown',TEMPLATE_LIBS.'/countdown/jquery.countdown.css');
-	wp_enqueue_style('countdown');
 	wp_register_style('fonts',TEMPLATE_FOLDER.'/css/fonts.css');
 	wp_register_style('main',TEMPLATE_FOLDER.'/css/main.css');
 	wp_register_style('media-theme',TEMPLATE_FOLDER.'/css/media.css');
 	wp_register_style('owl.carousel',TEMPLATE_FOLDER.'/css/owl.carousel.css');
+	wp_register_style('jquery.fullPage',TEMPLATE_FOLDER.'/css/jquery.fullPage.css');
+
+	wp_enqueue_style('bootstrap-grid');
+	wp_enqueue_style('font-awesome.min');
+	wp_enqueue_style('jquery.fancybox');
+	wp_enqueue_style('owl-carousel-css');
+	wp_enqueue_style('countdown');
 	wp_enqueue_style('fonts');
 	wp_enqueue_style('main');
 	wp_enqueue_style('media-theme');
 	wp_enqueue_style('owl.carousel');
+	wp_enqueue_style('jquery.fullPage');
 }
 /***********************************************************
  * ADD IN FOOTER JS SHEET
@@ -171,12 +175,17 @@ function add_header_js() {
     wp_register_script('maps',TEMPLATE_LIBS.'/maps/maps.js','',array(),true);
     wp_register_script('maps-load','https://maps.googleapis.com/maps/api/js?key=AIzaSyB4cW0wCPb-bt-Ieckbr7aW_lKuQNI1lIY&#038;callback=initialize&#038;ver=4.5.2');
 	//wp_register_script('maps-load',TEMPLATE_LIBS.'/maps/maps-load.js');
+	wp_deregister_script( 'jquery' );
+	wp_register_script('jquery.easings.min',TEMPLATE_FOLDER.'/js/jquery.easings.min.js');
+	wp_register_script('scrolloverflow.min',TEMPLATE_FOLDER.'/js/scrolloverflow.min.js');
+	wp_register_script('jquery.fullPage.min',TEMPLATE_FOLDER.'/js/jquery.fullPage.min.js');
+
 	wp_enqueue_script('maps-load');
 	wp_enqueue_script('maps');
-	wp_deregister_script( 'jquery' );
 	wp_enqueue_script( 'jquery-2.2.3', TEMPLATE_LIBS.'/jquery/jquery-2.2.3.min.js');
-
-
+	wp_enqueue_script('jquery.easings.min');
+	wp_enqueue_script('scrolloverflow.min');
+	wp_enqueue_script('jquery.fullPage.min');
 }
 
 
@@ -216,10 +225,22 @@ if (function_exists('register_sidebar')) {
 		'after_title' => '</h2>'
 
 	);
+	$args_new_food=array(
+
+		'name' => __('New food in index', 'asite'),
+		'id' => 'new-food-index',
+		'description' => 'Show food in index ',
+		'class' => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>'
+	);
 
 	register_sidebar($args_booking);
 	register_sidebar($args_hours);
 	register_sidebar($args_food);
+	register_sidebar($args_new_food);
 }
 /***********************************************************
  * CREATE CUSTOM EXCERPT

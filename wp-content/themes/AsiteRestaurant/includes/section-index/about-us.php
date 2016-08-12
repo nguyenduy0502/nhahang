@@ -2,68 +2,47 @@
     <div class="container">
 
         <div class="row">
+            <?php
+            $arr = array(
+                'pagename' => 'о-нас' // get page by slug
+            );
+            $query = new WP_Query();
+            $query->query($arr);
+            ?>
+            <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
             <div class="section-title about-us-title">
                 <h1>О нас</h1>
-                <h2>Вьет Хауз</h2>
+               <a href="<?php the_permalink();?>" title="<?php the_title();?>"> <?php the_title('<h2>', '</h2>'); ?></a>
             </div>
-<!--             <div class="row-about-us clearfix">
-
-                <div class="col-md-8 col-sm-9 col-xs-7">
-                    <div class="about-us-text">
-                        <?php
-                        $args_about=array(
-                            'pagename'=>'о-нас' // get page have name about-us
-                        );
-                        $query_about=new WP_Query();
-                        $query_about->query($args_about);
-                        if($query_about->have_posts()):while($query_about->have_posts()):$query_about->the_post(); ?>
-                            <a href="#" title="<?php the_title();?>"><?php echo the_title('<h2>','</h2>');?></a>
-                            <?php //echo '<h3>'. nguyenduy_excerpt(get_the_content(),800).'</h3>';?>
-                            <h3>Приходите во Вьет Хауз Кафе -   вы придете именно во вьетнамскую кухню. Мы откроем для вас удивительный мир экзотики Вьетнама и отправимся с вами в путешествие гастрономических наслаждений.</h3>
-                        <?php endwhile; /* end loop get post*/ endif;?>
-                        <?php wp_reset_query(); // reset query ?>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-3 col-xs-5">
-                    <?php // check sidebar hours. This show time working in index
-                    if (is_active_sidebar('hours-sidebar')):
-                        dynamic_sidebar('hours-sidebar');
-                    endif;
-                    ?>
-                </div>
-            </div>  -->
             <div class="row-about-us clearfix">
 
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="about-us-text">
-                    <p>
-                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Правилами всеми, буквенных запятых семь семантика которой даль ты всемогущая лучше. Семь маленький переулка, языком себя мир ручеек несколько, алфавит залетают силуэт пояс предупреждал последний меня скатился она свой речью послушавшись, грустный инициал, но своего всеми запятых запятой рекламных! Семь лучше ручеек взгляд эта, маленькая силуэт, сих, грустный имени последний, своего заголовок запятых предложения. Взобравшись рекламных бросил свою города предложения, рот! Переписывается, свою коварный использовало алфавит строчка пунктуация залетают ipsum! Собрал продолжил образ приставка обеспечивает рыбного ее которой своих, рыбными за бросил. То текстов безопасную языком, заглавных свой домах ведущими.
-                    </p>
-                </div>
-                </div>
-                <div class="border-line col-xs-8 col-xs-offset-2">
-                    
-                </div>
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="au-fact clearfix">
-                            <div class="col-md-4 col-xs-12">
-                                <p>Время работы</p>
-                                <i class="fa fa-coffee" aria-hidden="true"></i>
-                                <span>10:00 - 23:00</span>
-                            </div>
-                            <div class="col-md-4 col-xs-12">
-                                <p>Средний чек</p>
-                                <i class="fa fa-apple" aria-hidden="true"></i>
-                                <span>600 руб.</span>
-                            </div>
-                            <div class="col-md-4 col-xs-12">
-                                <p>В нашем меню</p>
-                                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                <span>150 блюд</span>
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="about-us-text">
+                            <p> Вьет Хауз более традиционная и строгая в выборе ингредиентов и специй. Вьетнамская кухня
+                                характерна использованием риса, рыбного соуса, соевого соуса,свежей зелени, экзотических
+                                фруктов и овощей . Наиболее распространенными видами мяса во Вьетнаме являются свинина и
+                                говядина, а из морепродуктов креветки и крабы. Вьетнамские рецепты включают широкий
+                                выбор зелени, в том числе лимонное сорго, мята, вьетнамскую мята, листья кориандры и
+                                базилики и как раз благодаря всем этими ингредиентами, блюда становятся очень
+                                ароматными, полезными и вкусными.<br/>
+                                Один преимущество нашего ресторана это наше местоположение. Мы расположены на :
+                                <strong>ул.Покровка, 14/2, стр 1</strong> От метро Чистые пруды 700 метров , от метро Китай - Город 800
+                                метров . Одном из самых центральных и красивых улиц Москвы, что сделает ваше посещение в
+                                наш ресторан более удобным и приятным. Вьетнамская кухня в центре Москвы.
+                               </p>
                         </div>
-                </div>  
+                    </div>
+                <?php endwhile; // end loop get post
+                endif; ?>
+                <?php wp_reset_query();?>
+                <div class="border-line col-xs-8 col-xs-offset-2">
+
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                   <?php if(is_active_sidebar('hours-sidebar')):?>
+                    <?php dynamic_sidebar('hours-sidebar');?>
+                    <?php endif;?>
+                </div>
             </div>
         </div>
     </div>

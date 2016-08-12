@@ -1,17 +1,27 @@
 <div class="food-menu section fp-auto-height clearfix" id="section3" data-anchor="food-menu">
 
     <?php
-    $arr_tab3 = get_post_meta(14, 'choose_cat_53'); // Горячие Закуски
-    $arr_tab1 = get_post_meta(14, 'choose_cat_52'); // Суп
-    $arr_tab2 = get_post_meta(14, 'choose_cat_50'); // Салат
-    $arr_tab4 = get_post_meta(14, 'choose_cat_57'); //Напитки
+    $arr=array(
+        'post_type'=>'menu', // get post type
+        'posts_per_page' => 1,
+        'post_name__in'  => ['вьетланч'] // name slug
+    );
+    $query=new WP_Query();
+    $query->query($arr);
+    if($query->have_posts()): while($query->have_posts()):$query->the_post();
+    $post_id=$post->ID;
+    $arr_tab3 = get_post_meta($post_id, 'choose_cat_53'); // Горячие Закуски
+    $arr_tab1 = get_post_meta($post_id, 'choose_cat_52'); // Суп
+    $arr_tab2 = get_post_meta($post_id, 'choose_cat_50'); // Салат
+    $arr_tab4 = get_post_meta($post_id, 'choose_cat_57'); //Напитки
+    endwhile; endif;
+    wp_reset_query();
     ?>
     <div class="container">
 
         <div class="menu-food">
             <div class="section-title food-menu-title">
-<!--                 <a href="<?php echo get_the_permalink(14) ?>"><h1>ВьетЛанч - 350 руб</h1></a> -->
-                <a href="http://localhost:8080/nhahang/food/"><h1>Вьет Ланч</h1></a>
+                <a href="<?php the_permalink($post_id);?>" title="<?php echo get_the_title($post_id);?>"><h1><?php echo get_the_title($post_id);?></h1></a>
                 <h2>350 руб.</h2>
                 <ul id="tabs">
                     <li><a href="#" class="tab1"><h2>Суп</h2></a></li>
