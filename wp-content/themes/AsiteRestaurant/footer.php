@@ -157,8 +157,13 @@ $(document).ready(function () {
 $(document).ready(function() {
     $('#fullpage').fullpage({
     	scrollOverflow:true,
+        scrollOverflowOptions: {
+    		mouseWheel: false,
+    		scrollbars: false,
+    		mouseWheelSpeed: 1
+		},
         navigation: true,
-        navigationTooltips: ['Главная', 'О Нас', 'Новые Блюды','Вьет Ланч','Резерв Стола','Оставить сообщение'],
+        // navigationTooltips: ['Главная', 'О Нас', 'Новые Блюды','Вьет Ланч','Резерв Стола','Оставить сообщение']
         // anchors:['main','about-us', 'new-food','food-menu','booking','contact-us'],
         // lockAnchors: true,
         // css3: false
