@@ -1,4 +1,4 @@
-<div class="booking section clearfix" id="booking">
+<div class="booking section clearfix" id="section4" data-anchor="booking">
 
 	<div class="container">
 

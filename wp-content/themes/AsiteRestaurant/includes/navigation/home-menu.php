@@ -13,7 +13,7 @@
 <!--<a href="#" class="toggle-menu">&#9776;</a>-->
 <nav>
     <ul class="nav-list nav-open" id="nav">
-        <li><a href="#about-us">О нас</a></li>
+        <li data-menuanchor="about-us" class="active"><a href="#about-us">О нас</a></li>
         <li class="has-submenu"><a href="#news">Новости</a>
             <!--<ul>
                 <li><a href="#">Web Designing</a></li>
@@ -23,7 +23,7 @@
                 <li><a href="#">Front End Development</a></li>
             </ul>-->
         </li>
-        <li><a href="#new-food">Новые блюды</a></li>
+        <li data-menuanchor="new-food"><a href="#new-food">Новые блюды</a></li>
 
 
         <li class="has-logo"><a href="<? echo home_url();?>" title="<?php bloginfo('description')?>">
@@ -32,7 +32,7 @@
                          title="<?php bloginfo('name'); ?>">
                 </h2>
             </a></li>
-        <li class="has-submenu"><a href="#food-menu">Меню</a>
+        <li class="has-submenu" data-menuanchor="food-menu"><a href="#food-menu">Меню</a>
             <!--<ul>
                 <li><a href="#">Web Development</a></li>
                 <li><a href="#">Web Design</a></li>
@@ -41,7 +41,7 @@
                 <li><a href="#">Front End Development</a></li>
             </ul>-->
         </li>
-        <li><a href="#booking">Бронирование</a></li>
-        <li><a href="#contact-us">Контакты</a></li>
+        <li data-menuanchor="booking"><a href="#booking">Бронирование</a></li>
+        <li data-menuanchor="contact-us"><a href="#contact-us">Контакты</a></li>
     </ul>
 </nav>

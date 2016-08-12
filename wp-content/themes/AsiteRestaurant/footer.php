@@ -1,5 +1,6 @@
 <!--footer-->
-<footer class="footer">
+
+<div class="footer section fp-auto-height" id="section6">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-4 col-xs-6">
@@ -18,7 +19,8 @@
 			</div>
 		</div>
 	</div>
-</footer>
+</div>
+</div>
 <!--end footer-->
 
 
@@ -60,17 +62,7 @@
 <script>
 	$(document).ready(function(){
 		(jQuery)(".owl-carousel").owlCarousel({
-      // navigation : true, // показывать кнопки next и prev 
- 
-      // slideSpeed : 300,
-      // paginationSpeed : 400,
- 
-      // items : 1, 
-      // itemsDesktop : false,
-      // itemsDesktopSmall : false,
-      // itemsTablet: false,
-      // itemsMobile : false
- 
+
 			items:4,
 			loop:true,
 			autoHeight:true,
@@ -86,7 +78,7 @@
 				480:{items : 1},
 				768:{items: 2},
 				992:{items: 2},
-				1200:{items: 2}
+				1200:{items: 3}
 			}
 
 		});
@@ -120,7 +112,7 @@
 	});
 </script>
 
-<!-- smooth scroll down-->
+<!-- smooth scroll down--
 <script>
 	$(function() {
 	  $('a[href*="#"]:not([href="#"])').click(function() {
@@ -138,7 +130,7 @@
 	});
 </script>
 <!-- end smooth scroll -->
-<!--  smooth scroll up -->
+<!--  smooth scroll up --
 <script>
 $(document).ready(function () {
 
@@ -161,12 +153,17 @@ $(document).ready(function () {
 </script>
 <!-- end smooth scroll up -->
 <script>
-        $(function() {
-        $.scrollify({
-        section: ".section"
-                    });
-                });
-
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+    	scrollOverflow:true,
+        navigation: true,
+        navigationTooltips: ['Главная', 'О Нас', 'Новые Блюды','Вьет Ланч','Резерв Стола','Оставить сообщение'],
+        // anchors:['main','about-us', 'new-food','food-menu','booking','contact-us'],
+        // lockAnchors: true,
+        // css3: false
+        // autoScrolling: false
+    });
+});
 </script>
 </body>
 </html>

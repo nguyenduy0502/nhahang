@@ -1,5 +1,4 @@
-<div class="row">
-	<header class="header clearfix">
+	<div class="header section clearfix" id="section0" data-anchor="main">
 		<?php if(is_home()):?>
 		<?php get_template_part('includes/navigation/home-menu');?>
 		<?php else: ?>
@@ -13,6 +12,4 @@
 				<p>Мы всегда рады Вам</p>
 			</div>
 		</div>
-
-	</header>
-</div>
+	</div>

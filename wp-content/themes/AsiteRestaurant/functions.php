@@ -145,7 +145,7 @@ function add_footer_js() {
     wp_register_script('owl.carousel',TEMPLATE_FOLDER.'/js/owl.carousel.js',array(),'',true);
     wp_register_script('owl.carousel.min',TEMPLATE_FOLDER.'/js/owl.carousel.min.js',array(),'',true);
 
-	wp_enqueue_script('jquery-1.11.1');
+	// wp_enqueue_script('jquery-1.11.1');
 	wp_enqueue_script('jquery-mousewheel');
 	wp_enqueue_script('waypoints');
 	wp_enqueue_script('scrollto');

@@ -113,7 +113,7 @@
 		z-index: 1012;
 		left: 0;
 		top:0;
-		background-color: #fff;
+		background-color: transparent;
 		
 		max-height: 0;
 		overflow: hidden;
@@ -178,6 +178,9 @@
 		font-size: 14px;
 		padding: 6px;
 	}
+	#fp-nav.right {
+	right: 1px;
+}
 
 
 }

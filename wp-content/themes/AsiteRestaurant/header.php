@@ -78,6 +78,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"/>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/css/jquery.fullPage.css" />
+<!--     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+   
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
     <script>
@@ -91,9 +94,14 @@
         ga('send', 'pageview');
     </script>
     <?php wp_head(); ?>
+    <script type="text/javascript" src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.fullPage.min.js"></script>
+
 </head>
 
-<body>
+<body class="fp-responsive">
+<div id="fullpage">
 <!-- header-->
 <!--
 	<div class="mobile-display" >

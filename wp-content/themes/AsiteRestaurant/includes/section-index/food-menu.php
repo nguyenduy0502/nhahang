@@ -1,4 +1,4 @@
-<div class="food-menu section clearfix" id="food-menu">
+<div class="food-menu section fp-auto-height clearfix" id="section3" data-anchor="food-menu">
 
     <?php
     $arr_tab3 = get_post_meta(14, 'choose_cat_53'); // Горячие Закуски
@@ -11,7 +11,7 @@
         <div class="menu-food">
             <div class="section-title food-menu-title">
 <!--                 <a href="<?php echo get_the_permalink(14) ?>"><h1>ВьетЛанч - 350 руб</h1></a> -->
-                <h1>Вьет Ланч</h1>
+                <a href="http://localhost:8080/nhahang/food/"><h1>Вьет Ланч</h1></a>
                 <h2>350 руб.</h2>
                 <ul id="tabs">
                     <li><a href="#" class="tab1"><h2>Суп</h2></a></li>
