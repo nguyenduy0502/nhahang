@@ -7,7 +7,7 @@
  */
 get_header();?>
 
-<div class="new-page">
+<div class="new-page section">
 <div class="container">
 <div class="row">
 		<div class="page-block clearfix">

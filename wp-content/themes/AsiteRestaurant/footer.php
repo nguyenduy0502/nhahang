@@ -21,6 +21,7 @@
 	</div>
 </div>
 </div>
+<!-- end fullpage -->
 <!--end footer-->
 
 
