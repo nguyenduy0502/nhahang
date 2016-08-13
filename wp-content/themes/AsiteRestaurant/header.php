@@ -82,6 +82,7 @@
    
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
+
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -92,11 +93,14 @@
         ga('require', 'displayfeatures');
         ga('send', 'pageview');
     </script>
+
     <?php wp_head(); ?>
+        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.scrollify.js"></script>
 </head>
 
-<body class="fp-responsive">
-<div id="fullpage">
+<body>
+<!-- <body class="fp-responsive"> -->
+<!-- <div id="fullpage"> -->
 <!-- header-->
 <!--
 	<div class="mobile-display" >

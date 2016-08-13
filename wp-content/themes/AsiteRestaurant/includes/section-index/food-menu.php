@@ -1,4 +1,5 @@
-<div class="food-menu section fp-auto-height clearfix" id="section3" data-anchor="food-menu">
+<!-- <div class="food-menu section fp-auto-height clearfix" id="section3" data-anchor="food-menu"> -->
+<div class="food-menu section clearfix" id="food-menu">
 
     <?php
     $arr=array(
@@ -19,7 +20,7 @@
     ?>
     <div class="container">
 
-        <div class="menu-food foldtr">
+        <div class="menu-food">
             <div class="section-title food-menu-title">
                 <a href="<?php the_permalink($post_id);?>" title="<?php echo get_the_title($post_id);?>"><h1><?php echo get_the_title($post_id);?></h1></a>
                 <h2>350 руб.</h2>

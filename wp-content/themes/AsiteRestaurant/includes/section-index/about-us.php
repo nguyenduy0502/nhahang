@@ -1,4 +1,5 @@
-<div class="about-us section" id="section1" data-anchor="about-us">
+<!-- <div class="about-us section" id="section1" data-anchor="about-us"> -->
+<div class="about-us section" id="about-us">
     <div class="container">
 
         <div class="row">

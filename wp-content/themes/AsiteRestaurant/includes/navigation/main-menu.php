@@ -1,4 +1,5 @@
-	<div class="header section clearfix" id="section0" data-anchor="main">
+	<!-- <div class="header section clearfix" id="section0" data-anchor="main"> -->
+	<div class="header section clearfix">
 		<?php if(is_home()):?>
 		<?php get_template_part('includes/navigation/home-menu');?>
 		<?php else: ?>

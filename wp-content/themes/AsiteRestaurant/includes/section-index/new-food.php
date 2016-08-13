@@ -1,4 +1,5 @@
-<div class="new-food section" id="section2" data-anchor="new-food">
+<!-- <div class="new-food section" id="section2" data-anchor="new-food"> -->
+<div class="new-food section" id="new-food">
 <div class="new-food-content">
             <div class="section-title">
                 <h1>Наши</h1>

@@ -20,7 +20,7 @@
 		</div>
 	</div>
 </div>
-</div>
+<!-- </div> -->
 <!-- end fullpage -->
 <!--end footer-->
 
@@ -64,7 +64,7 @@
 	$(document).ready(function(){
 		(jQuery)(".owl-carousel").owlCarousel({
 
-			items:4,
+			items:3,
 			loop:true,
 			autoHeight:true,
 			autoplay:false,
@@ -91,6 +91,23 @@
 	$("li").removeClass("selected");
 	$(this).addClass("selected");
 });
+</script>
+<script>
+	$.scrollify({
+		section : ".section",
+		interstitialSection : ".footer",
+		// easing: "easeOutExpo",
+		// scrollSpeed: 1100,
+		// offset : 0,
+		// scrollbars: false,
+		// standardScrollElements: "",
+		setHeights: false,
+		overflowScroll: true,
+		// before:function() {},
+		// after:function() {},
+		// afterResize:function() {},
+		// afterRender:function() {}
+	});
 </script>
 <script>
 	$(document).ready(function() {
@@ -153,7 +170,7 @@ $(document).ready(function () {
 });
 </script>
 <!-- end smooth scroll up -->
-<script>
+<!-- <script>
 $(document).ready(function() {
     $('#fullpage').fullpage({
     	scrollOverflow:true,
@@ -170,6 +187,7 @@ $(document).ready(function() {
         // autoScrolling: false
     });
 });
-</script>
+</script> -->
+
 </body>
 </html>

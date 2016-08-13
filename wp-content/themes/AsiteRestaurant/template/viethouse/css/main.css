@@ -100,7 +100,18 @@ h1{
 }
 h2, h3, h4, h5, h6{ text-align: center; }
 /*.section-title{background-color: rgb(17,91,54); }*/
+.section:not(.footer){
+/*	display: flex;
+	justify-content: center;
+	align-items: center;*/
+	min-height: 100vh;
 
+}
+.section:not(.new-food):not(.header){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .section p{
 	font-size: 16px;
 }
@@ -312,7 +323,6 @@ nav a{
 	color: #fff;
 }
 a{ color:#444 ; }
-
 
 /* 2.7. HEADER
 ---------------------------------------------------*/
@@ -639,7 +649,7 @@ background: #fff;
 
 -----------------------------------------------*/
 
-
+/*
 .foldtr {
   position: relative;
   -webkit-box-shadow: -5px 7px 5px rgba(0,0,0,0.8);
@@ -650,7 +660,7 @@ background: #fff;
 .foldtr:before {
   content: "";
   position: absolute;
-	top: -3%;
+	top: -6%;
     right: -4%;
   width: 0px;
   height: 0px;
@@ -659,7 +669,7 @@ background: #fff;
   -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
   -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
   box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-}
+}*/
  
 /*.foldtr:after {
   content: "";
@@ -674,10 +684,10 @@ background: #fff;
 .menu-food {
 /*	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 */	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-	margin: 80px 0;
+	/*margin: 80px 0;*/
 	background: white;
 	border: 4px dashed rgb(17, 91,54);
-	box-shadow: 0 0 0 40px #fff;
+	/*box-shadow: 0 0 0 40px #fff;*/
 /*	-webkit-mask-box-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/stampTiles.svg) 28 repeat;
 	mask-border: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/stampTiles.svg) 30 repeat;*/
 	padding: 0px;
@@ -686,7 +696,10 @@ background: #fff;
 /*	background-color: rgb(17,91,54);*/
 }
 .food-menu{
-	min-height: 100%;
+	max-height: 100vh;
+	/*max-height: */
+	overflow: hidden;
+	margin-top: 17px;
 }
 .food-menu table{
 	min-width: 100%;
