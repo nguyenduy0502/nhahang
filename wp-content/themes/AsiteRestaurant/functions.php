@@ -65,6 +65,12 @@ function get_quantity_food($post_id) {
 			break;
 		case 'select-5': $result="5 шт";
 			break;
+		case 'select-10': $result="10 шт";
+			break;
+		case 'select-15': $result="15 шт";
+			break;
+		case 'select-20': $result="20 шт";
+			break;
 		case 'select-null': $result=null;
 			break;
 		default:
@@ -295,4 +301,5 @@ function pagination($prev = '&laquo;', $next = '&raquo;')
 
 	echo paginate_links($pagination);
 }
+
 ?>

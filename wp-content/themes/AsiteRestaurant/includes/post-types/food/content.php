@@ -11,6 +11,7 @@
         <div class="single-food">
             <?php if(have_posts()): while(have_posts()):the_post();?>
                 <?php
+                // get post meta
                 $price_food = get_post_meta($post->ID, 'price_food', true);
                 $recommend_food = get_post_meta($post->ID, 'recommend_food', true);
                 $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
@@ -35,10 +36,14 @@
                 <p class="price">
                 <?php echo (empty($price_food))? 'Безплатно': get_price_food($post->ID);?>
                 </p>
-                <?php get_template_part('includes/social-navigator/fb-share'); // get navigator fb?>
+                <?php get_template_part('includes/social-navigator/fb-share'); // get navigator fb ?>
                 <p class="description">
                 <ul>
-                    <li><i class="fa fa-angle-right" aria-hidden="true"></i> Масса: <?php echo $weight_food; ?></li>
+                    <?php if(!empty(get_quantity_food($post->ID))): // check has quantity food?>
+                    <li><i class="fa fa-angle-right" aria-hidden="true"></i> <?php echo get_quantity_food($post->ID); ?></li>
+                    <?php else: ?>
+                        <li><i class="fa fa-angle-right" aria-hidden="true"></i> Масса: <?php echo get_weight_food($post->ID); ?></li>
+                    <?php endif; // end check ?>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i> Белки: <?php echo $protein_food; ?></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i> Жиры: <?php echo $fat_food;?></li>
                     <li><i class="fa fa-angle-right" aria-hidden="true"></i> Калории: <?php echo $calorie_food;?></li>
@@ -55,7 +60,13 @@
                 <div id="content">
                     <div id="tab1">
                         <h2>Описание блюды</h2>
-                        <img src="<?php the_post_thumbnail_url('large')?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); ?>" title="<?php the_title();?>">
+                        <?php if(has_post_thumbnail()): // check has post thumbnail ?>
+                            <img src="<?php the_post_thumbnail_url('large')?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); ?>" title="<?php the_title();?>">
+
+                        <?php else: ?>
+                            <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.jpg';?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); ?>" title="<?php the_title();?>">
+
+                        <?php endif; // end check?>
                         <p><?php the_content();?></p>
                         <i class="fa fa-coffee" aria-hidden="true"></i> Вьетнамская Кухня Вьет Хауз очень рад Вас приветствовать!
                     </div>

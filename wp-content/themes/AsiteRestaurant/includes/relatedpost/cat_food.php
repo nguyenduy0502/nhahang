@@ -31,6 +31,7 @@ $related_items = new WP_Query( $args );
     <h2>Другие Блюды</h2>
     <div class="otherfood-list">
         <?php if($related_items->have_posts()):while($related_items->have_posts()):$related_items->the_post();?>
+            <?php    $price_food = get_post_meta($post->ID, 'price_food', true); // get post meta ?>
         <div class="of-item">
            <?php if(has_post_thumbnail()): // check has post thumbnails ?>
                <div class="of-img">
@@ -40,13 +41,13 @@ $related_items = new WP_Query( $args );
                <div class="of-img">
                    <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>" title="<?php the_title();?>">
                </div>
-                <?php endif; // end check?>
+                <?php endif; // end check has post thumbnail?>
             <div class="of-text">
                 <a href="<?php the_permalink();?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
-                <p class="of-price"><?php echo get_price_food($post->ID);?></p><a href=""></a>
+                <a href="<?php the_permalink();?>" title="<?php the_title();?>"><p class="of-price"><?php echo (empty($price_food))? 'Безплатно': get_price_food($post->ID);?></p></a>
             </div>
         </div>
-        <?php endwhile; endif; ?>
+        <?php endwhile;/* end loop get post*/ endif; ?>
     </div>
 </div>
 <?php wp_reset_postdata();?>
