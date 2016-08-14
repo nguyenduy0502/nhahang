@@ -11,7 +11,7 @@
     $query->query($arr);
     if($query->have_posts()): while($query->have_posts()):$query->the_post();
     $post_id=$post->ID;
-    $arr_tab3 = get_post_meta($post_id, 'choose_cat_53'); // Горячие Закуски
+    $arr_tab3 = get_post_meta($post_id, 'choose_cat_54'); // Основные Блюда
     $arr_tab1 = get_post_meta($post_id, 'choose_cat_52'); // Суп
     $arr_tab2 = get_post_meta($post_id, 'choose_cat_50'); // Салат
     $arr_tab4 = get_post_meta($post_id, 'choose_cat_57'); //Напитки
