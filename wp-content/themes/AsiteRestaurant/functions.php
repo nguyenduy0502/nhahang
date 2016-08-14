@@ -129,7 +129,7 @@ function add_header_stylesheet() {
 	wp_enqueue_style('main');
 	wp_enqueue_style('media-theme');
 	wp_enqueue_style('owl.carousel');
-	wp_enqueue_style('jquery.fullPage');
+	//wp_enqueue_style('jquery.fullPage');
 }
 /***********************************************************
  * ADD IN FOOTER JS SHEET
@@ -185,13 +185,15 @@ function add_header_js() {
 	wp_register_script('jquery.easings.min',TEMPLATE_FOLDER.'/js/jquery.easings.min.js');
 	wp_register_script('scrolloverflow.min',TEMPLATE_FOLDER.'/js/scrolloverflow.min.js');
 	wp_register_script('jquery.fullPage.min',TEMPLATE_FOLDER.'/js/jquery.fullPage.min.js');
+	wp_register_script('jquery.scrollify',TEMPLATE_FOLDER.'/js/jquery.scrollify.js');
 
 	wp_enqueue_script('maps-load');
 	wp_enqueue_script('maps');
 	wp_enqueue_script( 'jquery-2.2.3', TEMPLATE_LIBS.'/jquery/jquery-2.2.3.min.js');
-	wp_enqueue_script('jquery.easings.min');
-	wp_enqueue_script('scrolloverflow.min');
-	wp_enqueue_script('jquery.fullPage.min');
+	//wp_enqueue_script('jquery.easings.min');
+	//wp_enqueue_script('scrolloverflow.min');
+	//wp_enqueue_script('jquery.fullPage.min');
+	wp_enqueue_script('jquery.scrollify');
 }
 
 
