@@ -89,6 +89,7 @@
 	.nav-list>li:not(.has-logo)>a {
 		background-color: rgba(17,91,54,.7);
 		text-align: center;
+		padding: 20px 1rem;
 	}
 	.toggle-menu{
 		display: block;
@@ -103,7 +104,7 @@
 		border-radius: .25em;
 	
 	}
-	.toggle-menu:hover{background-color: rgb(17,91,54);}
+	.toggle-menu:hover{border-radius: 0.25em 0.25em 0 0;}
 
 	.nav-list{
 		display: block;

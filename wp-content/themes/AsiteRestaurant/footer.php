@@ -95,7 +95,7 @@
 <script>
 	$.scrollify({
 		section : ".section",
-		interstitialSection : ".footer",
+		interstitialSection : "",
 		// easing: "easeOutExpo",
 		// scrollSpeed: 1100,
 		// offset : 0,

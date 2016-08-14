@@ -189,9 +189,9 @@ function add_header_js() {
 	wp_enqueue_script('maps-load');
 	wp_enqueue_script('maps');
 	wp_enqueue_script( 'jquery-2.2.3', TEMPLATE_LIBS.'/jquery/jquery-2.2.3.min.js');
-	wp_enqueue_script('jquery.easings.min');
-	wp_enqueue_script('scrolloverflow.min');
-	wp_enqueue_script('jquery.fullPage.min');
+	// wp_enqueue_script('jquery.easings.min');
+	// wp_enqueue_script('scrolloverflow.min');
+	// wp_enqueue_script('jquery.fullPage.min');
 }
 
 
