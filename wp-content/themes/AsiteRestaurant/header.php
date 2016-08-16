@@ -96,6 +96,9 @@
 
     <?php wp_head(); ?>
         <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.scrollify.js"></script>
+        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/svgslidercd/jquery.mobile.custom.min.js"></script>
+        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/svgslidercd/snap.svg-min.js"></script>
+        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/svgslidercd/svgslider.js"></script>
 </head>
 
 <body>
