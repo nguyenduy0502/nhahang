@@ -131,6 +131,43 @@
 	.toggle-menu:hover{border-radius: 0.25em 0.25em 0 0;}
 	.food-menu table td:nth-of-type(3){display: none;}
 	.food-menu th, .food-menu td{padding: 10px 10px;}
+
+	.comment-author img{
+		width: 24px;
+		height: 24px;
+		float: left;
+		margin-right: 8px;
+	}
+	cite.fn{
+		font-size: 16px;
+		margin-right: 4px;
+		line-height: 24px;
+		float:left;
+		font-style: normal;
+		font-weight: bold;
+	}
+	.comment-meta a{
+		font-size: 12px;
+		line-height: 27px;
+	}
+	.comment-body{
+		margin: 20px 0;
+	}
+	.comment-body p{
+		margin: 2px 0 0 0;
+	}
+	.comment>ul.children{
+		padding-left: 50px;
+	}
+	ul.children ul.children{
+		padding-left: 50px;
+	}
+	.says{
+		display: none;
+	}
+	p.price{
+		font-size: 20px;
+	}
 }
 
 
@@ -177,8 +214,12 @@
 	#fp-nav.right {
 	right: 1px;
 }
-
-
+	.sf-images{
+		width: 37%;
+	}
+	.sf-info{
+		width: 63%;
+	}
 }
 
 /* Custom, iPhone Retina */
