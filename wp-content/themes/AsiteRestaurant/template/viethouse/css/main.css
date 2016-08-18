@@ -1530,7 +1530,9 @@ p.of-price{
 .spc-content p, .spc-content table tbody{
 	margin: 16px 0px;
 }
-
+ol ol, ul ol, ol ul, ul ul{
+	padding-left: 20px;
+}
 .spc-content-img{
 	text-align: center;
 	padding: 20px 0;
