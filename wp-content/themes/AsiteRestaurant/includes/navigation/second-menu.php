@@ -7,9 +7,10 @@
  */
 ?>
 <div class="top_line">
-</div>
 <a href="#" class="toggle-menu has-logo"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
                                      alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>"></a>
+</div>
+
 <!--<a href="#" class="toggle-menu">&#9776;</a>-->
 <?php
 $args_menu=array(

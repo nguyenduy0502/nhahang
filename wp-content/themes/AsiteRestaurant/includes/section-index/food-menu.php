@@ -199,7 +199,11 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="morebutton">
+                    <a href="#">Ещё блюды</a>
+                </div>
             </div>
+
         </div>
     </div>
 </div>

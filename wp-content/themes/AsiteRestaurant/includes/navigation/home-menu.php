@@ -10,23 +10,17 @@
 <a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
                                      alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>"></a>
 </div>
-<div class="mmt">
-    
-
-</div>
 <!--<a href="#" class="toggle-menu">&#9776;</a>-->
 <nav>
     <ul class="nav-list nav-open" id="nav">
         <!-- <li data-menuanchor="about-us" class="active"><a href="#about-us">О нас</a></li>-->
         <li><a href="#about-us">О нас</a></li>
         <li class="has-submenu"><a href="#news">Новости</a>
-            <!--<ul>
+            <ul>
                 <li><a href="#">Web Designing</a></li>
                 <li><a href="#">Web Development</a></li>
                 <li><a href="#">UI Designing</a></li>
-                <li><a href="#">Back End Development</a></li>
-                <li><a href="#">Front End Development</a></li>
-            </ul>-->
+            </ul>
         </li>
         <!-- <li data-menuanchor="new-food"><a href="#new-food">Новые блюды</a></li> -->
         <li><a href="#new-food">Новые блюды</a></li>
@@ -40,13 +34,10 @@
             </a></li>
         <!-- <li class="has-submenu" data-menuanchor="food-menu"><a href="#food-menu">Меню</a> -->
         <li class="has-submenu"><a href="#food-menu">Меню</a>
-            <!--<ul>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">Web Design</a></li>
-                <li><a href="#">UI Designing</a></li>
+            <ul>
                 <li><a href="#">Back End Development</a></li>
                 <li><a href="#">Front End Development</a></li>
-            </ul>-->
+            </ul>
         </li>
         <!-- <li data-menuanchor="booking"><a href="#booking">Бронирование</a></li> -->
         <li><a href="#booking">Бронирование</a></li>
