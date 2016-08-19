@@ -15,15 +15,17 @@
     <ul class="nav-list nav-open" id="nav">
         <!-- <li data-menuanchor="about-us" class="active"><a href="#about-us">О нас</a></li>-->
         <li><a href="#about-us">О нас</a></li>
-        <li class="has-submenu"><a href="#news">Новости</a>
+        <li class="has-submenu"><a href="#news">Новости</a></li>
+        <!-- <li data-menuanchor="new-food"><a href="#new-food">Новые блюды</a></li> -->
+        <li><a href="#new-food">Новые блюды</a>
             <ul>
-                <li><a href="#">Web Designing</a></li>
-                <li><a href="#">Web Development</a></li>
-                <li><a href="#">UI Designing</a></li>
+                <?php $terms = get_terms('cuisine'); ?>
+                <?php foreach ($terms as $term) {
+                    echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
+                }?>
+
             </ul>
         </li>
-        <!-- <li data-menuanchor="new-food"><a href="#new-food">Новые блюды</a></li> -->
-        <li><a href="#new-food">Новые блюды</a></li>
 
 
         <li class="has-logo"><a href="<? echo home_url();?>" title="<?php bloginfo('description')?>">
@@ -35,8 +37,7 @@
         <!-- <li class="has-submenu" data-menuanchor="food-menu"><a href="#food-menu">Меню</a> -->
         <li class="has-submenu"><a href="#food-menu">Меню</a>
             <ul>
-                <li><a href="#">Back End Development</a></li>
-                <li><a href="#">Front End Development</a></li>
+                <li><a href="<?php echo home_url().'/menu/вьетланч/'?>">Вьет Ланч</a></li>
             </ul>
         </li>
         <!-- <li data-menuanchor="booking"><a href="#booking">Бронирование</a></li> -->

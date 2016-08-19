@@ -21,8 +21,8 @@
 								<path id="cd-changing-path-1" d="M1400,800H0V521V0h1399c0.6,0,1,0.4,1,1V800z"/>
 							</clipPath>
 						</defs>
-						
-						<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="/nhahang/wp-content/themes/AsiteRestaurant/img/img-1.jpg"></image>
+
+						<image height='800px' width="1400px" clip-path="url(#cd-image-1)" xlink:href="<?php echo TEMPLATE_FOLDER.'/img/bg1.jpg'?>"></image>
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
@@ -37,7 +37,7 @@
 							</clipPath>
 						</defs>
 						
-						<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="/nhahang/wp-content/themes/AsiteRestaurant/img/img-2.jpg"></image>
+						<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="<?php echo TEMPLATE_FOLDER.'/img/bg2.jpg'?>"></image>
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
@@ -52,7 +52,7 @@
 							</clipPath>
 						</defs>
 						
-						<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="/nhahang/wp-content/themes/AsiteRestaurant/img/img-3.jpg"></image>
+						<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="<?php echo TEMPLATE_FOLDER.'/img/bg3.jpg'?>"></image>
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
@@ -67,7 +67,7 @@
 							</clipPath>
 						</defs>
 						
-						<image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="/nhahang/wp-content/themes/AsiteRestaurant/img/img-4.jpg"></image>
+						<image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="<?php echo TEMPLATE_FOLDER.'/img/bg4.jpg'?>"></image>
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>

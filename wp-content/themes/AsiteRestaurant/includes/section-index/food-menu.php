@@ -15,6 +15,7 @@
     $arr_tab1 = get_post_meta($post_id, 'choose_cat_52'); // Суп
     $arr_tab2 = get_post_meta($post_id, 'choose_cat_50'); // Салат
     $arr_tab4 = get_post_meta($post_id, 'choose_cat_57'); //Напитки
+        $link_menu=get_permalink();
     endwhile; endif;
     wp_reset_query();
     ?>
@@ -200,7 +201,7 @@
                     </table>
                 </div>
                 <div class="morebutton">
-                    <a href="#">Ещё блюды</a>
+                    <a href="<?php echo $link_menu;?>">Ещё блюды</a>
                 </div>
             </div>
 

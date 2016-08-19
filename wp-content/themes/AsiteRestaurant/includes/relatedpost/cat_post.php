@@ -36,6 +36,7 @@ if ($categories): $category_ids = array();
                                title="<?php the_title(); ?>"><?php the_title('<p>', '</p>'); ?></a>
                         </div>
                     </div>
+                    <?php wp_reset_query();?>
                 <?php endwhile; ?>
             </div>
         <?php endif; endif; endif; ?>

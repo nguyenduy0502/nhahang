@@ -79,10 +79,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"/>
 <!--     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-   
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
-
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -93,12 +91,7 @@
         ga('require', 'displayfeatures');
         ga('send', 'pageview');
     </script>
-
     <?php wp_head(); ?>
-        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.scrollify.js"></script>
-        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/svgslidercd/jquery.mobile.custom.min.js"></script>
-        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/svgslidercd/snap.svg-min.js"></script>
-        <script type="text/javascript" src="/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/svgslidercd/svgslider.js"></script>
 </head>
 
 <body>
