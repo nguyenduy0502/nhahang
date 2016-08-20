@@ -17,15 +17,7 @@
         <li><a href="#about-us">О нас</a></li>
         <li class="has-submenu"><a href="#news">Новости</a></li>
         <!-- <li data-menuanchor="new-food"><a href="#new-food">Новые блюды</a></li> -->
-        <li><a href="#new-food">Новые блюды</a>
-            <ul>
-                <?php $terms = get_terms('cuisine'); ?>
-                <?php foreach ($terms as $term) {
-                    echo '<li><a href="'.get_term_link($term).'">'.$term->name.'</a></li>';
-                }?>
-
-            </ul>
-        </li>
+        <li><a href="#new-food">Новые блюды</a></li>
 
 
         <li class="has-logo"><a href="<? echo home_url();?>" title="<?php bloginfo('description')?>">
@@ -35,11 +27,7 @@
                 </h2>
             </a></li>
         <!-- <li class="has-submenu" data-menuanchor="food-menu"><a href="#food-menu">Меню</a> -->
-        <li class="has-submenu"><a href="#food-menu">Меню</a>
-            <ul>
-                <li><a href="<?php echo home_url().'/menu/вьетланч/'?>">Вьет Ланч</a></li>
-            </ul>
-        </li>
+        <li class="has-submenu"><a href="#food-menu">Меню</a></li>
         <!-- <li data-menuanchor="booking"><a href="#booking">Бронирование</a></li> -->
         <li><a href="#booking">Бронирование</a></li>
         <!-- <li data-menuanchor="contact-us"><a href="#contact-us">Контакты</a></li> -->
