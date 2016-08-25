@@ -6,3 +6,6 @@ wp-content/plugins/wordpress-importer/tmp-wordpress-importer-readme.pot
 wp-content/plugins/wordpress-importer/readme.txt
 wp-content/plugins/wordpress-importer/parsers.php
 wp-content/plugins/wordpress-importer/wordpress-importer.php
+*.mo
+wp-content/languages/admin-network-ru_RU.po
+*.po

@@ -200,9 +200,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="morebutton">
-                    <a href="<?php echo $link_menu;?>">Ещё блюды</a>
-                </div>
+                    <a href="<?php echo $link_menu;?>" class="alignright butt">Ещё блюды ></a>
             </div>
 
         </div>
