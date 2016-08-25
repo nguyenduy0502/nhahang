@@ -6,7 +6,7 @@
  * Description: This is file second menu
  */
 ?>
-<div class="top_line">
+<div class="top_line2">
 <a href="#" class="toggle-menu has-logo"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
                                      alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>"></a>
 </div>

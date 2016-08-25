@@ -20,7 +20,7 @@
 <!--end booking-->
 
     <!--news-->
-<?php //get_template_part('includes/section-index/news'); ?>
+<?php get_template_part('includes/section-index/news'); ?>
     <!--end news-->
 
 <!--contact us-->
