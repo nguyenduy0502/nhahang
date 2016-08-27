@@ -36,7 +36,7 @@
 							</clipPath>
 						</defs>
 
-						<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="http://viethousecafe.ru/wp-content/uploads/2016/08/bg1-1.jpg"></image>
+						<image height='800px' width="1400px" clip-path="url(#cd-image-2)" xlink:href="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg"></image>
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
@@ -51,22 +51,7 @@
 							</clipPath>
 						</defs>
 
-						<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="http://viethousecafe.ru/wp-content/uploads/2016/08/bg3-1.jpg"></image>
-					</svg>
-				</div> <!-- .cd-svg-wrapper -->
-			</li>
-
-			<li>
-				<div class="cd-svg-wrapper">
-					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 800">
-						<title>Aimated SVG</title>
-						<defs>
-							<clipPath id="cd-image-4">
-								<path id="cd-changing-path-4" d="M1400,800H0V521V0h1399c0.6,0,1,0.4,1,1V800z"/>
-							</clipPath>
-						</defs>
-
-						<image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="http://viethousecafe.ru/wp-content/uploads/2016/08/bg4-1.jpg"></image>
+						<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="http://viethousecafe.ru/wp-content/uploads/2016/08/2-slider.jpg"></image>
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
