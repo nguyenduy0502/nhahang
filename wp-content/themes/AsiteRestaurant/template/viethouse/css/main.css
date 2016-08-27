@@ -948,7 +948,7 @@ background: #fff;
 /*	background-color: rgb(17,91,54);*/
 }
 .food-menu{
-	/*max-height: 100vh;*/
+	max-height: 100vh;
 	overflow: hidden;
 	margin-top: 18px;
 }

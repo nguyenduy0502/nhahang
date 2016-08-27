@@ -51,7 +51,6 @@
 							</clipPath>
 						</defs>
 
-<<<<<<< HEAD
 			<li>
 				<div class="cd-svg-wrapper">
 					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
@@ -63,9 +62,6 @@
 						</defs>
 						
 						<image height='800px' width="1400px" clip-path="url(#cd-image-4)" xlink:href="<?php echo TEMPLATE_FOLDER.'/img/bg4.jpg'?>"></image>
-=======
-						<image height='800px' width="1400px" clip-path="url(#cd-image-3)" xlink:href="http://viethousecafe.ru/wp-content/uploads/2016/08/2-slider.jpg"></image>
->>>>>>> origin/master
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
