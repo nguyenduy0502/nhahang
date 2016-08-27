@@ -11,10 +11,10 @@
 				<p>Мы всегда рады Вам</p>
 			</div>
 	<div class=" cd-slider-wrapper">
-		<ul class="cd-slider" data-step1="M1402,800h-2V525V0h1c0.6,0,1,0.4,1,1V800z" data-step2="M1400,800H739L427,523L760,0h639c0.6,0,1,0.4,1,1V800z" data-step3="M1400,800H0V521V0h1399c0.6,0,1,0.4,1,1V800z" data-step4="M-2,800h2V525V0h-1c-0.6,0-1,0.4-1,1V800z" data-step5="M0,800h661l312-277L640,0L1,0C0.4,0,0,0.4,0,1L0,800z" data-step6="M0,800h1400V521V0L1,0C0.4,0,0,0.4,0,1L0,800z">
+		<ul class="cd-slider" data-step1="M1402,550h-2V525V0h1c0.6,0,1,0.4,1,1V550z" data-step2="M1400,550H739L427,523L760,0h639c0.6,0,1,0.4,1,1V550z" data-step3="M1400,550H0V521V0h1399c0.6,0,1,0.4,1,1V550z" data-step4="M-2,550h2V525V0h-1c-0.6,0-1,0.4-1,1V550z" data-step5="M0,550h661l312-277L640,0L1,0C0.4,0,0,0.4,0,1L0,550z" data-step6="M0,550h1400V521V0L1,0C0.4,0,0,0.4,0,1L0,550z">
 			<li class="visible">
 				<div class="cd-svg-wrapper">
-					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 800">
+					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
 						<title>Aimated SVG</title>
 						<defs>
 							<clipPath id="cd-image-1">
@@ -29,7 +29,7 @@
 
 			<li>
 				<div class="cd-svg-wrapper">
-					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 800">
+					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
 						<title>Aimated SVG</title>
 						<defs>
 							<clipPath id="cd-image-2">
@@ -44,7 +44,7 @@
 
 			<li>
 				<div class="cd-svg-wrapper">
-					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 800">
+					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
 						<title>Aimated SVG</title>
 						<defs>
 							<clipPath id="cd-image-3">
@@ -59,7 +59,7 @@
 
 			<li>
 				<div class="cd-svg-wrapper">
-					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 800">
+					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
 						<title>Aimated SVG</title>
 						<defs>
 							<clipPath id="cd-image-4">

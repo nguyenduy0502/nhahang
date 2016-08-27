@@ -33,8 +33,10 @@
 					<div class="article-img alignright">
 						<a href="#"><img src="http://lorempixel.com/160/130/food" alt=""></a>
 					</div>
-					<div class="article-text align-text-right">
+					<div class="article-name">
 						<h3>Article 2</h3>
+					</div>
+					<div class="article-text align-text-right">
 						<h4>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Семь, моей! Послушавшись которое снова возвращайся эта то рыбного. Меня последний парадигматическая, но что города, которое коварный грустный на берегу, ее заманивший то там рекламных алфавит вершину всемогущая дороге живет lorem!
 						</h4>
 					</div>
@@ -47,8 +49,10 @@
 					<div class="article-img alignleft">
 						<a href="#"><img src="http://lorempixel.com/160/130/food" alt=""></a>
 					</div>
-					<div class="article-text align-text-left">
+					<div class="article-name">
 						<h3>Article 3</h3>
+					</div>
+					<div class="article-text align-text-left">
 						<h4>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Семь, моей! Послушавшись которое снова возвращайся эта то рыбного. Меня последний парадигматическая, но что города, которое коварный грустный на берегу, ее заманивший то там рекламных алфавит вершину всемогущая дороге живет lorem!
 						</h4>
 					</div>

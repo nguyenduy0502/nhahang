@@ -81,6 +81,11 @@ jQuery(document).ready(function(){
 			nextSlide = ( visibleSlide.next('li').length > 0 ) ? visibleSlide.next('li') : slider.find('li').eq(0);
 		updateSlide(visibleSlide, nextSlide, 'next', sliderControls, pathArray);
 	}
+	//autoplay 
+		setInterval(function() {
+			$('.next-slide').trigger('click');
+			}, 6000);
+
 	function prevSlide(slider, sliderControls, pathArray ) {
 		var visibleSlide = retrieveVisibleSlide(slider),
 				prevSlide = ( visibleSlide.prev('li').length > 0 ) ? visibleSlide.prev('li') : slider.find('li').last();

@@ -1,6 +1,6 @@
 <!--footer-->
 
-<div class="footer section fp-auto-height" id="section6">
+<div class="section footer" id="section6">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-4 col-xs-6">

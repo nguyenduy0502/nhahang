@@ -187,7 +187,7 @@ ul li a { text-decoration: none; }
 	border-left: 15px solid rgb(17,91,54);
 	position: absolute; right: -15px; top: 0;
 }
-button, .button {
+/*button, .button {
 	padding: 5px 10px;
 	text-align: center;
 	cursor: pointer;
@@ -206,8 +206,8 @@ button:active, .button:active {
 	background-color: #eee;
 	box-shadow: 0 3px #666;
 	transform: translateY(3px);
-}
-.butt{
+}*/
+.butt, button,.button{
 	padding: 5px 20px;
 	color: rgb( 17,91,54);
 	font-weight: bold;
@@ -217,7 +217,13 @@ button:active, .button:active {
 	background-color: #fff;
 	border: 2px solid rgb(17,91,54);
 	display: inline-block;
+	transition: 0.1s;
 }
+.butt:hover,button:hover,.button:hover,.butt:active,button:active, .button:active {
+	color:#fff;
+	background-color: rgb(17,91,54);
+}
+ .butt:focus,button:focus, .button:focus {outline:0;} 
 /* 2.5. TAB TABLE
 --------------------------------------------------*/
 
@@ -753,9 +759,11 @@ ul.children ul.children{
 	text-align: right;
 }
 .article-text{
-	height: 70%;
+	height: 35%;
 	padding: 1% 0;
 	overflow: hidden;
+}
+.article-text h4{
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -940,8 +948,7 @@ background: #fff;
 /*	background-color: rgb(17,91,54);*/
 }
 .food-menu{
-	max-height: 100vh;
-	/*max-height: */
+	/*max-height: 100vh;*/
 	overflow: hidden;
 	margin-top: 18px;
 }
@@ -981,18 +988,29 @@ td .food-text{
 	background-image:url(../img/bg1.jpg);
 	background-size:cover;
 }
-.booking h1{
+/*.booking h1{
 	color: #fff;
-}
-.booking .section-title h2{
+}*/
+/*.booking .section-title h2{
 	color: #5fcd91;
-}
+}*/
 .booking-info{
 	width: 572px;
+	border: 4px dashed rgb(17,91,54);
+	box-sizing: content-box;
+	padding: 10px;
+}
+.booking-info .section-title{
+	background-color: #fff;
+}
+.rtb-booking-form{
+	/*border: 4px dashed rgb(17,91,54);*/
 }
 .rtb-booking-form form{
 	padding: 10px 20px;
-	background-color: rgba(00,00,00,.87);
+	/*background-color: rgba(00,00,00,.87);*/
+	background-color: #fff;
+
 }
 .rtb-booking-form fieldset.reservation,
 .rtb-booking-form fieldset.contact{
@@ -1004,31 +1022,54 @@ td .food-text{
 .rtb-booking-form fieldset.reservation label,
 .rtb-booking-form fieldset.contact legend,
 .rtb-booking-form fieldset.contact label{
-	color:#fff;
+	color:#444;
 }
 
 /* 3.6. CONTACT-US SECTION
 -------------------------------------------------*/
-.contact-us h1{
+
+.gallery-item{
+	margin: 10px 0;
+	overflow: hidden;
+}
+.gallery-item img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/*.contact-us h1{
 	color: #fff;
 }
 .contact-us .section-title h2{
 	color: #5fcd91;
+}*/
+.contact-us-background{
+	background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+	background-size: cover;
+	display: block;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	min-height: 100vh;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 0;
 }
-
 .contact-us-small{
-	width: 780px;
-	background-color: rgba(23,21,21,.7);
+	/*width: 780px;*/
+	/*background-color: rgba(23,21,21,.7);*/
+	background-color: #fff;
 	overflow: hidden;
 	padding: 10px;
-	box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;
+	/*box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;*/
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	margin: 0 auto;
 }
-.contact-us-form{
+/*.contact-us-form{
 	padding: 5px 40px;
 	color: #fff;
-}
+}*/
 textarea,
 input{
 	width: 100%;
@@ -1050,6 +1091,8 @@ input{
 	height: 350px;
 	overflow: hidden;
 	margin:20px auto;
+	padding: 10px;
+	border: 4px dashed rgb(17,91,54);
 }
 .google-map img{
 	width: 100%;
@@ -1206,7 +1249,7 @@ form #search {
 
 /* UL Layer 1 Rules */
 #nestedlist {
-  font-size: 20px;
+  font-size: 16px;
   font-weight:bold;
 }
 
