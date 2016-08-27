@@ -1,22 +1,86 @@
 <!-- <div class="contact-us section" id="section5" data-anchor="contact-us"> -->
 <div class="contact-us section" id="contact-us">
+    <div class="gallery col-md-7">
+<!--             <div class="gallery-item col-md-4">
+                <img src="http://www.placehold.it/300x200" alt="">
+            </div> -->
+    <!-- colored -->
     <div class="contact-us-background"></div>
-    <div class="contact-us-content">
-        <div class="gallery col-md-7">
-            <div class="gallery-item col-md-6">
-                <img src="http://www.placehold.it/300x200" alt="">
-            </div>
-            <div class="gallery-item col-md-6">
-                <img src="http://www.placehold.it/300x200" alt="">
-            </div>
-            <div class="gallery-item col-md-6">
-                <img src="http://www.placehold.it/300x200" alt="">
-            </div>
-            <div class="gallery-item col-md-6">
-                <img src="http://www.placehold.it/300x200" alt="">
-            </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
+  <div class="col-md-4">
+    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
+        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
+        <div class="info">
+          <h3>Heading here</h3>
+          <p>Description goes here</p>
+        </div></a></div>
+  </div>
         </div>
-        <div class="contact-us-small col-md-5">
+        <div class="contact-us-info col-md-5">
+            <div class="contact-us-content">
                     <div class="section-title">
                         <h1>Свяжитесь</h1>
                         <h2>С нами</h2>
@@ -53,7 +117,7 @@
                     </script>
                 </div>
             </div>
+            </div>
         </div>
         <a href="#" class="scrollup"> button</a>
-    </div>
 </div>

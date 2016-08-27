@@ -101,13 +101,10 @@ h1{
 h2, h3, h4, h5, h6{ text-align: center; }
 /*.section-title{background-color: rgb(17,91,54); }*/
 .section:not(.footer){
-/*	display: flex;
-	justify-content: center;
-	align-items: center;*/
 	min-height: 100vh;
 
 }
-.section:not(.new-food):not(.header):not(.cd-slider-wrapper){
+.section:not(.header):not(.new-food):not(.cd-slider-wrapper):not(.contact-us){
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -213,11 +210,11 @@ button:active, .button:active {
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 12px;
-	margin: 1% 0!important;
+	margin: 0.5% 0!important;
 	background-color: #fff;
 	border: 2px solid rgb(17,91,54);
 	display: inline-block;
-	transition: 0.1s;
+	transition: 0.25s;
 }
 .butt:hover,button:hover,.button:hover,.butt:active,button:active, .button:active {
 	color:#fff;
@@ -967,15 +964,22 @@ background: #fff;
 	color: #000;
 }
 .food{
-	width: 180px;
-	height: 130px;
+	width: 95px;
+	height: 95px;
 	overflow: hidden;
 	border: 3px solid #ccc;
+	transition: .5s;
 }
 .food img{
 	width: 100%;
 	object-fit: cover;
-	height: 180px;
+	height: 95px;
+}
+.food:hover{
+    position:relative;
+    width:180px;
+    display:block;
+    z-index:999;
 }
 td .food-text{
 	width: 200px;
@@ -995,10 +999,11 @@ td .food-text{
 	color: #5fcd91;
 }*/
 .booking-info{
-	width: 572px;
+	width: 600px;
 	border: 4px dashed rgb(17,91,54);
-	box-sizing: content-box;
+	box-sizing: border-box;
 	padding: 10px;
+	background-color: #fff;
 }
 .booking-info .section-title{
 	background-color: #fff;
@@ -1027,12 +1032,39 @@ td .food-text{
 
 /* 3.6. CONTACT-US SECTION
 -------------------------------------------------*/
-
-.gallery-item{
-	margin: 10px 0;
-	overflow: hidden;
+.gallery{
+	min-height: 100vh;
+	background: #444 url('https://www.omnihotels.com/-/media/images/hotels/homrst/restaurants/homrst-omni-homestead-resort-casino-restaurant.jpg');
+	background-blend-mode: darken;
 }
-.gallery-item img{
+.ih-item{
+	width: 100%!important;
+	height: 30vh!important;
+	margin: 1.5vh 0;
+	overflow: hidden;
+	border: none!important;
+}
+.ih-item.square .img:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+.ih-item .info{
+	width: 100%!important;
+}
+
+.ih-item .img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.ih-item img{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -1044,27 +1076,26 @@ td .food-text{
 .contact-us .section-title h2{
 	color: #5fcd91;
 }*/
-.contact-us-background{
-	background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+/*.contact-us-background{
+	background-image: url('https://www.omnihotels.com/-/media/images/hotels/homrst/restaurants/homrst-omni-homestead-resort-casino-restaurant.jpg');
 	background-size: cover;
 	display: block;
-	filter: blur(5px);
-	-webkit-filter: blur(5px);
 	min-height: 100vh;
 	position: absolute;
 	left: 0;
 	right: 0;
 	z-index: 0;
-}
-.contact-us-small{
-	/*width: 780px;*/
-	/*background-color: rgba(23,21,21,.7);*/
+}*/
+.contact-us-info{
 	background-color: #fff;
 	overflow: hidden;
-	padding: 10px;
-	/*box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 6px, rgba(0, 0, 0, 0.227451) 0px 3px 6px;*/
+	padding: 0px;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 /*.contact-us-form{
 	padding: 5px 40px;
@@ -1087,11 +1118,11 @@ input{
 	font-weight: bold;
 }
 .google-map{
-	width: 350px;
-	height: 350px;
+	width: 270px;
+	height:270px;
 	overflow: hidden;
 	margin:20px auto;
-	padding: 10px;
+	padding: 5px;
 	border: 4px dashed rgb(17,91,54);
 }
 .google-map img{
@@ -1103,7 +1134,7 @@ input{
 }
 /*map*/
 #map-canvas{
-	height: 600px;
+	height: 280px;
 	width: 100%;
 }
 
