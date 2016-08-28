@@ -94,7 +94,21 @@
 			navigation: false,
 			pagination:true,
 			paginationNumbers:true,
-			navigationText: ["prev", "next"],
+			navigationText: ["prev", "next"]
+
+		});
+		(jQuery)(".owl-carousel3").owlCarousel({
+
+			items:1,
+			loop:true,
+			autoHeight:true,
+			autoplay:true,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			navigation: false,
+			pagination:true,
+			paginationNumbers:true,
+			navigationText: ["prev", "next"]
 
 		});
 	});
