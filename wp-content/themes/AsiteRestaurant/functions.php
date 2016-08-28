@@ -22,23 +22,22 @@ define('BACKEND_URL',THEME_URL.'/backend');
  *****************************************************************
  */
 
-require_once('AdditionalPlugins/CustomPostRestaurant/main.php'); // custom post food
-require_once('AdditionalPlugins/MenuRetaurant/main.php'); // custom page menu
-
+require_once dirname(__FILE__).'/AdditionalPlugins/CustomPostRestaurant/main.php';// custom post food
+require_once dirname(__FILE__).'/AdditionalPlugins/MenuRetaurant/main.php';// custom page menu
 
 /*******************************************************************
  * ADD CUSTOM BACKEND
  *****************************************************************
  */
-require_once('backend/login/login.php');
-require_once('backend/functions.php');
+require_once dirname(__FILE__).'/backend/login/login.php';
+require_once dirname(__FILE__).'/backend/functions.php';
 /*******************************************************************
  * ADD WIDGET
  *****************************************************************
  */
-require_once('widget/searchform-food.php');
-require_once('widget/categories-food.php');
-require_once('widget/new-food.php');
+require_once dirname(__FILE__).'/widget/searchform-food.php';
+require_once dirname(__FILE__).'/widget/categories-food.php';
+require_once dirname(__FILE__).'/widget/new-food.php';
 //require_once('includes/relatedpost/cat_food.php');
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS

@@ -14,7 +14,8 @@ function add_type_menu_style() {
 	wp_enqueue_style('info-food');
 	wp_enqueue_style('type-menu');
 }
-require_once('metabox/meta-box.php');
+require_once dirname( __FILE__ ) . '/core/init.php';
+require_once dirname(__FILE__).'/metabox/meta-box.php';
 /* ====================================================
 // Add Thumbnails in Manage Posts/Pages List
  ====================================================*/

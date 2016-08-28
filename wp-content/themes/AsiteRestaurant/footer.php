@@ -1,20 +1,35 @@
 <!--footer-->
-
+<?php global $asite_options;?>
 <div class="section footer" id="section6">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-4 col-xs-6">
 				<div class="social">
-					<a href="https://www.facebook.com/viethousemoscow"><i class="fa fa-facebook-square"></i></a>
-					<a href=""><i class="fa fa-youtube-square"></i></a>
-					<a href=""><i class="fa fa-google-plus-square"></i></a>
+					<?php // check social in theme option?>
+					<?php if(!empty($asite_options['option_fb']) && isset($asite_options['option_fb'])): ?>
+						<a href="<?php echo $asite_options['option_fb']?>"><i class="fa fa-facebook-square"></i></a>
+					<?php endif; ?>
+					<?php if(!empty($asite_options['option_youtube']) && isset($asite_options['option_youtube'])): ?>
+					<a href="<?php echo $asite_options['option_youtube']?>"><i class="fa fa-youtube-square"></i></a>
+					<?php endif; ?>
+					<?php if(!empty($asite_options['option_gg']) && isset($asite_options['option_gg'])): ?>
+					<a href="<?php echo $asite_options['option_gg']?>"><i class="fa fa-google-plus-square"></i></a>
+					<?php endif; ?>
+					<?php if(!empty($asite_options['option_vk']) && isset($asite_options['option_vk'])): ?>
+						<a href="<?php echo $asite_options['option_vk']?>"><i class="fa fa-vk"></i></a>
+					<?php endif;?>
+					<?php if(!empty($asite_options['option_insta']) && isset($asite_options['option_insta'])): ?>
+						<a href="<?php echo $asite_options['option_insta']?>"><i class="fa fa-instagram"></i></a>
+					<?php endif; ?>
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-4 col-xs-6">
 				<div class="credit">
-					<h6><?php bloginfo('description');?></h6>
-					<h6>Телефон: 8 (909) 352-10-58 или 8 (964) 628-99-13</h6>
-					<h6>ул. Покровка, 14/2, стр 01, Moscow</h6>
+					<?php if(!empty($asite_options['option_address']) && isset($asite_options['option_address'])): // check option_address in theme option?>
+					<h6><?php echo $asite_options['option_address'];?></h6>
+					<?php else: ?>
+					<h6>Вьетнамская Кухня Вьет Хауз Кафе Телефон: 8 (909) 352-10-58 или 8 (964) 628-99-13 ул. Покровка, 14/2, стр 01, Moscow</h6>
+					<?php endif; // end check option_address in theme option ?>
 				</div>
 			</div>
 		</div>

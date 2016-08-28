@@ -40,17 +40,6 @@
 					</svg>
 				</div> <!-- .cd-svg-wrapper -->
 			</li>
-
-			<li>
-				<div class="cd-svg-wrapper">
-					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
-						<title>Aimated SVG</title>
-						<defs>
-							<clipPath id="cd-image-3">
-								<path id="cd-changing-path-3" d="M1400,800H0V521V0h1399c0.6,0,1,0.4,1,1V800z"/>
-							</clipPath>
-						</defs>
-
 			<li>
 				<div class="cd-svg-wrapper">
 					<svg height='100%' width="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1400 550">
