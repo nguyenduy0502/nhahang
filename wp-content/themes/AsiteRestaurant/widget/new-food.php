@@ -75,26 +75,26 @@ class New_Food extends WP_Widget
         <div class=" owl-carousel">
             <?php if ($query->have_posts()):while ($query->have_posts()):$query->the_post(); ?>
                 <?php $ingredient_food = get_post_meta(get_the_ID(), 'ingredient_food', true); ?>
-                <div class="item">
-                    <div class="item-info">
-                        <div class="item-info-mid">
+                <div class="item-new-food">
+                    <div class="item-new-food-info">
+                        <div class="item-new-food-info-mid">
                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><p
-                                    class="it-name"><?php the_title() ?></p></a>
+                                    class="it-nf-name"><?php the_title() ?></p></a>
 
-                            <p class="it-price"><?php echo get_price_food(get_the_ID()); ?></p>
+                            <p class="it-nf-price"><?php echo get_price_food(get_the_ID()); ?></p>
 
-                            <p class="it-desc"><?php echo $ingredient_food;  ?></p>
+                            <p class="it-nf-desc"><?php echo $ingredient_food;  ?></p>
                         </div>
                     </div>
 
                     <?php if(has_post_thumbnail()):?>
-                        <div class="item-image">
+                        <div class="item-new-food-image">
                             <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php echo $ingredient_food;
                             echo " | ";
                             bloginfo('description'); ?>" title="<?php the_title(); ?>">
                         </div>
                     <?php else: ?>
-                        <div class="item-image">
+                        <div class="item-new-food-image">
                             <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo $ingredient_food;
                             echo " | ";
                             bloginfo('description'); ?>" title="<?php the_title(); ?>">

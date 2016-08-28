@@ -1,12 +1,12 @@
 <!-- <div class="contact-us section" id="section5" data-anchor="contact-us"> -->
 <div class="contact-us section" id="contact-us">
-    <div class="gallery col-md-7">
-<!--             <div class="gallery-item col-md-4">
-                <img src="http://www.placehold.it/300x200" alt="">
-            </div> -->
-    <!-- colored -->
+    <div class="gallery col-md-6">
+       <div class="section-title">
+           <h1>Что</h1>
+           <h2>О нас думают</h2>
+       </div>
     <div class="contact-us-background"></div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
         <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
         <div class="info">
@@ -14,7 +14,7 @@
           <p>Description goes here</p>
         </div></a></div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
         <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
         <div class="info">
@@ -22,7 +22,7 @@
           <p>Description goes here</p>
         </div></a></div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
         <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
         <div class="info">
@@ -30,7 +30,7 @@
           <p>Description goes here</p>
         </div></a></div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
         <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
         <div class="info">
@@ -38,48 +38,57 @@
           <p>Description goes here</p>
         </div></a></div>
   </div>
-  <div class="col-md-4">
-    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
-        <div class="info">
-          <h3>Heading here</h3>
-          <p>Description goes here</p>
-        </div></a></div>
-  </div>
-  <div class="col-md-4">
-    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
-        <div class="info">
-          <h3>Heading here</h3>
-          <p>Description goes here</p>
-        </div></a></div>
-  </div>
-  <div class="col-md-4">
-    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
-        <div class="info">
-          <h3>Heading here</h3>
-          <p>Description goes here</p>
-        </div></a></div>
-  </div>
-  <div class="col-md-4">
-    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
-        <div class="info">
-          <h3>Heading here</h3>
-          <p>Description goes here</p>
-        </div></a></div>
-  </div>
-  <div class="col-md-4">
-    <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-        <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="img" alt="img"></div>
-        <div class="info">
-          <h3>Heading here</h3>
-          <p>Description goes here</p>
-        </div></a></div>
-  </div>
+    <div class="col-md-12">
+        <div class="owl-carousel2 testimonial">
+            <div class="item-testm">
+                <div class="item-testm-content">
+                    <div class="item-testm-pers">
+                        <div class="item-testm-pers-img">
+                            <img src="http://static2.businessinsider.com/image/564e42f82491f92b008b6af2-480/david-beckham.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item-testm-text">
+                        <blockquote>
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Напоивший первую строчка назад проектах гор заглавных, ручеек несколько которой!<cite> - Владимир</cite>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+            <div class="item-testm">
+                <div class="item-testm-content">
+                    <div class="item-testm-pers">
+                        <div class="item-testm-pers-img">
+                            <img src="http://static2.businessinsider.com/image/564e42f82491f92b008b6af2-480/david-beckham.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item-testm-text">
+                        <blockquote>
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Напоивший первую строчка назад проектах гор заглавных, ручеек несколько которой!<cite> - Владимир</cite>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
+            <div class="item-testm">
+                <div class="item-testm-content">
+                    <div class="item-testm-pers">
+                        <div class="item-testm-pers-img">
+                            <img src="http://static2.businessinsider.com/image/564e42f82491f92b008b6af2-480/david-beckham.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item-testm-text">
+                        <blockquote>
+                        Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Напоивший первую строчка назад проектах гор заглавных, ручеек несколько которой!<cite> - Владимир</cite>
+                        </blockquote>
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="contact-us-info col-md-5">
+    </div>
+        </div>
+        <div class="contact-us-info col-md-6">
             <div class="contact-us-content">
                     <div class="section-title">
                         <h1>Свяжитесь</h1>

@@ -83,6 +83,20 @@
 			}
 
 		});
+		(jQuery)(".owl-carousel2").owlCarousel({
+
+			items:1,
+			loop:true,
+			autoHeight:true,
+			autoplay:true,
+			autoplayTimeout:4000,
+			autoplayHoverPause:true,
+			navigation: false,
+			pagination:true,
+			paginationNumbers:true,
+			navigationText: ["prev", "next"],
+
+		});
 	});
 </script>
 <script>
