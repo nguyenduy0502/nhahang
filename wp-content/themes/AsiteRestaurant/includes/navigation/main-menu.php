@@ -10,16 +10,14 @@
 		<p>Мы всегда рады Вам</p>
 	</div>
 	<div class="owl-carousel3 headslide">
+		<?php global $asite_options; ?>
+		<?php foreach($asite_options['option_slides'] as $slide):?>
 		<div class="item-headslide">
 			<div class="item-headslide-img">
-				<img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="">
+				<img src="<?php echo $slide['image']?>" alt="<?php echo $slide['description']?>">
 			</div>
 		</div>
-		<div class="item-headslide">
-			<div class="item-headslide-img">
-				<img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg" alt="">
-			</div>
-		</div>
+<?php endforeach; // end loop get image?>
 	</div>
 
 	<!-- .cd-slider-wrapper -->
