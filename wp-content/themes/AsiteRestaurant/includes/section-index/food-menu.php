@@ -12,18 +12,25 @@
     if ($query->have_posts()): while ($query->have_posts()):$query->the_post();
         $post_id = $post->ID;
 
-        $arr_tab1 = get_post_meta($post_id, 'choose_cat_52'); // Суп
+       /* //$arr_tab1 = get_post_meta($post_id, 'choose_cat_52',true); // Суп
+        (!empty(get_post_meta($post_id, 'choose_cat_52',true)))? $arr_tab1=get_post_meta($post_id, 'choose_cat_52',true):$arr_tab1=array(0502);
+        $arr_tab2=get_post_meta($post_id,'choose_cat_50',true);
+        $arr_tab3=get_post_meta($post_id,'choose_cat_54',true);
+        $arr_tab4=get_post_meta($post_id,'choose_cat_57',true);
+       */
 
-        (!empty(get_post_meta($post_id, 'choose_cat_50',true)))? $arr_salad=get_post_meta($post_id, 'choose_cat_50',true):$arr_salad=array(0502);// Салат
-        (!empty(get_post_meta($post_id, 'choose_cat_51',true)))? $arr_cold_food=get_post_meta($post_id, 'choose_cat_51',true):$arr_cold_food=array(0502); // Холодные Закуски
+        (!empty(get_post_meta($post_id, 'choose_cat_52',true)))? $arr_tab1=get_post_meta($post_id, 'choose_cat_52',true):$arr_tab1=array(145123);
+
+        (!empty(get_post_meta($post_id, 'choose_cat_50',true)))? $arr_salad=get_post_meta($post_id, 'choose_cat_50',true):$arr_salad=array(145123);// Салат
+        (!empty(get_post_meta($post_id, 'choose_cat_51',true)))? $arr_cold_food=get_post_meta($post_id, 'choose_cat_51',true):$arr_cold_food=array(145123); // Холодные Закуски
         $arr_tab2 = array_merge($arr_salad,$arr_cold_food);  // merge array Салат and Холодные Закуски
 
-        (!empty(get_post_meta($post_id, 'choose_cat_53',true)))? $arr_snack=get_post_meta($post_id, 'choose_cat_53',true):$arr_snack=array(0502);//Горячие Закуски
-        (!empty(get_post_meta($post_id, 'choose_cat_54',true)))? $arr_main_dishes=get_post_meta($post_id, 'choose_cat_54',true):$arr_main_dishes=array(0502);// Основные Блюда
+        (!empty(get_post_meta($post_id, 'choose_cat_53',true)))? $arr_snack=get_post_meta($post_id, 'choose_cat_53',true):$arr_snack=array(145123);//Горячие Закуски
+        (!empty(get_post_meta($post_id, 'choose_cat_54',true)))? $arr_main_dishes=get_post_meta($post_id, 'choose_cat_54',true):$arr_main_dishes=array(145123);// Основные Блюда
         $arr_tab3 = array_merge($arr_snack,$arr_main_dishes); // merge array Закуски and  Основные Блюда
 
-        (!empty(get_post_meta($post_id, 'choose_cat_57',true)))? $arr_drinks=get_post_meta($post_id, 'choose_cat_57',true):$arr_drinks=array(0502);//Напитки
-        (!empty(get_post_meta($post_id, 'choose_cat_12',true)))? $arr_dessert=get_post_meta($post_id, 'choose_cat_12',true):$arr_dessert=array(0502);//десерты
+        (!empty(get_post_meta($post_id, 'choose_cat_57',true)))? $arr_drinks=get_post_meta($post_id, 'choose_cat_57',true):$arr_drinks=array(145123);//Напитки
+        (!empty(get_post_meta($post_id, 'choose_cat_12',true)))? $arr_dessert=get_post_meta($post_id, 'choose_cat_12',true):$arr_dessert=array(145123);//десерты
         $arr_tab4 = array_merge($arr_drinks,$arr_dessert); // merge array десерты and Напитки
 
         $link_menu = get_permalink();
@@ -51,7 +58,7 @@
                         <tbody>
                         <?php
                         $args_tab1 = array(
-                            'post__in' => $arr_tab1[0],
+                            'post__in' => $arr_tab1,
                             'post_type' => 'food'
                         );
                         $query_tab1 = new WP_Query();
@@ -61,7 +68,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -83,7 +90,7 @@
                                 <!--<td class="food-text">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</td> -->
                             </tr>
                         <?php endwhile; endif; ?>
-                        <?php wp_reset_query(); ?>
+                        <?php wp_reset_query(); ?><?php wp_reset_postdata();?>
                         </tbody>
                     </table>
                 </div>
@@ -102,7 +109,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -125,7 +132,7 @@
 
                             </tr>
                         <?php endwhile; endif; ?>
-                        <?php wp_reset_query(); ?>
+                        <?php wp_reset_query(); ?><?php wp_reset_postdata();?>
                         </tbody>
                     </table>
                 </div>
@@ -144,7 +151,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -167,7 +174,7 @@
 
                             </tr>
                         <?php endwhile; endif; ?>
-                        <?php wp_reset_query(); ?>
+                        <?php wp_reset_query(); ?><?php wp_reset_postdata();?>
                         </tbody>
                     </table>
                 </div>
@@ -186,7 +193,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -209,7 +216,7 @@
 
                             </tr>
                         <?php endwhile; endif; ?>
-                        <?php wp_reset_query(); ?>
+                        <?php wp_reset_query(); ?><?php wp_reset_postdata();?>
                         </tbody>
                     </table>
                 </div>

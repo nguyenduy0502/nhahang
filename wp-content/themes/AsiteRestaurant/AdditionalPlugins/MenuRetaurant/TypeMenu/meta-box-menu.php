@@ -38,39 +38,39 @@ function form_menu_output($post)
     wp_nonce_field('save_choose_cat_12_nonce', 'info_choose_cat_12_nonce');
     if (empty($choose_cat_53[0])) {
         // set default data for array
-        $choose_cat_53[0] = array(0502);
+        $choose_cat_53[0] = array(145123);
     }
     if (empty($choose_cat_55[0])) {
         // set default data for array
-        $choose_cat_55[0] = array(0502);
+        $choose_cat_55[0] = array(145123);
     }
     if (empty($choose_cat_50[0])) {
         // set default data for array
-        $choose_cat_50[0] = array(0502);
+        $choose_cat_50[0] = array(145123);
     }
     if (empty($choose_cat_52[0])) {
         // set default data for array
-        $choose_cat_52[0] = array(0502);
+        $choose_cat_52[0] = array(145123);
     }
     if (empty($choose_cat_51[0])) {
         // set default data for array
-        $choose_cat_51[0] = array(0502);
+        $choose_cat_51[0] = array(145123);
     }
     if (empty($choose_cat_54[0])) {
         // set default data for array
-        $choose_cat_54[0] = array(0502);
+        $choose_cat_54[0] = array(145123);
     }
     if (empty($choose_cat_56[0])) {
         // set default data for array
-        $choose_cat_56[0] = array(0502);
+        $choose_cat_56[0] = array(145123);
     }
     if (empty($choose_cat_57[0])) {
         // set default data for array
-        $choose_cat_57[0] = array(0502);
+        $choose_cat_57[0] = array(145123);
     }
     if (empty($choose_cat_12[0])) {
         // set default data for array
-        $choose_cat_12[0] = array(0502);
+        $choose_cat_12[0] = array(145123);
     }
     ?>
     <?php $args_cats = array('taxonomy' => 'cuisine'); // get category cuisine
@@ -428,14 +428,18 @@ function save_form_menu_output($post_id)
             update_post_meta($post_id, 'choose_cat_53', $custom);
         } else {
             add_post_meta($post_id, 'choose_cat_53', $custom);
+            //$old_meta = array(0502);
 
         }
 
 
+    } else {
+        $custom = $_POST['choose_cat_53_array'];
+        delete_post_meta($post_id, 'choose_cat_53',$custom);
     }
 
     if (isset($_POST['choose_cat_55_array']) && $_POST['choose_cat_55_array'] !== "") {
-        $custom = $_POST['choose_cat_53_array'];
+        $custom = $_POST['choose_cat_55_array'];
         $old_meta = get_post_meta($post_id, 'choose_cat_55', true);
         // Update post meta
         if (!empty($old_meta)) {
@@ -446,6 +450,9 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_55_array'];
+        delete_post_meta($post_id, 'choose_cat_55',$custom);
     }
     if (isset($_POST['choose_cat_50_array']) && $_POST['choose_cat_50_array'] !== "") {
         $custom = $_POST['choose_cat_50_array'];
@@ -459,6 +466,9 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_50_array'];
+        delete_post_meta($post_id, 'choose_cat_50',$custom);
     }
 
     if (isset($_POST['choose_cat_52_array']) && $_POST['choose_cat_52_array'] !== "") {
@@ -473,7 +483,11 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_52_array'];
+        delete_post_meta($post_id, 'choose_cat_52',$custom);
     }
+
     if (isset($_POST['choose_cat_51_array']) && $_POST['choose_cat_51_array'] !== "") {
         $custom = $_POST['choose_cat_51_array'];
         $old_meta = get_post_meta($post_id, 'choose_cat_51', true);
@@ -486,7 +500,11 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_51_array'];
+        delete_post_meta($post_id, 'choose_cat_51',$custom);
     }
+
     if (isset($_POST['choose_cat_54_array']) && $_POST['choose_cat_54_array'] !== "") {
         $custom = $_POST['choose_cat_54_array'];
         $old_meta = get_post_meta($post_id, 'choose_cat_54', true);
@@ -499,7 +517,11 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_54_array'];
+        delete_post_meta($post_id, 'choose_cat_54',$custom);
     }
+
     if (isset($_POST['choose_cat_56_array']) && $_POST['choose_cat_56_array'] !== "") {
         $custom = $_POST['choose_cat_56_array'];
         $old_meta = get_post_meta($post_id, 'choose_cat_56', true);
@@ -512,7 +534,11 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_56_array'];
+        delete_post_meta($post_id, 'choose_cat_56',$custom);
     }
+
     if (isset($_POST['choose_cat_57_array']) && $_POST['choose_cat_57_array'] !== "") {
         $custom = $_POST['choose_cat_57_array'];
         $old_meta = get_post_meta($post_id, 'choose_cat_57', true);
@@ -525,7 +551,11 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_57_array'];
+        delete_post_meta($post_id, 'choose_cat_57',$custom);
     }
+
     if (isset($_POST['choose_cat_12_array']) && $_POST['choose_cat_12_array'] !== "") {
         $custom = $_POST['choose_cat_12_array'];
         $old_meta = get_post_meta($post_id, 'choose_cat_12', true);
@@ -538,7 +568,11 @@ function save_form_menu_output($post_id)
         }
 
 
+    }else {
+        $custom = $_POST['choose_cat_12_array'];
+        delete_post_meta($post_id, 'choose_cat_12',$custom);
     }
+
     // save data day_start
     if (!wp_verify_nonce($_POST['info_day_start_nonce'], 'save_day_start_nonce')) {
         return;
