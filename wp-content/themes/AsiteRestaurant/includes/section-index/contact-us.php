@@ -33,50 +33,30 @@
                 <?php endforeach; ?>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-                    <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg"
-                                          alt="img" alt="img"></div>
-                    <div class="info">
-                        <h3>Heading here</h3>
+        <?php
+        $args=array(
+            'post_type'=>'food',
+            'orderby'=>'rand',
+            'posts_per_page'=>4
+        );
+        $query=new WP_Query();
+        $query->query($args);
+        if($query->have_posts()):while($query->have_posts()):$query->the_post();
+            $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
 
-                        <p>Description goes here</p>
+            ?>
+        <div class="col-md-6">
+            <div class="ih-item square colored effect6 bottom_to_top"><a href="<?php the_permalink();?>">
+                    <div class="img"><img src="<?php the_post_thumbnail_url('medium');?>"
+                                           alt="<?php the_title();?>"></div>
+                    <div class="info">
+                        <h3><?php the_title();?></h3>
+
+                        <p><?php echo $ingredient_food;?></p>
                     </div>
                 </a></div>
         </div>
-        <div class="col-md-6">
-            <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-                    <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg"
-                                          alt="img" alt="img"></div>
-                    <div class="info">
-                        <h3>Heading here</h3>
-
-                        <p>Description goes here</p>
-                    </div>
-                </a></div>
-        </div>
-        <div class="col-md-6">
-            <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-                    <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg"
-                                          alt="img" alt="img"></div>
-                    <div class="info">
-                        <h3>Heading here</h3>
-
-                        <p>Description goes here</p>
-                    </div>
-                </a></div>
-        </div>
-        <div class="col-md-6">
-            <div class="ih-item square colored effect6 bottom_to_top"><a href="#">
-                    <div class="img"><img src="http://viethousecafe.ru/wp-content/uploads/2016/08/1-slider.jpg"
-                                          alt="img" alt="img"></div>
-                    <div class="info">
-                        <h3>Heading here</h3>
-
-                        <p>Description goes here</p>
-                    </div>
-                </a></div>
-        </div>
+        <?php endwhile; endif; ?>
 
     </div>
     <div class="contact-us-info col-md-6">
