@@ -16,15 +16,15 @@ function form_menu_output($post)
 
     $choose_food = array(get_post_meta($post->ID, 'choose_food', true));
 
-    $choose_cat_53 = array(get_post_meta($post->ID, 'choose_cat_53', true));
-    $choose_cat_55 = array(get_post_meta($post->ID, 'choose_cat_55', true));
-    $choose_cat_50 = array(get_post_meta($post->ID, 'choose_cat_50', true));
-    $choose_cat_52 = array(get_post_meta($post->ID, 'choose_cat_52', true));
-    $choose_cat_51 = array(get_post_meta($post->ID, 'choose_cat_51', true));
-    $choose_cat_54 = array(get_post_meta($post->ID, 'choose_cat_54', true));
-    $choose_cat_56 = array(get_post_meta($post->ID, 'choose_cat_56', true));
-    $choose_cat_57 = array(get_post_meta($post->ID, 'choose_cat_57', true));
-    $choose_cat_12 = array(get_post_meta($post->ID, 'choose_cat_12', true));
+    $choose_cat_53 = array(get_post_meta($post->ID, 'choose_cat_53', true));////Горячие Закуски
+    $choose_cat_55 = array(get_post_meta($post->ID, 'choose_cat_55', true)); ////Вегетарианские Блюда
+    $choose_cat_50 = array(get_post_meta($post->ID, 'choose_cat_50', true)); //Салаты
+    $choose_cat_52 = array(get_post_meta($post->ID, 'choose_cat_52', true));//Супы
+    $choose_cat_51 = array(get_post_meta($post->ID, 'choose_cat_51', true));////Холодные Закуски
+    $choose_cat_54 = array(get_post_meta($post->ID, 'choose_cat_54', true)); //Основные Блюда
+    $choose_cat_56 = array(get_post_meta($post->ID, 'choose_cat_56', true)); ////Специальное Предложение
+    $choose_cat_57 = array(get_post_meta($post->ID, 'choose_cat_57', true));////Напитки
+    $choose_cat_12 = array(get_post_meta($post->ID, 'choose_cat_12', true)); //десерты
 
     wp_nonce_field('save_choose_food_nonce', 'info_choose_food_nonce');
     wp_nonce_field('save_choose_cat_53_nonce', 'info_choose_cat_53_nonce');

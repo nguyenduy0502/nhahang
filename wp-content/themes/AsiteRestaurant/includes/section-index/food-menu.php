@@ -2,20 +2,32 @@
 <div class="food-menu section clearfix" id="food-menu">
 
     <?php
-    $arr=array(
-        'post_type'=>'menu', // get post type
+    $arr = array(
+        'post_type' => 'menu', // get post type
         'posts_per_page' => 1,
-        'post_name__in'  => ['вьетланч'] // name slug
+        'post_name__in' => ['вьетланч'] // name slug
     );
-    $query=new WP_Query();
+    $query = new WP_Query();
     $query->query($arr);
-    if($query->have_posts()): while($query->have_posts()):$query->the_post();
-    $post_id=$post->ID;
-    $arr_tab3 = get_post_meta($post_id, 'choose_cat_54'); // Основные Блюда
-    $arr_tab1 = get_post_meta($post_id, 'choose_cat_52'); // Суп
-    $arr_tab2 = get_post_meta($post_id, 'choose_cat_50'); // Салат
-    $arr_tab4 = get_post_meta($post_id, 'choose_cat_57'); //Напитки
-        $link_menu=get_permalink();
+    if ($query->have_posts()): while ($query->have_posts()):$query->the_post();
+        $post_id = $post->ID;
+
+        $arr_tab1 = get_post_meta($post_id, 'choose_cat_52'); // Суп
+
+        (!empty(get_post_meta($post_id, 'choose_cat_50',true)))? $arr_salad=get_post_meta($post_id, 'choose_cat_50',true):$arr_salad=array(0502);// Салат
+        (!empty(get_post_meta($post_id, 'choose_cat_51',true)))? $arr_cold_food=get_post_meta($post_id, 'choose_cat_51',true):$arr_cold_food=array(0502); // Холодные Закуски
+        $arr_tab2 = array_merge($arr_salad,$arr_cold_food);  // merge array Салат and Холодные Закуски
+
+        (!empty(get_post_meta($post_id, 'choose_cat_53',true)))? $arr_snack=get_post_meta($post_id, 'choose_cat_53',true):$arr_snack=array(0502);//Горячие Закуски
+        (!empty(get_post_meta($post_id, 'choose_cat_54',true)))? $arr_main_dishes=get_post_meta($post_id, 'choose_cat_54',true):$arr_main_dishes=array(0502);// Основные Блюда
+        $arr_tab3 = array_merge($arr_snack,$arr_main_dishes); // merge array Закуски and  Основные Блюда
+
+        (!empty(get_post_meta($post_id, 'choose_cat_57',true)))? $arr_drinks=get_post_meta($post_id, 'choose_cat_57',true):$arr_drinks=array(0502);//Напитки
+        (!empty(get_post_meta($post_id, 'choose_cat_12',true)))? $arr_dessert=get_post_meta($post_id, 'choose_cat_12',true):$arr_dessert=array(0502);//десерты
+        $arr_tab4 = array_merge($arr_drinks,$arr_dessert); // merge array десерты and Напитки
+
+
+        $link_menu = get_permalink();
     endwhile; endif;
     wp_reset_query();
     ?>
@@ -23,7 +35,9 @@
 
         <div class="menu-food">
             <div class="section-title food-menu-title">
-                <a href="<?php the_permalink($post_id);?>" title="<?php echo get_the_title($post_id);?>"><h1><?php echo get_the_title($post_id);?></h1></a>
+                <a href="<?php the_permalink($post_id); ?>" title="<?php echo get_the_title($post_id); ?>">
+                    <h1><?php echo get_the_title($post_id); ?></h1></a>
+
                 <h2>350 руб.</h2>
                 <ul id="tabs">
                     <li><a href="#" class="tab1"><h2>Суп</h2></a></li>
@@ -79,7 +93,7 @@
                         <tbody>
                         <?php
                         $args_tab2 = array(
-                            'post__in' => $arr_tab2[0],
+                            'post__in' => $arr_tab2,
                             'post_type' => 'food'
                         );
                         $query_tab2 = new WP_Query();
@@ -121,7 +135,7 @@
                         <tbody>
                         <?php
                         $args_tab3 = array(
-                            'post__in' => $arr_tab3[0],
+                            'post__in' => $arr_tab3,
                             'post_type' => 'food'
                         );
                         $query_tab3 = new WP_Query();
@@ -163,7 +177,7 @@
                         <tbody>
                         <?php
                         $args_tab4 = array(
-                            'post__in' => $arr_tab4[0],
+                            'post__in' => $arr_tab4,
                             'post_type' => 'food'
                         );
                         $query_tab3 = new WP_Query();
@@ -200,7 +214,7 @@
                         </tbody>
                     </table>
                 </div>
-                    <a href="<?php echo $link_menu;?>" class="alignright butt">Ещё блюды ></a>
+                <a href="<?php echo $link_menu; ?>" class="alignright butt">Ещё блюды ></a>
             </div>
 
         </div>
