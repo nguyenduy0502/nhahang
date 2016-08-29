@@ -79,7 +79,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"/>
 <!--     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-    <link rel="stylesheet" href="http://localhost:8888/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/css/ihover.min.css">
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
     <script>

@@ -118,6 +118,7 @@ function add_header_stylesheet() {
 	wp_register_style('media-theme',TEMPLATE_FOLDER.'/css/media.css');
 	wp_register_style('owl.carousel',TEMPLATE_FOLDER.'/css/owl.carousel.css');
 	wp_register_style('jquery.fullPage',TEMPLATE_FOLDER.'/css/jquery.fullPage.css');
+	wp_register_style('ihover.min',TEMPLATE_FOLDER.'/css/ihover.min.css');
 
 	wp_enqueue_style('bootstrap-grid');
 	wp_enqueue_style('font-awesome.min');
@@ -128,6 +129,7 @@ function add_header_stylesheet() {
 	wp_enqueue_style('main');
 	wp_enqueue_style('media-theme');
 	wp_enqueue_style('owl.carousel');
+	wp_enqueue_style('ihover.min');
 	//wp_enqueue_style('jquery.fullPage');
 }
 /***********************************************************
