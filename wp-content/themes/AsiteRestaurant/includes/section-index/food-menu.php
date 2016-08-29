@@ -26,7 +26,6 @@
         (!empty(get_post_meta($post_id, 'choose_cat_12',true)))? $arr_dessert=get_post_meta($post_id, 'choose_cat_12',true):$arr_dessert=array(0502);//десерты
         $arr_tab4 = array_merge($arr_drinks,$arr_dessert); // merge array десерты and Напитки
 
-
         $link_menu = get_permalink();
     endwhile; endif;
     wp_reset_query();

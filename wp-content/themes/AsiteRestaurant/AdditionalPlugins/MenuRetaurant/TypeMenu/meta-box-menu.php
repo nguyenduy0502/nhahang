@@ -3,7 +3,7 @@
  * File Name: meta-box-menu.php
  * Date: 23-06-2016
  * Time: 23:07
- * Description: Meta box menu show foods
+ * Description: Meta box menu show foods and categories
  */
 add_action('add_meta_boxes', 'metabox_menu');
 function metabox_menu()
