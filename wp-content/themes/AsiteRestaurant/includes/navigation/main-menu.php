@@ -6,8 +6,12 @@
 	<?php endif; ?>
 	<div class="quad">
 		<p>Вьет Хауз</p>
-		<p><i class="fa fa-coffee"></i></p>
+		<img src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/pho.png" alt="">
 		<p>Мы всегда рады Вам</p>
+	</div>
+	<div class="bubble">
+<!-- 		<img src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/bubble3.png" alt=""> -->
+<p><a href="#">Доставка</a></p>
 	</div>
 	<div class="owl-carousel3 headslide">
 		<?php global $asite_options; ?>
