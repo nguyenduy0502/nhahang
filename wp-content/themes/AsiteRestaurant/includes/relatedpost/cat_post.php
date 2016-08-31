@@ -30,13 +30,13 @@ if ($categories): $category_ids = array();
                         <div class="pb-otherpost">
 
                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img
-                                    src="<?php the_post_thumbnail('thumbnail') ?>" alt="<?php the_title(); ?>"
+                                    src="<?php the_post_thumbnail_url('thumbnail') ?>" alt="<?php the_title(); ?>"
                                     title="<?php the_title(); ?>"></a>
                             <a href="<?php the_permalink(); ?>"
                                title="<?php the_title(); ?>"><?php the_title('<p>', '</p>'); ?></a>
                         </div>
                     </div>
-                    <?php wp_reset_query();?>
                 <?php endwhile; ?>
+                <?php wp_reset_query(); ?>
             </div>
         <?php endif; endif; endif; ?>

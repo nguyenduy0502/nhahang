@@ -39,6 +39,11 @@ require_once dirname(__FILE__).'/widget/searchform-food.php';
 require_once dirname(__FILE__).'/widget/categories-food.php';
 require_once dirname(__FILE__).'/widget/new-food.php';
 //require_once('includes/relatedpost/cat_food.php');
+/***********************************************************
+ * ADD HELPERS
+ * ********************************************************
+ */
+require_once dirname(__FILE__).'/helpers/instagram/init.php';
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS
  ****************************************************************
@@ -217,7 +222,7 @@ function add_header_js() {
  *****************************************************************
  */
 if (function_exists('register_sidebar')) {
-	$args_booking=array(
+	/*$args_booking=array(
 		'name' => __('Booking widget', 'asite'),
 		'id' => 'booking-sidebar',
 		'description' => 'Booking sidebar',
@@ -237,6 +242,18 @@ if (function_exists('register_sidebar')) {
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>'
 	);
+
+	$args_new_food=array(
+
+		'name' => __('New food in index', 'asite'),
+		'id' => 'new-food-index',
+		'description' => 'Show food in index ',
+		'class' => '',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>'
+	);*/
 	$args_food=array(
 		'name' => __('Left food sidebar', 'asite'),
 		'id' => 'left-food-sidebar',
@@ -248,22 +265,10 @@ if (function_exists('register_sidebar')) {
 		'after_title' => '</h2>'
 
 	);
-	$args_new_food=array(
-
-		'name' => __('New food in index', 'asite'),
-		'id' => 'new-food-index',
-		'description' => 'Show food in index ',
-		'class' => '',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>'
-	);
-
-	register_sidebar($args_booking);
-	register_sidebar($args_hours);
+	//register_sidebar($args_booking);
+	//register_sidebar($args_hours);
 	register_sidebar($args_food);
-	register_sidebar($args_new_food);
+	//register_sidebar($args_new_food);
 }
 /***********************************************************
  * CREATE CUSTOM EXCERPT

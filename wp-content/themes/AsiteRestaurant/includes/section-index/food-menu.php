@@ -1,24 +1,11 @@
 <!-- <div class="food-menu section fp-auto-height clearfix" id="section3" data-anchor="food-menu"> -->
+<?php global $asite_options; ?>
+<?php if(!empty($asite_options['option_name_lunch']) && isset($asite_options['option_name_lunch'])):?>
+    <?php $post_id=$asite_options['option_name_lunch'];
+    $link_menu =get_permalink($post_id)
+    ?>
 <div class="food-menu section clearfix" id="food-menu">
-
     <?php
-    $arr = array(
-        'post_type' => 'menu', // get post type
-        'posts_per_page' => 1,
-        'post_name__in' => ['вьетланч'] // name slug
-    );
-    $query = new WP_Query();
-    $query->query($arr);
-    if ($query->have_posts()): while ($query->have_posts()):$query->the_post();
-        $post_id = $post->ID;
-
-       /* //$arr_tab1 = get_post_meta($post_id, 'choose_cat_52',true); // Суп
-        (!empty(get_post_meta($post_id, 'choose_cat_52',true)))? $arr_tab1=get_post_meta($post_id, 'choose_cat_52',true):$arr_tab1=array(0502);
-        $arr_tab2=get_post_meta($post_id,'choose_cat_50',true);
-        $arr_tab3=get_post_meta($post_id,'choose_cat_54',true);
-        $arr_tab4=get_post_meta($post_id,'choose_cat_57',true);
-       */
-
         (!empty(get_post_meta($post_id, 'choose_cat_52',true)))? $arr_tab1=get_post_meta($post_id, 'choose_cat_52',true):$arr_tab1=array(145123);
 
         (!empty(get_post_meta($post_id, 'choose_cat_50',true)))? $arr_salad=get_post_meta($post_id, 'choose_cat_50',true):$arr_salad=array(145123);// Салат
@@ -32,19 +19,15 @@
         (!empty(get_post_meta($post_id, 'choose_cat_57',true)))? $arr_drinks=get_post_meta($post_id, 'choose_cat_57',true):$arr_drinks=array(145123);//Напитки
         (!empty(get_post_meta($post_id, 'choose_cat_12',true)))? $arr_dessert=get_post_meta($post_id, 'choose_cat_12',true):$arr_dessert=array(145123);//десерты
         $arr_tab4 = array_merge($arr_drinks,$arr_dessert); // merge array десерты and Напитки
-
-        $link_menu = get_permalink();
-    endwhile; endif;
-    wp_reset_query();
     ?>
     <div class="container">
-
         <div class="menu-food">
             <div class="section-title food-menu-title">
                 <a href="<?php the_permalink($post_id); ?>" title="<?php echo get_the_title($post_id); ?>">
                     <h1><?php echo get_the_title($post_id); ?></h1></a>
-
-                <h2>350 руб.</h2>
+                <?php if(!empty($asite_options['option_desc_menu']) && $asite_options['option_desc_menu']): // endcheck option_desc_menu?>
+                <h2><?php echo $asite_options['option_desc_menu'];?></h2>
+        <?php endif; // end check option_desc_menu?>
                 <ul id="tabs">
                     <li><a href="#" class="tab1"><h2>Суп</h2></a></li>
                     <li><a href="#" class="tab2"><h2>Салат</h2></a></li>
@@ -226,3 +209,4 @@
         </div>
     </div>
 </div>
+<?php endif; // end check option_name_lunch?>
