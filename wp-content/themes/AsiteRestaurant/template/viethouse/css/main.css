@@ -105,7 +105,11 @@ h2, h3, h4, h5, h6{ text-align: center; }
 
 }
 .section:not(.header):not(.new-food):not(.cd-slider-wrapper):not(.contact-us){
-	display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;   ;
 	justify-content: center;
 	align-items: center;
 }
@@ -313,7 +317,11 @@ button:active, .button:active {
 	box-shadow: 0px 3px 4.69px 2.31px rgba(0, 0, 0, 0.35);
 }
 .nav-list{
-	display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;   ;
 	flex-flow: row;
 	justify-content: center;
 	align-items: center;
@@ -388,7 +396,11 @@ a{ color:#444 ; }
 }
 .vhmain{ 
 	top: 60px;
-	display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;   ;
 	justify-content: center;
 	align-items: center;
 	min-height: 80vh;
@@ -566,9 +578,6 @@ ul.children ul.children{
 	border-image: url(../img/content/bamboo-small.png);
 	margin: 40px;
 }
-.about-us-text ul{
-	/*display: flex;*/
-}
 .border-line{
 	border-bottom: 1px solid #ccc;
 }
@@ -733,7 +742,11 @@ ul.children ul.children{
 	display: block;
 	float: left;
 	text-align: center;
-	display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;   ;
 	justify-content: center;
 	align-items: center;
 	padding: 5px;
@@ -761,86 +774,6 @@ p.it-nf-price{
 	height: 100%;
 	width: 100%!important;
 }
-/*
-.item-image {
-	background-color:#003a6f;
-	height:95vh;
-	width:100%;
-	background-size:cover;
-	position:relative;
-	z-index:-1;
-}
-.item-image img{
-	min-height: 100%;
-}
-#backshape .wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	float:left;
-	width:100%;
-	padding:0 5%;
-	min-height: 19vh;
-	transform:skew(0deg,-10deg);
--ms-transform:skew(0deg,-10deg);
--webkit-transform:skew(0deg,-10deg); 
-background: #fff;
-}
-.item-text {
-  float:left;
-  background:transparent;
-  transform:skew(0deg,-10deg);
--ms-transform:skew(0deg,-10deg);
--webkit-transform:skew(0deg,5deg);
-}
-#backshape {
-  z-index:1;
-  display:block;
-  float:left;
-  margin-top:-100px;
-  width:100%;
-  background:white;
-  transform:skew(0deg,10deg);
--ms-transform:skew(0deg,10deg);
--webkit-transform:skew(0deg,5deg); 
-}*/
-
-/* 3.4. VIETLUNCH SECTION
-
------------------------------------------------*/
-
-/*
-.foldtr {
-  position: relative;
-  -webkit-box-shadow: -5px 7px 5px rgba(0,0,0,0.8);
-  -moz-box-shadow: -5px 7px 5px rgba(0,0,0,0.8);
-  box-shadow: -5px 7px 5px rgba(0,0,0,0.8);
-}
- 
-.foldtr:before {
-  content: "";
-  position: absolute;
-	top: -6%;
-    right: -4%;
-  width: 0px;
-  height: 0px;
-  border-bottom: 70px solid #eee;
-  border-right: 70px solid transparent;
-  -webkit-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-  -moz-box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-  box-shadow: -7px 7px 7px rgba(0,0,0,0.3);
-}*/
- 
-/*.foldtr:after {
-  content: "";
-  position: absolute;
-  top: 0%;
-  right: 0%;
-  width: 0px;
-  height: 0px;
-  border-top: 69px solid #272822; 
-  border-left: 69px solid transparent;
-}*/
 .menu-food {
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	background: white;
@@ -986,10 +919,13 @@ td .food-text{
 	max-height: 25vh;
 }
 .item-testm{
-	/*margin: 0px 4.5%;*/
 	min-height: 25vh;
 	color: #fff;
-	display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;   ;
 	justify-content: center;
 	align-items: center;
 }
@@ -1061,14 +997,14 @@ blockquote cite{
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	margin: 0 auto;
 	min-height: 100vh;
-	display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;   ;
 	justify-content: center;
 	align-items: center;
 }
-/*.contact-us-form{
-	padding: 5px 40px;
-	color: #fff;
-}*/
 textarea,
 input{
 	width: 100%;
