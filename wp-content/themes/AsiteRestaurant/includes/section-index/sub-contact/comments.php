@@ -11,7 +11,7 @@
 <?php if(!empty($asite_options['option_number_cm']) && isset($asite_options['option_number_cm'])): // check option_number_cm?>
 <div class="col-md-12">
     <div class="owl-carousel2 testimonial">
-        <?
+        <?php
         !empty($asite_options['option_order_cm'])&&isset($asite_options['option_order_cm'])?$orderby=$asite_options['option_order_cm']:$orderby='comment_date_gmt';
         $args=array(
             'orderby'=>$orderby,

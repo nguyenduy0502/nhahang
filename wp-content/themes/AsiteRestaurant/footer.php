@@ -135,7 +135,7 @@
 	$(this).addClass("selected");
 });
 </script>
-<script>
+<!-- <script>
 	$.scrollify({
 		section : ".section",
 		interstitialSection : "",
@@ -151,7 +151,7 @@
 		// afterResize:function() {},
 		// afterRender:function() {}
 	});
-</script>
+</script> -->
 <script>
 	$(document).ready(function() {
 	    $("#content").find("[id^='tab']").hide(); // Hide all content

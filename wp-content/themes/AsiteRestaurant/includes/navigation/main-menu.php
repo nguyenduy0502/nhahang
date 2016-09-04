@@ -16,7 +16,7 @@
 	</div>
 	<div class="bubble">
 <!-- 		<img src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/bubble3.png" alt=""> -->
-<p><a href="#">Доставка</a></p>
+		<p><a href="#">Доставка</a></p>
 	</div>
 	<div class="owl-carousel3 headslide">
 		<?php foreach($asite_options['option_slides'] as $slide):?>

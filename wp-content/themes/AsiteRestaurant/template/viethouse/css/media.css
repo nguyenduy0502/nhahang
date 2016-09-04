@@ -100,6 +100,9 @@
 		max-height: 0;
 		overflow: hidden;
 	}
+	.nav-list > li{
+		display: block;
+	}
 	.active{
 		max-height: 100%;
 		overflow: auto;
@@ -118,10 +121,7 @@
 	.nav-list>li:not(.has-logo){border-top: 1px dashed rgba(255,255,255,0.6); margin: 0 40px;}
 	.nav-list>li:first-child{border-top: none;}
 	.toggle-menu{
-		display: block;
-		max-width: -webkit-min-content;
-		max-width: -moz-min-content;
-		max-width: min-content;
+		display: inline-block;
 		margin: 1rem auto 0 auto;
 		background-color: rgba(17,91,54,.8);
 		text-align: center;

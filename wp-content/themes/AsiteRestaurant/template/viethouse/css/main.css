@@ -100,9 +100,15 @@ h1{
 }
 h2, h3, h4, h5, h6{ text-align: center; }
 /*.section-title{background-color: rgb(17,91,54); }*/
-/*.section:not(.footer){
+.section:not(.footer){
 	min-height: 100vh;
-}*/
+}
+.section:not(.header):not(.footer):not(.contact-us){
+	padding-top: 80px!important;
+}
+.section:not(.header):not(.footer):not(.news):not(.contact-us){
+	padding-bottom: 80px!important;
+}
 /*.section:not(.header):not(.new-food):not(.cd-slider-wrapper):not(.contact-us){
 	display: -webkit-box;
 	display: -moz-box;         
@@ -333,6 +339,7 @@ button:active, .button:active {
 	position: relative;
 	z-index: 2;
 	display: inline-block;
+	margin-right: -5px;
 }
 .nav-list>li:not(.has-logo)>a{
 	text-transform: uppercase;
@@ -387,6 +394,7 @@ a{ color:#444 ; }
 	width: 100%;
 	margin-bottom: -27px;
 	z-index: 1;
+	text-align: center;
 }
 .top_line2{
 	height: 40px;
@@ -396,6 +404,7 @@ a{ color:#444 ; }
 	width: 100%;
 	margin-bottom: -27px;
 	z-index: 1;
+	text-align: center;
 }
 .vhmain{ 
 	top: 60px;
@@ -466,10 +475,10 @@ Slider
   z-index: 0!important;
   width: 100%!important;
   margin: 0 auto!important;
-  /*height: 100vh!important;*/
+  height: 100vh!important;
   overflow-x: hidden!important;
 }
-/*.item-headslide{
+.item-headslide{
 	width: 100vw;
 	height: 100vh;
 }
@@ -481,7 +490,7 @@ Slider
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
-}*/
+}
 
 /* 2.8. FOOTER
 ---------------------------------------------------*/
@@ -685,6 +694,12 @@ ul.children ul.children{
 .bamboo{
 	overflow: hidden;
 	height: 100vh;
+	background-image: url('http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/content/bamboo.png');
+	width: 30%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-size: cover;
 }
 .bamboo img{
 	height: 100vh;
@@ -779,7 +794,8 @@ p.it-nf-price{
 .menu-food {
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	background: white;
-	border: 4px dashed rgb(17, 91,54);
+/*	border: 4px dashed rgb(17, 91,54);*/
+	border: 4px solid #ccc;
 	padding: 0px;
 	min-width: 320px;
 }
@@ -834,15 +850,10 @@ td .food-text{
 	background-image:url(../img/bg1.jpg);
 	background-size:cover;
 }
-/*.booking h1{
-	color: #fff;
-}*/
-/*.booking .section-title h2{
-	color: #5fcd91;
-}*/
 .booking-info{
 	width: 600px;
-	border: 4px dashed rgb(17,91,54);
+/*	border: 4px dashed rgb(17,91,54);*/
+	border: 4px solid #ccc;
 	box-sizing: border-box;
 	padding: 10px;
 	background-color: #fff;
@@ -850,12 +861,9 @@ td .food-text{
 .booking-info .section-title{
 	background-color: #fff;
 }
-.rtb-booking-form{
-	/*border: 4px dashed rgb(17,91,54);*/
-}
+
 .rtb-booking-form form{
 	padding: 10px 20px;
-	/*background-color: rgba(00,00,00,.87);*/
 	background-color: #fff;
 
 }
@@ -909,6 +917,7 @@ td .food-text{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	border: 4px solid #ccc;
 }
 .ih-item img{
 	width: 100%;
