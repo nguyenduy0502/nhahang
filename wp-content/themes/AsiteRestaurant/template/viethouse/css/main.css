@@ -100,19 +100,18 @@ h1{
 }
 h2, h3, h4, h5, h6{ text-align: center; }
 /*.section-title{background-color: rgb(17,91,54); }*/
-.section:not(.footer){
+/*.section:not(.footer){
 	min-height: 100vh;
-
-}
-.section:not(.header):not(.new-food):not(.cd-slider-wrapper):not(.contact-us){
-		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;   ;
+}*/
+/*.section:not(.header):not(.new-food):not(.cd-slider-wrapper):not(.contact-us){
+	display: -webkit-box;
+	display: -moz-box;         
+	display: -ms-flexbox;      
+	display: -webkit-flex;     
+	display: flex;
 	justify-content: center;
 	align-items: center;
-}
+}*/
 .section p{
 	font-size: 16px;
 }
@@ -317,19 +316,23 @@ button:active, .button:active {
 	box-shadow: 0px 3px 4.69px 2.31px rgba(0, 0, 0, 0.35);
 }
 .nav-list{
-		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;   ;
-	flex-flow: row;
-	justify-content: center;
-	align-items: center;
-	white-space: nowrap;
+/*	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;*/
+/*	flex-flow: row;*/
+/*	display: inline;*/
+/*	justify-content: center;
+	align-items: center;*/
+	/*white-space: nowrap;*/
+	margin: 0 auto;
+	text-align: center;
 }
 .nav-list > li {
 	position: relative;
 	z-index: 2;
+	display: inline-block;
 }
 .nav-list>li:not(.has-logo)>a{
 	text-transform: uppercase;
@@ -396,13 +399,12 @@ a{ color:#444 ; }
 }
 .vhmain{ 
 	top: 60px;
-		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;   ;
+/*	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center;*/
 	min-height: 80vh;
 }
 
@@ -464,10 +466,10 @@ Slider
   z-index: 0!important;
   width: 100%!important;
   margin: 0 auto!important;
-  height: 100vh!important;
+  /*height: 100vh!important;*/
   overflow-x: hidden!important;
 }
-.item-headslide{
+/*.item-headslide{
 	width: 100vw;
 	height: 100vh;
 }
@@ -479,7 +481,7 @@ Slider
 	object-fit: cover;
 	width: 100%;
 	height: 100%;
-}
+}*/
 
 /* 2.8. FOOTER
 ---------------------------------------------------*/
@@ -742,13 +744,13 @@ ul.children ul.children{
 	display: block;
 	float: left;
 	text-align: center;
-		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;   ;
+/*	display: -webkit-box;
+	display: -moz-box;       
+	display: -ms-flexbox;    
+	display: -webkit-flex;   
+	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center;*/
 	padding: 5px;
 }
 p.it-nf-name{
@@ -921,12 +923,12 @@ td .food-text{
 .item-testm{
 	min-height: 25vh;
 	color: #fff;
-		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;   ;
-	justify-content: center;
+/*	display: -webkit-box;
+	display: -moz-box;       
+	display: -ms-flexbox;    
+	display: -webkit-flex;   
+	display: flex;
+	justify-content: center;*/
 	align-items: center;
 }
 .item-testm-content{
@@ -997,12 +999,12 @@ blockquote cite{
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 	margin: 0 auto;
 	min-height: 100vh;
-		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;   ;
-	justify-content: center;
+/*	display: -webkit-box;
+	display: -moz-box;       
+	display: -ms-flexbox;    
+	display: -webkit-flex;   
+	display: flex;
+	justify-content: center;*/
 	align-items: center;
 }
 textarea,

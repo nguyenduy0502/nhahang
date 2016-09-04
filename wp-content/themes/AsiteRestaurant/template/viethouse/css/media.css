@@ -23,7 +23,7 @@
 
 
 
-@media only screen and (max-width: 58.75rem){
+@media only screen and (max-width: 940px){
 
 	.top_line{
 		background-color: transparent;
@@ -32,7 +32,7 @@
 	}
 
 	.has-logo{
-		display: none;
+		display: none!important;
 	}
 	.mobile-display{
 		display: block;
