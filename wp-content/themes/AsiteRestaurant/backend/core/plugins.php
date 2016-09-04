@@ -12,8 +12,17 @@ function asite_plugin_activation(){
             'name'=>'Redux Framework',
             'slug'=>'redux-framework',
             'required'=>true
-
         ),
+        array(
+            'name'=>'Restaurant Reservations',
+            'slug'=>'restaurant-reservations',
+            'required'=>true
+        ),
+        array(
+            'name'=>'Contact Form 7',
+            'slug'=>'contact-form-7',
+            'required'=>true
+        )
     );
     // config TGM
     $configs=array(

@@ -244,10 +244,11 @@ Redux::setHelpSidebar($opt_name, $content);
  */
 
 // -> START Basic Fields
+/*===================================Slider Options================================= */
 
 Redux::setSection($opt_name, array( // slides options
-    'title' => __('Slider Options', 'asite'),
-    'desc' => __('Show image in header', 'asite'),
+    'title' => __('Header', 'asite'),
+    'desc' => __('', 'asite'),
     'icon' => 'el el-home',
     'fields' => array(
         array(
@@ -259,13 +260,184 @@ Redux::setSection($opt_name, array( // slides options
                 'title' => __('This is a title', 'asite'),
                 'description' => __('Description Here', 'asite'),
                 'url' => __('Give us a link!', 'asite'),
+            )
+        ),
+        array(// this is field description about us
+            'id'=>'option_head_title',
+            'type'=>'text',
+            'title'=>__('Title Head','asite')
+        ),
+        array(// this is field description about us
+            'id'=>'option_head_desc',
+            'type'=>'text',
+            'title'=>__('Description Head','asite')
+        ),
+    )
+));
+/*===================================About us================================= */
+Redux::setSection($opt_name,array(
+    'title'=>__('About Us','asite'),
+    'desc'=>__('About Us', 'asite'),
+    'icon'=>'el el-adult',
+    'fields'=>array(
+        array( // this is field about us
+            'id'=>'option_page_about_us',
+            'type'=>'select',
+            'args'=>array('post_type'=>'page','posts_per_page'=>-1),
+            'data'=>'page',
+            'title'=>__('Page About Us','asite')
+        ),
+        array(// this is field description about us
+            'id'=>'option_desc_about_us',
+            'type'=>'textarea',
+            'title'=>__('Description About Us','asite')
+        ),
+        array(// this is field hours work
+            'id'=>'option_hours_work',
+            'type'=>'text',
+            'title'=>__('Hours Work','asite')
+        ),
+        array(//this is field average bill
+            'id'=>'option_ave_bill',
+            'type'=>'text',
+            'title'=>__('Average bill','asite')
+        ),
+        array(//this is Quantity food
+            'id'=>'option_quantity_food',
+            'type'=>'text',
+            'title'=>__('Quantity Food','asite')
+        )
+
+    )
+));
+/*===================================New food================================= */
+Redux::setSection($opt_name,array(
+    'title'=>__('New Food','asite'),
+    'desc'=>__('','asite'),
+    'icon'=>'el el-braille',
+    'fields'=>array(
+        array(
+            'id'=>'option_new_food',
+            'type'=>'select',
+            'multi'=>true,
+            'args' => array('taxonomies'=>'cuisine', 'args'=>array()),
+            'data'=>'terms',
+            'desc'=>'Should choose two categories',
+            'hint'=>array(
+                'content'=>__('Should choose two categories','asite')
             ),
+            'title'=>__('Categories food','asite')
+        ),
+        array(
+            'id'=>'option_num_new_food',
+            'type'=>'text',
+            'title'=>__('Number display','asite'),
+            'validate' => 'numeric'
+        ),
+        array(
+            'id'=>'option_order_food',
+            'type'=>'select',
+            'title'=>__('Order By','asite'),
+            'options'=>array(
+                'date'=>'Newest to oldest',
+                'rand'=>'Random'
+            )
+        )
+
+    )
+));
+/*===================================Lunch================================= */
+Redux::setSection($opt_name,array(
+    'title'=>__('Lunch','asite'),
+    'desc'=>__('Lunch','asite'),
+    'icon'=>'el el-check',
+    'fields'=>array(
+        array(// this is field choose lunch
+            'id'=>'option_name_lunch',
+            'type'=>'select',
+            'args'=>array('post_type'=>'menu','posts_per_page'=>-1),
+            'data'=>'posts',
+            'title'=>__('Name Menu Lunch','asite')
+        ),
+        array(// this is field description menu
+            'id'=>'option_desc_menu',
+            'type'=>'text',
+            'title'=>__('Description','asite'),
+            'placeholder'=>'350 руб.',
+            'hint'=>array(
+                'content'=>'You can write price'
+            )
+        )
+
+    )
+));
+/*===================================Booking================================= */
+Redux::setSection($opt_name,array(
+    'title'=>__('Booking','asite'),
+    'desc'=>__('',''),
+    'icon'=>'el el-address-book',
+    'fields'=>array(
+        array(
+            'id'=>'option_booking_title',
+            'type'=>'text',
+            'desc'=>__('Title section booking','asite'),
+            'title'=>__('Title section booking','asite')
+        ),
+        array(
+            'id'=>'option_booking_desc',
+            'type'=>'text',
+            'desc'=>__('Description section booking','asite'),
+            'title'=>__('Description section booking','asite')
+        ),
+        array(
+            'id'=>'option_booking',
+            'type'=>'switch',
+            'desc'=>__('Enable/Disable section booking','asite'),
+            'title'=>__('Enable/Disable Section booking','asite')
         )
     )
 ));
-
-
-
+/*===================================News================================= */
+Redux::setSection($opt_name,array(
+    'title'=>__('News','asite'),
+    'desc'=>__('','asite'),
+    'icon'=>'el el-file-alt',
+    'fields'=>array(
+        array(
+            'id'=>'option_title_news',
+            'type'=>'text',
+            'desc'=>__('Title section news','asite'),
+            'title'=>__('Title section news','asite')
+        ),
+        array(
+            'id'=>'option_desc_news',
+            'title'=>__('Description section news','asite'),
+            'type'=>'text',
+            'desc'=>__('Description section news','asite'),
+        ),
+        array(
+            'id'=>'option_category_news',
+            'type'=>'select',
+            'title'=>__('Category','asite'),
+            'desc'=>__('Category of posts','asite'),
+            'data'=>'categories'
+        ),
+        array(
+            'id'=>'option_number_news',
+            'type'=>'select',
+            'title'=>__('Number of post','asite'),
+            'hint'=>array(
+                'content'=>__('Should choose two post','asite')
+            ),
+            'options'=>array(
+                '1'=>__('1 post','asite'),
+                '2'=>__('2 post','asite'),
+                '3'=>__('3 post','asite')
+            )
+        )
+    )
+));
+/*===================================Contact================================= */
 Redux::setSection($opt_name, array( // Contact options
     'title' => __('Contact', 'asite'),
     'icon' => 'el el-phone-alt',
@@ -287,7 +459,8 @@ Redux::setSection($opt_name, array( // Contact options
             'placeholder'=>'453453,1',
             'hint'=>array(
                 'content'=>'Find latitude in http://www.latlong.net/'
-            )
+            ),
+            'validate' => 'numeric'
         ),
         array(
             'id'=>'option_lon',
@@ -296,7 +469,8 @@ Redux::setSection($opt_name, array( // Contact options
             'placeholder'=>'553453,1',
             'hint'=>array(
                 'content'=>'Find longitude in http://www.latlong.net/'
-            )
+            ),
+            'validate' => 'numeric'
         ),
         array(
             'id'=>'option_marker',
@@ -313,34 +487,89 @@ Redux::setSection($opt_name, array( // Contact options
     )
 
 ));
+/*===================================Gallery================================= */
+Redux::setSection($opt_name,array(
+    'title'=>__('Gallery','asite'),
+    'icon'=>'el el-picture',
+    'fields'=>array(
+        array(
+            'id'=>'option_title_gallery',
+            'type'=>'text',
+            'desc'=>__('Title in section Gallery','asite'),
+            'title'=>__('Title in section Gallery','asite')
+        ),
+        array(
+            'id'=>'option_desc_gallery',
+            'type'=>'text',
+            'desc'=>__('Description in section Gallery','asite'),
+            'title'=>__('Description in section Gallery','asite')
+        ),
+        array(
+            'id'=>'option_id_insta',
+            'type'=>'text',
+            'desc'=>__('ID or Username instagram','asite'),
+            'title'=>__('ID or Username instagram','asite'),
+        ),
+        array(
+            'id'=>'option_tags_insta',
+            'type'=>'text',
+            'desc'=>__('Without #','asite'),
+            'title'=>__('Hashtag','asite')
+        ),
+        array(
+            'id'=>'option_switch_insta',
+            'type'=>'switch',
+            'desc'=>__('Enabled/Disabled hashtag','asite'),
+            'title'=>__('Enabled/Disabled hashtag','asite')
+        ),
+        array(
+            'id'=>'option_number_cm',
+            'type'=>'text',
+            'desc'=>__('Number display comments','asite'),
+            'title'=>__('Number display comments','asite'),
+            'validate' => 'numeric'
+        ),
+        array(
+            'id'=>'option_order_cm',
+            'type'=>'select',
+            'title'=>__('Order by','asite'),
+            'options'=>array(
+                'comment_date'=>__('Newest to oldest'),
+                'comment_content'=>__('Content','asite')
+            )
+        )
 
+
+    )
+));
+ /*===================================Footer Information================================= */
 Redux::setSection($opt_name, array(
-    'title' => __('Footer Information', 'asite'),
+    'title' => __('Footer', 'asite'),
     'desc' => __('Information in footer', 'asite'),
     'icon' => 'el el-share',
     'fields' => array(
-        array( // this field facebook
+        array( // this is field facebook
             'id' => 'option_fb',
             'type' => 'text',
             'title' => __('URL Facebook', 'asite'),
             'desc' => 'URL facebook',
             'placeholder' => 'http://facebook.com/asite.it'
         ),
-        array( // this field google plus
+        array( // this is field google plus
             'id' => 'option_gg',
             'type' => 'text',
             'title' => __('URL Google Plus', 'asite'),
             'desc' => 'URL Google Plus',
             'placeholder' => 'http://plus.google.com'
         ),
-        array(// this field youtube
+        array(// this is field youtube
             'id' => 'option_youtube',
             'type' => 'text',
             'title' => __('URL Youtube', 'asite'),
             'desc' => 'URL Youtube',
             'placeholder' => 'http://youtube.com/viethousecafe.ru'
         ),
-        array( // this field vk
+        array( // this is field vk
             'id' => 'option_vk',
             'type' => 'text',
             'title' => __('URL VK', 'asite'),
@@ -348,7 +577,7 @@ Redux::setSection($opt_name, array(
             'placeholder' => 'http://vk.com/12345'
 
         ),
-        array( // this field instagram
+        array( // this is field instagram
             'id' => 'option_insta',
             'type' => 'text',
             'title' => __('URL Instagram', 'asite'),
@@ -356,7 +585,7 @@ Redux::setSection($opt_name, array(
             'placeholder' => 'http://instagram.com/12345'
 
         ),
-        array( // this field address
+        array( // this is field address
             'id' => 'option_address',
             'type' => 'textarea',
             'title' => __('Address ', 'asite'),
@@ -367,8 +596,12 @@ Redux::setSection($opt_name, array(
         )
 
     )
-
 ));
+
+
+
+
+
 /*
  * <--- END SECTIONS
  */
