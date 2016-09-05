@@ -170,18 +170,7 @@
 </script>
 <!-- nicescroll for smooth mouse wheel scrolling -->
 <script>
-$(document).ready(function() {  
-    $("html").niceScroll({
-    	scrollspeed: 60,
-    	cursorwidth: "17px", // cursor width in pixel (you can also write "5px"),
-        cursorcolor: "#ccc",
-        cursoropacitymin: 0.3,
-        background: "#fff",
-        cursorborder: "0",
-        autohidemode: false,
-        cursorminheight: 30
-    });
-});
+
 </script>
 <!-- end nicescroll -->
 <!-- smooth scroll down--

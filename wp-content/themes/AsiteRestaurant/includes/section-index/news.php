@@ -2,8 +2,8 @@
 <?php if (!empty($asite_options['option_category_news']) && isset($asite_options['option_category_news'])): // check option_category_news?>
     <div class="news section" id="news">
         <div class="bamboo">
-<!--             <img src="<?php echo TEMPLATE_FOLDER . '/img/content/bamboo.png' ?>"
-                 alt="<?php bloginfo('description'); ?>"> -->
+             <img src="<?php echo TEMPLATE_FOLDER . '/img/content/bamboo.png' ?>"
+                 alt="<?php bloginfo('description'); ?>">
         </div>
         <div class="container">
             <div class="row">

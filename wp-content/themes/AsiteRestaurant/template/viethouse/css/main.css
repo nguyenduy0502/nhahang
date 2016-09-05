@@ -429,7 +429,7 @@ a{ color:#444 ; }
 	bottom: 0;
 	right: 5%;
 	z-index: 1;
-	background-image: url(http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/bubble3.png);
+	background: url(../img/bubble3.png);
 	background-size: cover;
 }
 .bubble p{
@@ -561,7 +561,6 @@ ul.children ul.children{
 }
 .about-us-text{
 	text-align: center;
-	border-image: url(../img/content/bamboo-small.png);
 	margin: 40px;
 }
 .border-line{
@@ -652,7 +651,7 @@ ul.children ul.children{
 .bamboo{
 	overflow: hidden;
 	height: 100vh;
-	background-image: url('http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/content/bamboo.png');
+	/*background-image: url('http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/content/bamboo.png');*/
 	width: 30%;
 	position: absolute;
 	bottom: 0;
