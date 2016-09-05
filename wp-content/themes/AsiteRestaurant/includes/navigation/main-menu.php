@@ -9,7 +9,7 @@
 		<?php if(!empty($asite_options['option_head_title']) && isset($asite_options['option_head_title'])):?>
 		<p><?php echo $asite_options['option_head_title'];?></p>
 		<?php endif; ?>
-		<img src="http://localhost:8888/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/pho.png" alt="">
+		<img src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/pho.png" alt="">
 		<?php if(!empty($asite_options['option_head_desc']) && isset($asite_options['option_head_desc'])): ?>
 		<p><?php echo $asite_options['option_head_desc']; ?></p>
 		<?php endif; ?>

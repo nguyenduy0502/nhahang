@@ -1,6 +1,6 @@
 <!--footer-->
 <?php global $asite_options;?>
-<div class="section footer" id="section6">
+<div class="footer" id="section6">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3 col-sm-4 col-xs-6">
@@ -59,6 +59,7 @@
 <![endif]-->
 <!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
 <!-- Google Analytics counter --><!-- /Google Analytics counter -->
+<!-- toggle button for menu in small devices -->
 <script type="text/javascript">
 	$(document).ready(function(){
 
@@ -75,6 +76,8 @@
 		})
 	})
 </script>
+<!-- end toggle button for menu in small devices -->
+<!-- sliderhead, slider new food, slider comment -->
 <script>
 	$(document).ready(function(){
 		(jQuery)(".owl-carousel").owlCarousel({
@@ -117,7 +120,7 @@
 			items:1,
 			loop:true,
 			autoHeight:true,
-			autoplay:true,
+			autoplay:false,
 			autoplayTimeout:4000,
 			autoplayHoverPause:false,
 			navigation: false,
@@ -128,6 +131,8 @@
 		});
 	});
 </script>
+<!-- end sliderhead, slider new food, slider comment -->
+<!-- tab in menu -->
 <script>
 	$(".food-menu li").click(function(e) {
 	e.preventDefault();
@@ -135,23 +140,6 @@
 	$(this).addClass("selected");
 });
 </script>
-<!-- <script>
-	$.scrollify({
-		section : ".section",
-		interstitialSection : "",
-		// easing: "easeOutExpo",
-		// scrollSpeed: 1100,
-		// offset : 0,
-		// scrollbars: false,
-		// standardScrollElements: "",
-		setHeights: false,
-		overflowScroll: true,
-		// before:function() {},
-		// after:function() {},
-		// afterResize:function() {},
-		// afterRender:function() {}
-	});
-</script> -->
 <script>
 	$(document).ready(function() {
 	    $("#content").find("[id^='tab']").hide(); // Hide all content
@@ -172,7 +160,30 @@
 	    });
 	});
 </script>
-
+<!-- end tab in menu -->
+<script>
+            window.viewportUnitsBuggyfill.init({
+                force: true,
+                refreshDebounceWait: 250,
+                hacks: window.viewportUnitsBuggyfillHacks
+            });
+</script>
+<!-- nicescroll for smooth mouse wheel scrolling -->
+<script>
+$(document).ready(function() {  
+    $("html").niceScroll({
+    	scrollspeed: 60,
+    	cursorwidth: "17px", // cursor width in pixel (you can also write "5px"),
+        cursorcolor: "#ccc",
+        cursoropacitymin: 0.3,
+        background: "#fff",
+        cursorborder: "0",
+        autohidemode: false,
+        cursorminheight: 30
+    });
+});
+</script>
+<!-- end nicescroll -->
 <!-- smooth scroll down--
 <script>
 	$(function() {
@@ -213,24 +224,5 @@ $(document).ready(function () {
 });
 </script>
 <!-- end smooth scroll up -->
-<!-- <script>
-$(document).ready(function() {
-    $('#fullpage').fullpage({
-    	scrollOverflow:true,
-        scrollOverflowOptions: {
-    		mouseWheel: false,
-    		scrollbars: false,
-    		mouseWheelSpeed: 1
-		},
-        navigation: true,
-        // navigationTooltips: ['Главная', 'О Нас', 'Новые Блюды','Вьет Ланч','Резерв Стола','Оставить сообщение']
-        // anchors:['main','about-us', 'new-food','food-menu','booking','contact-us'],
-        // lockAnchors: true,
-        // css3: false
-        // autoScrolling: false
-    });
-});
-</script> -->
-
 </body>
 </html>

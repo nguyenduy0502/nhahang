@@ -95,7 +95,7 @@
 		line-height: 1rem;
 		z-index: 1012;
 		left: 0;
-		top:53px;
+		top:41px;
 		background-color: rgba(17,91,54,.8);
 		max-height: 0;
 		overflow: hidden;
@@ -121,16 +121,15 @@
 	.nav-list>li:not(.has-logo){border-top: 1px dashed rgba(255,255,255,0.6); margin: 0 40px;}
 	.nav-list>li:first-child{border-top: none;}
 	.toggle-menu{
-		display: inline-block;
-		margin: 1rem auto 0 auto;
-		background-color: rgba(17,91,54,.8);
-		text-align: center;
+		/*display: inline-block;*/
+		display: block;
+		/*margin: 1rem auto 0 auto;*/
+		background-color: rgba(17,91,54,.99);
+		text-align: right;
 		color: #fff !important;
-		padding: 0.8rem;
-		border-radius: .25em;
+		/*padding: 0.8rem;*/
 	
 	}
-	.toggle-menu:hover{border-radius: 0.25em 0.25em 0 0;}
 	.food-menu table td:nth-of-type(3){display: none;}
 	.food-menu th, .food-menu td{padding: 10px 10px;}
 

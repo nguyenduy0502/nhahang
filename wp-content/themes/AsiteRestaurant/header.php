@@ -78,7 +78,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"/>
-<!--     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
     <script>
@@ -92,19 +91,10 @@
         ga('send', 'pageview');
     </script>
     <?php wp_head(); ?>
+    <script src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/viewport-units-buggyfill.js"></script>
+    <script src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.nicescroll.min.js"></script>
 </head>
 
 <body>
-<!-- <body class="fp-responsive"> -->
-<!-- <div id="fullpage"> -->
-<!-- header-->
-<!--
-	<div class="mobile-display" >
-		<h2 class="site-title">
-			<a href="#">
-				<img src="img/logo.jpg" alt="viethouse" >
-			</a>
-		</h2>
-	</div>-->
 <?php get_template_part('includes/navigation/main-menu'); // get template main menu?>
 <!--end header-->
