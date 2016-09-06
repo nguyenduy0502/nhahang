@@ -9,14 +9,15 @@
 		<?php if(!empty($asite_options['option_head_title']) && isset($asite_options['option_head_title'])):?>
 		<p><?php echo $asite_options['option_head_title'];?></p>
 		<?php endif; ?>
-		<img src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/pho.png" alt="">
+
+		<img src="<?php echo TEMPLATE_FOLDER.'/img/pho.png'?>" alt="<?php bloginfo('description');?>">
 		<?php if(!empty($asite_options['option_head_desc']) && isset($asite_options['option_head_desc'])): ?>
 		<p><?php echo $asite_options['option_head_desc']; ?></p>
 		<?php endif; ?>
 	</div>
 	<div class="bubble">
 <!-- 		<img src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/bubble3.png" alt=""> -->
-		<p><a href="#">Доставка</a></p>
+		<p><a href="http://www.delivery-club.ru/widget/VIETHOUSE/" target="_blank">Доставка</a></p>
 	</div>
 	<div class="owl-carousel3 headslide">
 		<?php foreach($asite_options['option_slides'] as $slide):?>

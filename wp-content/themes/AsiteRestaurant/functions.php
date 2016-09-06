@@ -195,6 +195,8 @@ function add_header_js() {
 	wp_register_script('jquery.mobile.custom.min',TEMPLATE_FOLDER.'/js/svgslidercd/jquery.mobile.custom.min.js');
 	wp_register_script('snap.svg-min',TEMPLATE_FOLDER.'/js/svgslidercd/snap.svg-min.js');
 	wp_register_script('svgslider',TEMPLATE_FOLDER.'/js/svgslidercd/svgslider.js');
+	wp_register_script('viewport-units-buggyfill',TEMPLATE_FOLDER.'/js/viewport-units-buggyfill.js');
+	wp_register_script('jquery.nicescroll.min',TEMPLATE_FOLDER.'/js/jquery.nicescroll.min.js');
 
 	wp_enqueue_script('maps-load');
 	wp_enqueue_script('maps');
@@ -209,10 +211,12 @@ function add_header_js() {
 	//wp_enqueue_script('jquery.easings.min');
 	//wp_enqueue_script('scrolloverflow.min');
 	//wp_enqueue_script('jquery.fullPage.min');
-	wp_enqueue_script('jquery.scrollify');
+	//wp_enqueue_script('jquery.scrollify');
 	wp_enqueue_script('jquery.mobile.custom.min');
 	wp_enqueue_script('snap.svg-min');
 	wp_enqueue_script('svgslider');
+	wp_enqueue_script('viewport-units-buggyfill');
+	wp_enqueue_script('jquery.nicescroll.min');
 
 }
 

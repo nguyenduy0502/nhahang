@@ -59,7 +59,7 @@
                     </div>
                 <?php else: ?>
                     <div class="item-new-food-image">
-                        <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo $ingredient_food;
+                        <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.png'; ?>" alt="<?php echo $ingredient_food;
                         echo " | ";
                         bloginfo('description'); ?>" title="<?php the_title(); ?>">
                     </div>
@@ -91,7 +91,7 @@
                     </div>
                 <?php else: ?>
                     <div class="item-new-food-image">
-                        <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo $ingredient_food;
+                        <img src="<?php echo TEMPLATE_FOLDER.'/img/logo.png'; ?>" alt="<?php echo $ingredient_food;
                         echo " | ";
                         bloginfo('description'); ?>" title="<?php the_title(); ?>">
                     </div>

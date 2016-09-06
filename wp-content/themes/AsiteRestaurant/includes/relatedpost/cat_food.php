@@ -39,7 +39,7 @@ $related_items = new WP_Query( $args );
                </div>
                <?php else: ?>
                <div class="of-img">
-                   <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>" title="<?php the_title();?>">
+                   <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.png'; ?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); echo ' - '; bloginfo('name');?>" title="<?php the_title();?>">
                </div>
                 <?php endif; // end check has post thumbnail?>
             <div class="of-text">

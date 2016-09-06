@@ -29,9 +29,17 @@ if ($categories): $category_ids = array();
                     <div class="col-md-4">
                         <div class="pb-otherpost">
 
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <?php if(has_post_thumbnail()):?>
+                                <img
                                     src="<?php the_post_thumbnail_url('thumbnail') ?>" alt="<?php the_title(); ?>"
-                                    title="<?php the_title(); ?>"></a>
+                                    title="<?php the_title(); ?>">
+                        <?php else: ?>
+                        <img
+                            src="<?php echo TEMPLATE_FOLDER . '/img/logo.png'; ?>" alt="<?php the_title(); ?>"
+                            title="<?php the_title(); ?>">
+                        <?php endif; ?>
+                            </a>
                             <a href="<?php the_permalink(); ?>"
                                title="<?php the_title(); ?>"><?php the_title('<p>', '</p>'); ?></a>
                         </div>

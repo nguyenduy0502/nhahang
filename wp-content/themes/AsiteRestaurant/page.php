@@ -20,7 +20,9 @@
                                     <h2><?php the_title();?></h2>
                                 </div>
                                 <div class="spc-header">
+                                    <?php if(has_post_thumbnail()):?>
                                     <img src="<?php the_post_thumbnail_url('large');?>" alt="<?php the_title();?>" title="<?php the_title();?>">
+                                    <?php endif; ?>
                                     <div class="post-info">
                                         <a href="<?php the_permalink();?>" rel="bookmark"></a>
                                         <time class="entry-date published"
