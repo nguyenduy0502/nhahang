@@ -77,7 +77,7 @@
           content="вьетнамская кухня, вьетнамская кухня рецепты, ресторан вьетнамской кухни, блюда вьетнамской кухни, кафе вьетнамской кухни, вьетнамская кухня в москве, суп фо бо, вьетнамский суп фо, фо рецепт, Вьет Хауз, суп фо вьетнамский рецепт, вьетнамская кухня меню, ВьетЛанч, <?php wp_title( '|', true, 'right' );?>"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"/>
+    <link rel="shortcut icon" href="<?php echo TEMPLATE_FOLDER . '/img/logo.png' ?>"/>
     <meta property="fb:app_id" content="273681262992709"/>
     <meta property="fb:admins" content="1099208330101074"/>
     <script>
@@ -91,8 +91,6 @@
         ga('send', 'pageview');
     </script>
     <?php wp_head(); ?>
-    <script src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/viewport-units-buggyfill.js"></script>
-    <script src="http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/js/jquery.nicescroll.min.js"></script>
 </head>
 
 <body>

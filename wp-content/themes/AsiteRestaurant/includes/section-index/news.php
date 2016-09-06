@@ -40,7 +40,7 @@
                             <?php else: // else not has post thumbnail?>
                                 <div class="article-img alignleft">
                                     <a href="<?php the_permalink(); ?>"><img
-                                            src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
+                                            src="<?php echo TEMPLATE_FOLDER . '/img/logo.png'; ?>"
                                             alt="<?php the_title(); ?>"></a>
                                 </div>
                             <?php endif; ?>

@@ -33,7 +33,7 @@ $access_token = '1591885187.44a5744.87e84a6f76394d60a2f19f8d9b53582a';
                                   alt="test"></div>
             <div class="info">
                 <h3><?php echo nguyenduy_excerpt($item['caption']['text'],100);?></h3>
-                <p>#<?php echo $item['tags'][0]?></p>
+                <p>#<?php //echo $item['tags'][0]?>viethousemoscow</p>
             </div>
         </a></div>
 </div>

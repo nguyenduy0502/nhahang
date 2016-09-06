@@ -6,13 +6,26 @@
  * Description: This is file index menu
  */
 ?>
-<div class="top_line">
-<a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
-                                     alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+<?php global $asite_options; ?>
+<?php if(!empty($asite_options['option_logo']['url']) && isset($asite_options['option_logo']['url'])): ?>
+    <div class="top_line">
+        <a href="#" class="toggle-menu"><img src="<?php echo $asite_options['option_logo']['url']; ?>"
+                                             alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
 
-     <h1>Menu</h1>
- </a>
-</div>
+            <h1>Menu</h1>
+        </a>
+    </div>
+    <?php else:  ?>
+    <div class="top_line">
+        <a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER.'/img/logo.png'; ?>"
+                                             alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+
+            <h1>Menu</h1>
+        </a>
+    </div>
+<?php endif;?>
+
+
 <!--<a href="#" class="toggle-menu">&#9776;</a>-->
 <nav>
     <ul class="nav-list nav-open" id="nav">
@@ -23,9 +36,10 @@
         <li><a href="#new-food">Новые блюды</a></li>
 
 
-        <li class="has-logo"><a href="<? echo home_url();?>" title="<?php bloginfo('description')?>">
+        <li class="has-logo"><a href="<? echo home_url(); ?>" title="<?php bloginfo('description') ?>">
                 <h2 class="site-title">
-                    <img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>" alt="<?php bloginfo('description') ?>"
+                    <img src="<?php echo $asite_options['option_logo']['url']; ?>"
+                         alt="<?php bloginfo('description') ?>"
                          title="<?php bloginfo('name'); ?>">
                 </h2>
             </a></li>

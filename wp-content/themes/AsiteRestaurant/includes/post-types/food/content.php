@@ -28,7 +28,7 @@
                     </div>
                     <?php else: ?>
                     <div class="sf-images">
-                        <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php echo TEMPLATE_FOLDER.'/img/logo.jpg'; ?>" alt="<?php echo $ingredient_food; echo ' - '; bloginfo('name');?>"></a>
+                        <a href="<?php the_permalink();?>" title="<?php the_title();?>"><img src="<?php echo TEMPLATE_FOLDER.'/img/logo.png'; ?>" alt="<?php echo $ingredient_food; echo ' - '; bloginfo('name');?>"></a>
                     </div>
                     <?php endif; // end check ?>
             <div class="sf-info">
@@ -64,7 +64,7 @@
                             <img src="<?php the_post_thumbnail_url('large')?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); ?>" title="<?php the_title();?>">
 
                         <?php else: ?>
-                            <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.jpg';?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); ?>" title="<?php the_title();?>">
+                            <img src="<?php  echo TEMPLATE_FOLDER.'/img/logo.png';?>" alt="<?php echo get_post_meta($post->ID,'ingredient_food',true); ?>" title="<?php the_title();?>">
 
                         <?php endif; // end check?>
                         <p><?php the_content();?></p>
