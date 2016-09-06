@@ -168,6 +168,17 @@
 	p.price{
 		font-size: 20px;
 	}
+	.article, .article-date h4{
+		text-align: center;
+	}
+	.article-img{
+		width: 100%;
+		height: 250px;
+		margin-bottom: 10px!important;
+	}
+	.section:not(.header):not(.contact-us){
+		padding: 40px 0;
+	}
 }
 
 

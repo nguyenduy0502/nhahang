@@ -104,6 +104,9 @@ h2, h3, h4, h5, h6{ text-align: center; }
 .section{
 	min-height: 100vh;
 }
+.section:not(.header):not(.news):not(.contact-us), .news .container{
+	padding: 20px 0;
+}
 /*.section:not(.header):not(.footer):not(.contact-us){
 	padding-top: 10vh!important;
 }
@@ -663,19 +666,17 @@ ul.children ul.children{
 	padding: 1px 0px;
 }
 .article{
-    height: 28vh;
-/*    background-color: #fff;*/
-    /* border: 4px dashed #ccc; */
-    /* margin: 11px auto; */
-    overflow: hidden;
-    padding: 1%;
+	/*height: 28vh;*/
+	overflow: hidden;
+	margin-top: 20px;
+	/*padding: 1%;*/
 }
 .article-name{
 	padding-top: 1%; 
 }
 .article-img{
-	height: 100%;
 	width: 30%;
+	height: 220px;
 	border: 4px solid #ccc;
 }
 .article img{
@@ -683,10 +684,11 @@ ul.children ul.children{
 	height: 100%;
 	object-fit: cover;
 }
-.article-date{
+.article-date h4{
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #888;
+	text-align: left;
 }
 .align-text-left h4{
 	text-align: left;
@@ -705,7 +707,7 @@ ul.children ul.children{
 }
 .bamboo{
 	overflow: hidden;
-	height: 100vh;
+	height: 100%;
 	/*background-image: url('http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/content/bamboo.png');*/
 	width: 30%;
 	position: absolute;
@@ -714,7 +716,7 @@ ul.children ul.children{
 	background-size: cover;
 }
 .bamboo img{
-	height: 100vh;
+	height: inherit;
 	position: absolute;
 	right: 0px;
 	z-index: 1;
@@ -1176,8 +1178,8 @@ form #search {
 
 
 /*POSTRECENT IN SINGLE-PAGE STYLING*/
-.page-content a{
-	color: rgb(17,91,54);
+.single-page a{
+	color: #00A800;
 }
 .post-info{
 	margin-bottom: 10px;

@@ -48,9 +48,9 @@
                             <div class="article-text align-text-left">
                                 <h4><?php echo nguyenduy_excerpt(get_the_content(), 200); ?></h4>
                             </div>
-                            <div class="article-date align-text-left"><h4><?php echo get_the_date('d-M-Y'); ?></h4>
+                            <div class="article-date"><h4><?php echo get_the_date('d-M-Y'); ?></h4>
                             </div>
-                            <a href="<?php the_permalink(); ?>" class="butt alignleft">Читать дальше></a>
+                            <a href="<?php the_permalink(); ?>" class="butt">Читать дальше></a>
                         </div>
 
                     <?php endwhile; endif; ?>
