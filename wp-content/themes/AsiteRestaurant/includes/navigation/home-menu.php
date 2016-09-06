@@ -6,9 +6,17 @@
  * Description: This is file index menu
  */
 ?>
+<?php global $asite_options;?>
+
 <div class="top_line">
-<a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
-                                     alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+<a href="#" class="toggle-menu">
+    <?php if(!empty($asite_options['option_logo']['url']) && isset($asite_options['option_logo']['url'])):?>
+        <img src="<?php echo $asite_options['option_logo']['url'];?>"
+             alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+    <?php else: ?>
+        <img src="<?php echo TEMPLATE_FOLDER . '/img/logo.png' ?>"
+             alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+    <?php endif;?>
 
      <h1>Меню</h1>
  </a>
@@ -25,8 +33,13 @@
 
         <li class="has-logo"><a href="<? echo home_url();?>" title="<?php bloginfo('description')?>">
                 <h2 class="site-title">
-                    <img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>" alt="<?php bloginfo('description') ?>"
+                    <?php if(!empty($asite_options['option_logo']['url']) && isset($asite_options['option_logo']['url'])):?>
+                        <img src="<?php echo $asite_options['option_logo']['url'] ?>" alt="<?php bloginfo('description') ?>"
+                             title="<?php bloginfo('name'); ?>">
+                    <?php else: ?>
+                    <img src="<?php echo TEMPLATE_FOLDER . '/img/logo.png' ?>" alt="<?php bloginfo('description') ?>"
                          title="<?php bloginfo('name'); ?>">
+                    <?php endif;?>
                 </h2>
             </a></li>
         <!-- <li class="has-submenu" data-menuanchor="food-menu"><a href="#food-menu">Меню</a> -->

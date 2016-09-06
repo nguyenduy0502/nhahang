@@ -6,9 +6,16 @@
  * Description: This is file second menu
  */
 ?>
+<?php global $asite_options;?>
 <div class="top_line2">
-<a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
+<a href="#" class="toggle-menu">
+    <?php if(!empty($asite_options['option_logo']['url']) && isset($asite_options['option_logo']['url'])):?>
+        <img src="<?php echo $asite_options['option_logo']['url'] ?>"
+             alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+    <?php else: ?>
+    <img src="<?php echo TEMPLATE_FOLDER . '/img/logo.png' ?>"
                                      alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
+    <?php endif; ?>
 <h1>Меню</h1></a>
 </div>
 
