@@ -28,8 +28,12 @@
 	.top_line{
 		background-color: transparent;
 		top: 0;
-		/*width: 1px;*/
 	}
+	.top_line2{
+		background-color: transparent;
+		top: 0;
+	}
+	
 
 	.has-logo{
 		display: none!important;
@@ -75,11 +79,6 @@
 
 
 @media only screen and (max-width: 670px){
-	.top_line{
-		background-color: transparent;
-		top: 0;
-		/*width: 1px;*/
-	}
 	.has-logo{
 		display: none;
 	}
@@ -92,7 +91,7 @@
 		display: block;
 		width: 100%;
 		position: relative;
-		line-height: 1rem;
+		line-height: 16px;
 		z-index: 1012;
 		left: 0;
 		top:41px;

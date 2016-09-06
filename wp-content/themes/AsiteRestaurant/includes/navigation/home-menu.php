@@ -10,7 +10,7 @@
 <a href="#" class="toggle-menu"><img src="<?php echo TEMPLATE_FOLDER . '/img/logo.jpg' ?>"
                                      alt="<?php bloginfo('description') ?>" title="<?php bloginfo('name'); ?>">
 
-     <h1>Menu</h1>
+     <h1>Меню</h1>
  </a>
 </div>
 <!--<a href="#" class="toggle-menu">&#9776;</a>-->
