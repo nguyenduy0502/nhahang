@@ -6,7 +6,13 @@
  * Description:
  */
 ?>
-<form action="<?php echo home_url();?>" class="searchform" method="get" role="search">
+<!-- <form action="<?php echo home_url();?>" class="searchform" method="get" role="search">
     <input type="search" name="s" id="search" placeholder="Search" class="s" >
     <button class="">|||</button>
-</form>
+</form> -->
+<div id="search">
+    <form action="<?php echo home_url();?>" class="searchform" method="get" role="search">
+        <input type="search" name="s" id="search_text" placeholder="Поиск"/>
+        <input type="button" name="sb" id="search_button"></a>
+    </form>
+</div>

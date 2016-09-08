@@ -173,7 +173,7 @@
 
 </script>
 <!-- end nicescroll -->
-<!-- smooth scroll down--
+<!-- smooth scroll down-->
 <script>
 	$(function() {
 	  $('a[href*="#"]:not([href="#"])').click(function() {
@@ -191,7 +191,7 @@
 	});
 </script>
 <!-- end smooth scroll -->
-<!--  smooth scroll up --
+<!--  smooth scroll up -->
 <script>
 $(document).ready(function () {
 
@@ -213,5 +213,17 @@ $(document).ready(function () {
 });
 </script>
 <!-- end smooth scroll up -->
+<!-- scroll down button -->
+<script>
+$(".arrow").on("click", function(event) {
+    event.preventDefault(); //Prevent default action of anchor
+    $("html, body").animate({ 
+        scrollTop: $(window).height()  //Get the document height
+    }, "slow"); //Animates the scroll
+    /* Can also use 3000, 4000 i.e 3 seconds, 4 seconds to animate the scroll */
+});
+</script>
+<!-- end scroll down button -->
+
 </body>
 </html>

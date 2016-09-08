@@ -203,7 +203,7 @@
                         </tbody>
                     </table>
                 </div>
-                <a href="<?php echo $link_menu; ?>" class="alignright butt">Ещё блюды ></a>
+                <a href="<?php echo $link_menu; ?>" class="butt">Ещё блюды ></a>
             </div>
 
         </div>

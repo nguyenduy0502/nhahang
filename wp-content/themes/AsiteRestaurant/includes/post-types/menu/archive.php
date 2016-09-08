@@ -9,11 +9,10 @@
 <div class="page-content clearfix">
 
     <div class="archive-menu">
-
-        <div class="archive-menu-name">
-            <h2>Menu</h2>
-        </div>
         <div class="archive-menu-content">
+            <div class="archive-menu-name">
+                <h2>Меню</h2>
+            </div>
             <?php if (have_posts()):while (have_posts()):the_post(); ?>
                 <?php
                 $time_start=get_post_meta($post->ID,'time_start',true);
@@ -49,6 +48,4 @@
         </div>
     </div>
     <ul class="paginate pag2 clearfix"><?php pagination(); ?></ul>
-
-
 </div>
