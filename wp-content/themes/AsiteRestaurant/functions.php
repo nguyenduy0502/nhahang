@@ -330,4 +330,13 @@ function pagination($prev = '&laquo;', $next = '&raquo;')
 
 	echo paginate_links($pagination);
 }
+/************************************************
+ * PUBLICIZE SUPPORT
+ ************************************************
+ */
+add_action('init','publicize_support');
+function publicize_support() {
+	add_post_type_support( 'food', 'publicize' );
+	add_post_type_support( 'menu', 'publicize' );
+}
 ?>
