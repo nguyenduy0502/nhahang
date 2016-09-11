@@ -31,6 +31,8 @@ function form_food_output($post)
 	wp_nonce_field('save_calorie_food_nonce','info_calorie_food_nonce');
 	$quantity_food=get_post_meta($post->ID,'quantity_food',true);
 	wp_nonce_field('save_quantity_food_nonce','info_quantity_food_nonce');
+	$unit_food=get_post_meta($post->ID,'food_unit',true);
+	wp_nonce_field('save_food_unit_nonce','info_food_unit_nonce');
 	$stored_meta=get_post_meta($post->ID);
 
 	?>
@@ -46,6 +48,8 @@ function form_food_output($post)
 		<tr>
 			<td><label for="weight_food">Масса</label></td>
 			<td><input type="text" id="weight_food" name="weight_food" placeholder="250" value="<?php echo esc_attr($weight_food); ?>"/></td>
+			<td><label for="food_unit">Milliliter</label><input type="radio" name="food_unit" value="ml"<?php if(isset($stored_meta['food_unit'])) checked($stored_meta['food_unit'][0],'ml');?>></td>
+			<td><label for="food_unit">Gram</label><input type="radio" name="food_unit" value="gram" <?php if(isset($stored_meta['food_unit'])) checked($stored_meta['food_unit'][0],'gram');?>></td>
 		</tr>
 		<tr>
 			<td><label for="protein_food">Белки</label></td>
@@ -151,6 +155,15 @@ function save_form_food_output($post_id)
 	}
 	if (isset($_POST['quantity_food']) && $_POST['quantity_food'] !== "") {
 		update_post_meta($post_id,'quantity_food',$_POST['quantity_food']);
+	}
+	// save data food_unit
+	if (!wp_verify_nonce($_POST['info_food_unit_nonce'], 'save_food_unit_nonce')) {
+		return;
+	}
+	if (isset($_POST['food_unit']) && $_POST['food_unit'] !== "") {
+		update_post_meta($post_id,'food_unit',$_POST['food_unit']);
+	} else {
+		update_post_meta($post_id,'recommend_food','');
 	}
 }
 ?>

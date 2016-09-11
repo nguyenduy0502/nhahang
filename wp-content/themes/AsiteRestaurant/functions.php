@@ -87,8 +87,12 @@ function get_price_food($post_id) {
 	return(!empty($price_food))?$price_food.' Руб':0;
 }
 function get_weight_food($post_id) {
-	$weight_food=get_post_meta($post_id,'weight_food',true);
-	return (!empty($weight_food))? $weight_food.' гр':0;
+	//$get_food_unit=get_post_meta($post_id,'food_unit',true);
+	//$weight_food=get_post_meta($post_id,'weight_food',true);
+	(!empty(get_post_meta($post_id,'food_unit',true))) ?$get_food_unit=get_post_meta($post_id,'food_unit',true):$get_food_unit='gram';
+	(!empty(get_post_meta($post_id,'weight_food',true)))? $weight_food=get_post_meta($post_id,'weight_food',true): $weight_food=0;
+	($get_food_unit=='gram')? $weight_unit=$weight_food.' гр':$weight_unit=$weight_food.' мл';
+	return $weight_unit;
 
 }
 /***********************************************************
