@@ -7,4 +7,5 @@
  */
 get_header();
 echo 'this is a file 404';
+get_footer();
 ?>
