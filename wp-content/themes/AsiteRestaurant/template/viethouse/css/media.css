@@ -179,6 +179,18 @@
 	.section:not(.header):not(.contact-us){
 		padding: 40px 0;
 	}
+	.of-item{
+		width: 70%;
+		margin: 0 15%;
+	}
+	.archive-food-name{
+		padding: 10px;
+	}
+	.afc-item{
+		width: 80%;
+		margin: 0 auto;
+		float: none;
+	}
 }
 
 
@@ -226,10 +238,17 @@
 	right: 1px;
 }
 	.sf-images{
-		width: 37%;
+		width: 100%;
 	}
 	.sf-info{
-		width: 63%;
+		width: 100%;
+	}
+	.of-item{
+		width: 100%;
+		margin: 0;
+	}
+	.afc-item{
+		width: 100%;
 	}
 }
 
