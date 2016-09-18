@@ -11,7 +11,7 @@
     <div class="archive-menu">
         <div class="archive-menu-content">
             <div class="archive-menu-name">
-                <h2>Меню</h2>
+                <h2>Список Меню</h2>
             </div>
             <?php if (have_posts()):while (have_posts()):the_post(); ?>
                 <?php
