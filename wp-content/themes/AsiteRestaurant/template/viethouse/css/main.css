@@ -534,9 +534,14 @@ Slider
 .footer{
 	background-color: #131514;
 }
-
+.footer .container {
+    min-height: 120px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .social{
-	margin: 43px auto;
 	display: inline-block;
 	float: right;
 	letter-spacing: 13px;
@@ -548,8 +553,7 @@ Slider
 }
 .credit{
 	border-left: 1px solid #fff;
-		padding: 11px 20px;
-		margin: 18px auto;
+	padding: 11px 20px;
 	display: inline-block;
 	float: left;
 }
@@ -564,9 +568,17 @@ tbody tr:nth-child(2n-2) {
 
 /* 2.9. COMMENT
 ------------------------------------------------------*/
-#commentform{
-	padding: 0 100px;
+.commentlist{
 	text-align: left;
+}
+#respond{
+	width: 420px;
+	margin: auto;
+	text-align: left;
+	padding: 14px;
+	box-shadow: 0 0 30px #ccc;
+	background-color: #eee;
+	box-sizing: border-box;
 }
 .comment-author img{
 	width: 40px;
@@ -726,10 +738,9 @@ ul.children ul.children{
 	padding: 1px 0px;
 }
 .article{
-	/*height: 28vh;*/
 	overflow: hidden;
 	margin-top: 20px;
-	/*padding: 1%;*/
+	background-color: #fff;
 }
 .article-name{
 	padding-top: 1%; 
@@ -737,7 +748,6 @@ ul.children ul.children{
 .article-img{
 	width: 30%;
 	height: 220px;
-	border: 4px solid #ccc;
 }
 .article img{
 	width: 100%;
@@ -894,7 +904,7 @@ p.it-nf-price{
 .food-menu th,.food-menu td{
 	min-width:100px;
 	text-align: center;
-	padding: 8px 20px;
+	/*padding: 8px 20px;*/
 	color: #000;
 	font-size: 16px;
 }
@@ -905,7 +915,7 @@ p.it-nf-price{
 	width: 220px;
 	height: 171px;
 	overflow: hidden;
-	border: 3px solid #ccc;
+	/*border: 3px solid #ccc;*/
 }
 .food img{
 	width: 100%;
@@ -957,11 +967,12 @@ td .food-text{
 /*gallery*/
 .gallery{
 	min-height: 100vh;
-	background: #444 url('https://www.omnihotels.com/-/media/images/hotels/homrst/restaurants/homrst-omni-homestead-resort-casino-restaurant.jpg');
-	background-blend-mode: darken;
+/*	background: #444 url('https://www.omnihotels.com/-/media/images/hotels/homrst/restaurants/homrst-omni-homestead-resort-casino-restaurant.jpg');
+	background-blend-mode: darken;*/
+	background-color: #fff;
 }
 .gallery .section-title h1{
-	color: #fff;
+	/*color: #fff;*/
 }
 .ih-item{
 	width: 100%!important;
@@ -1004,7 +1015,7 @@ td .food-text{
 }
 .item-testm{
 	min-height: 25vh;
-	color: #fff;
+	/*color: #fff;*/
 /*	display: -webkit-box;
 	display: -moz-box;       
 	display: -ms-flexbox;    
@@ -1096,6 +1107,7 @@ input{
 	color: #333;
 	font-size: 14px;
 }
+
 .contact-us-form textarea{
 	height: 90px;
 }

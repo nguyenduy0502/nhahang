@@ -250,6 +250,18 @@
 	.afc-item{
 		width: 100%;
 	}
+	#respond{
+		width: 100%;
+	}
+	p.it-nf-name {
+	font-size: 1.6em;
+	}
+	p.it-nf-price{
+		font-size: 1em;
+	}
+	p.it-nf-desc{
+		font-size: 14px;
+	}
 }
 
 /* Custom, iPhone Retina */

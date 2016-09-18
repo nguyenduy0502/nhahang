@@ -3,7 +3,7 @@
 <div class="footer" id="section6">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="col-md-3 col-sm-4 col-xs-5">
 				<div class="social">
 					<?php // check social in theme option?>
 					<?php if(!empty($asite_options['option_fb']) && isset($asite_options['option_fb'])): ?>
@@ -23,7 +23,7 @@
 					<?php endif; ?>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="col-md-9 col-sm-8 col-xs-7">
 				<div class="credit">
 					<?php if(!empty($asite_options['option_address']) && isset($asite_options['option_address'])): // check option_address in theme option?>
 					<h6><?php echo $asite_options['option_address'];?></h6>
