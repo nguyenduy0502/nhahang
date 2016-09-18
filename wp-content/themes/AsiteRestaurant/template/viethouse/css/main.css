@@ -1208,7 +1208,6 @@ input{
     border: 0 none;
     height: 40px;
     margin-right: 0;
-    color: white;
     outline: none;
     background: #fff;
     float: left;
@@ -1227,7 +1226,12 @@ input{
     cursor: pointer;
     outline: none;
 }
-
+#search_button:hover{
+	background-color: #ccc ;
+}
+#search_button:active{
+	background-color: #bbb ;
+}
 /*PAGE NUMBER*/
 .paginate {
   display: block;
