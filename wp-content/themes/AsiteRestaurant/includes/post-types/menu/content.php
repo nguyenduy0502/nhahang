@@ -30,7 +30,7 @@
                 $array_food=array_merge($choose_cat_53,$choose_cat_55,$choose_cat_50,$choose_cat_52,$choose_cat_51,$choose_cat_54,$choose_cat_56,$choose_cat_57);
                 ?>
             <?php endwhile; // end get value?>
-            <?php $query = new WP_Query(array('post__in' => $array_food,'post_type' => 'food','orderby'=>'rand'));
+            <?php $query = new WP_Query(array('post__in' => $array_food,'post_type' => 'food','orderby'=>'rand','posts_per_page'=>'-1'));
             ?>
             <?php while ($query->have_posts()):$query->the_post(); ?>
                 <div class="amc-item">
