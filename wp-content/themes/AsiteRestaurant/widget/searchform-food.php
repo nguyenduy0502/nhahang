@@ -39,10 +39,8 @@ class Searchform_Food extends WP_Widget{
         extract($args);
         $title=$instance['title'];
         echo $args['before_widget'];?>
-        <form action="<?php echo home_url();?>" class="searchform" method="get" role="search">
-            <input type="search" name="s" id="search" placeholder="Search" class="s" >
-            <button class="">|||</button>
-        </form>
+
+        <?php get_search_form();?>
 
       <?php  echo $args['after_widget'];
     }
