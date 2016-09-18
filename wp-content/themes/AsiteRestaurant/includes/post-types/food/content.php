@@ -34,7 +34,7 @@
             <div class="sf-info">
                 <h2><?php the_title();?></h2>
                 <p class="price">
-                <?php echo (empty($price_food))? 'Безплатно': get_price_food($post->ID);?>
+                <?php echo (empty($price_food))? 'Беcплатно': get_price_food($post->ID);?>
                 </p>
                 <?php get_template_part('includes/social-navigator/fb-share'); // get navigator fb ?>
                 <p class="description">
