@@ -28,6 +28,7 @@
 	4.3. ARCHIVE-FOOD STYLING
 	4.4. SINGLE-FOOD STYLING
 	4.5. SINGLE-PAGE STYLING
+	4.6. 404 ERROR STYLING
 
 */
 
@@ -87,7 +88,7 @@ body {
 	position: relative;
 }
 .section-title h2{
-	color: rgb(5,104,57);;
+	color: rgb(5,104,57);
 }
 h1{
 /*	color: #fff;
@@ -740,9 +741,11 @@ ul.children ul.children{
 	overflow: hidden;
 	margin-top: 20px;
 	background-color: #fff;
+	border-bottom: 4px solid #ccc;
+	border-radius: 10px;
 }
 .article-name{
-	padding-top: 1%; 
+	padding-top: 2%; 
 }
 .article-img{
 	width: 30%;
@@ -889,7 +892,7 @@ p.it-nf-price{
 .menu-food {
 	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 	background: white;
-	border: 4px solid #ccc;
+	border-bottom: 4px solid #ccc;
 	padding: 0px;
 	min-width: 320px;
 }
@@ -934,7 +937,7 @@ td .food-text{
 }
 .booking-info{
 	width: 600px;
-	border: 4px solid #ccc;
+	border-bottom: 4px solid #ccc;
 	box-sizing: border-box;
 	padding: 10px;
 	background-color: #fff;
@@ -999,7 +1002,7 @@ td .food-text{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	border: 4px solid #ccc;
+	border-bottom: 4px solid #ccc;
 }
 .ih-item img{
 	width: 100%;
@@ -1196,17 +1199,7 @@ input{
 }
 
 /*SEARCH-FORM STYLING*/
-/*form #search {
-	width: 70%;
-	padding: 5px 10px;
-	outline: none;
-	color: #000;
-	background-color: #fff;
-	border: none;
-	font-size: 13px;
-	text-transform: uppercase;
-	font-weight: bold;
-}*/
+
 #search {
     width: 100%;
     height: 40px;
@@ -1647,4 +1640,18 @@ p.of-price{
 
 .page-content .single-page .updated{
 	display: none;
+}
+
+/* 4.6. 404 ERROR STYLING
+-------------------------------------------------------*/
+.e404 h1{
+	font-size: 160px;
+	color: rgb(5,104,57);
+	margin-bottom: -80px; 
+}
+.e404 h2{
+	font-size: 50px;
+}
+.e404 a{
+	color: rgb(5,104,57);
 }

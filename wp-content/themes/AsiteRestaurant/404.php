@@ -1,11 +1,12 @@
 <?php
-/**
- * File Name: 404.php
- * Date: 27-06-2016
- * Time: 16:31
- * Description:
- */
-get_header();
-echo 'this is a file 404';
-get_footer();
-?>
+get_header();?>
+<div class="section">
+	<div class="e404">
+		<h1>404</h1>
+		<h2>Ошибка.</h2>
+		<h3><a href=""><<вернуться</a></h3>
+	</div>
+</div>
+
+
+<?php get_footer();?>

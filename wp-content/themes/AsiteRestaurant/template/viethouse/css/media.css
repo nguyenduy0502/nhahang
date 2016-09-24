@@ -168,6 +168,9 @@
 	p.price{
 		font-size: 20px;
 	}
+	.article{
+		padding-bottom: 10px;
+	}
 	.article, .article-date h4{
 		text-align: center;
 	}
