@@ -15,9 +15,12 @@
 
 	}
 
-.owl-carousel2{
-	max-height: 50vh;
-}
+	.owl-carousel2{
+		max-height: 50vh;
+	}
+	.bamboo img{
+		right: -68%;
+	}
 
 }
 
@@ -51,15 +54,15 @@
 
 	.bamboo img{
 	right: -40px;
-}
+	}
+	.bamboo{
+		display: none;
+	}
 }
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-	.bamboo{
-		display: none;
-	}
 
 	.contact-us-small {
 	width: 100%;
@@ -193,6 +196,9 @@
 		width: 80%;
 		margin: 0 auto;
 		float: none;
+	}
+	.article-text {
+		padding: 1% 2%;
 	}
 }
 

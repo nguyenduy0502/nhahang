@@ -778,10 +778,10 @@ ul.children ul.children{
 	vertical-align: middle;
 }
 .bamboo{
-	overflow: hidden;
+	/*overflow: hidden;*/
 	height: 100%;
 	/*background-image: url('http://localhost:8080/nhahang/wp-content/themes/AsiteRestaurant/template/viethouse/img/content/bamboo.png');*/
-	width: 30%;
+	width: 16%;
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -790,7 +790,7 @@ ul.children ul.children{
 .bamboo img{
 	height: inherit;
 	position: absolute;
-	right: 0px;
+	right: -4%;
 	z-index: 1;
 }
 
@@ -822,6 +822,8 @@ ul.children ul.children{
 	height: 40vh;
 	border: 5px solid #ccc;
 	margin: 0px 4.5%;
+	overflow: hidden;
+	border-radius: 10px;
 }
 .item-new-food:hover .item-new-food-info{
 	display: none;
@@ -895,6 +897,8 @@ p.it-nf-price{
 	border-bottom: 4px solid #ccc;
 	padding: 0px;
 	min-width: 320px;
+	border-radius: 16px;
+	overflow: hidden;
 }
 .food-menu{
 	overflow: hidden;
@@ -941,6 +945,7 @@ td .food-text{
 	box-sizing: border-box;
 	padding: 10px;
 	background-color: #fff;
+	border-radius: 14px;
 }
 .booking-info .section-title{
 	background-color: #fff;

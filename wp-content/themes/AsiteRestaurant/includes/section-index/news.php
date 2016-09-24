@@ -17,7 +17,7 @@
                         <?php endif; // end check option_desc_news?>
                     </div>
                 </div>
-                <div class="col-md-10 col-sm-11 col-xs-12">
+                <div class="col-md-10 col-sm-12 col-xs-12">
                     <?php
                     (!empty($asite_options['option_number_news']) && isset($asite_options['option_number_news'])) ? $number_post = $asite_options['option_number_news'] : $number_post = 3;
                     // set query get post
