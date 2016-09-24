@@ -34,7 +34,7 @@
                             <?php if (has_post_thumbnail()): // check has post thumbnail?>
                                 <div class="article-img alignleft">
                                     <a href="<?php the_permalink(); ?>"><img
-                                            src="<?php the_post_thumbnail_url('thumbnail'); ?>"
+                                            src="<?php the_post_thumbnail_url('medium'); ?>"
                                             alt="<?php the_title(); ?>"></a>
                                 </div>
                             <?php else: // else not has post thumbnail?>

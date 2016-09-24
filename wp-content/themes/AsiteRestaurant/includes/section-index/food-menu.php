@@ -51,7 +51,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -92,7 +92,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -134,7 +134,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
@@ -176,7 +176,7 @@
                                 <td>
                                     <?php if (has_post_thumbnail()): // check has post thumbnails?>
                                         <div class="food">
-                                            <img src="<?php the_post_thumbnail_url('thumbnail'); ?>"
+                                            <img src="<?php the_post_thumbnail_url('medium'); ?>"
                                                  alt="<?php echo $ingredient_food = get_post_meta($post->ID, 'ingredient_food', true);
                                                  echo ' - ';
                                                  bloginfo('name'); ?>" title="<?php the_title(); ?>">
