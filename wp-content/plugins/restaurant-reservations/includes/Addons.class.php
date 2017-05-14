@@ -9,105 +9,13 @@ if ( !class_exists( 'rtbAddons' ) ) {
  */
 class rtbAddons {
 
-	/**
-	 * API endpoint to retrieve addons list
-	 */
-	public $api_url;
+	public function __construct( ) {
 
-	/**
-	 * Plugin slug to retrieve addons for
-	 */
-	public $plugin;
+		// Add the admin menu
+		add_action( 'admin_menu', array( $this, 'add_menu_page' ), 100 );
 
-	public function __construct( $args ) {
-
-		$this->parse_args( $args );
-
-		if ( $this->check_config() ) {
-
-			// Add the admin menu
-			add_action( 'admin_menu', array( $this, 'add_menu_page' ), 100 );
-
-			// Send addon data to the javascript
-			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ) );
-
-			// Receive ajax calls to fetch addons
-			add_action( 'wp_ajax_nopriv_rtb-addons' , array( $this , 'ajax_nopriv_get_addons' ) );
-			add_action( 'wp_ajax_rtb-addons', array( $this, 'ajax_get_addons' ) );
-
-			// Add a newsletter subscription prompt above the addons
-			add_action( 'rtb_addons_pre', array( $this, 'add_subscribe_pompt' ) );
-
-		}
-	}
-
-	/**
-	 * Parse the arguments passed in the construction and assign them to
-	 * internal variables.
-	 */
-	private function parse_args( $args ) {
-		foreach ( $args as $key => $val ) {
-			switch ( $key ) {
-
-				case 'api_url' :
-					$this->{$key} = esc_url( $val );
-
-				case 'plugin' :
-					$this->{$key} = esc_attr( $val );
-
-				default :
-					$this->{$key} = $val;
-
-			}
-		}
-
-		do_action( $this->plugin . '_addons_parse_args' );
-	}
-
-	/**
-	 * Check that we have everything we need to render the addons page
-	 */
-	public function check_config() {
-
-		if ( !empty( $this->api_url ) && !empty( $this->plugin ) ) {
-			return true;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Send addon data to the javascript
-	 */
-	public function enqueue_admin_assets() {
-
-		// Use the page reference in $admin_page_hooks because
-		// it changes in SOME hooks when it is translated.
-		// https://core.trac.wordpress.org/ticket/18857
-		global $admin_page_hooks;
-
-		$screen = get_current_screen();
-		if ( empty( $screen ) || empty( $admin_page_hooks['rtb-bookings'] ) ) {
-			return;
-		}
-
-		if ( $screen->base == $admin_page_hooks['rtb-bookings'] . '_page_rtb-addons' ) {
-			wp_localize_script(
-				'rtb-admin',
-				'rtb_addons',
-				array(
-					'nonce'			=> wp_create_nonce( 'rtb-addons' ),
-					'strings'		=> array(
-						'loading'		=> __( 'Loading', 'restaurant-reservations' ),
-						'error_unknown'	=> _x( 'An unknown error occured.', 'Error message when retrieving list of addons', 'restaurant-reservations' ),
-						'installed'		=> _x( 'Already Installed', 'Label for an addon that is already installed and activated.', 'restaurant-reservations' ),
-						'coming_soon'	=> _x( 'Coming Soon', 'Label for an addon that is not yet released.', 'restaurant-reservations' ),
-						'free'			=> _x( 'Free', 'Label for an addon that is free.', 'restaurant-reservations' ),
-						'learn_more'	=> _x( 'Get It', 'Label for an addon that is released.', 'restaurant-reservations' ),
-					)
-				)
-			);
-		}
+		// Add a newsletter subscription prompt above the addons
+		add_action( 'rtb_addons_pre', array( $this, 'add_subscribe_pompt' ) );
 	}
 
 	/**
@@ -131,80 +39,239 @@ class rtbAddons {
 	 */
 	public function show_admin_addons_page() {
 
-		// @todo check for transient and only call the api if its missing
+		// Set campaign parameters for addon URLs
+		$url_params = '?utm_source=Plugin&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations';
 		?>
 
 		<div class="wrap">
 			<h1><?php _e( 'Addons for Restaurant Reservations', 'restaurant-reservations' ); ?></h1>
 			<?php do_action( 'rtb_addons_pre' ); ?>
-			<div id="rtb-addons">
-				<div class="rtb-loading">
-					<div class="spinner"></div>
-					Loading
+			<div class="rtb-addons">
+				<div class="addon addon-custom-fields">
+					<a href="https://themeofthecrop.com/plugins/restaurant-reservations/custom-fields/<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/custom-fields.png'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Custom Fields', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'Plan your dinner service better by asking for special seating requests, dietary needs and more when customers book online.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/plugins/restaurant-reservations/custom-fields/<?php echo $url_params; ?>" class="button button-primary" target="_blank">
+								<?php esc_html_e( 'Learn More', 'restaurant-reservations' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-export-bookings">
+					<a href="https://themeofthecrop.com/plugins/restaurant-reservations/export-bookings/<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/export-bookings.png'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Export Bookings', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'Easily print your bookings in a PDF or export them to an Excel/CSV file so you can analyze patterns, cull customer data and import bookings into other services.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/plugins/restaurant-reservations/export-bookings/<?php echo $url_params; ?>" class="button button-primary" target="_blank">
+								<?php esc_html_e( 'Learn More', 'restaurant-reservations' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-email-templates">
+					<a href="https://themeofthecrop.com/plugins/restaurant-reservations/email-templates/<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/email-templates.png'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Email Templates', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'Send beautiful email notifications with your own logo and brand colors when your customers make a reservation.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/plugins/restaurant-reservations/email-templates/<?php echo $url_params; ?>" class="button button-primary" target="_blank">
+								<?php esc_html_e( 'Learn More', 'restaurant-reservations' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-mailchimp">
+					<a href="https://themeofthecrop.com/plugins/restaurant-reservations/mailchimp/<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/mailchimp.png'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'MailChimp', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'Subscribe requests to your MailChimp mailing list and watch your subscription rates grow effortlessly.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/plugins/restaurant-reservations/mailchimp/<?php echo $url_params; ?>" class="button button-primary" target="_blank">
+								<?php esc_html_e( 'Learn More', 'restaurant-reservations' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2>Recommended Themes</h2>
+			<p>The following restaurant themes integrate beautifully with Restaurant Reservations, providing a clean, stylized booking form that matches your site's design.</p>
+			<div class="rtb-addons">
+				<div class="addon addon-themes">
+					<a href="https://themeofthecrop.com/themes/augustan<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-augustan.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Augustan', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A traditionally elegant theme for high-class restaurants, with simple setup and powerful features.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/themes/augustan<?php echo $url_params; ?>" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="https://themeofthecrop.com/themes/luigi<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-luigi.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Luigi', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A smart theme for upscale bistros and fine Italian restaurants. Get up and running quickly.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/themes/luigi<?php echo $url_params; ?>" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="https://themeofthecrop.com/themes/the-spot<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-the-spot.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'The Spot', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A vibrant theme for bars, pubs and destination restaurants with an attention-grabbing homepage.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/themes/the-spot<?php echo $url_params; ?>" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="https://themeofthecrop.com/themes/plate-up<?php echo $url_params; ?>">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-plate-up.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Plate Up', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A refined theme for sophisticated, modern restaurants to drive customers to your booking form.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themeofthecrop.com/themes/plate-up<?php echo $url_params; ?>" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="https://wordpress.org/themes/auberge/">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-auberge.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Auberge', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'Display a menu of your restaurant, café or bar stylishly with this free mobile-friendly WordPress theme.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://wordpress.org/themes/auberge/" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://www.webmandesign.eu/">Webman Design</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="http://www.anarieldesign.com/themes/restaurant-bar-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-liber.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Liber', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A responsive theme optimized for restaurants and bars supporting features these websites need.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="http://www.anarieldesign.com/themes/restaurant-bar-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="http://www.anarieldesign.com/">Anariel Design</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="https://wordpress.org/themes/brasserie/">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-brasserie.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Brasserie', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A delightfully simple to use and beautifully crafted free theme for any food establishment.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://wordpress.org/themes/brasserie/" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://www.templateexpress.com/">Template Express</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="http://www.anarieldesign.com/themes/food-blog-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-veggie.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Veggie', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A food blogging and restaurant theme with modern, easy-to-read typography and minimalist design.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="http://www.anarieldesign.com/themes/food-blog-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="http://www.anarieldesign.com/">Anariel Design</a>
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 			<?php do_action( 'rtb_addons_post' ); ?>
 		</div>
 
 		<?php
-	}
-
-	/**
-	 * Handle ajax request for addons from logged out user
-	 */
-	public function ajax_nopriv_get_addons() {
-
-		wp_send_json_error(
-			array(
-				'error' => 'loggedout',
-				'msg' => __( 'You have been logged out. Please login again to retrieve the addons.', 'restaurant-reservations' ),
-			)
-		);
-	}
-
-	/**
-	 * Handle ajax request for addons
-	 */
-	public function ajax_get_addons() {
-
-		$url = $this->api_url . $this->plugin;
-
-		if ( !check_ajax_referer( 'rtb-addons', 'nonce' ) ||  !current_user_can( 'manage_options' )) {
-			wp_send_json_error(
-				array(
-					'error' => 'nopriv',
-					'msg' => __( 'You do not have permission to access this page. Please login to an administrator account if you have one.', 'restaurant-reservations' ),
-				)
-			);
-		}
-
-		if ( function_exists( 'curl_init' ) && function_exists( 'curl_setop' ) ) {
-			$ch = curl_init();
-			curl_setopt( $ch, CURLOPT_URL, $url );
-			curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json' ) );
-			curl_setopt( $ch, CURLOPT_USERAGENT, 'PHP-MCAPI/2.0' );
-			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-			curl_setopt( $ch, CURLOPT_TIMEOUT, 10 );
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-		} elseif ( ini_get( 'allow_url_fopen' ) ) {
-			$result = @file_get_contents( $url );
-		} else {
-			$result = @file_get_contents( RTB_PLUGIN_DIR . '/assets/addons-backup.json' );
-		}
-
-		if ( $result ) {
-			// @todo set a transient with this data to reduce calls
-			wp_send_json_success( json_decode( $result ) );
-		} else {
-			wp_send_json_error(
-				array(
-					'error' => 'apifailed',
-					'msg' => __( 'The addons list could not be retrieved. Please <a href="">try again</a>. If the problem persists over time, please report it on the <a href="http://wordpress.org/support/plugin/restaurant-reservations" target="_blank">support forums</a>.', 'restaurant-reservations' ),
-				)
-			);
-		}
 	}
 
 	/**
@@ -218,7 +285,17 @@ class rtbAddons {
 		?>
 
 		<p>
-			<?php echo sprintf( esc_html_x( 'Find out when new addons are available by subscribing to the %smonthly newsletter%s or following %sTheme of the Crop%s on Twitter.', 'restaurant-reservations' ), '<a href="http://themeofthecrop.com/about/mailing-list/?utm_source=Plugin&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations">', '</a>', '<a href="http://twitter.com/themeofthecrop">', '</a>' ); ?>
+			<?php
+				echo sprintf(
+					esc_html_x( 'Find out when new addons are available by subscribing to the %smonthly newsletter%s, liking %sTheme of the Crop%s on Facebook, or following %sTheme of the Crop%s on Twitter.', 'restaurant-reservations' ),
+					'<a target="_blank" href="https://themeofthecrop.com/about/mailing-list/?utm_source=Plugin&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations">',
+					'</a>',
+					'<a target="_blank" href="https://www.facebook.com/themeofthecrop/">',
+					'</a>',
+					'<a target="_blank" href="http://twitter.com/themeofthecrop">',
+					'</a>'
+				);
+			?>
 		</p>
 
 		<?php

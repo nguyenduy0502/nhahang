@@ -30,6 +30,12 @@ jQuery(document).ready(function ($) {
 			$( '.rtb-booking-form .add-message a' ).trigger( 'click' );
 		}
 
+		// Disable the submit button when the booking form is submitted
+		$( '.rtb-booking-form form' ).submit( function() {
+			$(this).find( 'button[type="submit"]' ).prop( 'disabled', 'disabled' );
+			return true;
+		} );
+
 		// Enable datepickers on load
 		if ( typeof rtb_pickadate !== 'undefined' ) {
 
@@ -40,11 +46,18 @@ jQuery(document).ready(function ($) {
 					format: rtb_pickadate.date_format,
 					formatSubmit: 'yyyy/mm/dd',
 					hiddenName: true,
-					min: true,
+					min: !rtb_pickadate.allow_past,
 					container: 'body',
+					firstDay: rtb_pickadate.first_day,
 
-					// Select the value when loaded if a value has been set
 					onStart: function() {
+
+						// Block dates beyond early bookings window
+						if ( rtb_pickadate.early_bookings !== '' ) {
+							this.set( 'max', parseInt( rtb_pickadate.early_bookings, 10 ) );
+						}
+
+						// Select the value when loaded if a value has been set
 						if ( $date_input.val()	!== '' ) {
 							var date = new Date( $date_input.val() );
 							if ( Object.prototype.toString.call( date ) === "[object Date]" ) {
@@ -111,10 +124,16 @@ jQuery(document).ready(function ($) {
 				rtb_booking_form.datepicker.set( 'disable', disable_dates );
 			}
 
-			rtb_pickadate.late_bookings = parseInt( rtb_pickadate.late_bookings, 10 );
-			if ( rtb_pickadate.late_bookings >= 1440 ) {
-				var min = Math.floor( rtb_pickadate.late_bookings / 1440 );
-				rtb_booking_form.datepicker.set( 'min', min );
+			if ( typeof rtb_pickadate.late_bookings === 'string' ) {
+				if ( rtb_pickadate.late_bookings == 'same_day' ) {
+					rtb_booking_form.datepicker.set( 'min', 1 );
+				} else if ( rtb_pickadate.late_bookings !== '' ) {
+					rtb_pickadate.late_bookings = parseInt( rtb_pickadate.late_bookings, 10 );
+					if ( rtb_pickadate.late_bookings % 1 === 0 && rtb_pickadate.late_bookings >= 1440 ) {
+						var min = Math.floor( rtb_pickadate.late_bookings / 1440 );
+						rtb_booking_form.datepicker.set( 'min', min );
+					}
+				}
 			}
 
 			// If no date has been set, select today's date if it's a valid
@@ -160,19 +179,20 @@ jQuery(document).ready(function ($) {
 			return;
 		}
 
-		selected_date = new Date( rtb_booking_form.datepicker.get( 'select', 'yyyy/mm/dd' ) );
-		var selected_date_year = selected_date.getFullYear();
-		var selected_date_month = selected_date.getMonth();
-		var selected_date_date = selected_date.getDate();
+		var selected_date = new Date( rtb_booking_form.datepicker.get( 'select', 'yyyy/mm/dd' ) ),
+			selected_date_year = selected_date.getFullYear(),
+			selected_date_month = selected_date.getMonth(),
+			selected_date_date = selected_date.getDate(),
+			current_date = new Date();
 
 		// Declaring the first element true inverts the timepicker settings. All
 		// times subsequently declared are valid. Any time that doesn't fall
 		// within those declarations is invalid.
-		// See: http://amsul.ca/pickadate.js/time.htm#disable-times-all
+		// See: http://amsul.ca/pickadate.js/time/#disable-times-all
 		var valid_times = [ rtb_booking_form.get_outer_time_range() ];
 
 		// Check if this date is an exception to the rules
-		if ( typeof rtb_pickadate.schedule_closed != 'undefined' ) {
+		if ( typeof rtb_pickadate.schedule_closed !== 'undefined' ) {
 
 			var excp_date = [];
 			var excp_start_date = [];
@@ -207,6 +227,8 @@ jQuery(document).ready(function ($) {
 					} else {
 						excp_end_time = [ 24, 0 ]; // End of the day
 					}
+
+					excp_start_time = rtb_booking_form.get_earliest_time( excp_start_time, selected_date, current_date );
 
 					valid_times.push( { from: excp_start_time, to: excp_end_time, inverted: true } );
 				}
@@ -267,6 +289,8 @@ jQuery(document).ready(function ($) {
 							} else {
 								rule_end_time = [ 24, 0 ]; // End of the day
 							}
+
+							rule_start_time = rtb_booking_form.get_earliest_time( rule_start_time, selected_date, current_date );
 
 							valid_times.push( { from: rule_start_time, to: rule_end_time, inverted: true } );
 
@@ -334,6 +358,43 @@ jQuery(document).ready(function ($) {
 		} else {
 			return [ hour, minute ];
 		}
+	};
+
+	/**
+	 * Get the earliest valid time
+	 *
+	 * This checks the valid time for the day and, if a current day, applies
+	 * any late booking restrictions. It also ensures that times in the past
+	 * are not availabe.
+	 *
+	 * @param array start_time
+	 * @param array selected_date
+	 * @param array current_date
+	 */
+	rtb_booking_form.get_earliest_time = function( start_time, selected_date, current_date ) {
+
+		// Only make adjustments for current day selections
+		if ( selected_date.toDateString() !== current_date.toDateString() ) {
+			return start_time;
+		}
+
+		// Get the number of minutes after midnight to compare
+		var start_minutes = ( start_time[0] * 60 ) + start_time[1],
+			current_minutes = ( current_date.getHours() * 60 ) + current_date.getMinutes(),
+			late_booking_minutes;
+
+		start_minutes = start_minutes > current_minutes ? start_minutes : current_minutes;
+
+		if ( typeof rtb_pickadate.late_bookings === 'number' && rtb_pickadate.late_bookings % 1 === 0 ) {
+			late_booking_minutes = current_minutes + rtb_pickadate.late_bookings;
+			if ( late_booking_minutes > start_minutes ) {
+				start_minutes = late_booking_minutes;
+			}
+		}
+
+		start_time = [ Math.floor( start_minutes / 60 ), start_minutes % 60 ];
+
+		return start_time;
 	};
 
 

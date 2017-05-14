@@ -90,8 +90,8 @@ class rtbSettings {
 		$this->defaults = array(
 
 			'success-message'				=> _x( 'Thanks, your booking request is waiting to be confirmed. Updates will be sent to the email address you provided.', 'restaurant-reservations' ),
-			'date-format'					=> _x( 'mmmm d, yyyy', 'Default date format for display. Must match formatting rules at http://amsul.ca/pickadate.js/date.htm#formatting-rules', 'restaurant-reservations' ),
-			'time-format'					=> _x( 'h:i A', 'Default time format for display. Must match formatting rules at http://amsul.ca/pickadate.js/time.htm#formats', 'restaurant-reservations' ),
+			'date-format'					=> _x( 'mmmm d, yyyy', 'Default date format for display. Must match formatting rules at http://amsul.ca/pickadate.js/date/#formats', 'restaurant-reservations' ),
+			'time-format'					=> _x( 'h:i A', 'Default time format for display. Must match formatting rules at http://amsul.ca/pickadate.js/time/#formats', 'restaurant-reservations' ),
 			'time-interval'					=> _x( '30', 'Default interval in minutes when selecting a time.', 'restaurant-reservations' ),
 
 			// Email address where admin notifications should be sent
@@ -267,11 +267,40 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 			'rtb-general',
 			'select',
 			array(
+				'id'            => 'party-size-min',
+				'title'         => __( 'Min Party Size', 'restaurant-reservations' ),
+				'description'   => __( 'Set a minimum allowed party size for bookings.', 'restaurant-reservations' ),
+				'blank_option'	=> false,
+				'options'       => $this->get_party_size_setting_options( false ),
+			)
+		);
+
+		$sap->add_setting(
+			'rtb-settings',
+			'rtb-general',
+			'select',
+			array(
 				'id'            => 'party-size',
 				'title'         => __( 'Max Party Size', 'restaurant-reservations' ),
 				'description'   => __( 'Set a maximum allowed party size for bookings.', 'restaurant-reservations' ),
 				'blank_option'	=> false,
 				'options'       => $this->get_party_size_setting_options(),
+			)
+		);
+
+		$sap->add_setting(
+			'rtb-settings',
+			'rtb-general',
+			'select',
+			array(
+				'id'            => 'require-phone',
+				'title'         => __( 'Require Phone', 'restaurant-reservations' ),
+				'description'   => __( "Don't accept booking requests without a phone number.", 'restaurant-reservations' ),
+				'blank_option'	=> false,
+				'options'       => array(
+					'' => __( 'No', 'restaurant-reservations' ),
+					'1' => __( 'Yes', 'restaurant-reservations' ),
+				),
 			)
 		);
 
@@ -294,7 +323,7 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 			array(
 				'id'            => 'date-format',
 				'title'         => __( 'Date Format', 'restaurant-reservations' ),
-				'description'   => sprintf( __( 'Define how the date is formatted on the booking form. %sFormatting rules%s. This only changes the format on the booking form. To change the date format in notification messages, modify your general %sWordPress Settings%s.', 'restaurant-reservations' ), '<a href="http://amsul.ca/pickadate.js/date.htm#formatting-rules">', '</a>', '<a href="' . admin_url( 'options-general.php' ) . '">', '</a>' ),
+				'description'   => sprintf( __( 'Define how the date is formatted on the booking form. %sFormatting rules%s. This only changes the format on the booking form. To change the date format in notification messages, modify your general %sWordPress Settings%s.', 'restaurant-reservations' ), '<a href="http://amsul.ca/pickadate.js/date/#formats">', '</a>', '<a href="' . admin_url( 'options-general.php' ) . '">', '</a>' ),
 				'placeholder'	=> $this->defaults['date-format'],
 			)
 		);
@@ -306,13 +335,13 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 			array(
 				'id'            => 'time-format',
 				'title'         => __( 'Time Format', 'restaurant-reservations' ),
-				'description'   => sprintf( __( 'Define how the time is formatted on the booking form. %sFormatting rules%s. This only changes the format on the booking form. To change the time format in notification messages, modify your general %sWordPress Settings%s.', 'restaurant-reservations' ), '<a href="http://amsul.ca/pickadate.js/time.htm#formatting-rules">', '</a>', '<a href="' . admin_url( 'options-general.php' ) . '">', '</a>' ),
+				'description'   => sprintf( __( 'Define how the time is formatted on the booking form. %sFormatting rules%s. This only changes the format on the booking form. To change the time format in notification messages, modify your general %sWordPress Settings%s.', 'restaurant-reservations' ), '<a href="http://amsul.ca/pickadate.js/time/#formats">', '</a>', '<a href="' . admin_url( 'options-general.php' ) . '">', '</a>' ),
 				'placeholder'	=> $this->defaults['time-format'],
 			)
 		);
 
 		// Add i8n setting for pickadate if the frontend assets are to be loaded
-		if ( RTB_LOAD_FRONTEND_ASSETS ) {
+		if ( apply_filters( 'rtb-load-frontend-assets', true ) ) {
 			$sap->add_setting(
 				'rtb-settings',
 				'rtb-general',
@@ -325,6 +354,28 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 				)
 			);
 		}
+
+		$sap->add_setting(
+			'rtb-settings',
+			'rtb-general',
+			'textarea',
+			array(
+				'id'			=> 'ban-emails',
+				'title'			=> __( 'Banned Email Addresses', 'restaurant-reservations' ),
+				'description'	=> __( 'You can block bookings from specific email addresses. Enter each email address on a separate line.', 'restaurant-reservations' ),
+			)
+		);
+
+		$sap->add_setting(
+			'rtb-settings',
+			'rtb-general',
+			'textarea',
+			array(
+				'id'			=> 'ban-ips',
+				'title'			=> __( 'Banned IP Addresses', 'restaurant-reservations' ),
+				'description'	=> __( 'You can block bookings from specific IP addresses. Enter each IP address on a separate line. Be aware that many internet providers rotate their IP address assignments, so an IP address may accidentally refer to a different user. Also, if you block an IP address used by a public connection, such as cafe WIFI, a public library, or a university network, you may inadvertantly block several people.', 'restaurant-reservations' ),
+			)
+		);
 
 		$sap->add_section(
 			'rtb-settings',
@@ -415,11 +466,11 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 				'blank_option'	=> false,
 				'options'       => array(
 					''		=> __( 'Any time', 'restaurant-reservations' ),
-					'1' 	=> __( 'Up to 1 day in advance', 'restaurant-reservations' ),
-					'7' 	=> __( 'Up to 1 week in advance', 'restaurant-reservations' ),
-					'14' 	=> __( 'Up to 2 weeks in advance', 'restaurant-reservations' ),
-					'30' 	=> __( 'Up to 30 days in advance', 'restaurant-reservations' ),
-					'90' 	=> __( 'Up to 90 days in advance', 'restaurant-reservations' ),
+					'1' 	=> __( 'From 1 day in advance', 'restaurant-reservations' ),
+					'7' 	=> __( 'From 1 week in advance', 'restaurant-reservations' ),
+					'14' 	=> __( 'From 2 weeks in advance', 'restaurant-reservations' ),
+					'30' 	=> __( 'From 30 days in advance', 'restaurant-reservations' ),
+					'90' 	=> __( 'From 90 days in advance', 'restaurant-reservations' ),
 				)
 			)
 		);
@@ -434,13 +485,14 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 				'description'   => __( 'Select how late customers can make their booking. (Administrators and Booking Managers are not restricted by this setting.)', 'restaurant-reservations' ),
 				'blank_option'	=> false,
 				'options'       => array(
-					'' 		=> __( 'Up to the last minute', 'restaurant-reservations' ),
-					'15' 	=> __( 'At least 15 minutes in advance', 'restaurant-reservations' ),
-					'30' 	=> __( 'At least 30 minutes in advance', 'restaurant-reservations' ),
-					'45' 	=> __( 'At least 45 minutes in advance', 'restaurant-reservations' ),
-					'60' 	=> __( 'At least 1 hour in advance', 'restaurant-reservations' ),
-					'240' 	=> __( 'At least 4 hours in advance', 'restaurant-reservations' ),
-					'1440' 	=> __( 'At least 1 day in advance', 'restaurant-reservations' ),
+					'' 	       => __( 'Up to the last minute', 'restaurant-reservations' ),
+					'15'       => __( 'At least 15 minutes in advance', 'restaurant-reservations' ),
+					'30'       => __( 'At least 30 minutes in advance', 'restaurant-reservations' ),
+					'45'       => __( 'At least 45 minutes in advance', 'restaurant-reservations' ),
+					'60'       => __( 'At least 1 hour in advance', 'restaurant-reservations' ),
+					'240'      => __( 'At least 4 hours in advance', 'restaurant-reservations' ),
+					'1440'     => __( 'At least 24 hours in advance', 'restaurant-reservations' ),
+					'same_day' => __( 'Block same-day bookings', 'restaurant-reservations' ),
 				)
 			)
 		);
@@ -476,6 +528,22 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 					'15' 		=> __( 'Every 15 minutes', 'restaurant-reservations' ),
 					'10' 		=> __( 'Every 10 minutes', 'restaurant-reservations' ),
 					'5' 		=> __( 'Every 5 minutes', 'restaurant-reservations' ),
+				)
+			)
+		);
+
+		$sap->add_setting(
+			'rtb-settings',
+			'rtb-schedule',
+			'select',
+			array(
+				'id'            => 'week-start',
+				'title'         => __( 'Week Starts On', 'restaurant-reservations' ),
+				'description'	=> __( 'Select the first day of the week', 'restaurant-reservations' ),
+				'blank_option'	=> false,
+				'options'       => array(
+					'0' => __( 'Sunday', 'restaurant-reservations' ),
+					'1' => __( 'Monday', 'restaurant-reservations' ),
 				)
 			)
 		);
@@ -677,11 +745,13 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 	 * Get options for the party size setting
 	 * @since 1.3
 	 */
-	public function get_party_size_setting_options() {
+	public function get_party_size_setting_options( $max = true ) {
 
-		$options = array(
-			'' 		=> __( 'Any size', 'restaurant-reservations' ),
-		);
+		$options = array();
+
+		if ( $max ) {
+			$options[''] = __( 'Any size', 'restaurant-reservations' );
+		}
 
 		$max = apply_filters( 'rtb_party_size_upper_limit', 100 );
 
@@ -699,10 +769,12 @@ Sorry, we could not accomodate your booking request. We\'re full or not open at 
 	public function get_form_party_options() {
 
 		$party_size = (int) $this->get_setting( 'party-size' );
+		$party_size_min = (int) $this->get_setting( 'party-size-min' );
 
+		$min = empty( $party_size_min ) ? 1 : (int) $this->get_setting( 'party-size-min' );
 		$max = empty( $party_size ) ? apply_filters( 'rtb_party_size_upper_limit', 100 ) : (int) $this->get_setting( 'party-size' );
 
-		for ( $i = 1; $i <= $max; $i++ ) {
+		for ( $i = $min; $i <= $max; $i++ ) {
 			$options[$i] = $i;
 		}
 

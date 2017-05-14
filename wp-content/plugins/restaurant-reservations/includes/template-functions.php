@@ -110,7 +110,11 @@ function rtb_print_booking_form( $args = array() ) {
 			<?php
 				foreach( $contents['fields'] as $slug => $field ) {
 
-					$args = empty( $field['callback_args'] ) ? null : $field['callback_args'];
+					$args = empty( $field['callback_args'] ) ? array() : $field['callback_args'];
+
+					if ( !empty( $field['required'] ) ) {
+						$args = array_merge( $args, array( 'required' => $field['required'] ) );
+					}
 
 					call_user_func( $field['callback'], $slug, $field['title'], $field['request_input'], $args );
 				}
@@ -172,16 +176,21 @@ function rtb_enqueue_assets() {
 	wp_localize_script(
 		'rtb-booking-form',
 		'rtb_pickadate',
-		array(
-			'date_format' => $rtb_controller->settings->get_setting( 'date-format' ),
-			'time_format'  => $rtb_controller->settings->get_setting( 'time-format' ),
-			'disable_dates'	=> rtb_get_datepicker_rules(),
-			'schedule_open' => $rtb_controller->settings->get_setting( 'schedule-open' ),
-			'schedule_closed' => $rtb_controller->settings->get_setting( 'schedule-closed' ),
-			'early_bookings' => current_user_can( 'manage_bookings' ) ? '' : $rtb_controller->settings->get_setting( 'early-bookings' ),
-			'late_bookings' => current_user_can( 'manage_bookings' ) ? '' : $rtb_controller->settings->get_setting( 'late-bookings' ),
-			'date_onload' => $rtb_controller->settings->get_setting( 'date-onload' ),
-			'time_interval' => $rtb_controller->settings->get_setting( 'time-interval' ),
+		apply_filters(
+			'rtb_pickadate_args',
+			array(
+				'date_format' => $rtb_controller->settings->get_setting( 'date-format' ),
+				'time_format'  => $rtb_controller->settings->get_setting( 'time-format' ),
+				'disable_dates'	=> rtb_get_datepicker_rules(),
+				'schedule_open' => $rtb_controller->settings->get_setting( 'schedule-open' ),
+				'schedule_closed' => $rtb_controller->settings->get_setting( 'schedule-closed' ),
+				'early_bookings' => is_admin() && current_user_can( 'manage_bookings' ) ? '' : $rtb_controller->settings->get_setting( 'early-bookings' ),
+				'late_bookings' => is_admin() && current_user_can( 'manage_bookings' ) ? '' : $rtb_controller->settings->get_setting( 'late-bookings' ),
+				'date_onload' => $rtb_controller->settings->get_setting( 'date-onload' ),
+				'time_interval' => $rtb_controller->settings->get_setting( 'time-interval' ),
+				'first_day' => $rtb_controller->settings->get_setting( 'week-start' ),
+				'allow_past' => is_admin() && current_user_can( 'manage_bookings' ),
+			)
 		)
 	);
 
@@ -190,7 +199,7 @@ function rtb_enqueue_assets() {
 
 /**
  * Get rules for datepicker date ranges
- * See: http://amsul.ca/pickadate.js/date.htm#disable-dates
+ * See: http://amsul.ca/pickadate.js/date/#disable-dates
  * @since 0.0.1
  */
 if ( !function_exists( 'rtb_get_datepicker_rules' ) ) {
@@ -198,16 +207,19 @@ function rtb_get_datepicker_rules() {
 
 	global $rtb_controller;
 
+	// First day of the week
+	$first_day = (int) $rtb_controller->settings->get_setting( 'week-start' );
+
 	$disable_rules = array();
 
 	$disabled_weekdays = array(
-		'sunday'	=> 1,
-		'monday'	=> 2,
-		'tuesday'	=> 3,
-		'wednesday'	=> 4,
-		'thursday'	=> 5,
-		'friday'	=> 6,
-		'saturday'	=> 7,
+		'sunday'	=> ( 1 - $first_day ) === 0 ? 7 : 1,
+		'monday'	=> 2 - $first_day,
+		'tuesday'	=> 3 - $first_day,
+		'wednesday'	=> 4 - $first_day,
+		'thursday'	=> 5 - $first_day,
+		'friday'	=> 6 - $first_day,
+		'saturday'	=> 7 - $first_day,
 	);
 
 	// Determine which weekdays should be disabled
@@ -265,6 +277,7 @@ function rtb_print_form_text_field( $slug, $title, $value, $args = array() ) {
 	$type = empty( $args['input_type'] ) ? 'text' : esc_attr( $args['input_type'] );
 	$classes = isset( $args['classes'] ) ? $args['classes'] : array();
 	$classes[] = 'rtb-text';
+	$required = isset( $args['required'] ) && $args['required'] ? ' required aria-required="true"' : '';
 
 	?>
 
@@ -273,7 +286,7 @@ function rtb_print_form_text_field( $slug, $title, $value, $args = array() ) {
 		<label for="rtb-<?php echo $slug; ?>">
 			<?php echo $title; ?>
 		</label>
-		<input type="<?php echo $type; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>">
+		<input type="<?php echo $type; ?>" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo $value; ?>"<?php echo $required; ?>>
 	</div>
 
 	<?php
@@ -293,6 +306,7 @@ function rtb_print_form_textarea_field( $slug, $title, $value, $args = array() )
 	$value = preg_replace('/\<br(\s*)?\/?\>/i', '', $value);
 	$classes = isset( $args['classes'] ) ? $args['classes'] : array();
 	$classes[] = 'rtb-textarea';
+	$required = isset( $args['required'] ) && $args['required'] ? ' required aria-required="true"' : '';
 
 	?>
 
@@ -301,7 +315,7 @@ function rtb_print_form_textarea_field( $slug, $title, $value, $args = array() )
 		<label for="rtb-<?php echo $slug; ?>">
 			<?php echo $title; ?>
 		</label>
-		<textarea name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>"><?php echo $value; ?></textarea>
+		<textarea name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>"<?php echo $required; ?>><?php echo $value; ?></textarea>
 	</div>
 
 	<?php
@@ -321,6 +335,7 @@ function rtb_print_form_select_field( $slug, $title, $value, $args ) {
 	$options = is_array( $args['options'] ) ? $args['options'] : array();
 	$classes = isset( $args['classes'] ) ? $args['classes'] : array();
 	$classes[] = 'rtb-select';
+	$required = isset( $args['required'] ) && $args['required'] ? ' required aria-required="true"' : '';
 
 	?>
 
@@ -329,7 +344,7 @@ function rtb_print_form_select_field( $slug, $title, $value, $args ) {
 		<label for="rtb-<?php echo $slug; ?>">
 			<?php echo $title; ?>
 		</label>
-		<select name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>">
+		<select name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>"<?php echo $required; ?>>
 			<?php foreach ( $options as $opt_value => $opt_label ) : ?>
 			<option value="<?php echo esc_attr( $opt_value ); ?>" <?php selected( $opt_value, $value ); ?>><?php echo esc_attr( $opt_label ); ?></option>
 			<?php endforeach; ?>
@@ -344,7 +359,6 @@ function rtb_print_form_select_field( $slug, $title, $value, $args ) {
 /**
  * Print a checkbox form field
  *
- * @uses rtb_print_form_tick_field
  * @since 1.3.1
  */
 if ( !function_exists( 'rtb_print_form_checkbox_field' ) ) {
@@ -378,7 +392,6 @@ function rtb_print_form_checkbox_field( $slug, $title, $value, $args ) {
 /**
  * Print a radio button form field
  *
- * @uses rtb_print_form_tick_field
  * @since 1.3.1
  */
 if ( !function_exists( 'rtb_print_form_radio_field' ) ) {
@@ -389,6 +402,7 @@ function rtb_print_form_radio_field( $slug, $title, $value, $args ) {
 	$options = is_array( $args['options'] ) ? $args['options'] : array();
 	$classes = isset( $args['classes'] ) ? $args['classes'] : array();
 	$classes[] = 'rtb-radio';
+	$required = isset( $args['required'] ) && $args['required'] ? ' required aria-required="true"' : '';
 
 	?>
 
@@ -399,7 +413,7 @@ function rtb_print_form_radio_field( $slug, $title, $value, $args ) {
 		</label>
 		<?php foreach ( $options as $opt_value => $opt_label ) : ?>
 		<label>
-			<input type="radio" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo esc_attr( $opt_value ); ?>" <?php checked( $opt_value, $value ); ?>>
+			<input type="radio" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="<?php echo esc_attr( $opt_value ); ?>" <?php checked( $opt_value, $value ); ?><?php echo $required; ?>>
 			<?php echo $opt_label; ?>
 		</label>
 		<?php endforeach; ?>
@@ -421,13 +435,14 @@ function rtb_print_form_confirm_field( $slug, $title, $value, $args ) {
 	$value = esc_attr( $value );
 	$classes = isset( $args['classes'] ) ? $args['classes'] : array();
 	$classes[] = 'rtb-confirm';
+	$required = isset( $args['required'] ) && $args['required'] ? ' required aria-required="true"' : '';
 
 	?>
 
 	<div <?php echo rtb_print_element_class( $slug, $classes ); ?>>
 		<?php echo rtb_print_form_error( $slug ); ?>
 		<label for="rtb-<?php echo $slug; ?>">
-			<input type="checkbox" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="1" <?php checked( $value, 1 ); ?>>
+			<input type="checkbox" name="rtb-<?php echo $slug; ?>" id="rtb-<?php echo $slug; ?>" value="1" <?php checked( $value, 1 ); ?><?php echo $required; ?>>
 			<?php echo $title; ?>
 		</label>
 	</div>

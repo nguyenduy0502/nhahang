@@ -192,6 +192,10 @@ class rtbQuery {
 			$args['end_date'] = sanitize_text_field( $_REQUEST['end_date'] );
 		}
 
+		if ( !empty( $_REQUEST['location'] ) ) {
+			$args['location'] = absint( $_REQUEST['location'] );
+		}
+
 		$this->args = array_merge( $this->args, $args );
 	}
 
@@ -222,6 +226,8 @@ class rtbQuery {
 		}
 
 		$this->bookings = $bookings;
+
+		wp_reset_query();
 
 		return $this->bookings;
 	}

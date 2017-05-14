@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
 			hiddenName: true,
 
 			onStart: function() {
-				if ( input.val()	!== '' ) {
+				if ( input.val() !== '' ) {
 					var date = new Date( input.val() );
 					if ( Object.prototype.toString.call( date ) === "[object Date]" ) {
 						this.set( 'select', date );
@@ -56,6 +56,9 @@ jQuery(document).ready(function ($) {
 
 		} else if ( target.data( 'action' ) == 'email') {
 			rtb_toggle_email_modal( true, target.data( 'id'), target.data( 'email' ), target.data( 'name' ) );
+
+		} else if ( target.data( 'action' ) == 'ban') {
+			rtb_toggle_ban_modal( true, target.data( 'id'), target.data( 'email' ), target.data( 'ip' ) );
 		}
 
 		e.preventDefault();
@@ -87,24 +90,29 @@ jQuery(document).ready(function ($) {
 	/**
 	 * Modals for the admin page
 	 */
-	var rtb_booking_modal = $( '#rtb-booking-modal' );
-	var rtb_booking_modal_fields = rtb_booking_modal.find( '#rtb-booking-form-fields' );
-	var rtb_booking_modal_submit = rtb_booking_modal.find( 'button' );
-	var rtb_booking_modal_cancel = rtb_booking_modal.find( '#rtb-cancel-booking-modal' );
-	var rtb_booking_modal_action_status = rtb_booking_modal.find( '.action-status' );
-	var rtb_email_modal = $( '#rtb-email-modal' );
-	var rtb_email_modal_submit = rtb_email_modal.find( 'button' );
-	var rtb_email_modal_cancel = rtb_email_modal.find( '#rtb-cancel-email-modal' );
-	var rtb_email_modal_action_status = rtb_email_modal.find( '.action-status' );
-	var rtb_column_modal = $( '#rtb-column-modal' );
-	var rtb_column_modal_submit = rtb_column_modal.find( 'button' );
-	var rtb_column_modal_cancel = rtb_column_modal.find( '#rtb-cancel-column-modal' );
-	var rtb_column_modal_action_status = rtb_column_modal.find( '.action-status' );
-	var rtb_details_modal = $( '#rtb-details-modal' );
-	var rtb_details_modal_close = rtb_details_modal.find( '#rtb-close-details-modal' );
-	var rtb_details_modal_cancel = rtb_details_modal.find( '#rtb-cancel-details-modal' );
-	var rtb_booking_modal_error = $( '#rtb-error-modal' );
-	var rtb_booking_modal_error_msg = rtb_booking_modal_error.find( '.rtb-error-msg' );
+	var rtb_booking_modal = $( '#rtb-booking-modal' ),
+		rtb_booking_modal_fields = rtb_booking_modal.find( '#rtb-booking-form-fields' ),
+		rtb_booking_modal_submit = rtb_booking_modal.find( 'button' ),
+		rtb_booking_modal_cancel = rtb_booking_modal.find( '#rtb-cancel-booking-modal' ),
+		rtb_booking_modal_action_status = rtb_booking_modal.find( '.action-status' ),
+		rtb_email_modal = $( '#rtb-email-modal' ),
+		rtb_email_modal_submit = rtb_email_modal.find( 'button' ),
+		rtb_email_modal_cancel = rtb_email_modal.find( '#rtb-cancel-email-modal' ),
+		rtb_email_modal_action_status = rtb_email_modal.find( '.action-status' ),
+		rtb_column_modal = $( '#rtb-column-modal' ),
+		rtb_column_modal_submit = rtb_column_modal.find( 'button' ),
+		rtb_column_modal_cancel = rtb_column_modal.find( '#rtb-cancel-column-modal' ),
+		rtb_column_modal_action_status = rtb_column_modal.find( '.action-status' ),
+		rtb_details_modal = $( '#rtb-details-modal' ),
+		rtb_details_modal_close = rtb_details_modal.find( '#rtb-close-details-modal' ),
+		rtb_details_modal_cancel = rtb_details_modal.find( '#rtb-cancel-details-modal' ),
+		rtb_booking_modal_error = $( '#rtb-error-modal' ),
+		rtb_booking_modal_error_msg = rtb_booking_modal_error.find( '.rtb-error-msg' ),
+		rtb_ban_modal = $( '#rtb-ban-modal' ),
+		rtb_ban_modal_submit_email = rtb_ban_modal.find( '#rtb-ban-modal-email-btn' ),
+		rtb_ban_modal_submit_ip = rtb_ban_modal.find( '#rtb-ban-modal-ip-btn' ),
+		rtb_ban_modal_cancel = rtb_ban_modal.find( '#rtb-cancel-ban-modal' ),
+		rtb_ban_modal_action_status = rtb_ban_modal.find( '.action-status' );
 
 	/**
 	 * Show or hide the booking form modal
@@ -210,7 +218,11 @@ jQuery(document).ready(function ($) {
 			rtb_details_modal.find( '.actions' ).click( function(e) {
 				var target = $( e.target );
 				rtb_toggle_details_modal( false );
-				rtb_toggle_email_modal( true, target.data( 'id'), target.data( 'email' ), target.data( 'name' ) );
+				if ( target.data( 'action' ) == 'email') {
+					rtb_toggle_email_modal( true, target.data( 'id'), target.data( 'email' ), target.data( 'name' ) );
+				} else if ( target.data( 'action' ) == 'ban') {
+					rtb_toggle_ban_modal( true, target.data( 'id'), target.data( 'email' ), target.data( 'ip' ) );
+				}
 			});
 
 		} else {
@@ -219,6 +231,36 @@ jQuery(document).ready(function ($) {
 			setTimeout( function() {
 				rtb_details_modal.find( '.rtb-details-data' ).empty();
 			}, 300 );
+		}
+	}
+
+	/**
+	 * Show or hide the ban ip/email form modal
+	 */
+	function rtb_toggle_ban_modal( show, id, email, ip ) {
+
+		if ( show ) {
+			rtb_ban_modal.scrollTop( 0 ).addClass( 'is-visible' );
+			rtb_ban_modal.find( '#rtb-ban-modal-email' ).text( email );
+			rtb_ban_modal.find( '#rtb-ban-modal-ip' ).text( ip );
+			if ( rtb_admin.banned_emails.indexOf( email ) > -1 ) {
+				rtb_ban_modal_submit_email.prop( 'disabled', true );
+			}
+			if ( rtb_admin.banned_ips.indexOf( ip ) > -1 ) {
+				rtb_ban_modal_submit_ip.prop( 'disabled', true );
+			}
+
+			$( 'body' ).addClass( 'rtb-hide-body-scroll' );
+
+		} else {
+			rtb_ban_modal.removeClass( 'is-visible' );
+			rtb_ban_modal.find( '#rtb-ban-modal-email' ).text( '' );
+			rtb_ban_modal.find( '#rtb-ban-modal-ip' ).text( '' );
+			rtb_ban_modal_submit_email.prop( 'disabled', false );
+			rtb_ban_modal_submit_ip.prop( 'disabled', false );
+			rtb_ban_modal_cancel.prop( 'disabled', false );
+
+			$( 'body' ).removeClass( 'rtb-hide-body-scroll' );
 		}
 	}
 
@@ -391,6 +433,17 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	// Close ban modal when background or cancel button is clicked
+	rtb_ban_modal.click( function(e) {
+		if ( $(e.target).is( rtb_ban_modal ) ) {
+			rtb_toggle_ban_modal( false );
+		}
+
+		if ( $(e.target).is( rtb_ban_modal_cancel ) && rtb_ban_modal_cancel.prop( 'disabled' ) !== true ) {
+			rtb_toggle_ban_modal( false );
+		}
+	});
+
 	// Close modals when ESC is keyed
 	$(document).keyup( function(e) {
 		if ( e.which == '27' ) {
@@ -399,6 +452,7 @@ jQuery(document).ready(function ($) {
 			rtb_toggle_column_modal( false );
 			rtb_toggle_details_modal( false );
 			rtb_toggle_booking_form_error_modal( false );
+			rtb_toggle_ban_modal( false );
 		}
 	});
 
@@ -577,119 +631,88 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	// Show the addons
-	if ( $( '#rtb-addons' ).length ) {
+	// Shared function for banning emails and IPs
+	function rtb_ban_modal_submit( e, type ) {
 
-		var rtbAddons = {
+		e.preventDefault();
+		e.stopPropagation();
 
-			el: $( '#rtb-addons' ),
+		if ( $(this).prop( 'disabled' ) === true ) {
+			return;
+		}
 
-			load: function() {
+		// Loading
+		if ( type === 'email' ) {
+			rtb_ban_modal_submit_email.prop( 'disabled', true );
+		} else if ( type === 'ip' ) {
+			rtb_ban_modal_submit_ip.prop( 'disabled', true );
+		}
+		rtb_ban_modal_cancel.prop( 'disabled', true );
+		rtb_ban_modal_action_status.addClass( 'is-visible' );
+		rtb_show_action_status( rtb_ban_modal_action_status, 'loading' );
 
-				var params = {
-					action: 'rtb-addons',
-					nonce: rtb_addons.nonce
-				};
+		var params = {};
 
-				var data = $.param( params );
+		params.action = 'rtb-admin-ban-modal';
+		params.nonce = rtb_admin.nonce;
+		if ( type === 'email' ) {
+			params.email = rtb_ban_modal.find( '#rtb-ban-modal-email' ).text();
+		} else if ( type === 'ip' ) {
+			params.ip = rtb_ban_modal.find( '#rtb-ban-modal-ip' ).text();
+		}
 
-				// Send Ajax request
-				var jqxhr = $.post( ajaxurl, data, function( r ) {
+		var data = $.param( params );
 
-					rtbAddons.el.find( '.rtb-loading' ).fadeOut( '250', function() {
-						if ( r.success ) {
-							rtbAddons.showAddons( r );
-						} else {
-							rtbAddons.showError( r );
-						}
-					});
+		var jqhxr = $.post( ajaxurl, data, function( r ) {
 
+			if ( r.success ) {
 
-				});
-			},
-
-			showAddons: function( r ) {
-
-				if ( typeof r.data == 'undefined' || !r.data.length ) {
-					rtbAddons.showError();
-					return false;
+				if ( type === 'email' ) {
+					rtb_admin.banned_emails.push( params.email );
+				} else if ( type === 'ip' ) {
+					rtb_admin.banned_ips.push( params.ip );
 				}
 
-				for( var i in r.data ) {
-					rtbAddons.el.append( rtbAddons.getAddonHTML( r.data[i] ) );
-					rtbAddons.el.find( '.addon.' + r.data[i].id ).fadeIn();
-				}
-			},
+				rtb_show_action_status( rtb_ban_modal_action_status, r.success );
 
-			showError: function( r ) {
+				// Hide result status icon after a few seconds
+				setTimeout( function() {
+					rtb_ban_modal.find( '.action-status' ).removeClass( 'is-visible' );
+				}, 1000 );
 
-				if ( typeof r.data == 'undefined' || typeof r.data.msg == 'undefined' ) {
-					rtbAddons.el.html( '<span class="error">' + rtb_addons.strings.error_unknown + '</span>' );
+			} else {
+
+				if ( typeof r.data == 'undefined' || typeof r.data.error == 'undefined' ) {
+					rtb_toggle_booking_form_error_modal( true, rtb_admin.strings.error_unspecified );
 				} else {
-					rtbAddons.el.html( '<span class="error">' + r.data.msg + '</span>' );
+					rtb_toggle_booking_form_error_modal( true, r.data.msg );
 				}
 
-			},
-
-			getAddonHTML: function( addon ) {
-
-				if ( typeof addon.id === 'undefined' && typeof addon.title === 'undefined' ) {
-					return;
+				rtb_ban_modal_cancel.prop( 'disabled', false );
+				if ( type === 'email' ) {
+					rtb_ban_modal_submit_email.prop( 'disabled', false );
+				} else if ( type === 'ip' ) {
+					rtb_ban_modal_submit_ip.prop( 'disabled', false );
 				}
 
-				// Set campaign parameters for addons
-				addon.url += '?utm_source=Plugin&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations';
+				rtb_show_action_status( rtb_ban_modal_action_status, false );
 
-				var html = '<div class="addon ' + addon.id + '">';
-
-				if ( typeof addon.url !== 'undefined' && typeof addon.img !== 'undefined' ) {
-					html += '<a href="' + addon.url + '"><img src="' + addon.img + '"></a>';
-				} else if ( typeof addon.img !== 'undefind' ) {
-					html += '<img src="' + addon.img + '">';
-				}
-
-				html += '<h3>' + addon.title + '</h3>';
-
-				html += '<div class="details">';
-
-				if ( typeof addon.description !== 'undefined' ) {
-					html += '<div class="description">' + addon.description + '</div>';
-				}
-
-				if ( typeof addon.status !== 'undefined' ) {
-
-					html += '<div class="action">';
-
-					if ( addon.status === 'released' && typeof addon.url !== 'undefined' ) {
-						html += '<a href="' + addon.url + '" class="button button-primary" target="_blank">';
-
-						if ( typeof addon.price !== 'undefined' && addon.price.length ) {
-							html += rtb_addons.strings.learn_more;
-						} else {
-							html += rtb_addons.strings.free;
-						}
-
-						html += '</a>';
-
-					} else if ( addon.status === 'installed' ) {
-						html += '<span class="installed">' + rtb_addons.strings.installed + '</span>';
-
-					} else {
-						html += '<span class="soon">' + rtb_addons.strings.coming_soon + '</span>';
-					}
-
-					html += '</div>'; // .action
-				}
-
-				html += '</div>'; // .details
-
-				html += '</div>'; // .addon
-
-				return html;
+				// Hide result status icon after a few seconds
+				setTimeout( function() {
+					rtb_ban_modal.find( '.action-status' ).removeClass( 'is-visible' );
+				}, 4000 );
 			}
-		};
-
-		rtbAddons.load();
+		});
 	}
+
+	// Submit ban email form modal
+	rtb_ban_modal_submit_email.click( function(e) {
+		rtb_ban_modal_submit( e, 'email' );
+	});
+
+	// Submit ban ip form modal
+	rtb_ban_modal_submit_ip.click( function(e) {
+		rtb_ban_modal_submit( e, 'ip' );
+	});
 
 });

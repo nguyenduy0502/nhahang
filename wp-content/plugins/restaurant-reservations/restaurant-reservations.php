@@ -3,7 +3,7 @@
  * Plugin Name: Restaurant Reservations
  * Plugin URI: http://themeofthecrop.com
  * Description: Accept restaurant reservations and bookings online.
- * Version: 1.6.2
+ * Version: 1.7.5
  * Author: Theme of the Crop
  * Author URI: http://themeofthecrop.com
  * License:     GNU General Public License v2.0 or later
@@ -47,13 +47,12 @@ class rtbInit {
 	public function __construct() {
 
 		// Common strings
-		define( 'RTB_VERSION', '1.6.1' );
+		define( 'RTB_VERSION', '1.7.5' );
 		define( 'RTB_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'RTB_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 		define( 'RTB_PLUGIN_FNAME', plugin_basename( __FILE__ ) );
 		define( 'RTB_BOOKING_POST_TYPE', 'rtb-booking' );
 		define( 'RTB_BOOKING_POST_TYPE_SLUG', 'booking' );
-		define( 'RTB_LOAD_FRONTEND_ASSETS', apply_filters( 'rtb-load-frontend-assets', true ) );
 
 		// Initialize the plugin
 		add_action( 'init', array( $this, 'load_textdomain' ) );
@@ -116,12 +115,7 @@ class rtbInit {
 
 		// Add the addons page
 		require_once( RTB_PLUGIN_DIR . '/includes/Addons.class.php' );
-		new rtbAddons(
-			array(
-				'api_url'	=> 'http://api.themeofthecrop.com/addons/',
-				'plugin'	=> basename( plugin_dir_path( __FILE__ ) ),
-			)
-		);
+		new rtbAddons();
 
 		// Load integrations with other plugins
 		require_once( RTB_PLUGIN_DIR . '/includes/integrations/business-profile.php' );
@@ -213,6 +207,8 @@ class rtbInit {
 	 */
 	public function enqueue_admin_assets() {
 
+		global $rtb_controller;
+
 		// Use the page reference in $admin_page_hooks because
 		// it changes in SOME hooks when it is translated.
 		// https://core.trac.wordpress.org/ticket/18857
@@ -236,6 +232,8 @@ class rtbInit {
 						'edit_booking'		=> __( 'Edit Booking', 'restaurant-reservations' ),
 						'error_unspecified'	=> __( 'An unspecified error occurred. Please try again. If the problem persists, try logging out and logging back in.', 'restaurant-reservations' ),
 					),
+					'banned_emails' => preg_split( '/\r\n|\r|\n/', (string) $rtb_controller->settings->get_setting( 'ban-emails' ) ),
+					'banned_ips' => preg_split( '/\r\n|\r|\n/', (string) $rtb_controller->settings->get_setting( 'ban-ips' ) ),
 				)
 			);
 		}
@@ -253,7 +251,7 @@ class rtbInit {
 	 */
 	function register_assets() {
 
-		if ( !RTB_LOAD_FRONTEND_ASSETS ) {
+		if ( !apply_filters( 'rtb-load-frontend-assets', true ) ) {
 			return;
 		}
 

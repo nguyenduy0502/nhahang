@@ -81,7 +81,6 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 			add_filter( 'rtb_query_args',                             array( $this, 'modify_query' ), 10, 2 );
 			add_filter( 'rtb_bookings_all_table_columns',             array( $this, 'add_location_column' ) );
 			add_filter( 'rtb_bookings_table_column',                  array( $this, 'print_location_column' ), 10, 3 );
-			add_filter( 'rtb_bookings_table_column_details',          array( $this, 'add_details_column_items' ), 10, 2 );
 			add_action( 'edit_form_after_title',                      array( $this, 'add_meta_nonce' ) );
 			add_action( 'add_meta_boxes',                             array( $this, 'add_meta_boxes' ) );
 			add_filter( 'the_content',                                array( $this, 'append_to_content' ) );
@@ -90,6 +89,7 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 			add_filter( 'rtb_notification_email_from_name',           array( $this, 'notification_from_name' ), 10, 2 );
 			add_filter( 'rtb_notification_template_tags',             array( $this, 'notification_template_tags' ), 10, 2 );
 			add_filter( 'rtb_notification_template_tag_descriptions', array( $this, 'notification_template_tag_descriptions' ) );
+			add_action( 'admin_init',                                 array( $this, 'fix_autodraft_term_error' ) );
 		}
 
 		/**
@@ -125,12 +125,13 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 		 */
 		public function save_location( $post_id, $post, $update ) {
 
-
-			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-				return $post_id;
-			}
-
-			if ( !current_user_can( 'edit_post', $post_id ) ) {
+			if (
+					$post->post_status === 'auto-draft' ||
+					( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) ||
+					!current_user_can( 'edit_post', $post_id ) ||
+					!isset( $_POST['rtb_location_meta_nonce'] ) ||
+					!wp_verify_nonce( $_POST['rtb_location_meta_nonce'], 'rtb_location_meta' )
+				) {
 				return $post_id;
 			}
 
@@ -138,15 +139,16 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 
 			// Create a new term for this location
 			if ( !$term_id ) {
+
 				$term = wp_insert_term(
 					sanitize_text_field( $post->post_title ),
 					$this->location_taxonomy
 				);
+
 				if ( !is_a( $term, 'WP_Error' ) ) {
 					update_post_meta( $post_id, $this->location_taxonomy, $term['term_id'] );
+					$term_id = $term['term_id'];
 				}
-
-				$term_id = $term['term_id'];
 
 			// Update the term for this location
 			} else {
@@ -160,36 +162,34 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 				);
 			}
 
-			// Save post and and term meta data
-			if ( !isset( $_POST['rtb_location_meta_nonce'] ) || !wp_verify_nonce( $_POST['rtb_location_meta_nonce'], 'rtb_location_meta' ) ) {
-				return $post_id;
-			}
-
 			if ( !empty( $_POST['rtb_append_booking_form'] ) ) {
 				update_post_meta( $post_id, 'rtb_append_booking_form', true );
 			} else {
 				delete_post_meta( $post_id, 'rtb_append_booking_form' );
 			}
 
-			if ( !empty( $_POST['rtb_reply_to_name'] ) ) {
-				$reply_to_name = sanitize_text_field( $_POST['rtb_reply_to_name'] );
-				update_term_meta( $term_id, 'rtb_reply_to_name', $reply_to_name );
-			} else {
-				delete_term_meta( $term_id, 'rtb_reply_to_name' );
-			}
+			if ( $term_id ) {
 
-			if ( !empty( $_POST['rtb_reply_to_address'] ) ) {
-				$reply_to_address = sanitize_email( $_POST['rtb_reply_to_address'] );
-				update_term_meta( $term_id, 'rtb_reply_to_address', $reply_to_address );
-			} else {
-				delete_term_meta( $term_id, 'rtb_reply_to_address' );
-			}
+				if ( !empty( $_POST['rtb_reply_to_name'] ) ) {
+					$reply_to_name = sanitize_text_field( $_POST['rtb_reply_to_name'] );
+					update_term_meta( $term_id, 'rtb_reply_to_name', $reply_to_name );
+				} else {
+					delete_term_meta( $term_id, 'rtb_reply_to_name' );
+				}
 
-			if ( !empty( $_POST['rtb_admin_email_address'] ) ) {
-				$email = sanitize_email( $_POST['rtb_admin_email_address'] );
-				update_term_meta( $term_id, 'rtb_admin_email_address', $email );
-			} else {
-				delete_term_meta( $term_id, 'rtb_admin_email_address' );
+				if ( !empty( $_POST['rtb_reply_to_address'] ) ) {
+					$reply_to_address = sanitize_email( $_POST['rtb_reply_to_address'] );
+					update_term_meta( $term_id, 'rtb_reply_to_address', $reply_to_address );
+				} else {
+					delete_term_meta( $term_id, 'rtb_reply_to_address' );
+				}
+
+				if ( !empty( $_POST['rtb_admin_email_address'] ) ) {
+					$email = sanitize_text_field( $_POST['rtb_admin_email_address'] );
+					update_term_meta( $term_id, 'rtb_admin_email_address', $email );
+				} else {
+					delete_term_meta( $term_id, 'rtb_admin_email_address' );
+				}
 			}
 
 			return $post_id;
@@ -207,7 +207,7 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 		public function delete_location( $post_id ) {
 
 			if ( !current_user_can( 'delete_posts' ) ) {
-				return;
+				return $post_id;
 			}
 
 			$term_id = get_post_meta( $post_id, $this->location_taxonomy, true );
@@ -227,10 +227,10 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 			// historical data.
 			if ( count( $query->bookings ) ) {
 				add_term_meta( $term_id, 'rtb_location_removed', true );
-				return;
+			} else {
+				wp_delete_term( $term_id, $this->location_taxonomy );
 			}
 
-			wp_delete_term( $term_id, $this->location_taxonomy );
 		}
 
 		/**
@@ -429,32 +429,6 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 			$location = current( $terms );
 
 			return $location->name;
-		}
-
-		/**
-		 * Add the location to the details column if the column has been
-		 * hidden
-		 *
-		 * @since 1.6
-		 */
-		public function add_details_column_items( $details, $booking ) {
-
-			global $rtb_controller;
-
-			$visible_columns = $rtb_controller->bookings->bookings_table->get_columns();
-			if ( !isset( $visible_columns['location'] ) ) {
-
-				$value = $rtb_controller->bookings->bookings_table->column_default( $booking, 'location' );
-
-				if ( !empty( $value ) ) {
-					$details[] = array(
-						'label' => __( 'Location', 'restaurant-reservations' ),
-						'value' => $value,
-					);
-				}
-			}
-
-			return $details;
 		}
 
 		/**
@@ -708,6 +682,74 @@ if ( ! class_exists( 'rtbMultipleLocations', false ) ) {
 				array( '{location}' => __( 'Location for which this booking was made.', 'restaurant-reservations' ) ),
 				$descriptions
 			);
+		}
+
+		/**
+		 * Removes Auto-Draft locations that were added due to a bug in v1.7
+		 *
+		 * Version 1.7 introduced a bug which caused a location term to be
+		 * created if the location Add New page was loaded. This term
+		 * corresponded to an auto-draft post object and will be removed when
+		 * that object is removed. This provides a one-time fix in v1.7.1
+		 *
+		 * @see https://github.com/NateWr/restaurant-reservations/issues/91
+		 * @see https://developer.wordpress.org/reference/functions/wp_delete_auto_drafts/
+		 * @since 1.7.1
+		 */
+		public function fix_autodraft_term_error() {
+
+			if ( get_option( 'rtb_autodraft_terms_fixed', false ) ) {
+				return;
+			}
+
+			global $wpdb;
+
+			if ( !$wpdb ) {
+				return;
+			}
+
+			$old_posts = $wpdb->get_col( "SELECT ID FROM $wpdb->posts WHERE post_status = 'auto-draft' AND post_type = '$this->post_type';" );
+			foreach ( (array) $old_posts as $delete ) {
+				// Force delete.
+				wp_delete_post( $delete, true );
+			}
+
+			// Set the `rtb_location_removed` term meta on any terms that are
+			// no longer attached to posts
+			global $wp_version;
+			if ( version_compare( $wp_version, '3.9', '>=' ) ) {
+				$live_terms = $wpdb->get_col( "SELECT meta_value FROM $wpdb->postmeta WHERE meta_key='$this->location_taxonomy';" );
+				$all_terms = get_terms( array(
+					'taxonomy' => $this->location_taxonomy,
+					'hide_empty' => false,
+					'meta_query' => array(
+						array(
+							'compare' => 'NOT EXISTS',
+							'key' => 'rtb_location_removed',
+						)
+					)
+				) );
+				if ( is_array( $all_terms ) ) {
+					foreach( $all_terms as $term ) {
+						if ( !in_array( $term->term_id, $live_terms ) ) {
+							$query = new rtbQuery( array( 'location' => $term->term_id ), 'delete-location-term-check' );
+							$query->prepare_args();
+							$query->get_bookings();
+
+							// Don't delete taxonomy terms if there are bookings assigned to
+							// this location, so the booking associations can remain as
+							// historical data.
+							if ( count( $query->bookings ) ) {
+								add_term_meta( $term->term_id, 'rtb_location_removed', true );
+							} else {
+								wp_delete_term( $term->term_id, $this->location_taxonomy );
+							}
+						}
+					}
+				}
+			}
+
+			update_option( 'rtb_autodraft_terms_fixed', true );
 		}
 	}
 }

@@ -80,6 +80,7 @@ class rtbBooking {
 			'phone' => '',
 			'date_submission' => '',
 			'logs' => array(),
+			'ip' => '',
 		);
 
 		$meta_defaults = apply_filters( 'rtb_booking_metadata_defaults', $meta_defaults );
@@ -95,6 +96,7 @@ class rtbBooking {
 		$this->phone = $meta['phone'];
 		$this->date_submission = $meta['date_submission'];
 		$this->logs = $meta['logs'];
+		$this->ip = $meta['ip'];
 	}
 
 	/**
@@ -120,6 +122,16 @@ class rtbBooking {
 	public function format_date( $date ) {
 		$date = mysql2date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $date);
 		return apply_filters( 'get_the_date', $date );
+	}
+
+	/**
+	 * Format a timestamp into a human-readable date
+	 *
+	 * @since 1.7.1
+	 */
+	public function format_timestamp( $timestamp ) {
+		$time = date( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ), $timestamp );
+		return $time;
 	}
 
 	/**
@@ -243,6 +255,15 @@ class rtbBooking {
 						);
 					}
 
+				} elseif ( $late_bookings === 'same_day' ) {
+					if ( $request->format( 'Y-m-d' ) == current_time( 'Y-m-d' ) ) {
+						$this->validation_errors[] = array(
+							'field'		=> 'time',
+							'error_msg'	=> 'Booking request made on same day',
+							'message'	=> __( 'Sorry, bookings can not be made for the same day.', 'restaurant-reservations' ),
+						);
+					}
+
 				} else {
 					$late_bookings_seconds = $late_bookings * 60; // Late bookings allowance in seconds
 					if ( $request->format( 'U' ) < ( current_time( 'timestamp' ) + $late_bookings_seconds ) ) {
@@ -264,7 +285,7 @@ class rtbBooking {
 
 			// Check against scheduling exception rules
 			$exceptions = $rtb_controller->settings->get_setting( 'schedule-closed' );
-			if ( empty( $this->validation_errors ) && !empty( $exceptions ) ) {
+			if ( empty( $this->validation_errors ) && !empty( $exceptions ) && !current_user_can( 'manage_bookings' ) ) {
 				$exception_is_active = false;
 				$datetime_is_valid = false;
 				foreach( $exceptions as $exception ) {
@@ -298,7 +319,7 @@ class rtbBooking {
 
 			// Check against weekly scheduling rules
 			$rules = $rtb_controller->settings->get_setting( 'schedule-open' );
-			if ( empty( $exception_is_active ) && empty( $this->validation_errors ) && !empty( $rules ) ) {
+			if ( empty( $exception_is_active ) && empty( $this->validation_errors ) && !empty( $rules ) && !current_user_can( 'manage_bookings' ) ) {
 				$request_weekday = strtolower( $request->format( 'l' ) );
 				$time_is_valid = null;
 				$day_is_valid = null;
@@ -394,9 +415,17 @@ class rtbBooking {
 					'message'	=> sprintf( __( 'We only accept bookings for parties of up to %d people.', 'restaurant-reservations' ), $party_size ),
 				);
 			}
+			$party_size_min = $rtb_controller->settings->get_setting( 'party-size-min' );
+			if ( !empty( $party_size_min ) && $party_size_min > $this->party ) {
+				$this->validation_errors[] = array(
+					'field'			=> 'party',
+					'post_variable'	=> $this->party,
+					'message'	=> sprintf( __( 'We only accept bookings for parties of more than %d people.', 'restaurant-reservations' ), $party_size_min ),
+				);
+			}
 		}
 
-		// Email/Phone
+		// Email
 		$this->email = empty( $_POST['rtb-email'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-email'] ) ); // @todo email validation? send notification back to form on bad email address.
 		if ( empty( $this->email ) ) {
 			$this->validation_errors[] = array(
@@ -404,10 +433,26 @@ class rtbBooking {
 				'post_variable'	=> $this->email,
 				'message'	=> __( 'Please enter an email address so we can confirm your booking.', 'restaurant-reservations' ),
 			);
+		} elseif ( !is_email( $this->email ) && apply_filters( 'rtb_require_valid_email', true ) ) {
+			$this->validation_errors[] = array(
+				'field'			=> 'email',
+				'post_variable'	=> $this->email,
+				'message'	=> __( 'Please enter a valid email address so we can confirm your booking.', 'restaurant-reservations' ),
+			);
 		}
 
-		// Phone/Message
+		// Phone
 		$this->phone = empty( $_POST['rtb-phone'] ) ? '' : sanitize_text_field( stripslashes_deep( $_POST['rtb-phone'] ) );
+		$phone_required = $rtb_controller->settings->get_setting( 'require-phone' );
+		if ( $phone_required && empty( $this->phone ) ) {
+			$this->validation_errors[] = array(
+				'field'			=> 'phone',
+				'post_variable'	=> $this->phone,
+				'message'	=> __( 'Please provide a phone number so we can confirm your booking.', 'restaurant-reservations' ),
+			);
+		}
+
+		// Message
 		$this->message = empty( $_POST['rtb-message'] ) ? '' : nl2br( wp_kses_post( stripslashes_deep( $_POST['rtb-message'] ) ) );
 
 		// Post Status (define a default post status is none passed)
@@ -427,6 +472,22 @@ class rtbBooking {
 					'message'	=> __( 'Please complete this field to request a booking.', 'restaurant-reservations' ),
 				);
 			}
+		}
+
+		// Check if the email or IP is banned
+		if ( !current_user_can( 'manage_bookings' ) ) {
+			$ip = $_SERVER['REMOTE_ADDR'];
+			if ( !$this->is_valid_ip( $ip ) || !$this->is_valid_email( $this->email ) ) {
+				$this->validation_errors[] = array(
+					'field'			=> 'date',
+					'post_variable'	=> $ip,
+					'message'	=> __( 'Your booking has been rejected. Please call us if you would like to make a booking.', 'restaurant-reservations' ),
+				);
+			} elseif ( empty( $this->ip ) ) {
+				$this->ip = sanitize_text_field( $ip );
+			}
+		} elseif ( empty( $this->ip ) ) {
+			$this->ip = sanitize_text_field( $_SERVER['REMOTE_ADDR'] );
 		}
 
 		do_action( 'rtb_validate_booking_submission', $this );
@@ -483,6 +544,64 @@ class rtbBooking {
 	}
 
 	/**
+	 * Check if an IP address has been banned
+	 *
+	 * @param string $ip
+	 * @return bool
+	 * @since 1.7
+	 */
+	public function is_valid_ip( $ip = null ) {
+
+		if ( is_null( $ip ) ) {
+			$ip = isset( $this->ip ) ? $this->ip : null;
+			if ( is_null( $ip ) ) {
+				return false;
+			}
+		}
+
+		global $rtb_controller;
+
+		$banned_ips = array_filter( explode( "\n", $rtb_controller->settings->get_setting( 'ban-ips' ) ) );
+
+		foreach( $banned_ips as $banned_ip ) {
+			if ( $ip == trim( $banned_ip ) ) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Check if an email address has been banned
+	 *
+	 * @param string $email
+	 * @return bool
+	 * @since 1.7
+	 */
+	public function is_valid_email( $email = null ) {
+
+		if ( is_null( $email ) ) {
+			$email = isset( $this->email ) ? $this->email : null;
+			if ( is_null( $email ) ) {
+				return false;
+			}
+		}
+
+		global $rtb_controller;
+
+		$banned_emails = array_filter( explode( "\n", $rtb_controller->settings->get_setting( 'ban-emails' ) ) );
+
+		foreach( $banned_emails as $banned_email ) {
+			if ( $email == trim( $banned_email ) ) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
 	 * Add a log entry to the booking
 	 *
 	 * @since 1.3.1
@@ -534,6 +653,7 @@ class rtbBooking {
 			'email' 			=> $this->email,
 			'phone' 			=> $this->phone,
 			'date_submission' 	=> current_time( 'timestamp' ),
+			'ip'                => $this->ip,
 		);
 
 		if ( !empty( $this->logs ) ) {
