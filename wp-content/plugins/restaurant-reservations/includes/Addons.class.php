@@ -129,7 +129,7 @@ class rtbAddons {
 								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
 							</a>
 							<span class="rtb-by">
-								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+								by <a href="https://themeofthecrop.com/<?php echo $url_params; ?>">Theme of the Crop</a>
 							</span>
 						</div>
 					</div>
@@ -148,7 +148,7 @@ class rtbAddons {
 								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
 							</a>
 							<span class="rtb-by">
-								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+								by <a href="https://themeofthecrop.com/<?php echo $url_params; ?>">Theme of the Crop</a>
 							</span>
 						</div>
 					</div>
@@ -167,7 +167,7 @@ class rtbAddons {
 								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
 							</a>
 							<span class="rtb-by">
-								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+								by <a href="https://themeofthecrop.com/<?php echo $url_params; ?>">Theme of the Crop</a>
 							</span>
 						</div>
 					</div>
@@ -186,7 +186,26 @@ class rtbAddons {
 								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
 							</a>
 							<span class="rtb-by">
-								by <a href="https://themeofthecrop.com/">Theme of the Crop</a>
+								by <a href="https://themeofthecrop.com/<?php echo $url_params; ?>">Theme of the Crop</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="https://themebeans.com/themes/plate?utm_source=totc_addons_plate&utm_medium=banner&utm_campaign=TOTC%20Addons%20Link%2C%20Plate">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-plate.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Plate', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A delightfully beautiful WordPress theme designed to help you build a stunning restaurant website.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="https://themebeans.com/themes/plate?utm_source=totc_addons_plate&utm_medium=banner&utm_campaign=TOTC%20Addons%20Link%2C%20Plate" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="https://themebeans.com?utm_source=totc_addons_plate&utm_medium=banner&utm_campaign=TOTC%20Addons%20Link%2C%20Plate">ThemeBeans</a>
 							</span>
 						</div>
 					</div>
@@ -259,6 +278,44 @@ class rtbAddons {
 						</div>
 						<div class="action">
 							<a href="http://www.anarieldesign.com/themes/food-blog-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="http://www.anarieldesign.com/">Anariel Design</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="http://www.anarieldesign.com/themes/wine-and-winery-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-good-ol-wine.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( "Good Ol' Wine", 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A beautiful responsive theme that is suitable for wine enthusiasts, wineries and wine bars.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="http://www.anarieldesign.com/themes/wine-and-winery-wordpress-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations" class="button" target="_blank">
+								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
+							</a>
+							<span class="rtb-by">
+								by <a href="http://www.anarieldesign.com/">Anariel Design</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="addon addon-themes">
+					<a href="http://www.anarieldesign.com/themes/simple-and-fresh-blogging-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations">
+						<img src="<?php echo RTB_PLUGIN_URL . '/assets/img/theme-healthy-living.jpg'; ?>">
+					</a>
+					<h3><?php esc_html_e( 'Healthy Living', 'restaurant-reservations' ); ?></h3>
+					<div class="details">
+						<div class="description">
+							<?php esc_html_e( 'A modern, clean healthy food blogging theme that can be used for a restaurant as well.', 'restaurant-reservations' ); ?>
+						</div>
+						<div class="action">
+							<a href="http://www.anarieldesign.com/themes/simple-and-fresh-blogging-theme/?utm_source=Theme%20of%20the%20Crop&utm_medium=Addon%20List&utm_campaign=Restaurant%20Reservations" class="button" target="_blank">
 								<?php esc_html_e( 'View Theme', 'restaurant-reservations' ); ?>
 							</a>
 							<span class="rtb-by">

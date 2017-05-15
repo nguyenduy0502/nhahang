@@ -19,7 +19,7 @@ class rtbAdminBookings {
 	 * @see WP_List_table.BookingsTable.class.php
 	 * @since 1.6
 	 */
-	public $booking_table;
+	public $bookings_table;
 
 	public function __construct() {
 
@@ -528,7 +528,16 @@ class rtbAdminBookings {
 
 			// Add an ID if we're updating the post
 			if ( !empty( $_POST['ID'] ) ) {
-				$rtb_controller->request->ID = (int) $_POST['ID'];
+				$result = $rtb_controller->request->load_post((int) $_POST['ID']);
+				if (!$result) {
+					wp_send_json_error(
+						array(
+							'error'		=> 'no_booking_found',
+							'booking'	=> $rtb_controller->request,
+							'fields'	=> $this->print_booking_form_fields(),
+						)
+					);
+				}
 			}
 
 			// Disable notifications

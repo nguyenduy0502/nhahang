@@ -264,7 +264,8 @@ Redux::setSection($opt_name, array(
             'id' => 'option_business_price',
             'type' => 'text',
             'title' => __('Цена', 'asite'),
-            'placeholder' => __('135 руб')
+            'placeholder' => __('135'),
+            'validate' => 'numeric'
         ),
         array(// this is field choose lunch
             'id' => 'option_business_cat',
@@ -295,12 +296,12 @@ Redux::setSection($opt_name, array(
             ),
             'title' => __('Categories food', 'asite')
         ),
-        array(
+     /*   array(
             'id' => 'option_num_new_food',
             'type' => 'text',
             'title' => __('Number display', 'asite'),
             'validate' => 'numeric'
-        ),
+        ),*/
         array(
             'id' => 'option_order_food',
             'type' => 'select',

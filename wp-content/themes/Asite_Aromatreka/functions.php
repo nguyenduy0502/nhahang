@@ -68,5 +68,20 @@ function add_footer_js(){
     wp_enqueue_script('main-min-scripts');
 
 }
+/***********************************************************
+ * SHORTEN POST TITLE
+ * ********************************************************
+ */
+function short_title($after = '', $length)
+{
+    $mytitle = explode(' ', get_the_title(), $length);
+    if (count($mytitle) >= $length) {
+        array_pop($mytitle);
+        $mytitle = implode(" ", $mytitle) . $after;
+    } else {
+        $mytitle = implode(" ", $mytitle);
+    }
+    return $mytitle;
 
+}
 ?>
