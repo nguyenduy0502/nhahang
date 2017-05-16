@@ -46,7 +46,7 @@ function custom_post_food() {
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 5,
-		'menu_icon'             => THEME_URL.'/AdditionalPlugins/CustomPostRestaurant/icon/icon-food.png',
+		'menu_icon'             => THEME_URL.'/AdditionalPlugins/FoodRestaurant/icon/icon-food.png',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,

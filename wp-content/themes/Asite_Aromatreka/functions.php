@@ -10,7 +10,7 @@ define('CSS_FOLDER', TEMPLATE_FOLDER . '/css');
 define('JS_FOLDER', TEMPLATE_FOLDER . '/js');
 define('FONT_FOLDER', TEMPLATE_FOLDER . '/font');
 define('IMG_FOLDER', TEMPLATE_FOLDER . '/img');
-define('CUSTOM_MENU',THEME_URL.'/AdditionalPlugins/MenuRetaurant');
+define('CUSTOM_MENU',THEME_URL.'/AdditionalPlugins/MenuRestaurant');
 define('CUSTOM_FOOD',THEME_URL.'/AdditionalPlugins/FoodRestaurant');
 define('BACKEND_URL',THEME_URL.'/backend');
 
@@ -26,7 +26,7 @@ require_once dirname(__FILE__) . '/AdditionalPlugins/init.php';
  *****************************************************************
  */
 require_once dirname(__FILE__) . '/backend/login/login.php';
-require_once dirname(__FILE__) . '/backend/functions.php';
+require_once dirname(__FILE__) . '/backend/init.php';
 /*******************************************************************
  * REGISTER TEXT DOMAIN, THEME SUPPORTS
  ****************************************************************
@@ -83,5 +83,30 @@ function short_title($after = '', $length)
     }
     return $mytitle;
 
+}
+/************************************************
+ * PAGINATION
+ ************************************************
+ */
+function pagination($prev = '&laquo;', $next = '&raquo;')
+{
+    global $wp_query, $wp_rewrite;
+    $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+    $pagination = array(
+        'base' => @add_query_arg('paged', '%#%'),
+        'format' => '',
+        'total' => $wp_query->max_num_pages,
+        'current' => $current,
+        'prev_text' => $prev,
+        'next_text' => $next,
+        'type' => 'list'
+    );
+    if ($wp_rewrite->using_permalinks())
+        $pagination['base'] = user_trailingslashit(trailingslashit(remove_query_arg('s', get_pagenum_link(1))) . 'page/%#%/', 'paged');
+
+    if (!empty($wp_query->query_vars['s']))
+        $pagination['add_args'] = array('s' => get_query_var('s'));
+
+    echo paginate_links($pagination);
 }
 ?>
