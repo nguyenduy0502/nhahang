@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+<?php global $asite_options?>
 <head>
-
     <meta charset="<?php bloginfo('charset');?>">
-
     <title>
         <?php
         $cat_name = get_the_category();
@@ -71,7 +69,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="Keywords"
           content="вьетнамская кухня, вьетнамская кухня рецепты, ресторан вьетнамской кухни, блюда вьетнамской кухни, кафе вьетнамской кухни, вьетнамская кухня в москве, суп фо бо, вьетнамский суп фо, фо рецепт, Вьет Хауз, суп фо вьетнамский рецепт, вьетнамская кухня меню, ВьетЛанч, <?php wp_title( '|', true, 'right' );?>"/>
-    <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" href="<?php echo IMG_FOLDER.'/favicon/favicon.ico'?>" type="image/x-icon">
     <link rel="apple-touch-icon" href="<?php echo IMG_FOLDER . '/favicon/apple-touch-icon.png' ?>">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo IMG_FOLDER . '/favicon/apple-touch-icon-72x72.png' ?>">
@@ -97,7 +94,6 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet'/>
     <?php wp_head(); ?>
 </head>
-
 <body>
 
 <!-- Section Header -->

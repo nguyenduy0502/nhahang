@@ -1,4 +1,5 @@
 <?php global $asite_options; ?>
+<?php wp_footer(); ?>
     <!-- Section Footer -->
     <div class="footer">
         <div class="inner-top"></div>
@@ -63,46 +64,30 @@
         </div>
     </div>
     <!-- END Section Footer -->
-
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK514w6GAGOtGhrTiIb_pXcxEr_33yts4&callback=initMap">
+</script>
     <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiYXNpdGVpdCIsImEiOiJjajJmNzh0YmYwNm0xMndvODRld2dtcjV6In0.tJtxkOARDLQwBeZtcqkPDw';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v10',
-            center: [37.68037402521972, 55.76202860276379],
-            zoom: 16
-        });
-        map.on('load', () = > {
-            map.loadImage('./template/dist/img/location.png', (error, image) = > {
-            if (error) throw error;
-        map.addImage('cat', image);
-        map.addLayer({
-            "id": "points",
-            "type": "symbol",
-            "source": {
-                "type": "geojson",
-                "data": {
-                    "type": "FeatureCollection",
-                    "features": [{
-                        "type": "Feature",
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [37.68037402521972, 55.76202860276379]
-                        }
-                    }]
-                }
-            },
-            "layout": {
-                "icon-image": "cat",
-                "icon-size": 0.25
-            }
-        });
-        })
-        ;
-        })
-        ;
+    function initMap() {
+         var uluru = {lat: 55.762104, lng: 37.681231};
+         var map = new google.maps.Map(document.getElementById('map'), {
+             zoom: 18,
+             center: uluru
+         });
+
+        var image = {
+            url: './wp-content/themes/Asite_Aromatreka/template/dist/img/location.png',
+            scaledSize: new google.maps.Size(50, 50), // scaled size
+            origin: new google.maps.Point(0,0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
+         var marker = new google.maps.Marker({
+             position: uluru,
+             map: map,
+             icon: image
+         });
+     }
 
     </script>
     </body>
     </html>
-<?php wp_footer(); ?>

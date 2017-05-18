@@ -2,7 +2,8 @@
 <div class="map">
     <div class="row">
         <div class="col-md-6 no-padding">
-            <div id='map'></div>
+            <div id='map'>
+            </div>
         </div>
         <div class="col-md-6 no-padding">
             <!-- Gallery -->
