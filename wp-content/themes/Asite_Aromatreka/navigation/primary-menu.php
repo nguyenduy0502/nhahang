@@ -2,112 +2,42 @@
 <div class="header_left">
 
     <!-- Header Menu -->
-    <div class="header_menu">
-        <ul>
-            <li><a href="<?php echo home_url(); ?>">Главная</a></li>
-            <li><a href="#menu">Меню</a></li>
-
-            <!-- Modal window for reserve -->
-            <!-- Button trigger modal -->
-            <li><a type="button" class="btn" data-toggle="modal" data-target="#reserve">Забронировать</a>
-            </li>
-            <!-- END Button trigger modal -->
-            <!-- Modal -->
-            <div class="modal fade" id="reserve" tabindex="-1" role="dialog"
-                 aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close"><span aria-hidden="true">&times;</span>
-                            </button>
-                            <h4 class="modal-title" id="myModalLabel">Забронировать</h4>
-                        </div>
-                        <div class="modal-body"><?php echo rtb_print_booking_form();?></div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php home_url();?>">
+                    <?php if (!empty($asite_options['option_logo'])): ?>
+                        <img src="<?php echo $asite_options['option_logo']['url'] ?>" alt="<?php bloginfo('name'); ?>"
+                             title="<?php bloginfo('description') ?>">
+                    <?php else: ?>
+                        <img src="<?php echo IMG_FOLDER . '/logo.png' ?>" alt="<?php bloginfo('name'); ?>"
+                             title="<?php bloginfo('description') ?>">
+                    <?php endif; ?>
+                </a>
             </div>
-            <!-- END Modal -->
-            <!-- END Modal window for reserve -->
 
-            <!-- Modal window for comments -->
-            <!-- Button trigger modal -->
-            <li><a type="button" class="btn" data-toggle="modal" data-target="#comments">Отзывы</a>
-            </li>
-            <!-- END Button trigger modal -->
-            <!-- Modal -->
-            <div class="modal fade" id="comments" tabindex="-1" role="dialog"
-                 aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close"><span aria-hidden="true">&times;</span>
-                            </button>
-                            <h4 class="modal-title" id="myModalLabel">Отзывы</h4>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END Modal -->
-            <!-- END Modal window for comments -->
-
-            <!-- Modal window for contact -->
-            <!-- Button trigger modal -->
-            <li><a type="button" class="btn" data-toggle="modal" data-target="#contact">Контакт</a>
-            </li>
-            <!-- END Button trigger modal -->
-            <!-- Modal -->
-            <div class="modal fade" id="contact" tabindex="-1" role="dialog"
-                 aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"
-                                    aria-label="Close"><span aria-hidden="true">&times;</span>
-                            </button>
-                            <h4 class="modal-title" id="myModalLabel">Контакт</h4>
-                        </div>
-                        <div class="modal-body">
-                            <?php if (!empty($asite_options['option_contact_form'])): ?>
-                            <?php echo do_shortcode($asite_options['option_contact_form'])?>
-                            <?php else:?>
-                            <p>
-                                Адрес:
-                                <?php echo !empty($asite_options['option_contact_address']) ? $asite_options['option_contact_address'] : '' ?>
-                                Телефон:
-                                <?php echo !empty($asite_options['option_contact_phone_1']) ? $asite_options['option_contact_phone_1'] : '' ?>
-                                <?php echo !empty($asite_options['option_contact_phone_2']) ? $asite_options['option_contact_phone_2'] : '' ?>
-                                <?php echo !empty($asite_options['option_contact_phone_3']) ? $asite_options['option_contact_phone_3'] : '' ?>
-
-                            </p>
-                            <?php endif;?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END Modal -->
-            <!-- END Modal window for contact -->
-        </ul>
-    </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#menu">Меню</a></li>
+                    <li><a type="button" class="btn" data-toggle="modal" data-target="#reserve">Забронировать</a></li>
+                    <li><a type="button" class="btn" data-toggle="modal" data-target="#comments">Отзывы</a></li>
+                    <li><a type="button" class="btn" data-toggle="modal" data-target="#contact">Контакт</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
     <!-- END Header Menu -->
 
     <!-- Header Social -->

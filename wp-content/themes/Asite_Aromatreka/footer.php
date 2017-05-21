@@ -45,16 +45,16 @@
                         <!-- Footer Social -->
                         <div class="footer_social">
                             <?php echo !empty($asite_options['option_socail_fb']) ?
-                                '<a href=' . $asite_options['option_socail_fb'] . '><img src=' . IMG_FOLDER . './pink-social/004-social.png' . '></a>' : '' ?>
+                                '<a href=' . $asite_options['option_socail_fb'] . '><img src=' . IMG_FOLDER . '/pink-social/004-social.png' . '></a>' : '' ?>
 
                             <?php echo !empty($asite_options['option_socail_insta']) ?
-                                '<a href=' . $asite_options['option_socail_insta'] . '><img src=' . IMG_FOLDER . './pink-social/003-instagram-logo.png' . '></a>' : '' ?>
+                                '<a href=' . $asite_options['option_socail_insta'] . '><img src=' . IMG_FOLDER . '/pink-social/003-instagram-logo.png' . '></a>' : '' ?>
 
                             <?php echo !empty($asite_options['option_socail_mail']) ?
-                                '<a href=' . $asite_options['option_socail_mail'] . '><img src=' . IMG_FOLDER . './pink-social/002-email.png' . '></a>' : '' ?>
+                                '<a href=' . $asite_options['option_socail_mail'] . '><img src=' . IMG_FOLDER . '/pink-social/002-email.png' . '></a>' : '' ?>
 
                             <?php echo !empty($asite_options['option_socail_vk']) ?
-                                '<a href=' . $asite_options['option_socail_vk'] . '><img src=' . IMG_FOLDER . './pink-social/001-vk-social-logotype.png' . '></a>' : '' ?>
+                                '<a href=' . $asite_options['option_socail_vk'] . '><img src=' . IMG_FOLDER . '/pink-social/001-vk-social-logotype.png' . '></a>' : '' ?>
 
                         </div>
                         <!-- END Footer Social -->

@@ -42,7 +42,7 @@
                                     'field' => 'id'
                                 )
                             ),
-                            'orderby' => $asite_options['option_order_food']
+                            //'orderby' => $asite_options['option_order_food']
                         );
                         $query = new WP_Query();
                         $query->query($args);
@@ -51,11 +51,15 @@
                             <div class="menu-content" data-hash="menupage<?php echo $index ?>">
                                 <div class="row">
                                     <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
+                                        <?php
+                                        $price = get_post_meta($post->ID, 'price_food', true);
+                                        $description = get_post_meta($post->ID, 'ingredient_food', true)
+                                        ?>
                                         <div class="col-md-3 col-sm-4 col-xs-6">
                                             <div class="menu-content-item">
                                                 <div class="menu-content-item-img">
                                                     <?php if (has_post_thumbnail()): ?>
-                                                        <img src="<?php echo get_the_post_thumbnail_url('lage'); ?>"
+                                                        <img src="<?php echo get_the_post_thumbnail_url($post->ID,'large'); ?>"
                                                              alt="<?php echo get_the_title(); ?>"
                                                              title="<?php echo get_the_title(); ?>">
 
@@ -67,14 +71,12 @@
                                                     <?php endif; ?>
                                                 </div>
                                                 <div class="menu-content-item-head">
-                                                    <span><?php echo short_title('...', 4) ?></span>
+                                                    <span><?php echo short_title('', 4) ?></span>
                                                 </div>
                                                 <div class="menu-content-item-subhead">
-                                                    <span>Lorem ipsum next food</span>
+                                                    <span><?php echo $description; ?></span>
                                                 </div>
-                                                <div class="menu-content-item-price">
-                                                    135 руб.
-                                                </div>
+                                                <div class="menu-content-item-price"><?php echo $price?> руб</div>
                                             </div>
                                         </div>
 
@@ -85,49 +87,10 @@
                                     wp_reset_postdata(); ?>
                                 </div>
                             </div>
-                            <!--      <div class="menu-content" data-hash="menupage2"> Your Content 2</div>
-                                  <div class="menu-content" data-hash="menupage3"> Your Content 3</div>-->
                         </div>
-                        <!--         <div class="menu-nav">
-                                     <a href="#menupage1"> 1</a>
-                                     <a href="#menupage2"> 2</a>
-                                     <a href="#menupage3"> 3</a>
-                                 </div>-->
                     </div>
-
-
                 <?php endfor; ?>
-                <!--   <div role="tabpanel" class="tab-pane fade in" id="menu2">
-                       <div class="owl-carousel">
-                           <div class="menu-content" data-hash="menupage1">
-                               <div class="row">
-                                   <div class="col-md-3 col-sm-4 col-xs-6">
-                                       <div class="menu-content-item">
-                                           <div class="menu-content-item-img">
-                                               <img src="img/menu-content-item-img.png">
-                                           </div>
-                                           <div class="menu-content-item-head">
-                                               <span>Креветки</span>
-                                           </div>
-                                           <div class="menu-content-item-subhead">
-                                               <span>Lorem ipsum next food</span>
-                                           </div>
-                                           <div class="menu-content-item-price">
-                                               135 руб.
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="menu-content" data-hash="menupage2"> Your Content 2</div>
-                           <div class="menu-content" data-hash="menupage3"> Your Content 3</div>
-                       </div>
-                       <div class="menu-nav">
-                           <a href="#menupage1"> 1</a>
-                           <a href="#menupage2"> 2</a>
-                           <a href="#menupage3"> 3</a>
-                       </div>
-                   </div>-->
+
             </div>
             <!-- END Tabs Contents -->
             <div class="row">

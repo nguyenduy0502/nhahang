@@ -53,7 +53,7 @@ function publicize_support(){
  */
 add_action('wp_enqueue_scripts', 'add_header_stylesheet');
 function add_header_stylesheet(){
-    wp_register_style('main-min-style', CSS_FOLDER . './main.min.css');
+    wp_register_style('main-min-style', CSS_FOLDER . '/main.min.css');
     wp_enqueue_style('main-min-style');
 
 }
