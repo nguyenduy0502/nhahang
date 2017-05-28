@@ -109,4 +109,48 @@ function pagination($prev = '&laquo;', $next = '&raquo;')
 
     echo paginate_links($pagination);
 }
+/*******************************************************************
+ * ADDITION FUNCTION FOR CUSTOM POST TYPE=food
+ ****************************************************************
+ */
+function get_quantity_food($post_id) {
+    $quantity_food=get_post_meta($post_id,'quantity_food',true);
+    $result="";
+    switch($quantity_food){
+        case 'select-3': $result="3 шт";
+            break;
+        case 'select-4': $result="4 шт";
+            break;
+        case 'select-5': $result="5 шт";
+            break;
+        case 'select-10': $result="10 шт";
+            break;
+        case 'select-15': $result="15 шт";
+            break;
+        case 'select-20': $result="20 шт";
+            break;
+        case 'select-null': $result=null;
+            break;
+        default:
+            $result=null;
+    }
+    return $result;
+}
+function get_price_food($post_id) {
+    $price_food=get_post_meta($post_id,'price_food',true);
+    return(!empty($price_food))?$price_food.' Руб':0;
+}
+function get_weight_food($post_id) {
+    //$get_food_unit=get_post_meta($post_id,'food_unit',true);
+    //$weight_food=get_post_meta($post_id,'weight_food',true);
+    (!empty(get_post_meta($post_id,'food_unit',true))) ?$get_food_unit=get_post_meta($post_id,'food_unit',true):$get_food_unit='gram';
+    (!empty(get_post_meta($post_id,'weight_food',true)))? $weight_food=get_post_meta($post_id,'weight_food',true): $weight_food=0;
+    ($get_food_unit=='gram')? $weight_unit=$weight_food.' гр':$weight_unit=$weight_food.' мл';
+    return $weight_unit;
+
+}
+function get_ingredient_food($post_id){
+    $ingredient_food=get_post_meta($post_id,'ingredient_food',true);
+    return (!empty($ingredient_food)) ? $ingredient_food :'';
+}
 ?>

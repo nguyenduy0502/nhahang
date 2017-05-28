@@ -13,7 +13,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php home_url();?>">
+                <a class="navbar-brand" href="<?php echo home_url();?>">
                     <?php if (!empty($asite_options['option_logo'])): ?>
                         <img src="<?php echo $asite_options['option_logo']['url'] ?>" alt="<?php bloginfo('name'); ?>"
                              title="<?php bloginfo('description') ?>">
@@ -27,7 +27,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Главная</a></li>
+                    <li><a href="<?php echo home_url();?>">Главная</a></li>
                     <li><a href="#menu">Меню</a></li>
                     <li><a type="button" class="btn" data-toggle="modal" data-target="#reserve">Забронировать</a></li>
                     <li><a type="button" class="btn" data-toggle="modal" data-target="#comments">Отзывы</a></li>
