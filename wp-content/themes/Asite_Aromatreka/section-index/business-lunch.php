@@ -1,6 +1,6 @@
 <?php global $asite_options; ?>
 <div class="header_widget_bottom">
-    <div class="owl-carousel">
+    <div class="owl-carousel"  id="fast-slider">
         <?php for ($index = 0; $index < count($asite_options['option_business_cat']); $index++): ?>
             <?php
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_hot_snack', true))) ? $arr_hot_snack = get_post_meta($asite_options['option_business_cat'][$index], 'choose_hot_snack', true) : $arr_hot_snack = array();
