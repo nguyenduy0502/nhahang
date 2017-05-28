@@ -106,7 +106,7 @@
 
 							<!-- Header widget bottom -->
 								<div class="header_widget_bottom">
-									<div class="owl-carousel">
+									<div class="owl-carousel" id="fast-slider">
 										<div class="header_widget_bottom_content">
 											<div class="header_widget_bottom_content_head">Menu 1</div>
 											<div class="header_widget_bottom_content_price">135 руб.</div>
@@ -135,7 +135,11 @@
 					<div class="row">
 						<div class="col-md-12">
 						<!-- Arrow down -->
-
+							<div class="arrow animated bounce infinite">
+								<a href="#menu">
+									<img width="40" height="40" src="img/arrowswhite.png">
+								</a>
+							</div>
 						<!-- END Arrow down -->
 						</div>
 					</div>
@@ -154,55 +158,52 @@
 		<div class="menu-title-aligner ">
 			<h3 class="logo-menu-book-title" id="menu-book-title">MENU</h3>
 		</div>
-		<div class="owl-carousel">
-			<div class="item" id="item-desserts0" data-page="2">
+		<div class="owl-carousel" id="menu-slider">
+			<div class="item">
 				<section class="menu-book">
 					<div class="dishtype-menu">
 						<div class="menu-book-center"><h3 class="food-type">DESSERTS</h3><hr class="under-food-type"></div>
 						<div class="dish-list">
 							<div class="first-menu-column">
 								<ul class="leaders">
-									<li class="product-name">
-									<a class="product-line" href="http://webdotinc.net/demos/thesteam/index.php/dish/poppy-seed-lemon-twists/" data-img="http://webdotinc.net/demos/thesteam/wp-content/uploads/2017/04/bread-534733-1-2.jpg">
-									<span class="ellipsis">
-									Poppy Seed-Lemon Twists </span>
-									 
-									<span class="product-price">$ 8.40</span>
-									</a>
+									<li class="product-item">
+										<div class="product-name">
+										<a class="product-line" href="http://webdotinc.net/demos/thesteam/index.php/dish/poppy-seed-lemon-twists/" data-img="http://webdotinc.net/demos/thesteam/wp-content/uploads/2017/04/bread-534733-1-2.jpg">
+										<span class="ellipsis">
+										Poppy Seed-Lemon Twists </span>
+										<span class="product-price">$ 8.40</span>
+										</a>
+										</div>
+										<div class="product-description">butter, lemon, milk, poppy seed filling, sweet dough </div>
 									</li>
-									<li class="product-description">butter, lemon, milk, poppy seed filling, sweet dough </li>
 								</ul>
 							</div>
 							<div class="second-menu-column"></div>
 							<div class="third-menu-column ts-clearfix">
 								<ul class="leaders">
-
-									<li class="product-name">
-									<a class="product-line" href="http://webdotinc.net/demos/thesteam/index.php/dish/fruit-and-cream-pie/" data-img="http://webdotinc.net/demos/thesteam/wp-content/uploads/2017/04/photo-1460380410874-537ecece39841-2.jpg">
-									<span class="ellipsis">
-									Fruit and Cream Pie </span>
-									 
-									<span class="product-price">$ 12.60</span>
-									</a>
+									<li class="product-item">
+										<div class="product-name">
+										<a class="product-line" href="http://webdotinc.net/demos/thesteam/index.php/dish/poppy-seed-lemon-twists/" data-img="http://webdotinc.net/demos/thesteam/wp-content/uploads/2017/04/bread-534733-1-2.jpg">
+										<span class="ellipsis">
+										Poppy Seed-Lemon Twists </span>
+										<span class="product-price">$ 8.40</span>
+										</a>
+										</div>
+										<div class="product-description">butter, lemon, milk, poppy seed filling, sweet dough </div>
 									</li>
-									<li class="product-description">heavy cream, chocolate, vanilla, eggs, milk, butter, cocoa, sugar, buttermilk, strawberries, plums, blueberries </li>
-								</ul> 
-							</div> 
-						</div> 
-					</div> 
-					<div class="bar-selector" style="opacity: 1;">
-						<div class="bar left-bar clicked-bar">1</div>
-						<div class="bar right-bar unclicked-bar">2</div>
+							</div>
+						</div>
 					</div>
-				</section> 
+				</section>
 			</div>
 			<div class="item">1</div>
+			<div class="item">2</div>
 		</div>
 			<div class="row">
 				<div class="col-md-12">
 				<!-- Arrow down -->
 					<div class="arrow animated bounce infinite">
-						<a href="#map">
+						<a href="#gallery">
 							<img width="40" height="40" src="img/arrowspurple.png">
 						</a>
 					</div>
@@ -217,15 +218,12 @@
 <!--END Section Menu -->
 
 <!-- Section Map -->
-	<div class="map">
+	<div class="gallery" id="gallery">
 		<div class="row">
-			<div class="col-md-6 no-padding">
-				<div id='map'></div>
-			</div>
-			<div class="col-md-6 no-padding">
+			<div class="col-md-12 no-padding">
 				<!-- Gallery -->
-				<div class="gallery">
-					<div class="owl-carousel">
+				<div class="gallery-content">
+					<div class="owl-carousel owl-theme" id="gallery-slider">
 						<div class="gallery-content">
 							<img src="img/gallery/_DSF4392-HDR.jpg">
 						</div>
@@ -283,6 +281,11 @@
 							<a href="#"><img src="img/pink-social/001-vk-social-logotype.png"></a>
 						</div>
 						<!-- END Footer Social -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 no-padding">
+						<div id='map'></div>
 					</div>
 				</div>
 			</div>
