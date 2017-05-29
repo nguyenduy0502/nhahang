@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+
+<body>
+<!-- Section Header -->
+	<div class="header">
+		<div class="container">
+			<div class="header_content">
+				<div class="row">
+					<div class="col-md-7">
+						<!-- Header Left -->
+						<div class="header_left">
+							<!-- Header Menu -->
+							<nav class="navbar navbar-default">
+								<div class="container-fluid">
+								<!-- Brand and toggle get grouped for better mobile display -->
+									<div class="navbar-header">
+										<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										</button>
+										<a class="navbar-brand" href="#">
+											<img src="img/logo.png">
+										</a>
+									</div>
+
+								<!-- Collect the nav links, forms, and other content for toggling -->
+									<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+										<ul class="nav navbar-nav">
+											<li><a href="#">Главная</a></li>
+											<li><a href="#menu">Меню</a></li>
+											<li><a type="button" class="btn" data-toggle="modal" data-target="#reserve">Забронировать</a></li>
+											<li><a type="button" class="btn" data-toggle="modal" data-target="#comments">Отзывы</a></li>
+											<li><a type="button" class="btn" data-toggle="modal" data-target="#contact">Контакт</a></li>
+										</ul>
+										<ul class="nav navbar-nav navbar-right">
+										</ul>
+									</div><!-- /.navbar-collapse -->
+								</div><!-- /.container-fluid -->
+							</nav>
+							<!-- END Header Menu -->
+							<!-- Header Social -->
+							<div class="header_social">
+								<a href="#"><img src="img/social/004-facebook-logo-button.png"></a>
+								<a href="#"><img src="img/social/002-instagram-logo.png"></a>
+								<a href="#"><img src="img/social/001-email.png"></a>
+								<a href="#"><img src="img/social/003-vk-social-logotype.png"></a>
+							</div>
+							<!-- END Header Social -->
+						</div>
+						<!-- END Header Left -->
+					</div>
+					<div class="col-md-5">
+					<!-- Header right -->
+						<div class="header_right">
+							<div class="header_widget">
+
+							<!-- Header widget top -->
+								<div class="header_widget_top">
+									<div class="header_widget_top_left">
+										<img src="img/header_widget_head.png">
+									</div>
+									<div class="header_widget_top_right">
+										<p>Cейчас</p>
+										<p>идёт</p>
+										<p>акция</p>
+										<!-- Modal window for discount -->
+										<!-- Button trigger modal -->
+										<a type="button" class="btn button" data-toggle="modal" data-target="#discount">Показать</a>
+										<!-- END Button trigger modal -->
+										<!-- END Modal window for discount -->
+									</div>
+								</div>
+							<!-- END Header widget top -->
+
+							<!-- Header widget bottom -->
+								<div class="header_widget_bottom">
+									<div class="owl-carousel" id="fast-slider">
+										<div class="header_widget_bottom_content">
+											<div class="header_widget_bottom_content_head">Menu 1</div>
+											<div class="header_widget_bottom_content_price">135 руб.</div>
+											<div class="header_widget_bottom_content_subhead">
+												<ul>
+													<li>food 1</li>
+													<li>food 2</li>
+													<li>food 3</li>
+												</ul>
+											</div>
+											<div class="widget-bot-img">
+												<img src="img/food/_DSF4227.jpg">
+											</div>
+										</div>
+										<div class="header_widget_bottom_content">
+											2
+										</div>
+									</div>
+								</div>
+							<!-- END Header widget bottom -->
+
+							</div>
+						</div>
+					<!-- Header right -->
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<!-- Arrow down -->
+							<div class="arrow animated bounce infinite">
+								<a href="#menu">
+									<img width="40" height="40" src="img/arrowswhite.png">
+								</a>
+							</div>
+						<!-- END Arrow down -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- END Section Header -->
+
+<!-- Section Menu -->
+	<div class="menu" id="menu">
+	<div class="inner-top">
+	</div>
+	<div class="inner-middle">
+		<div class="container">
+		<div class="menu-title-aligner ">
+			<h3 class="logo-menu-book-title" id="menu-book-title">MENU</h3>
+		</div>
+		<div class="owl-carousel" id="menu-slider">
+			<div class="item">
+				<section class="menu-book">
+					<div class="dishtype-menu">
+						<div class="menu-book-center"><h3 class="food-type">DESSERTS</h3><hr class="under-food-type"></div>
+						<div class="dish-list">
+							<div class="first-menu-column">
+								<ul class="leaders">
+									<li class="product-item">
+										<div class="product-name">
+										<a class="product-line" href="http://webdotinc.net/demos/thesteam/index.php/dish/poppy-seed-lemon-twists/" data-img="http://webdotinc.net/demos/thesteam/wp-content/uploads/2017/04/bread-534733-1-2.jpg">
+										<span class="ellipsis">
+										Poppy Seed-Lemon Twists </span>
+										<span class="product-price">$ 8.40</span>
+										</a>
+										</div>
+										<div class="product-description">butter, lemon, milk, poppy seed filling, sweet dough </div>
+									</li>
+								</ul>
+							</div>
+							<div class="second-menu-column"></div>
+							<div class="third-menu-column ts-clearfix">
+								<ul class="leaders">
+									<li class="product-item">
+										<div class="product-name">
+										<a class="product-line" href="http://webdotinc.net/demos/thesteam/index.php/dish/poppy-seed-lemon-twists/" data-img="http://webdotinc.net/demos/thesteam/wp-content/uploads/2017/04/bread-534733-1-2.jpg">
+										<span class="ellipsis">
+										Poppy Seed-Lemon Twists </span>
+										<span class="product-price">$ 8.40</span>
+										</a>
+										</div>
+										<div class="product-description">butter, lemon, milk, poppy seed filling, sweet dough </div>
+									</li>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="item">1</div>
+			<div class="item">2</div>
+		</div>
+			<div class="row">
+				<div class="col-md-12">
+				<!-- Arrow down -->
+					<div class="arrow animated bounce infinite">
+						<a href="#gallery">
+							<img width="40" height="40" src="img/arrowspurple.png">
+						</a>
+					</div>
+				<!-- END Arrow down -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="inner-bot">
+	</div>
+	</div>
+<!--END Section Menu -->
+
+<!-- Section Map -->
+	<div class="gallery" id="gallery">
+		<div class="row">
+			<div class="col-md-12 no-padding">
+				<!-- Gallery -->
+				<div class="gallery-content">
+					<div class="owl-carousel owl-theme" id="gallery-slider">
+						<div class="gallery-content">
+							<img src="img/gallery/_DSF4392-HDR.jpg">
+						</div>
+						<div class="gallery-content">
+							<img src="img/gallery/_DSF4424-HDR.jpg">
+						</div>
+					</div>
+				</div>
+				<!-- END Gallery -->
+			</div>
+		</div>
+	</div>
+<!-- END Section Map -->
+
+<!-- Section Footer -->
+	<div class="footer">
+		<div class="inner-top"></div>
+		<div class="inner-middle">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<!-- Footer Address -->
+						<div class="footer_adress">
+							<div class="footer_adress_head">
+								Адрес:
+							</div>
+							<div class="footer_adress_subhead">
+								наб. Академика Туполева, 15, к. 2
+							</div>
+						</div>
+						<!-- END Footer Address -->
+					</div>
+					<div class="col-md-4">
+						<!-- Footer Contact -->
+						<div class="footer_contact">
+							<div class="footer_contact_head">
+								Телефон:
+							</div>
+							<div class="footer_contact_subhead">
+								<ul>
+									<li>8 (495) 726 31 42</li>
+									<li>8 (965) 113-01-66</li>
+									<li>8 (909) 699-11-07</li>
+								</ul>
+							</div>
+						</div>
+						<!-- END Footer Contact -->
+					</div>
+					<div class="col-md-4">
+						<!-- Footer Social -->
+						<div class="footer_social">
+							<a href="#"><img src="img/pink-social/004-social.png"></a>
+							<a href="#"><img src="img/pink-social/003-instagram-logo.png"></a>
+							<a href="#"><img src="img/pink-social/002-email.png"></a>
+							<a href="#"><img src="img/pink-social/001-vk-social-logotype.png"></a>
+						</div>
+						<!-- END Footer Social -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 no-padding">
+						<div id='map'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- END Section Footer -->
+<!-- Modals -->
+	<!--Reserve Modal -->
+	<div class="modal fade" id="reserve" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Забронировать</h4>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<!-- END Reserve Modal -->
+
+	<!-- Comments Modal -->
+	<div class="modal fade" id="comments" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Отзывы</h4>
+		</div>
+		<div class="modal-body">
+			...
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		</div>
+	</div>
+	<!-- END Comments Modal -->
+
+	<!-- Contact Modal -->
+	<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Контакт</h4>
+		</div>
+		<div class="modal-body">
+			<p>
+				Адрес:
+				наб. Академика Туполева, 15, к. 2
+				Телефон:
+				8 (495) 726 31 42
+				8 (965) 113-01-66
+				8 (909) 699-11-07
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		</div>
+	</div>
+	<!-- END Contact Modal -->
+
+	<!-- Discount Modal -->
+	<div class="modal fade" id="discount" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Акция</h4>
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+		</div>
+	</div>
+	<!-- END Discount Modal -->
+<!--END Modals -->
+	<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYXNpdGVpdCIsImEiOiJjajJmNzh0YmYwNm0xMndvODRld2dtcjV6In0.tJtxkOARDLQwBeZtcqkPDw';
+	var map = new mapboxgl.Map({
+	container: 'map',
+	style: 'mapbox://styles/mapbox/streets-v10',
+	center: [37.68037402521972, 55.76202860276379],
+	zoom: 16
+	});
+	map.on('load', () => {
+		map.loadImage('img/location.png', (error, image) => {
+			if (error) throw error;
+			map.addImage('cat', image);
+			map.addLayer({
+				"id": "points",
+				"type": "symbol",
+				"source": {
+					"type": "geojson",
+					"data": {
+						"type": "FeatureCollection",
+						"features": [{
+							"type": "Feature",
+							"geometry": {
+								"type": "Point",
+								"coordinates": [37.68037402521972, 55.76202860276379]
+							}
+						}]
+					}
+				},
+				"layout": {
+					"icon-image": "cat",
+					"icon-size": 0.25
+				}
+			});
+		});
+	});
+	</script>
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>
