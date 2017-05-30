@@ -1,5 +1,4 @@
 <?php global $asite_options; ?>
-<?php wp_footer(); ?>
 <!-- Section Footer -->
 <div class="footer">
     <div class="inner-top"></div>
@@ -64,9 +63,12 @@
                 </div>
                 <div class="col-md-6">
                     <?php echo rtb_print_booking_form(); ?>
+
                 </div>
             </div>
+
         </div>
+
     </div>
 </div>
 <!-- END Section Footer -->
@@ -80,7 +82,7 @@
                         aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">Забронировать</h4>
             </div>
-            <div class="modal-body"><?php echo rtb_print_booking_form(); ?></div>
+            <div class="modal-body"><?php //echo rtb_print_booking_form(); ?></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
@@ -183,5 +185,6 @@
     }
 
 </script>
+<?php wp_footer(); ?>
 </body>
 </html>
