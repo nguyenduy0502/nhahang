@@ -5,7 +5,7 @@
     <div class="inner-middle">
         <div class="container">
             <div class="menu-title-aligner ">
-                <h3 class="logo-menu-book-title" id="menu-book-title">MENU</h3>
+                <h3 class="logo-menu-book-title" id="menu-book-title">Меню</h3>
             </div>
             <div class="owl-carousel" id="menu-slider">
                 <?php for ($index = 0;
@@ -42,18 +42,17 @@
                                             ?>
                                             <?php if ($query->have_posts()):
                                                 while ($query->have_posts()): $query->the_post(); ?>
-                                                    <li class="product-name">
-                                                        <a class="product-line"
-                                                           href="<?php the_permalink(); ?>"
-                                                           data-img="<?php the_post_thumbnail_url('large') ?>">
-                                                            <span class="ellipsis"><?php the_title(); ?></span>
-
-                                                            <span
-                                                                class="product-price"><?php echo get_price_food($post->ID) ?></span>
-                                                        </a>
+                                                    <li class="product-item">
+                                                        <div class="product-name">
+										                <span class="product-line">
+								            		<span class="ellipsis"><?php the_title(); ?></span>
+									                	<span
+                                                            class="product-price"><?php echo get_price_food($post->ID) ?></span>
+								                		</span>
+                                                        </div>
+                                                        <div
+                                                            class="product-description"><?php echo get_ingredient_food($post->ID); ?></div>
                                                     </li>
-                                                    <li class="product-description"><?php echo get_ingredient_food($post->ID); ?></li>
-
                                                     <?php $post_ids[] = get_the_ID(); endwhile; endif;
                                             wp_reset_query(); ?>
                                         </ul>
@@ -81,17 +80,17 @@
                                             ?>
                                             <?php if ($query->have_posts()):
                                                 while ($query->have_posts()): $query->the_post(); ?>
-                                                    <li class="product-name">
-                                                        <a class="product-line"
-                                                           href="<?php the_permalink(); ?>"
-                                                           data-img="<?php the_post_thumbnail_url('large') ?>">
-                                                            <span class="ellipsis"><?php the_title() ?></span>
-
-                                                            <span
-                                                                class="product-price"><?php echo get_price_food($post->ID) ?></span>
-                                                        </a>
+                                                    <li class="product-item">
+                                                        <div class="product-name">
+										                <span class="product-line">
+								            		<span class="ellipsis"><?php the_title(); ?></span>
+									                	<span
+                                                            class="product-price"><?php echo get_price_food($post->ID) ?></span>
+								                		</span>
+                                                        </div>
+                                                        <div
+                                                            class="product-description"><?php echo get_ingredient_food($post->ID); ?></div>
                                                     </li>
-                                                    <li class="product-description"><?php echo get_ingredient_food($post->ID); ?></li>
                                                 <?php endwhile; endif;
                                             wp_reset_query(); ?>
                                         </ul>

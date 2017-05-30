@@ -1,13 +1,13 @@
 <?php get_header(); ?>
     <!-- Section Menu -->
-    <div class="menu" id="menu">
-        <div class="inner-top">
-        </div>
-        <div class="inner-middle">
-            <div class="container">
-                <div class="owl-carousel">
-                    <?php if (have_posts()): while (have_posts()):
-                    the_post(); ?>
+    <div class="menu-single">
+        <div class="container">
+            <div class="menu-title-aligner ">
+                <h3 class="logo-menu-book-title" id="menu-book-title">Супы</h3>
+            </div>
+            <section class="menu-book">
+                <?php if (have_posts()): while (have_posts()): the_post(); ?>
+
                     <?php
                     $arr_hot_snack = !empty(get_post_meta($post->ID, 'choose_hot_snack', true)) ? get_post_meta($post->ID, 'choose_hot_snack', true) : $arr_hot_snack = array();
                     $arr_salad = !empty(get_post_meta($post->ID, 'choose_salad', true)) ? get_post_meta($post->ID, 'choose_salad', true) : $arr_salad = array();// Салат
@@ -20,51 +20,59 @@
                     $arr_dessert = !empty(get_post_meta($post->ID, 'choose_dessert', true)) ? get_post_meta($post->ID, 'choose_dessert', true) : $arr_dessert = array();//десерты
                     //$array_foods= $arr_hot_snack+$arr_salad+$arr_cold_snack+$arr_special_food+$arr_main_dishes+$arr_drinks+$arr_dessert;
                     $array_foods = array_merge($arr_hot_snack, $arr_soup, $arr_salad, $arr_cold_snack, $arr_special_food, $arr_main_dishes, $arr_vegetarian, $arr_drinks, $arr_dessert);
-                    $array_foods = array_chunk($array_foods, 8);
+                    //$array_foods = array_chunk($array_foods, 5);
+                    $len = count($array_foods);
+                    $firsthalf = array_slice($array_foods, 0, $len / 2);
+                    $secondhalf = array_slice($array_foods, $len / 2);
                     ?>
-                    <?php for ($index = 1; $index < count($array_foods) + 1; $index++): ?>
-                        <div class="menu-content" data-hash="menupage<?php echo $index ?>">
-                            <div class="row">
-                                <?php $args = array(
-                                    'post__in' => $array_foods[$index-1],
-                                    'post_type' => 'food',
-                                    'orderby' => 'rand',
-                                );
-                                $query = new WP_Query($args);
-                                ?>
-                                <?php if ($query->have_posts()): while ($query->have_posts()): $query->the_post(); ?>
-                                    <div class="col-md-3 col-sm-4 col-xs-6">
-                                        <div class="menu-content-item">
-                                            <div class="menu-content-item-head">
-                                                <span><?php the_title()?></span>
+                    <div class="dishtype-menu">
+                        <div class="dish-list">
+                            <div class="first-menu-column">
+                                <ul class="leaders">
+                                    <?php for ($index = 0; $index < count($firsthalf); $index++): ?>
+                                        <li class="product-item">
+                                            <div class="product-name">
+									<span class="product-line">
+									<span class="ellipsis"><?php echo get_the_title($firsthalf[$index]); ?></span>
+									<span class="product-price"><?php echo get_price_food($firsthalf[$index]); ?></span>
+									</span>
                                             </div>
-                                            <div class="menu-content-item-subhead">
-                                                <span>Lorem ipsum next food</span>
+                                            <div
+                                                class="product-description"><?php echo get_post_meta($firsthalf[$index], 'ingredient_food', true); ?></div>
+                                        </li>
+                                    <?php endfor; ?>
+                                </ul>
+                            </div>
+                            <div class="second-menu-column"></div>
+                            <div class="third-menu-column ts-clearfix">
+                                <ul class="leaders">
+                                    <?php for ($index = 0; $index < count($secondhalf); $index++): ?>
+                                        <li class="product-item">
+                                            <div class="product-name">
+									<span class="product-line">
+									<span class="ellipsis"><?php echo get_the_title($secondhalf[$index]); ?></span>
+									<span
+                                        class="product-price"><?php echo get_price_food($secondhalf[$index]); ?></span>
+									</span>
                                             </div>
-                                            <div class="menu-content-item-price">
-                                                135 руб.
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endwhile; endif; // end loop get data?>
+                                            <div
+                                                class="product-description"><?php echo get_post_meta($secondhalf[$index], 'ingredient_food', true); ?></div>
+                                        </li>
+                                    <?php endfor; ?>
+
                             </div>
                         </div>
-                    <?php endfor; // loop get container div
-                    ?>
-                </div>
-                <div class="menu-nav">
-                    <?php for ($i = 1; $i < count($array_foods) + 1; $i++): ?>
-                        <a href="#menupage<?php echo $i ?>"> <?php echo $i ?></a>
-                    <?php endfor; ?>
-                </div>
-                <?php endwhile;
-                endif; ?>
-                <div class="im-img">
-                    <img src="<?php echo IMG_FOLDER . '/food/_DSF4313.jpg' ?>">
-                </div>
-            </div>
+                    </div>
+                    <?php $url_thumbnail = get_the_post_thumbnail_url(); endwhile; endif; ?>
+            </section>
         </div>
-        <div class="inner-bot">
+        <div class="menu-single-back">
+            <?php if (empty($url_thumbnail)): ?>
+                <img src="<?php echo IMG_FOLDER . '/food/_DSF4313.jpg' ?>" alt="<?php bloginfo('name') ?>">
+            <?php else: ?>
+                <img src="<?php echo $url_thumbnail ?>" alt="<?php bloginfo('name') ?>">
+
+            <?php endif; ?>
         </div>
     </div>
     <!--END Section Menu -->
