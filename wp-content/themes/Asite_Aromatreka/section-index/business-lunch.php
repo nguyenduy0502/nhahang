@@ -3,7 +3,7 @@
     <div class="owl-carousel"  id="fast-slider">
         <?php for ($index = 0; $index < count($asite_options['option_business_cat']); $index++): ?>
             <?php
-            (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_hot_snack', true))) ? $arr_hot_snack = get_post_meta($asite_options['option_business_cat'][$index], 'choose_hot_snack', true) : $arr_hot_snack = array();
+            (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_pancake', true))) ? $arr_hot_snack = get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_pancake', true) : $arr_hot_snack = array();
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_salad', true))) ? $arr_salad = get_post_meta($asite_options['option_business_cat'][$index], 'choose_salad', true) : $arr_salad = array();// Салат
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_cold_snack', true))) ? $arr_cold_snack = get_post_meta($asite_options['option_business_cat'][$index], 'choose_cold_snack', true) : $arr_cold_snack = array();
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_soup', true))) ? $arr_soup = get_post_meta($asite_options['option_business_cat'][$index], 'choose_soup', true) : $arr_soup = array();
