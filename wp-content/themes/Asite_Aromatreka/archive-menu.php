@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); global $asite_options; ?>
     <!-- Section Menu -->
     <div class="menu-single">
         <div class="container">
@@ -12,7 +12,8 @@
                             <?php $first_args = array(
                                 'post_type' => 'menu',
                                 'posts_per_page' => 5,
-                                'orderby' => 'rand'
+                                'orderby' => 'rand',
+                                'post__not_in' => $asite_options['option_business_cat']
                             );
                             $query = new WP_Query();
                             $query->query($first_args);
@@ -51,8 +52,8 @@
                             $secon_args = array(
                                 'post_type' => 'menu',
                                 'posts_per_page' => 5,
-                                'post__not_in' => $post_ids,
-                                'orderby' => 'rand'
+                                'post__not_in' => $asite_options['option_business_cat'],
+                                'orderby' => 'rand',
                             );
                             $query = new WP_Query();
                             $query->query($secon_args);

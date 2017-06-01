@@ -857,9 +857,9 @@ function save_form_menu_output($post_id)
         return;
     }
     //save data choose_food
-    if (!wp_verify_nonce($_POST['info_choose_rice_pancake_nonce'], 'save_choose_rice_pancake_nonce')) {
+  /*  if (!wp_verify_nonce($_POST['info_choose_rice_pancake_nonce'], 'save_choose_rice_pancake_nonce')) {
         return;
-    }
+    }*/
     if (isset($_POST['choose_rice_pancake_array']) && $_POST['choose_rice_pancake_array'] !== "") {
         $custom = $_POST['choose_rice_pancake_array'];
         $old_meta = get_post_meta($post_id, 'choose_rice_pancake', true);
