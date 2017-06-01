@@ -5,7 +5,7 @@
     <div class="inner-middle">
         <div class="container">
             <div class="menu-title-aligner ">
-                <h3 class="logo-menu-book-title" id="menu-book-title">Меню</h3>
+                <h3 class="logo-menu-book-title" id="menu-book-title"><a href="<?php echo home_url().'/menu'?>">Меню</a></h3>
             </div>
             <div class="owl-carousel" id="menu-slider">
                 <?php for ($index = 0;

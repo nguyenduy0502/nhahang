@@ -26,7 +26,8 @@
                                     $day_end = get_post_meta($post->ID, 'day_end', true);
                                     ?>
                                     <li class="product-item">
-                                        <div class="product-name">
+                                        <a href="<?php the_permalink();?>" class="product-item-url">
+                                            <div class="product-name">
 									<span class="product-line">
 									<span class="ellipsis"><?php echo short_title('', 2) ?></span>
 									<span
@@ -36,7 +37,8 @@
                                             <?php echo $day_start; ?> - <?php echo $day_end; ?> - <?php echo $time_start; ?>–<?php echo $time_end; ?>
                                         <?php endif; ?></span>
 									</span>
-                                        </div>
+                                            </div>
+                                        </a>
                                         <div class="product-description"></div>
                                     </li>
                                     <?php $post_ids[] = get_the_ID(); endwhile; endif;
@@ -63,6 +65,7 @@
                                     $day_end = get_post_meta($post->ID, 'day_end', true);
                                     ?>
                                     <li class="product-item">
+                                        <a href="<?php the_permalink();?>" class="product-item-url">
                                         <div class="product-name">
 									<span class="product-line">
 									<span class="ellipsis"><?php echo short_title('', 2) ?></span>
@@ -74,6 +77,7 @@
                                         <?php endif; ?></span>
 									</span>
                                         </div>
+                                        </a>
                                         <div class="product-description"></div>
                                     </li>
                                 <?php endwhile; endif;
