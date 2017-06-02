@@ -5,7 +5,7 @@
             <?php
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_pancake', true))) ? $choose_rice_pancake = get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_pancake', true) : $choose_rice_pancake = array();
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_fish', true))) ? $choose_rice_fish = get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_fish', true) : $choose_rice_fish = array();
-            (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_pancake', true))) ? $choose_salad = get_post_meta($asite_options['option_business_cat'][$index], 'choose_rice_pancake', true) : $choose_salad = array();
+            (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_salad', true))) ? $choose_salad = get_post_meta($asite_options['option_business_cat'][$index], 'choose_salad', true) : $choose_salad = array();
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_soup', true))) ? $choose_soup = get_post_meta($asite_options['option_business_cat'][$index], 'choose_soup', true) : $choose_soup = array();
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_fish', true))) ? $choose_fish = get_post_meta($asite_options['option_business_cat'][$index], 'choose_fish', true) : $choose_fish = array();
             (!empty(get_post_meta($asite_options['option_business_cat'][$index], 'choose_shrimp', true))) ? $choose_shrimp = get_post_meta($asite_options['option_business_cat'][$index], 'choose_shrimp', true) : $choose_shrimp = array();
@@ -30,8 +30,8 @@
 
 
 
-            $array_foods = array_merge($choose_rice_pancake, $choose_rice_fish, $choose_salad, $choose_soup, $choose_fish, $choose_shrimp, $choose_frog_eel, $choose_chicken_quail, $choose_duck,
-                $choose_pork_beef, $choose_beef_goat, $choose_squid, $choose_spinach, $choose_snails, $choose_dessert, $choose_gas_drink, $choose_cafe_tea, $choose_beer, $choose_vodka,
+            $array_foods = array_merge($choose_soup,$choose_salad,$choose_fish,$choose_beef_goat,$choose_pork_beef,$choose_beer,$choose_rice_pancake, $choose_rice_fish, $choose_shrimp, $choose_frog_eel, $choose_chicken_quail, $choose_duck,
+                $choose_squid, $choose_spinach, $choose_snails, $choose_dessert, $choose_gas_drink, $choose_cafe_tea, $choose_vodka,
                 $choose_champagne, $choose_whiskey, $choose_cognac, $choose_wine, $choose_rice_vermicelli
             );
             ?>
